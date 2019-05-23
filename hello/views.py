@@ -6,7 +6,7 @@ from datetime import datetime
 from django.http import HttpResponse
 
 def home(request):
-    return HttpResponse("Hello, Gurus!")
+    return HttpResponse("Hello, world!")
 
 def hello_there(request, name):
     now = datetime.now()
@@ -21,5 +21,5 @@ def hello_there(request, name):
     else:
         clean_name = "Friend"
 
-    content = "Hello there, " + clean_name + "! It's " + formatted_now
+    content = "Hello my " + clean_name + ". It's " + formatted_now
     return HttpResponse(content)    

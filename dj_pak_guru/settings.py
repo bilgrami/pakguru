@@ -25,8 +25,15 @@ SECRET_KEY = '3e909706-f2ab-4bed-a9a4-03271bc144a1'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    # Example host name only; customize to your specific host
+    "pakguru.azurewebsites.net",
+    "127.0.0.1",
+    "localhost",
+    "pak.guru",
+    "www.pak.guru",
+]
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
@@ -78,7 +85,7 @@ WSGI_APPLICATION = 'dj_pak_guru.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(BASE_DIR, "app", "db", 'db.sqlite3'),
     }
 }
 

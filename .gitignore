@@ -345,3 +345,4 @@ venv/
 
 #ignore .vscode
 .vscode/settings.json
+.vscode/launch.json

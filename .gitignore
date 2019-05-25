@@ -343,3 +343,4 @@ healthchecksdb
 env/
 venv/
 /app/db
+app/db/db.sqlite3

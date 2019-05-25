@@ -343,3 +343,5 @@ healthchecksdb
 env/
 venv/
 
+#ignore .vscode
+.vscode/settings.json

@@ -21,5 +21,5 @@ def hello_there(request, name):
     else:
         clean_name = "Friend"
 
-    content = "Hello my " + clean_name + ". It's " + formatted_now
+    content = "Hello " + clean_name + ". It's " + formatted_now
     return HttpResponse(content)    

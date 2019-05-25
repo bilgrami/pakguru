@@ -342,7 +342,4 @@ healthchecksdb
 # Python environments
 env/
 venv/
-
-#ignore .vscode
-.vscode/settings.json
-.vscode/launch.json
+/app/db

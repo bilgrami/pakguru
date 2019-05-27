@@ -12,7 +12,6 @@ ENV PYTHONUNBUFFERED 1
 RUN \
  apt-get update && \
  apt-get install -qy --no-install-recommends \
- # -o APT::Install-Recommends=false -o APT::Install-Suggests=false \
   python3 python3-virtualenv pypy \
   libpq-dev python-dev gcc
 

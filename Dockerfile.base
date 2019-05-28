@@ -13,6 +13,6 @@ RUN \
  apt-get update && \
  apt-get install -qy --no-install-recommends \
   python3 python3-virtualenv pypy \
-  libpq-dev python-dev gcc
-
-RUN pip install virtualenv
+  libpq-dev python-dev gcc && \
+ rm -rf /var/lib/apt/lists/* && \
+ pip install virtualenv

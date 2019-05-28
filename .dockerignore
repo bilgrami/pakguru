@@ -13,3 +13,4 @@ LICENSE
 .vscode
 */env
 __pycache__
+*/app/db*

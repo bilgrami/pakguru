@@ -347,3 +347,4 @@ app/db/db.sqlite3
 docker-compose-hosted-azure-postgres-db.yml
 config/web_azuredb.env
 project/pakguru_project/pakguru_app/static
+.virtualenvs

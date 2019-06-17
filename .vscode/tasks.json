@@ -1,0 +1,109 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    // https://code.visualstudio.com/docs/editor/tasks-v1
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Docker - build pakguru image",
+            "type": "shell",
+            "command": "docker build --rm -f 'Dockerfile' -t bilgrami/pakguru:latest .;",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Docker-Compose - build and push to docker repo",
+            "type": "shell",
+            "command": "docker build --rm -f 'Dockerfile' -t bilgrami/pakguru:latest .; docker push bilgrami/pakguru:latest;",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Docker-Compose - web - bash shell",
+            "type": "shell",
+            "command": "docker-compose exec web bash",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Docker-Compose - db - bash",
+            "type": "shell",
+            "command": "docker-compose exec db bash -c 'cd /usr/local/project/pakguru_project;'",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Docker-Compose - web - check logs",
+            "type": "shell",
+            "command": "docker logs -t -f hijri-calendar_web_1",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Docker-Compose - web - start notebook server",
+            "type": "shell",
+            "command": "docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && python manage.py shell_plus --notebook'",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Docker-Compose - web - run django shell_plus",
+            "type": "shell",
+            "command": "docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && python manage.py shell_plus'",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Docker-Compose - web - run initialization script",
+            "type": "shell",
+            "command": "docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project/shell_scripts && chmod +x init_script.sh && ./init_script.sh'",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Docker-Compose - web - start notebook server",
+            "type": "shell",
+            "command": "docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && python manage.py shell_plus --notebook'",
+            "group": "build",
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        
+        
+    ]
+}

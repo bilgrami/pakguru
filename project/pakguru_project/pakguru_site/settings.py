@@ -39,7 +39,7 @@ ALLOWED_HOSTS = [
 # Application references
 # https://docs.djangoproject.com/en/2.1/ref/settings/#std:setting-INSTALLED_APPS
 INSTALLED_APPS = [
-    'app',
+    'pakguru_app.app.PakGuruWebsiteConfig',
     # Add your apps here to enable them
     'django.contrib.admin',
     'django.contrib.auth',

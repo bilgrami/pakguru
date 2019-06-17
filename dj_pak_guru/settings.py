@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 import posixpath
 
+from envs import env
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -45,7 +47,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-]
+    'django.contrib.humanize',
+    'django_extensions',
+    'rest_framework',
+    'django_admin_shell',
+ ]
 
 # Middleware framework
 # https://docs.djangoproject.com/en/2.1/topics/http/middleware/
@@ -88,6 +94,20 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, "app", "db", 'db.sqlite3'),
     }
 }
+sql_lite_db_path = os.path.join(BASE_DIR, "app", "db", 'db.sqlite3')
+if DEBUG and not env('DATABASE_ENGINE'):
+    print("sql lite db is located at:", sql_lite_db_path)
+
+DATABASES = {
+    'default': {
+        'ENGINE': env('DATABASE_ENGINE', 'django.db.backends.sqlite3'),
+        'NAME': env('DATABASE_NAME', sql_lite_db_path),
+        'USER': env('DATABASE_USER'),
+        'PASSWORD': env('DATABASE_PASSWORD'),
+        'HOST': env('DATABASE_HOST'),
+        'PORT': env('DATABASE_PORT')
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -109,12 +129,45 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 LANGUAGE_CODE = 'en-us'
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Los_Angeles'
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-STATIC_URL = '/static/'
-STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+# STATIC_URL = '/static/'
+# STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+
+STATIC_URL = env('STATIC_URL', '/static/')
+
+STATICFILES_DIR = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
+
+NOTEBOOK_ARGUMENTS = [
+    # '--notebook-dir', 'notebooks',
+    # exposes IP and port
+    '--ip=0.0.0.0',
+    '--port=8888',
+    '--allow-root',
+    # disables the browser
+    '--no-browser',
+ ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+        ],
+    'DEFAULT_PAGINATION_CLASS': (
+        'rest_framework.pagination.'
+        'PageNumberPagination'
+        ),
+    'PAGE_SIZE': 20
+}
+
+# django-admin-shell settings
+ADMIN_SHELL_ENABLE = True
+ADMIN_SHELL_ONLY_FOR_SUPERUSER = True
+ADMIN_SHELL_ONLY_DEBUG_MODE = True

@@ -1,8 +1,24 @@
-version: '2.1'
+version: '3.7'
 
 services:
-  dj_pak_guru:
+  db:
+    image: postgres
+    env_file: ./config/db.env
+    volumes:
+      - postgres:/var/lib/postgresql/data
+    
+  web:
     image: bilgrami/pakguru:latest
-    build: .
+    env_file: ./config/web.env
+    volumes:
+      - ${HOST_PROJECT_FOLDER}:${TARGET_PROJECT_FOLDER}
     ports:
-      - 5000:5000
+      - "${SERVER_PORT}:${SERVER_PORT}"
+      - "${iPYTHON_NOTEBOOK_PORT}:${iPYTHON_NOTEBOOK_PORT}"
+    depends_on:
+       - db
+
+  # redis:
+  #   image: "redis:alpine"
+volumes:
+  postgres:

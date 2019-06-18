@@ -1,5 +1,5 @@
 """
-WSGI config for dj_pak_guru project.
+WSGI config for pakguru_site project.
 
 This module contains the WSGI application used by Django's development server
 and any production WSGI deployments. It should expose a module-level variable
@@ -21,7 +21,7 @@ from django.core.wsgi import get_wsgi_application
 
 os.environ.setdefault(
     'DJANGO_SETTINGS_MODULE',
-    'dj_pak_guru.settings')
+    'pakguru_site.settings')
 
 # This application object is used by any WSGI server configured to use this
 # file. This includes Django's development server, if the WSGI_APPLICATION

@@ -1,8 +1,8 @@
 version: '2.1'
 
 services:
-  dj_pak_guru:
-    image: dj_pak_guru
+  pakguru_site:
+    image: pakguru_site
     build:
       context: .
       dockerfile: Dockerfile

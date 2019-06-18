@@ -10,7 +10,7 @@ sed -i "s/SSH_PORT/$SSH_PORT/g" /etc/ssh/sshd_config;
 echo "python is located at:"
 which python 
 
-cd /usr/local/project/pakguru/
+cd /usr/local/project/pakguru_project/
 echo Displaying list of files under current directory: $(pwd)
 # ls -lR
 echo "starting django server on port $SERVER_PORT"

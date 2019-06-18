@@ -1,5 +1,5 @@
 """
-Django settings for dj_pak_guru project.
+Django settings for pakguru_site project.
 
 Based on 'django-admin startproject' using Django 2.1.2.
 
@@ -65,7 +65,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'dj_pak_guru.urls'
+ROOT_URLCONF = 'pakguru_site.urls'
 
 # Template configuration
 # https://docs.djangoproject.com/en/2.1/topics/templates/
@@ -85,7 +85,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dj_pak_guru.wsgi.application'
+WSGI_APPLICATION = 'pakguru_site.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 DATABASES = {
@@ -139,12 +139,13 @@ USE_TZ = True
 # STATIC_URL = '/static/'
 # STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
-STATIC_URL = env('STATIC_URL', '/static/')
+# STATIC_URL = env('STATIC_URL', '/static/')
 
-STATICFILES_DIR = (
-    os.path.join(BASE_DIR, 'static'),
-)
-
+# STATICFILES_DIR = (
+#     os.path.join(BASE_DIR, 'static'),
+# )
+STATIC_URL = '/static/'
+STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
 NOTEBOOK_ARGUMENTS = [
     # '--notebook-dir', 'notebooks',

@@ -1,3 +1,3 @@
 """
-Package for dj_pak_guru.
+Package for pakguru_site.
 """

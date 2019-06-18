@@ -88,13 +88,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'pakguru_site.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, "app", "db", 'db.sqlite3'),
-    }
-}
-sql_lite_db_path = os.path.join(BASE_DIR, "app", "db", 'db.sqlite3')
+sql_lite_db_path = os.path.join(BASE_DIR, 'db.sqlite3')
 if DEBUG and not env('DATABASE_ENGINE'):
     print("sql lite db is located at:", sql_lite_db_path)
 
@@ -136,15 +130,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
-# STATIC_URL = '/static/'
-# STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
+STATIC_URL = env('STATIC_URL', '/static/')
 
-# STATIC_URL = env('STATIC_URL', '/static/')
-
-# STATICFILES_DIR = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
-STATIC_URL = '/static/'
+STATICFILES_DIR = (
+    os.path.join(BASE_DIR, 'static'),
+)
 STATIC_ROOT = posixpath.join(*(BASE_DIR.split(os.path.sep) + ['static']))
 
 NOTEBOOK_ARGUMENTS = [

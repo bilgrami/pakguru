@@ -38,9 +38,9 @@
             "problemMatcher": []
         },
         {
-            "label": "Docker-Compose - db - bash",
+            "label": "Docker-Compose - db - bash shell",
             "type": "shell",
-            "command": "docker-compose exec db bash -c 'cd /usr/local/project/pakguru_project;'",
+            "command": "docker-compose exec db bash;",
             "group": "build",
             "presentation": {
                 "reveal": "always",
@@ -51,7 +51,7 @@
         {
             "label": "Docker-Compose - web - check logs",
             "type": "shell",
-            "command": "docker logs -t -f hijri-calendar_web_1",
+            "command": "docker logs -t -f pakguru_web_1",
             "group": "build",
             "presentation": {
                 "reveal": "always",
@@ -84,7 +84,7 @@
         {
             "label": "Docker-Compose - web - run initialization script",
             "type": "shell",
-            "command": "docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project/shell_scripts && chmod +x init_script.sh && ./init_script.sh'",
+            "command": "docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && chmod +x ./shell_scripts/init_script.sh && ./shell_scripts//init_script.sh'",
             "group": "build",
             "presentation": {
                 "reveal": "always",

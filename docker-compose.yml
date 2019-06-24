@@ -12,13 +12,20 @@ services:
     env_file: ./config/web.env
     volumes:
       - ${HOST_PROJECT_FOLDER}:${TARGET_PROJECT_FOLDER}
+      - ${WEBAPP_STORAGE_HOME}/docker/volumes/webdata:/usr/local/project/pakguru_project/data
     ports:
       - "${SERVER_PORT}:${SERVER_PORT}"
       - "${iPYTHON_NOTEBOOK_PORT}:${iPYTHON_NOTEBOOK_PORT}"
     depends_on:
        - db
 
-  # redis:
-  #   image: "redis:alpine"
+  redis:
+    container_name: 'redis'
+    image: "redis:alpine"
+    ports:
+      - "6579:6379"
+    volumes:
+      - "${WEBAPP_STORAGE_HOME}/docker/volumes/redisdata:/data"
+
 volumes:
   postgres:

@@ -1,7 +1,7 @@
 {
     //"python.pythonPath": "{workspaceFolder}/.virtualenvs/myproject_env/Scripts/python",
     // "workbench.colorTheme": "Solarized Dark",
-    "python.pythonPath": "${workspaceFolder}/.virtualenvs/myproject_env/Scripts/python",
+    "python.pythonPath": ".virtualenvs\\myproject_env\\Scripts\\python.exe",
     "python.linting.pylintEnabled": false,
     "python.linting.enabled": true,
     "appService.zipIgnorePattern": [

@@ -1,6 +1,7 @@
 FROM bilgrami/python-base:latest
 LABEL Name=pakguru Version=0.0.1 maintainer="Syed Bilgrami <bilgrami@gmail.com>"
 
+
 ARG PROJECT_ROOT=/usr/local/project
 ARG CONFIG_ROOT=$PROJECT_ROOT/config
 ENV VIRTUAL_ENV=$PROJECT_ROOT/.virtualenvs/myproject_env
@@ -36,7 +37,7 @@ STOPSIGNAL SIGINT
 RUN \
  apt-get update && \
  apt-get install -qy --no-install-recommends \
-   curl wget openssh-server nano && \
+   curl wget openssh-server nano redis-tools && \
  rm -rf /var/lib/apt/lists/* && \
  mkdir -p /home/LogFiles /opt/startup && \
  echo "root:Docker!" | chpasswd 
@@ -52,7 +53,7 @@ RUN chmod -R +x /opt/startup \
    && rm -rf /tmp/* \
    && cd /opt/startup
 
-ENV SSH_PORT 8080
-EXPOSE $SSH_PORT $SSH_PORT
+ENV SSH_PORT 2222
+EXPOSE 80 2222
 
 ENTRYPOINT ["/opt/startup/init_container.sh"]

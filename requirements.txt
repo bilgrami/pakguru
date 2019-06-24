@@ -2,12 +2,10 @@ amqp
 astroid
 Babel
 billiard
-celery
 colorama
 Django
 django-health-check
 django-redis
-flower
 isort
 kombu
 lazy-object-proxy
@@ -18,7 +16,10 @@ pytz
 redis
 six
 sqlparse
-tornado
+celery>=3.1.0; python_version<"3.7"
+celery>=4.3.0; python_version>="3.7"
+tornado>=5.0.0,<6.0.0; python_version<"3.5.2"
+tornado>=5.0.0,<7.0.0; python_version>="3.5.2"
 typed-ast
 vine
 wrapt
@@ -33,3 +34,5 @@ jupyter-console
 jupyter-core
 django-admin-shell
 django-material
+django-redis
+# flower

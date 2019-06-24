@@ -1,11 +1,9 @@
 # Welcome to pak.guru official github repository!
+[![Build Status](https://travis-ci.org/bilgrami/pakguru.svg?branch=master)](https://travis-ci.org/bilgrami/pakguru)
 
-This application is written in Django 2.x with cosmosdb via mongodb API as backend. 
+This application is written in Django 2.x with Azure postgres db as backend.
 
-The production version is hosted on Microsoft Azure inside a docker container.
-
-More details will follow as we continue making progress on site development.
+The production version is hosted on Microsoft Azure inside a docker multi-container.
 
 ---
 > version 0.0.1
-

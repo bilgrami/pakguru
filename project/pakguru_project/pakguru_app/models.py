@@ -79,10 +79,10 @@ class YouTubeFeeds(models.Model):
     channel_name = models.CharField('Channel Name', max_length=300)
     channel_link = models.URLField('Channel Link', max_length=500)
     latest_show_link = models.URLField('Latest Show Link', max_length=500, null=True, blank=True)
-    search_pattern = models.URLField('Search Pattern', max_length=500, null=True, blank=True)
+    search_pattern = models.CharField('Search Pattern', max_length=500, null=True, blank=True)
     search_url = models.URLField('Search URL', max_length=500, null=True, blank=True)
     is_active = models.BooleanField("Is Active", default=True)
-    expiration_date = models.DateTimeField('Expiration Date')
+    expiration_date = models.DateTimeField('Expiration Date', null=True, blank=True)
     added_by = models.ForeignKey(User, related_name='related_youtube_feeds',
                                  on_delete=models.SET_NULL,
                                  null=True, blank=True)

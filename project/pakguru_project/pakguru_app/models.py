@@ -58,7 +58,7 @@ class LocaleList(models.Model):
 
 class Author(models.Model):
     name = models.CharField(max_length=255)
-    email = models.EmailField(max_length=100)
+    email = models.EmailField(max_length=100, null=True, blank=True)
     is_active = models.BooleanField("Is Active", default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -74,6 +74,9 @@ class YouTubeFeeds(models.Model):
     channel_short_code = models.CharField('Channel Code', max_length=10)
     channel_name = models.CharField('Channel Name', max_length=300)
     channel_link = models.URLField('Channel Link', max_length=500)
+    latest_show_link = models.URLField('Latest Show Link', max_length=500, null=True, blank=True)
+    search_pattern = models.URLField('Search Pattern', max_length=500, null=True, blank=True)
+    search_url = models.URLField('Search URL', max_length=500, null=True, blank=True)
     is_active = models.BooleanField("Is Active", default=True)
     expiration_date = models.DateTimeField('Expiration Date')
     added_by = models.ForeignKey(User, related_name='related_youtube_feeds',

@@ -44,6 +44,7 @@ class PostCategoryList(models.Model):
 
     class Meta:
         verbose_name = "Post Category"
+        verbose_name_plural = "Post Categories"
 
 
 class LocaleList(models.Model):
@@ -54,6 +55,9 @@ class LocaleList(models.Model):
 
     def __str__(self):
         return self.locale_code
+    
+    class Meta:
+        verbose_name_plural = "Locales"
 
 
 class Author(models.Model):
@@ -85,6 +89,9 @@ class YouTubeFeeds(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     extra_data = JSONField()
+    
+    class Meta:
+        verbose_name_plural = "Youtube Feeds"
 
 
 class Post(models.Model):

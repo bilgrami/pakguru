@@ -1,17 +1,37 @@
+sudo: 'required'
 dist: xenial
 language: python
 services:
 - postgresql
 - redis-server
 - docker
+env:
+  global:
+    - IMAGE_NAME=bilgrami/pakguru
+
 python:
 - '3.7'
 before_script:
+- version="$(awk '$2 == "PRODUCT_VERSION" { print $3; exit }' Dockerfile)"
+- docker pull "$IMAGE_NAME" || true  
 - psql -c 'create database travis_ci_test;' -U postgres
 before_install:
 - docker --version
-- docker build -t bilgrami/pakguru:latest .
-- docker run -d -p 127.0.0.1:80:5000 bilgrami/pakguru:latest /bin/sh -c "cd
+- docker build -t ${IMAGE_NAME} .
+- docker run -d -p 127.0.0.1:80:5000 ${IMAGE_NAME} /bin/sh -c "cd
   /opt/startup; ./init_container.sh;"
 - docker ps -a
 script: cd ./project/pakguru_project/ && python manage.py test;
+after_script:
+  - docker images
+
+before_deploy:
+- docker login -u "$DOCKER_USERNAME" -p "$DOCKER_PASS"
+- docker tag "$IMAGE_NAME" "${IMAGE_NAME}:latest"
+- docker tag "$IMAGE_NAME" "${IMAGE_NAME}:${version}"
+deploy:
+  provider: script
+  script: docker push "${IMAGE_NAME}:latest" && docker push "${IMAGE_NAME}:${version}"
+  on:
+      branch: master
+  skip_cleanup: true

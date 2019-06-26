@@ -348,4 +348,4 @@ docker-compose-hosted-azure-postgres-db.yml
 config/web_azuredb.env
 .virtualenvs
 docker/volumes/redisdata/dump.rdb
-docker/volumes/redisdata/dump.rdb
+data/redis-data/dump.rdb

@@ -6,5 +6,6 @@
 	],
 	"settings": {
 		"python.envFile": "${workspaceFolder}/.virtualenvs",
+		"workbench.colorTheme": "Noctis",
 	}
 }

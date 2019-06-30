@@ -349,3 +349,5 @@ config/web_azuredb.env
 .virtualenvs
 docker/volumes/redisdata/dump.rdb
 data/redis-data/dump.rdb
+docker/volumes/redisdata/dump.rdb
+docker/volumes/redisdata/dump.rdb

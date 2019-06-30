@@ -43,3 +43,16 @@ def about(request):
             'year':datetime.now().year,
         }
     )
+
+def dailytv(request):
+    """Renders the about page."""
+    assert isinstance(request, HttpRequest)
+    return render(
+        request,
+        'pakguru_app/dailytv.html',
+        {
+            'title':'Daily TV',
+            'message':'Daily TV description goes here.',
+            'year':datetime.now().year,
+        }
+    )

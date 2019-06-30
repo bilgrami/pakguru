@@ -80,7 +80,8 @@ class CountryList(models.Model):
     name = models.CharField("Country Name", max_length=200)
     short_name = models.CharField("Short Name", max_length=10)
     capital_city = models.CharField("Capital", max_length=100)
-    country_phone_code = models.CharField("country_phone_code", max_length=10)
+    country_phone_code = models.CharField("Country Phone Code",
+                                          max_length=10, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -123,7 +124,11 @@ class YouTubeShow(models.Model):
     show_id = models.AutoField(primary_key=True)
     show_name = models.CharField('Show Name', max_length=300)
     host_name = models.CharField('Host Name', max_length=300)
-    description = models.TextField('Description')
+    airtime = models.CharField('Air Time', max_length=300, blank=True, null=True)
+    facebook_link = models.CharField('Facebook', max_length=300, blank=True, null=True)
+    twitter_link = models.CharField('Twitter', max_length=300, blank=True, null=True)
+    instagram_link = models.CharField('Instagram', max_length=300, blank=True, null=True)
+    description = models.TextField('Description', blank=True, null=True)
     channel_short_code = models.CharField('Channel Code', max_length=10)
     channel_name = models.CharField('Channel Name', max_length=300)
     channel_link = models.URLField('Channel Link', max_length=500)
@@ -137,12 +142,13 @@ class YouTubeShow(models.Model):
                                  on_delete=models.SET_NULL,
                                  null=True, blank=True)
     country = models.ManyToManyField(CountryList, blank=True, null=True)
-    feed_quality = models.CharField('Feed Quality', max_length=50)
-    priority = models.SmallIntegerField("Priority")
+    feed_quality = models.CharField('Feed Quality', max_length=50, null=True, blank=True)
+    priority = models.SmallIntegerField("Priority", null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     youtube_feed_list = models.ManyToManyField(YouTubeFeed,
-                                               related_name='youtube_shows')
+                                               related_name='youtube_shows',
+                                               blank=True, null=True)
     extra_data = JSONField()
 
     class Meta:

@@ -184,9 +184,9 @@ class Post(models.Model):
                                       null=True)
     extra_data = JSONField()
 
-    daily_tv = DailyTVManager()
-    jokes = JokePostManager()
-    quotes = QuotePostManager()
+    # daily_tv = DailyTVManager()
+    # jokes = JokePostManager()
+    # quotes = QuotePostManager()
 
 # class PostStats(models.Model):
 #     post_stat_id = models.AutoField('Post Stat Id', primary_key=True)

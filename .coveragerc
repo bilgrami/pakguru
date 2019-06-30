@@ -1,0 +1,21 @@
+[run]
+source =
+    project
+branch = False
+omit =
+    docs/*
+    .virtualenvs/*
+    docker/*
+    shell_scripts/*
+    config/*
+    .vscode/*
+    env/*
+    env*
+
+[report]
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    raise AssertionError
+    raise NotImplementedError
+    if __name__ == .__main__.:

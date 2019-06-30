@@ -1,5 +1,5 @@
 FROM bilgrami/python-base:latest
-LABEL Name=pakguru Version=0.1.0 maintainer="Syed Bilgrami <bilgrami@gmail.com>"
+LABEL Name=pakguru Version=0.1.1 maintainer="Syed Bilgrami <bilgrami@gmail.com>"
 
 
 ARG PROJECT_ROOT=/usr/local/project
@@ -54,6 +54,6 @@ RUN chmod -R +x /opt/startup \
 
 ENV SSH_PORT 2222
 EXPOSE 80 2222
-ENV PRODUCT_VERSION 0.1.0
+ENV PRODUCT_VERSION 0.1.1
 
 ENTRYPOINT ["/opt/startup/init_container.sh"]

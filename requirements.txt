@@ -33,6 +33,10 @@ jupyter-client
 jupyter-console
 jupyter-core
 django-admin-shell
-django-material
+# django-material
 django-redis
 # flower
+coverage
+python-coveralls
+mock
+factory_boy

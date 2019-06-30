@@ -1,0 +1,42 @@
+version: 2.0
+jobs:
+  build:
+    machine:
+      image: ubuntu-1604:201903-01
+    steps:
+      - checkout
+      - run:
+          name: Getting code
+          command: |
+            echo '^^^ Code Files ^^^'
+            ls -al
+      - run:
+          name: Start containers and run tests
+          environment:
+            IMAGE_REPO: bilgrami/pakguru
+          command: |      
+            set -x
+            docker version # detailed version info for docker
+            docker-compose version # detailed version info for docker-compose
+            docker pull "$IMAGE_REPO" || true
+            docker build -t ${IMAGE_REPO} .
+            docker-compose up -d
+            docker ps
+            docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && python manage.py test'
+            docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && coverage run --source=. manage.py test'
+            docker-compose down
+      - run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+      - run:
+          name: Deploy to docker hub
+          environment:
+            IMAGE_REPO: bilgrami/pakguru
+          command: | 
+            set -x
+            version="$(awk '$2 == "PRODUCT_VERSION" { print $3; exit }' Dockerfile)"
+            echo Product version is ${version};
+            docker tag "$IMAGE_REPO" "${IMAGE_REPO}:latest"
+            docker tag "$IMAGE_REPO" "${IMAGE_REPO}:${version}"
+            docker push "${IMAGE_REPO}:latest"
+            docker push "${IMAGE_REPO}:${version}"
+            docker images
+      - run: echo Goodbye

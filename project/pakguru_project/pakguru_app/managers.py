@@ -1,19 +1,19 @@
 from django.db import models
 
 
-class DailyTVManager(models.Manager):
+class ShowManager(models.Manager):
     def get_queryset(self):
-        return super(DailyTVManager, self).get_queryset()\
-                          .filter(category='Daily TV')
+        return super(ShowManager, self).get_queryset()\
+                          .filter(is_Show=True)
 
 
 class JokePostManager(models.Manager):
     def get_queryset(self):
         return super(JokePostManager, self).get_queryset()\
-                          .filter(category='Joke')
+                          .filter(is_Joke=True)
 
 
 class QuotePostManager(models.Manager):
     def get_queryset(self):
         return super(QuotePostManager, self).get_queryset()\
-                          .filter(category='Quote')
+                          .filter(is_Quote=True)

@@ -4,12 +4,22 @@ Definition of models.
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import ArrayField, JSONField
 from django.db import models
-from .managers import DailyTVManager, JokePostManager, QuotePostManager
+from .managers import ShowManager, JokePostManager, QuotePostManager
+
+feed_source_choice = [
+    ('Youtube', 'Youtube'),
+    ('Facebook', 'Facebook'),
+    ('Podcast', 'Podcast'),
+    ('Vimeo', 'Vimeo'),
+    ('Other', 'Other'),
+    ('Twitter', 'Twitter'),
+]
 
 media_type_choice = [
     ('text', 'Text'),
     ('image', 'Image'),
     ('video', 'Video'),
+    ('podcast', 'Podcast'),
     ('embedded video', 'embedded video'),
     ('document', 'Document'),
 ]
@@ -23,6 +33,24 @@ weekday_choices = [
     ('Fri', 'Friday'),
     ('Sat', 'Saturday'),
 ]
+
+feed_quality_choices = [
+    ('320p', '320p'),
+    ('480p', '480p'),
+    ('720p', '720p'),
+    ('1080p', '1080p'),
+    ('HD', 'HD'),
+    ('4K', '4K'),
+    ('8K', '8K'),
+]
+
+# tvshow_type_choices = [
+#     ('Drama', 'Drama'),
+#     ('News', 'News'),
+#     ('Sports', 'Sports'),
+#     ('Cooking', 'Cooking'),
+#     ('Movie', 'Movie'),
+# ]
 
 # post_category_choices = [
 #     (1, 'News TV Show'),
@@ -38,6 +66,7 @@ weekday_choices = [
 class PostCategoryList(models.Model):
     category_id = models.AutoField(primary_key=True)
     name = models.CharField("Category Name", max_length=100)
+    description = models.TextField('Description', blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -58,7 +87,7 @@ class LocaleList(models.Model):
 
     def __str__(self):
         return self.locale_code
-    
+
     class Meta:
         verbose_name_plural = "Locales"
 
@@ -73,6 +102,9 @@ class Author(models.Model):
 
     def __str__(self):
         return f'{self.name} <{self.email}>'
+
+    class Meta:
+        verbose_name_plural = "Locales"
 
 
 class CountryList(models.Model):
@@ -93,66 +125,123 @@ class CountryList(models.Model):
         verbose_name_plural = "Countries"
 
 
-class YouTubeFeed(models.Model):
-    feed_id = models.AutoField(primary_key=True)
-    show_name = models.CharField('Show Name', max_length=300)
-    feed_name = models.CharField('Show Name', max_length=300)
-    channel_short_code = models.CharField('Channel Code', max_length=10)
+class ShowChannel(models.Model):
+    channel_id = models.AutoField(primary_key=True)
+    channel_short_code = models.CharField('Channel Code', max_length=20)
     channel_name = models.CharField('Channel Name', max_length=300)
     channel_link = models.URLField('Channel Link', max_length=500)
-    playlist_link = models.URLField('Playlist Link', max_length=500)
-    latest_show_link = models.URLField('Latest Show Link', max_length=500, null=True, blank=True)
-    search_pattern = models.CharField('Search Pattern', max_length=500, null=True, blank=True)
-    search_url = models.URLField('Search URL', max_length=500, null=True, blank=True)
+    description = models.TextField('Description', blank=True, null=True)
+    facebook_link = models.CharField('Facebook', max_length=300,
+                                     blank=True, null=True)
+    twitter_link = models.CharField('Twitter', max_length=300,
+                                    blank=True, null=True)
+    instagram_link = models.CharField('Instagram', max_length=300,
+                                      blank=True, null=True)
     is_active = models.BooleanField("Is Active", default=True)
-    expiration_date = models.DateTimeField('Expiration Date', null=True, blank=True)
-    added_by = models.ForeignKey(User, related_name='related_youtube_feeds',
+    added_by = models.ForeignKey(User, related_name='related_tvchannel',
                                  on_delete=models.SET_NULL,
                                  null=True, blank=True)
-    country = models.ManyToManyField(CountryList, blank=True, null=True)
-    feed_quality = models.CharField('Feed Quality', max_length=50)
-    priority = models.SmallIntegerField("Priority")
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    extra_data = JSONField()
+
+    def __str__(self):
+        return f'{self.channel_name}'
 
     class Meta:
-        verbose_name_plural = "Youtube Feeds"
+        verbose_name = "Show Channel"
+        verbose_name_plural = "Show Channels"
 
 
-class YouTubeShow(models.Model):
+class ShowSourceFeed(models.Model):
+    feed_id = models.AutoField(primary_key=True)
+    feed_name = models.CharField('Show Name', max_length=300)
+    channel = models.ForeignKey(ShowChannel,
+                                on_delete=models.SET_NULL,
+                                blank=True, null=True)
+    playlist_link = models.URLField('Playlist Link', max_length=500)
+    latest_show_link = models.URLField('Latest Show Link', max_length=500,
+                                       null=True, blank=True)
+    title_example = models.CharField('Title Example', max_length=500,
+                                     null=True, blank=True)
+    title_search_pattern = models.CharField('Title Search Pattern',
+                                            max_length=500,
+                                            null=True, blank=True)
+    search_api_url = models.URLField('Search URL', max_length=500,
+                                     null=True, blank=True)
+    search_api_pattern = models.CharField('Search Pattern', max_length=500,
+                                          null=True, blank=True)
+    is_active = models.BooleanField("Is Active", default=True)
+    effective_date = models.DateTimeField('Effective Date', auto_now=True)
+    expiration_date = models.DateTimeField('Expiration Date',
+                                           null=True, blank=True)
+    country = models.ManyToManyField(CountryList, blank=True)
+    feed_source = models.CharField('Feed Source', choices=feed_source_choice,
+                                   max_length=20, null=True, blank=True)
+    feed_quality = models.CharField('Max Feed Quality',
+                                    choices=feed_quality_choices,
+                                    max_length=20, null=True, blank=True)
+    priority = models.SmallIntegerField("Priority", null=True, blank=True)
+    extra_data = JSONField(blank=True, null=True)
+    added_by = models.ForeignKey(User, related_name='related_tvfeed',
+                                 on_delete=models.SET_NULL,
+                                 null=True, blank=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f'{self.feed_name} ({self.channel})'
+
+    class Meta:
+        verbose_name_plural = "Show Source Feeds"
+
+
+class Show(models.Model):
     show_id = models.AutoField(primary_key=True)
     show_name = models.CharField('Show Name', max_length=300)
     host_name = models.CharField('Host Name', max_length=300)
-    airtime = models.CharField('Air Time', max_length=300, blank=True, null=True)
-    facebook_link = models.CharField('Facebook', max_length=300, blank=True, null=True)
-    twitter_link = models.CharField('Twitter', max_length=300, blank=True, null=True)
-    instagram_link = models.CharField('Instagram', max_length=300, blank=True, null=True)
+    airtime = models.CharField('Air Time', max_length=300,
+                               blank=True, null=True)
+    facebook_link = models.CharField('Facebook', max_length=300,
+                                     blank=True, null=True)
+    twitter_link = models.CharField('Twitter', max_length=300,
+                                    blank=True, null=True)
+    instagram_link = models.CharField('Instagram', max_length=300,
+                                      blank=True, null=True)
     description = models.TextField('Description', blank=True, null=True)
-    channel_short_code = models.CharField('Channel Code', max_length=10)
-    channel_name = models.CharField('Channel Name', max_length=300)
-    channel_link = models.URLField('Channel Link', max_length=500)
-    playlist_link = models.URLField('Playlist Link', max_length=500)
-    latest_show_link = models.URLField('Latest Show Link', max_length=500, null=True, blank=True)
-    search_pattern = models.CharField('Search Pattern', max_length=500, null=True, blank=True)
-    search_url = models.URLField('Search URL', max_length=500, null=True, blank=True)
+    category = models.ForeignKey(PostCategoryList,
+                                 related_name='related_tvshow',
+                                 on_delete=models.SET_NULL,
+                                 blank=True, null=True)
+    channel = models.ForeignKey(ShowChannel,
+                                on_delete=models.SET_NULL,
+                                blank=True, null=True)
+    primary_feed = models.ForeignKey(ShowSourceFeed,
+                                     on_delete=models.SET_NULL,
+                                     related_name='related_primary_shows',
+                                     blank=True, null=True)
+    additional_feeds = models.ManyToManyField(ShowSourceFeed,
+                                              related_name='related_shows',
+                                              blank=True)
+    locale = models.ForeignKey(LocaleList,
+                               on_delete=models.SET_NULL,
+                               blank=True, null=True)
     is_active = models.BooleanField("Is Active", default=True)
-    expiration_date = models.DateTimeField('Expiration Date', null=True, blank=True)
+    effective_date = models.DateTimeField('Effective Date', auto_now=True)
+    expiration_date = models.DateTimeField('Expiration Date',
+                                           null=True, blank=True)
+    country = models.ManyToManyField(CountryList, blank=True)
+    extra_data = JSONField(blank=True, null=True)
     added_by = models.ForeignKey(User, related_name='related_youtube_shows',
                                  on_delete=models.SET_NULL,
                                  null=True, blank=True)
-    country = models.ManyToManyField(CountryList, blank=True, null=True)
-    feed_quality = models.CharField('Feed Quality', max_length=50, null=True, blank=True)
-    priority = models.SmallIntegerField("Priority", null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
-    youtube_feed_list = models.ManyToManyField(YouTubeFeed,
-                                               related_name='youtube_shows',
-                                               blank=True, null=True)
-    extra_data = JSONField()
+
+    def __str__(self):
+        return f'{self.show_name} ({self.channel})'
 
     class Meta:
-        verbose_name_plural = "Youtube Shows"
+        verbose_name_plural = "Shows"
 
 
 class Post(models.Model):
@@ -177,28 +266,40 @@ class Post(models.Model):
     locale = models.ForeignKey(LocaleList,
                                on_delete=models.SET_NULL,
                                blank=True, null=True)
-    youtube_show = models.ForeignKey(YouTubeShow,
-                                     on_delete=models.SET_NULL,
-                                     blank=True, null=True)
+    show = models.ForeignKey(Show,
+                             on_delete=models.SET_NULL,
+                             blank=True, null=True)
     tags = ArrayField(models.CharField('Tags', max_length=50))
+    country = models.ManyToManyField(CountryList, blank=True)
     added_by = models.ForeignKey(User, related_name='related_posts',
                                  on_delete=models.SET_NULL,
                                  null=True, blank=True)
-    country = models.ManyToManyField(CountryList, blank=True, null=True)
+    is_active = models.BooleanField("Is Active", default=True)
+    flagged = models.BooleanField("Is Flagged", default=False)
+    flagged_data = models.TextField("Flagged Data",
+                                    blank=True, null=True)
+    extra_data = JSONField(blank=True, null=True)
     created_on = models.DateTimeField('Created On',
                                       auto_now_add=True,
                                       null=True)
-    extra_data = JSONField()
+    updated = models.DateTimeField(auto_now=True)
+    is_Show = models.BooleanField("Is Show", default=True)
+    is_Joke = models.BooleanField("Is Joke", default=False)
+    is_Quote = models.BooleanField("Is Quote", default=False)
 
-    # daily_tv = DailyTVManager()
-    # jokes = JokePostManager()
-    # quotes = QuotePostManager()
+    shows = ShowManager()
+    jokes = JokePostManager()
+    quotes = QuotePostManager()
 
-# class PostStats(models.Model):
-#     post_stat_id = models.AutoField('Post Stat Id', primary_key=True)
-#     post_id = models.ForeignKey(Post, related_name='related_stats',
-#                                 on_delete=models.CASCADE)
-#     total_views = models.IntegerField('Total Views', default=0)
+
+class PostStats(models.Model):
+    post_stat_id = models.AutoField('Post Stat Id', primary_key=True)
+    post_id = models.ForeignKey(Post, related_name='related_stats',
+                                on_delete=models.CASCADE)
+    total_views = models.IntegerField('Total Views', default=0)
+    up_votes = models.IntegerField('Up', default=0)
+    down_votes = models.IntegerField('Down', default=0)
+    down_votes = models.IntegerField('Down', default=0)
 
 
 # class PostViews(models.Model):

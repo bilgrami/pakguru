@@ -104,7 +104,7 @@ class Author(models.Model):
         return f'{self.name} <{self.email}>'
 
     class Meta:
-        verbose_name_plural = "Locales"
+        verbose_name_plural = "Authors"
 
 
 class CountryList(models.Model):

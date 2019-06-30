@@ -23,7 +23,7 @@ before_install:
   /opt/startup; ./init_container.sh;"
 - docker ps -a
 script:
-- cd ./project/hijri_calendar_project;
+- cd ./project/pakguru_project;
 - python manage.py test;
 - coverage run --source=. manage.py test
 after_script:

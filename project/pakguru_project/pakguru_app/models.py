@@ -4,7 +4,8 @@ Definition of models.
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import ArrayField, JSONField
 from django.db import models
-from .managers import ShowManager, JokePostManager, QuotePostManager
+from .managers import (ShowManager, JokePostManager,
+                       QuotePostManager, PoliticalPostManager)
 
 feed_source_choice = [
     ('Youtube', 'Youtube'),
@@ -286,13 +287,15 @@ class Post(models.Model):
     is_Show = models.BooleanField("Is Show", default=True)
     is_Joke = models.BooleanField("Is Joke", default=False)
     is_Quote = models.BooleanField("Is Quote", default=False)
+    is_Politics = models.BooleanField("Is Politics", default=False)
 
     shows = ShowManager()
     jokes = JokePostManager()
     quotes = QuotePostManager()
+    politicalposts = PoliticalPostManager()
 
 
-class PostStats(models.Model):
+class PostStatistic(models.Model):
     post_stat_id = models.AutoField('Post Stat Id', primary_key=True)
     post_id = models.ForeignKey(Post, related_name='related_stats',
                                 on_delete=models.CASCADE)
@@ -300,6 +303,14 @@ class PostStats(models.Model):
     up_votes = models.IntegerField('Up', default=0)
     down_votes = models.IntegerField('Down', default=0)
     down_votes = models.IntegerField('Down', default=0)
+    extra_data = JSONField(blank=True, null=True)
+    created_on = models.DateTimeField('Created On',
+                                      auto_now_add=True,
+                                      null=True)
+    updated = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = "Post Stats"
 
 
 # class PostViews(models.Model):

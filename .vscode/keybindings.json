@@ -1,0 +1,5 @@
+[{"key": "alt+ctrl+8",
+    "command": "workbench.action.tasks.runTask",
+    "args": "Docker-Compose - web - bash shell"
+}
+]

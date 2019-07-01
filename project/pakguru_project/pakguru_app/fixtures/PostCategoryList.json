@@ -1,0 +1,41 @@
+[{
+        "model": "pakguru_app.postcategorylist",
+        "pk": 1,
+        "fields": {
+            "name": "Shows",
+            "description": "",
+            "created": "2019-06-30T15:04:36.880Z",
+            "updated": "2019-06-30T15:04:36.880Z"
+        }
+    },
+    {
+        "model": "pakguru_app.postcategorylist",
+        "pk": 2,
+        "fields": {
+            "name": "Jokes",
+            "description": "",
+            "created": "2019-06-30T15:04:43.485Z",
+            "updated": "2019-06-30T15:04:43.485Z"
+        }
+    },
+    {
+        "model": "pakguru_app.postcategorylist",
+        "pk": 3,
+        "fields": {
+            "name": "Quotes",
+            "description": "",
+            "created": "2019-06-30T15:04:51.548Z",
+            "updated": "2019-06-30T15:04:51.548Z"
+        }
+    },
+    {
+        "model": "pakguru_app.postcategorylist",
+        "pk": 4,
+        "fields": {
+            "name": "Poetry",
+            "description": "",
+            "created": "2019-06-30T15:05:01.408Z",
+            "updated": "2019-06-30T15:05:01.408Z"
+        }
+    }
+]

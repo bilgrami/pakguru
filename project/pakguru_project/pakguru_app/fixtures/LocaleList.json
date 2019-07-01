@@ -1,0 +1,21 @@
+[{
+        "model": "pakguru_app.localelist",
+        "pk": 1,
+        "fields": {
+            "locale_code": "en-US",
+            "language": "English (United States)",
+            "created": "2019-06-30T15:01:26.861Z",
+            "updated": "2019-06-30T15:01:26.861Z"
+        }
+    },
+    {
+        "model": "pakguru_app.localelist",
+        "pk": 2,
+        "fields": {
+            "locale_code": "ur-PK",
+            "language": "Urdu (Pakistan)",
+            "created": "2019-06-30T15:01:50.869Z",
+            "updated": "2019-06-30T15:01:50.869Z"
+        }
+    }
+]

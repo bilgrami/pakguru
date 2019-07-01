@@ -1,0 +1,37 @@
+[{
+        "model": "pakguru_app.countrylist",
+        "pk": 1,
+        "fields": {
+            "name": "Pakistan",
+            "short_name": "PK",
+            "capital_city": "Islamabad",
+            "country_phone_code": "+92",
+            "created": "2019-06-30T14:58:58.358Z",
+            "updated": "2019-06-30T14:58:58.358Z"
+        }
+    },
+    {
+        "model": "pakguru_app.countrylist",
+        "pk": 2,
+        "fields": {
+            "name": "United States",
+            "short_name": "USA",
+            "capital_city": "Washington D.C.",
+            "country_phone_code": "+1",
+            "created": "2019-06-30T14:59:19.011Z",
+            "updated": "2019-06-30T14:59:19.011Z"
+        }
+    },
+    {
+        "model": "pakguru_app.countrylist",
+        "pk": 3,
+        "fields": {
+            "name": "United Arab Emirates",
+            "short_name": "UAE",
+            "capital_city": "Abu Dhabi",
+            "country_phone_code": "+971",
+            "created": "2019-06-30T14:59:58.450Z",
+            "updated": "2019-06-30T14:59:58.450Z"
+        }
+    }
+]

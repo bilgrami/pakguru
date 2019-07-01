@@ -15,7 +15,7 @@ jobs:
           environment:
             IMAGE_REPO: bilgrami/pakguru
           command: |      
-            set -x
+            set -e
             docker version # detailed version info for docker
             docker-compose version # detailed version info for docker-compose
             docker pull "$IMAGE_REPO" || true
@@ -31,7 +31,7 @@ jobs:
           environment:
             IMAGE_REPO: bilgrami/pakguru
           command: | 
-            set -x
+            set -e
             version="$(awk '$2 == "PRODUCT_VERSION" { print $3; exit }' Dockerfile)"
             echo Product version is ${version};
             docker tag "$IMAGE_REPO" "${IMAGE_REPO}:latest"

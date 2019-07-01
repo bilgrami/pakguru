@@ -17,3 +17,9 @@ class QuotePostManager(models.Manager):
     def get_queryset(self):
         return super(QuotePostManager, self).get_queryset()\
                           .filter(is_Quote=True)
+
+
+class PoliticalPostManager(models.Manager):
+    def get_queryset(self):
+        return super(PoliticalPostManager, self).get_queryset()\
+                          .filter(is_Politics=True)

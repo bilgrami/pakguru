@@ -1,4 +1,5 @@
-[{
+[
+    {
         "model": "pakguru_app.postcategorylist",
         "pk": 1,
         "fields": {
@@ -46,6 +47,16 @@
             "description": "",
             "created": "2019-07-01T02:55:12.369Z",
             "updated": "2019-07-01T02:55:12.369Z"
+        }
+    },
+    {
+        "model": "pakguru_app.postcategorylist",
+        "pk": 6,
+        "fields": {
+            "name": "Sports",
+            "description": "",
+            "created": "2019-07-01T10:39:59.907Z",
+            "updated": "2019-07-01T10:39:59.907Z"
         }
     }
 ]

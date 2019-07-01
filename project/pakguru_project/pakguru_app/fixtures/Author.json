@@ -1,11 +1,13 @@
-[{
-    "model": "pakguru_app.author",
-    "pk": 1,
-    "fields": {
-        "name": "show_guru",
-        "email": "guru11@gmail.com",
-        "is_active": true,
-        "created": "2019-06-30T15:02:42.178Z",
-        "updated": "2019-06-30T15:04:04.975Z"
+[
+    {
+        "model": "pakguru_app.author",
+        "pk": 1,
+        "fields": {
+            "name": "show_guru",
+            "email": "guru11@gmail.com",
+            "is_active": true,
+            "created": "2019-06-30T15:02:42.178Z",
+            "updated": "2019-06-30T15:04:04.975Z"
+        }
     }
-}]
+]

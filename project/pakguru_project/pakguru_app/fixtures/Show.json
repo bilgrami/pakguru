@@ -1,4 +1,5 @@
-[{
+[
+    {
         "model": "pakguru_app.show",
         "pk": 1,
         "fields": {
@@ -59,6 +60,68 @@
             "country": [
                 1,
                 2,
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 3,
+        "fields": {
+            "show_name": "Meray Mutabiq With Hassan Nisar",
+            "host_name": "Hassan Nisar",
+            "airtime": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "description": "",
+            "category": 1,
+            "channel": 4,
+            "primary_feed": 5,
+            "locale": 2,
+            "is_active": true,
+            "effective_date": "2019-07-01T05:58:03.243Z",
+            "expiration_date": null,
+            "extra_data": null,
+            "added_by": 1,
+            "created": "2019-07-01T05:58:03.243Z",
+            "updated": "2019-07-01T05:58:03.243Z",
+            "additional_feeds": [],
+            "country": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 4,
+        "fields": {
+            "show_name": "Live with Dr. Shahid Masood",
+            "host_name": "Dr. Shahid Masood",
+            "airtime": null,
+            "website_link": "https://gnnhd.tv/",
+            "youtube_link": "https://www.youtube.com/channel/UC35KuZBNIj4S5Ls0yjY-UHQ",
+            "facebook_link": "https://www.facebook.com/gnnhd.tv/",
+            "twitter_link": "https://twitter.com/gnnhdofficial",
+            "instagram_link": "https://www.instagram.com/gnnhd.official/",
+            "description": "G News Network, commonly known as GNN, is a Pakistani 24-hour news and current affairs channel based in Lahore, Pakistan. It is owned and operated by Gourmet Foods.",
+            "category": 1,
+            "channel": 5,
+            "primary_feed": 6,
+            "locale": 2,
+            "is_active": true,
+            "effective_date": "2019-07-01T09:03:22.498Z",
+            "expiration_date": null,
+            "extra_data": null,
+            "added_by": 2,
+            "created": "2019-07-01T09:03:22.498Z",
+            "updated": "2019-07-01T09:03:22.498Z",
+            "additional_feeds": [
+                6
+            ],
+            "country": [
                 4
             ]
         }

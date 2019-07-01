@@ -1,4 +1,5 @@
-[{
+[
+    {
         "model": "pakguru_app.showchannel",
         "pk": 1,
         "fields": {
@@ -53,6 +54,44 @@
             "added_by": 1,
             "created": "2019-07-01T00:47:44.156Z",
             "updated": "2019-07-01T02:53:25.223Z"
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 4,
+        "fields": {
+            "channel_short_code": "Geo News",
+            "channel_name": "Geo News",
+            "description": "",
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "country": 1,
+            "is_active": true,
+            "added_by": 1,
+            "created": "2019-07-01T05:54:22.633Z",
+            "updated": "2019-07-01T05:54:22.633Z"
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 5,
+        "fields": {
+            "channel_short_code": "GNN",
+            "channel_name": "GNN",
+            "description": "G News Network, commonly known as GNN, is a Pakistani 24-hour news and current affairs channel based in Lahore, Pakistan. It is owned and operated by Gourmet Foods.",
+            "website_link": "https://gnnhd.tv/",
+            "youtube_link": "https://www.youtube.com/channel/UC35KuZBNIj4S5Ls0yjY-UHQ",
+            "facebook_link": "https://www.facebook.com/gnnhd.tv/",
+            "twitter_link": "https://twitter.com/gnnhdofficial",
+            "instagram_link": "https://www.instagram.com/gnnhd.official/",
+            "country": 1,
+            "is_active": true,
+            "added_by": 2,
+            "created": "2019-07-01T08:42:51.088Z",
+            "updated": "2019-07-01T08:42:51.088Z"
         }
     }
 ]

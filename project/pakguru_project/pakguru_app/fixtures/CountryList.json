@@ -1,4 +1,5 @@
-[{
+[
+    {
         "model": "pakguru_app.countrylist",
         "pk": 1,
         "fields": {

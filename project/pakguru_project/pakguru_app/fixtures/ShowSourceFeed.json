@@ -1,4 +1,5 @@
-[{
+[
+    {
         "model": "pakguru_app.showsourcefeed",
         "pk": 1,
         "fields": {
@@ -68,7 +69,7 @@
             "search_api_url": "http://www.unewstv.com/category/Zara+Hut+Kay+on+Dawn+News",
             "search_api_pattern": "http://www.unewstv.com/category/Zara+Hut+Kay+on+Dawn+News",
             "is_active": true,
-            "effective_date": "2019-07-01T03:12:53.026Z",
+            "effective_date": "2019-07-01T05:52:31.957Z",
             "expiration_date": null,
             "feed_source": "unewstv",
             "feed_quality": "480p",
@@ -76,7 +77,7 @@
             "extra_data": null,
             "added_by": 1,
             "created": "2019-07-01T01:42:27.916Z",
-            "updated": "2019-07-01T03:12:53.026Z",
+            "updated": "2019-07-01T05:52:31.957Z",
             "country": [
                 4
             ]
@@ -105,6 +106,62 @@
             "added_by": 1,
             "created": "2019-07-01T02:48:30.906Z",
             "updated": "2019-07-01T03:12:33.822Z",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 5,
+        "fields": {
+            "feed_name": "unewstv - Merey Mutabiq with Hassan Nisar",
+            "show_name": "Merey Mutabiq with Hassan Nisar",
+            "channel": 4,
+            "playlist_link": "http://www.unewstv.com/category/Merey+Mutabiq+with+Hassan+Nisar",
+            "latest_show_link": "http://www.unewstv.com/153242/meray-mutabiq-with-hassan-nisar-amnesty-scheme-other-issues-30th-june-2019",
+            "title_example": "Meray Mutabiq With Hassan Nisar (Amnesty Scheme, Other Issues) - 30th June 2019",
+            "title_search_pattern": "{show name} ({episode title}) \u2013 {date: DDth MMM YYYY}",
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "is_active": true,
+            "effective_date": "2019-07-01T05:56:46.741Z",
+            "expiration_date": null,
+            "feed_source": "unewstv",
+            "feed_quality": "480p",
+            "priority": 1,
+            "extra_data": null,
+            "added_by": 1,
+            "created": "2019-07-01T05:55:27.463Z",
+            "updated": "2019-07-01T05:56:46.741Z",
+            "country": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 6,
+        "fields": {
+            "feed_name": "unewstv - Live with Dr. Shahid Masood",
+            "show_name": "Live with Dr. Shahid Masood",
+            "channel": 5,
+            "playlist_link": "http://www.unewstv.com/category/Live+with+Dr.+Shahid+Masood",
+            "latest_show_link": "http://www.unewstv.com/153227/live-with-dr-shahid-masood-imran-khan-aur-loti-hui-daulat-30th-june-2019",
+            "title_example": "Live with Dr. Shahid Masood (Imran Khan Aur Loti Hui Daulat) - 30th June 2019",
+            "title_search_pattern": "Live with Dr. Shahid Masood (Muashi Dehshatgardi Ka Bharpoor Waar) - 29th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Live+with+Dr.+Shahid+Masood",
+            "search_api_pattern": "http://www.unewstv.com/category/Live+with+Dr.+Shahid+Masood",
+            "is_active": true,
+            "effective_date": "2019-07-01T08:55:53.055Z",
+            "expiration_date": null,
+            "feed_source": "unewstv",
+            "feed_quality": "720p",
+            "priority": 2,
+            "extra_data": null,
+            "added_by": 2,
+            "created": "2019-07-01T08:55:53.055Z",
+            "updated": "2019-07-01T08:55:53.055Z",
             "country": [
                 4
             ]

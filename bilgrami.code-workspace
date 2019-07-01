@@ -6,6 +6,7 @@
 	],
 	"settings": {
 		"python.envFile": "${workspaceFolder}/.virtualenvs",
-		"workbench.colorTheme": "Noctis",
+		"workbench.colorTheme": "Shades of Purple",
+		"workbench.iconTheme": "vscode-icons",
 	}
 }

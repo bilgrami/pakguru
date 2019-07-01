@@ -1,4 +1,5 @@
-[{
+[
+    {
         "model": "pakguru_app.localelist",
         "pk": 1,
         "fields": {

@@ -20,7 +20,9 @@
             "effective_date": "2019-07-01T01:15:52.903Z",
             "expiration_date": null,
             "extra_data": null,
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "created": "2019-07-01T01:05:15.181Z",
             "updated": "2019-07-01T01:15:52.903Z",
             "additional_feeds": [],
@@ -50,7 +52,9 @@
             "effective_date": "2019-07-01T03:14:45.524Z",
             "expiration_date": null,
             "extra_data": null,
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "created": "2019-07-01T01:34:13.765Z",
             "updated": "2019-07-01T03:14:45.524Z",
             "additional_feeds": [
@@ -85,7 +89,9 @@
             "effective_date": "2019-07-01T05:58:03.243Z",
             "expiration_date": null,
             "extra_data": null,
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "created": "2019-07-01T05:58:03.243Z",
             "updated": "2019-07-01T05:58:03.243Z",
             "additional_feeds": [],
@@ -115,7 +121,9 @@
             "effective_date": "2019-07-01T09:03:22.498Z",
             "expiration_date": null,
             "extra_data": null,
-            "added_by": 2,
+            "added_by": [
+                "shahneela"
+            ],
             "created": "2019-07-01T09:03:22.498Z",
             "updated": "2019-07-01T09:03:22.498Z",
             "additional_feeds": [

@@ -13,7 +13,9 @@
             "instagram_link": null,
             "country": 2,
             "is_active": true,
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "created": "2019-07-01T00:44:09.335Z",
             "updated": "2019-07-01T00:44:09.335Z"
         }
@@ -32,7 +34,9 @@
             "instagram_link": null,
             "country": 1,
             "is_active": true,
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "created": "2019-07-01T00:46:09.650Z",
             "updated": "2019-07-01T02:51:51.851Z"
         }
@@ -51,7 +55,9 @@
             "instagram_link": null,
             "country": 1,
             "is_active": true,
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "created": "2019-07-01T00:47:44.156Z",
             "updated": "2019-07-01T02:53:25.223Z"
         }
@@ -70,7 +76,9 @@
             "instagram_link": null,
             "country": 1,
             "is_active": true,
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "created": "2019-07-01T05:54:22.633Z",
             "updated": "2019-07-01T05:54:22.633Z"
         }
@@ -89,7 +97,9 @@
             "instagram_link": "https://www.instagram.com/gnnhd.official/",
             "country": 1,
             "is_active": true,
-            "added_by": 2,
+            "added_by": [
+                "shahneela"
+            ],
             "created": "2019-07-01T08:42:51.088Z",
             "updated": "2019-07-01T08:42:51.088Z"
         }

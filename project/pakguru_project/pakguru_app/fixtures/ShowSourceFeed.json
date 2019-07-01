@@ -19,7 +19,9 @@
             "feed_quality": "1080p",
             "priority": 1,
             "extra_data": null,
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "created": "2019-07-01T01:15:13.753Z",
             "updated": "2019-07-01T01:43:06.946Z",
             "country": [
@@ -47,7 +49,9 @@
             "feed_quality": "480p",
             "priority": 3,
             "extra_data": null,
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "created": "2019-07-01T01:36:31.821Z",
             "updated": "2019-07-01T03:13:12.619Z",
             "country": [
@@ -75,7 +79,9 @@
             "feed_quality": "480p",
             "priority": 2,
             "extra_data": null,
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "created": "2019-07-01T01:42:27.916Z",
             "updated": "2019-07-01T05:52:31.957Z",
             "country": [
@@ -103,7 +109,9 @@
             "feed_quality": "480p",
             "priority": 1,
             "extra_data": null,
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "created": "2019-07-01T02:48:30.906Z",
             "updated": "2019-07-01T03:12:33.822Z",
             "country": [
@@ -131,7 +139,9 @@
             "feed_quality": "480p",
             "priority": 1,
             "extra_data": null,
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "created": "2019-07-01T05:55:27.463Z",
             "updated": "2019-07-01T05:56:46.741Z",
             "country": [
@@ -159,7 +169,9 @@
             "feed_quality": "720p",
             "priority": 2,
             "extra_data": null,
-            "added_by": 2,
+            "added_by": [
+                "shahneela"
+            ],
             "created": "2019-07-01T08:55:53.055Z",
             "updated": "2019-07-01T08:55:53.055Z",
             "country": [

@@ -17,7 +17,9 @@
             "locale": 2,
             "show": 2,
             "tags": "[\"zara hat kay\", \"dawn news\", \"news talk shows\"]",
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "is_active": true,
             "flagged": false,
             "flagged_data": "",
@@ -51,7 +53,9 @@
             "locale": 2,
             "show": 3,
             "tags": "[\"meray mutabiq\", \"hassan nisar\", \"talk shows\"]",
-            "added_by": 1,
+            "added_by": [
+                "admin"
+            ],
             "is_active": true,
             "flagged": false,
             "flagged_data": "",

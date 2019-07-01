@@ -1,16 +1,22 @@
 #!/bin/bash
 set -e
+app_name=pakguru_app
+declare -a models_array
+models_array=(Author CountryList LocaleList PostCategoryList ShowChannel ShowSourceFeed Show Post PostStatistic)
+
+echo 'decrypting data started .. '
+python manage.py decrypt_dump
+echo 'decrypting data finished'
+
 echo 'loading data started .. '
-# python manage.py sqlflush
-python manage.py loaddata Author;
-python manage.py loaddata CountryList;
-python manage.py loaddata LocaleList;
-python manage.py loaddata PostCategoryList;
-
-python manage.py loaddata ShowChannel;
-python manage.py loaddata ShowSourceFeed;
-python manage.py loaddata Show;
-python manage.py loaddata Post;
-python manage.py loaddata PostStatistic;
-
+for i in "${models_array[@]}"; 
+do 
+    model_name="$i"
+    echo "loading $model_name"; 
+    # python manage.py loaddata Author;
+    python manage.py loaddata $model_name
+done
 echo 'loading data finished.'
+
+# echo 'removing dump files'
+# python manage.py remove_dump

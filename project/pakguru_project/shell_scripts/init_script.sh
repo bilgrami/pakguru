@@ -3,7 +3,7 @@
 set -e
 echo You are running script from $(pwd)
 # python manage.py sqlflush  #| python ./manage.py dbshell
-python manage.py makemigrations
+# python manage.py makemigrations
 python manage.py migrate
 
 echo -----------------------------------------
@@ -21,6 +21,12 @@ if (User.objects.filter(username = '$ADMIN_USER')):
   print ('Warning: Username [$ADMIN_USER] aleady exists. ')
 else:
   User.objects.create_superuser('$ADMIN_USER', '$ADMIN_EMAIL', '$ADMIN_PASSWD')
+
+if (User.objects.filter(username = 'shahneela')):
+  print ('Warning: Username [shahneela] aleady exists. ')
+else:
+  User.objects.create_superuser('shahneela', 'shahneela@example.com', 'test123')
+
 "
 echo "$__script" | python manage.py shell
 echo finished!

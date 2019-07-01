@@ -5,6 +5,15 @@ services:
     image: bilgrami/pakguru:latest
     env_file: ./config/web.env
     volumes:
+      # # use this if using azure volumes via path mappings (left side is mount volume)
+      # - data:/usr/local/project/pakguru_project/data
+      # - media:/usr/local/project/pakguru_project/media
+
+      # # use this if using azure webapp storage (host side on left side is the main difference from local development)
+      # - ${WEBAPP_STORAGE_HOME}/data/webdata:/usr/local/project/pakguru_project/data
+      # - ${WEBAPP_STORAGE_HOME}/data/media:/usr/local/project/pakguru_project/media
+
+      # # use this during local development
       - ${HOST_PROJECT_FOLDER}:${TARGET_PROJECT_FOLDER}
       - ${WEBAPP_STORAGE_HOME}/docker/volumes/webdata:/usr/local/project/pakguru_project/data
       - ${WEBAPP_STORAGE_HOME}/docker/volumes/media:/usr/local/project/pakguru_project/media
@@ -26,6 +35,13 @@ services:
     ports:
       - "6579:6379"
     volumes:
+      # # use this if using azure volumes via path mappings (left side is mount volume)
+      # - data:/data
+
+      # # use this if using azure webapp storage (host side on left side is the main difference from local development)
+      # - "${WEBAPP_STORAGE_HOME}/data/redis-data:/data"      
+
+      # # use this during local development
       - "${WEBAPP_STORAGE_HOME}/docker/volumes/redisdata:/data"
 
 volumes:

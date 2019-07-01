@@ -1,0 +1,66 @@
+[{
+        "model": "pakguru_app.show",
+        "pk": 1,
+        "fields": {
+            "show_name": "60 Minutes",
+            "host_name": "Lesley Stahl (host, 1991\u2013present, co-editor), Scott Pelley (host, 2003\u2013present), Bill Whitaker (host, 2014\u2013present), John Dickerson (2019\u2013present)",
+            "airtime": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": "https://www.facebook.com/60minutes/",
+            "twitter_link": null,
+            "instagram_link": null,
+            "description": "60 Minutes is an American news magazine and television program broadcast on the CBS television network. Debuting in 1968, the program was created by Don Hewitt, who chose to set it apart from other news programs by using a unique style of reporter-centered investigation.\r\n\r\nhttps://en.wikipedia.org/wiki/60_Minutes\r\n\r\nhttps://www.youtube.com/user/60minutes",
+            "category": 1,
+            "channel": 1,
+            "primary_feed": 1,
+            "locale": 1,
+            "is_active": true,
+            "effective_date": "2019-07-01T01:15:52.903Z",
+            "expiration_date": null,
+            "extra_data": null,
+            "added_by": 1,
+            "created": "2019-07-01T01:05:15.181Z",
+            "updated": "2019-07-01T01:15:52.903Z",
+            "additional_feeds": [],
+            "country": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 2,
+        "fields": {
+            "show_name": "Zara Hat Kay",
+            "host_name": "Wusatullah Khan, Zarar Khoro & Mubashir Zaidi",
+            "airtime": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": "https://www.facebook.com/ZHKDawn/",
+            "twitter_link": "https://twitter.com/zarahatkay_dawn",
+            "instagram_link": null,
+            "description": "Zara Hat Kay \u2013 Your dose of daily news, away from the mainstream talk shows, a show that speaks your mind and is interactive with the public on social media.",
+            "category": 1,
+            "channel": 2,
+            "primary_feed": 4,
+            "locale": 2,
+            "is_active": true,
+            "effective_date": "2019-07-01T03:14:45.524Z",
+            "expiration_date": null,
+            "extra_data": null,
+            "added_by": 1,
+            "created": "2019-07-01T01:34:13.765Z",
+            "updated": "2019-07-01T03:14:45.524Z",
+            "additional_feeds": [
+                2,
+                3
+            ],
+            "country": [
+                1,
+                2,
+                4
+            ]
+        }
+    }
+]

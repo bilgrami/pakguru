@@ -2,10 +2,10 @@
         "model": "pakguru_app.postcategorylist",
         "pk": 1,
         "fields": {
-            "name": "Shows",
+            "name": "Talk Shows",
             "description": "",
             "created": "2019-06-30T15:04:36.880Z",
-            "updated": "2019-06-30T15:04:36.880Z"
+            "updated": "2019-07-01T03:07:47.183Z"
         }
     },
     {
@@ -36,6 +36,16 @@
             "description": "",
             "created": "2019-06-30T15:05:01.408Z",
             "updated": "2019-06-30T15:05:01.408Z"
+        }
+    },
+    {
+        "model": "pakguru_app.postcategorylist",
+        "pk": 5,
+        "fields": {
+            "name": "Drama Serials",
+            "description": "",
+            "created": "2019-07-01T02:55:12.369Z",
+            "updated": "2019-07-01T02:55:12.369Z"
         }
     }
 ]

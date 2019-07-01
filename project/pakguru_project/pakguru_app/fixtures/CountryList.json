@@ -33,5 +33,17 @@
             "created": "2019-06-30T14:59:58.450Z",
             "updated": "2019-06-30T14:59:58.450Z"
         }
+    },
+    {
+        "model": "pakguru_app.countrylist",
+        "pk": 4,
+        "fields": {
+            "name": "All",
+            "short_name": "All",
+            "capital_city": "N/A",
+            "country_phone_code": null,
+            "created": "2019-06-30T14:59:58.450Z",
+            "updated": "2019-06-30T14:59:58.450Z"
+        }
     }
 ]

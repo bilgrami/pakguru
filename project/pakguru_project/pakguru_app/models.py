@@ -9,11 +9,13 @@ from .managers import (ShowManager, JokePostManager,
 
 feed_source_choice = [
     ('Youtube', 'Youtube'),
+    ('Talk Shows Central', 'Talk Shows Central'),
+    ('unewstv', 'unewstv'),
     ('Facebook', 'Facebook'),
     ('Podcast', 'Podcast'),
     ('Vimeo', 'Vimeo'),
-    ('Other', 'Other'),
     ('Twitter', 'Twitter'),
+    ('Other', 'Other'),
 ]
 
 media_type_choice = [
@@ -130,14 +132,21 @@ class ShowChannel(models.Model):
     channel_id = models.AutoField(primary_key=True)
     channel_short_code = models.CharField('Channel Code', max_length=20)
     channel_name = models.CharField('Channel Name', max_length=300)
-    channel_link = models.URLField('Channel Link', max_length=500)
     description = models.TextField('Description', blank=True, null=True)
-    facebook_link = models.CharField('Facebook', max_length=300,
-                                     blank=True, null=True)
-    twitter_link = models.CharField('Twitter', max_length=300,
+    website_link = models.URLField('Website', max_length=500,
+                                   blank=True, null=True)
+    youtube_link = models.URLField('Youtube', max_length=300,
+                                   blank=True, null=True)
+    facebook_link = models.URLField('Facebook', max_length=300,
                                     blank=True, null=True)
-    instagram_link = models.CharField('Instagram', max_length=300,
-                                      blank=True, null=True)
+    twitter_link = models.URLField('Twitter', max_length=300,
+                                   blank=True, null=True)
+    instagram_link = models.URLField('Instagram', max_length=300,
+                                     blank=True, null=True)
+    country = models.ForeignKey(CountryList,
+                                related_name='related_show_channels',
+                                on_delete=models.SET_NULL,
+                                null=True, blank=True)
     is_active = models.BooleanField("Is Active", default=True)
     added_by = models.ForeignKey(User, related_name='related_tvchannel',
                                  on_delete=models.SET_NULL,
@@ -146,7 +155,7 @@ class ShowChannel(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.channel_name}'
+        return f'{self.channel_name} ({self.country})'
 
     class Meta:
         verbose_name = "Show Channel"
@@ -155,7 +164,8 @@ class ShowChannel(models.Model):
 
 class ShowSourceFeed(models.Model):
     feed_id = models.AutoField(primary_key=True)
-    feed_name = models.CharField('Show Name', max_length=300)
+    feed_name = models.CharField('Feed Name', max_length=300)
+    show_name = models.CharField('Show Name', max_length=300)
     channel = models.ForeignKey(ShowChannel,
                                 on_delete=models.SET_NULL,
                                 blank=True, null=True)
@@ -181,7 +191,7 @@ class ShowSourceFeed(models.Model):
     feed_quality = models.CharField('Max Feed Quality',
                                     choices=feed_quality_choices,
                                     max_length=20, null=True, blank=True)
-    priority = models.SmallIntegerField("Priority", null=True, blank=True)
+    priority = models.SmallIntegerField("Priority", default=0)
     extra_data = JSONField(blank=True, null=True)
     added_by = models.ForeignKey(User, related_name='related_tvfeed',
                                  on_delete=models.SET_NULL,
@@ -202,12 +212,16 @@ class Show(models.Model):
     host_name = models.CharField('Host Name', max_length=300)
     airtime = models.CharField('Air Time', max_length=300,
                                blank=True, null=True)
-    facebook_link = models.CharField('Facebook', max_length=300,
-                                     blank=True, null=True)
-    twitter_link = models.CharField('Twitter', max_length=300,
+    website_link = models.URLField('Website', max_length=300,
+                                   blank=True, null=True)
+    youtube_link = models.URLField('Youtube', max_length=300,
+                                   blank=True, null=True)
+    facebook_link = models.URLField('Facebook', max_length=300,
                                     blank=True, null=True)
-    instagram_link = models.CharField('Instagram', max_length=300,
-                                      blank=True, null=True)
+    twitter_link = models.URLField('Twitter', max_length=300,
+                                   blank=True, null=True)
+    instagram_link = models.URLField('Instagram', max_length=300,
+                                     blank=True, null=True)
     description = models.TextField('Description', blank=True, null=True)
     category = models.ForeignKey(PostCategoryList,
                                  related_name='related_tvshow',
@@ -239,7 +253,7 @@ class Show(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f'{self.show_name} ({self.channel})'
+        return f'[{self.channel}] - {self.show_name}'
 
     class Meta:
         verbose_name_plural = "Shows"
@@ -249,10 +263,16 @@ class Post(models.Model):
     post_id = models.AutoField('Post Id', primary_key=True)
     title = models.CharField('Title', max_length=255)
     slug = models.SlugField('URL Slug')
-    text = models.TextField('Text')
-    post_author = models.CharField('Author', max_length=255)
-    source = models.CharField('Source', max_length=255)
-    source_detail = models.TextField('Source Detail')
+    publish_date = models.DateTimeField('Publish Date', auto_now_add=True)
+    target_date = models.DateField('Target Date')
+    text = models.TextField('Text',
+                            blank=True, null=True)
+    post_author = models.CharField('Author', max_length=255,
+                                   blank=True, null=True)
+    source = models.CharField('Source', max_length=255,
+                              blank=True, null=True)
+    source_detail = models.TextField('Source Detail',
+                                     blank=True, null=True)
     category = models.ForeignKey(PostCategoryList,
                                  related_name='related_posts',
                                  on_delete=models.SET_NULL,
@@ -261,7 +281,6 @@ class Post(models.Model):
                                   max_length=50,
                                   choices=media_type_choice,
                                   default='text')
-    publish_date = models.DateTimeField('Publish Date')
     weekday_name = models.CharField('Weekday', max_length=3,
                                     choices=weekday_choices)
     locale = models.ForeignKey(LocaleList,
@@ -293,6 +312,10 @@ class Post(models.Model):
     jokes = JokePostManager()
     quotes = QuotePostManager()
     politicalposts = PoliticalPostManager()
+
+    def __str__(self):
+        dt = self.target_date.strftime("%Y-%m-%d")
+        return f'[{dt}] - {self.title}'
 
 
 class PostStatistic(models.Model):

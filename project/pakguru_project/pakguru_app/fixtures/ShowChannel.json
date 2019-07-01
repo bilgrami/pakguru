@@ -1,0 +1,58 @@
+[{
+        "model": "pakguru_app.showchannel",
+        "pk": 1,
+        "fields": {
+            "channel_short_code": "CBS",
+            "channel_name": "CBS",
+            "description": "CBS is an American English language commercial broadcast television and radio network that is a flagship property of CBS Corporation. The company is headquartered at the CBS Building in New York City with major production facilities and operations in New York City and Los Angeles",
+            "website_link": "http://cbs.com",
+            "youtube_link": null,
+            "facebook_link": "https://www.facebook.com/CBS/",
+            "twitter_link": null,
+            "instagram_link": null,
+            "country": 2,
+            "is_active": true,
+            "added_by": 1,
+            "created": "2019-07-01T00:44:09.335Z",
+            "updated": "2019-07-01T00:44:09.335Z"
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 2,
+        "fields": {
+            "channel_short_code": "Dawn News",
+            "channel_name": "Dawn News",
+            "description": "Dawn is Pakistan's oldest, leading and most widely read English-language newspaper and is the country's newspaper of record. It is one of the country's three largest English-language dailies and the flagship of the Dawn Group of Newspapers.",
+            "website_link": "https://en.wikipedia.org/wiki/Dawn_(newspaper)",
+            "youtube_link": "https://www.youtube.com/user/dawnnewspakistan",
+            "facebook_link": "https://www.facebook.com/DawnNews/",
+            "twitter_link": null,
+            "instagram_link": null,
+            "country": 1,
+            "is_active": true,
+            "added_by": 1,
+            "created": "2019-07-01T00:46:09.650Z",
+            "updated": "2019-07-01T02:51:51.851Z"
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 3,
+        "fields": {
+            "channel_short_code": "Dunya News",
+            "channel_name": "Dunya News",
+            "description": "Dunya News is a 24 hours Urdu language news and current affairs television channel from Pakistan. It is governed and operated by the National Communication Services Pvt. Ltd. Its head office is situated at Lahore, Pakistan. \r\n\r\nhttps://en.wikipedia.org/wiki/Dunya_News",
+            "website_link": "https://dunyanews.tv/",
+            "youtube_link": "https://www.youtube.com/channel/UCnMBV5Iw4WqKILKue1nP6Hg",
+            "facebook_link": "https://www.facebook.com/dunyanews/",
+            "twitter_link": "https://twitter.com/DunyaNews",
+            "instagram_link": null,
+            "country": 1,
+            "is_active": true,
+            "added_by": 1,
+            "created": "2019-07-01T00:47:44.156Z",
+            "updated": "2019-07-01T02:53:25.223Z"
+        }
+    }
+]

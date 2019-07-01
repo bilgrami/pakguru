@@ -1,0 +1,34 @@
+[{
+    "model": "pakguru_app.post",
+    "pk": 1,
+    "fields": {
+        "title": "Zara Hat Kay (Andhere Main Ujala) - 29th June 2019",
+        "slug": "zara-hat-kay-29th-June-2019",
+        "publish_date": "2019-07-01T01:46:15Z",
+        "target_date": "2019-06-29",
+        "text": "None",
+        "post_author": "None",
+        "source": "http://www.unewstv.com/153186/zara-hut-kay-andhere-main-ujala-29th-june-2019",
+        "source_detail": "None",
+        "category": 1,
+        "media_type": "embedded video",
+        "weekday_name": "Sat",
+        "locale": 2,
+        "show": 2,
+        "tags": "[\"zara hat kay\", \"dawn news\", \"news talk shows\"]",
+        "added_by": 1,
+        "is_active": true,
+        "flagged": false,
+        "flagged_data": "",
+        "extra_data": null,
+        "created_on": "2019-07-01T01:51:16.040Z",
+        "updated": "2019-07-01T02:40:47.855Z",
+        "is_Show": true,
+        "is_Joke": false,
+        "is_Quote": false,
+        "is_Politics": true,
+        "country": [
+            4
+        ]
+    }
+}]

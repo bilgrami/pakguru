@@ -1,0 +1,113 @@
+[{
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 1,
+        "fields": {
+            "feed_name": "YouTube - 60 Minutes",
+            "show_name": "60 Minutes",
+            "channel": 1,
+            "playlist_link": "https://www.youtube.com/user/60minutes/playlists?view=1&sort=dd&flow=grid",
+            "latest_show_link": "https://www.youtube.com/watch?v=UNvdyKiNP_A",
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "feed_source": "Youtube",
+            "feed_quality": "1080p",
+            "priority": 1,
+            "extra_data": null,
+            "added_by": 1,
+            "created": "2019-07-01T01:15:13.753Z",
+            "updated": "2019-07-01T01:43:06.946Z",
+            "country": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 2,
+        "fields": {
+            "feed_name": "YouTube - Zara Hat Kay",
+            "show_name": "Zara Hat Kay",
+            "channel": 2,
+            "playlist_link": "https://www.youtube.com/watch?v=odMfq4uvawg&list=PLqvJuaAfjXbQZEZrIYkNHyd5JYW4peIwE",
+            "latest_show_link": "https://www.youtube.com/watch?time_continue=2&v=bsc23Rabj0w",
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "is_active": true,
+            "effective_date": "2019-07-01T03:13:12.619Z",
+            "expiration_date": null,
+            "feed_source": "Youtube",
+            "feed_quality": "480p",
+            "priority": 3,
+            "extra_data": null,
+            "added_by": 1,
+            "created": "2019-07-01T01:36:31.821Z",
+            "updated": "2019-07-01T03:13:12.619Z",
+            "country": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 3,
+        "fields": {
+            "feed_name": "unewstv - Zara Hat Kay",
+            "show_name": "Zara Hat Kay",
+            "channel": 2,
+            "playlist_link": "http://www.unewstv.com/category/Zara+Hut+Kay+on+Dawn+News",
+            "latest_show_link": "http://www.unewstv.com/153186/zara-hut-kay-andhere-main-ujala-29th-june-2019",
+            "title_example": "Zara Hut Kay (Andhere Main Ujala) \u2013 29th June 2019 Zara Hut Kay (Andhere Main Ujala) \u2013 29th June 2019",
+            "title_search_pattern": "{show name} ({episode title}) \u2013 {date: DDth MMM YYYY}",
+            "search_api_url": "http://www.unewstv.com/category/Zara+Hut+Kay+on+Dawn+News",
+            "search_api_pattern": "http://www.unewstv.com/category/Zara+Hut+Kay+on+Dawn+News",
+            "is_active": true,
+            "effective_date": "2019-07-01T03:12:53.026Z",
+            "expiration_date": null,
+            "feed_source": "unewstv",
+            "feed_quality": "480p",
+            "priority": 2,
+            "extra_data": null,
+            "added_by": 1,
+            "created": "2019-07-01T01:42:27.916Z",
+            "updated": "2019-07-01T03:12:53.026Z",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 4,
+        "fields": {
+            "feed_name": "Talk Shows Central - Zara Hat Kay",
+            "show_name": "Zara Hat Kay",
+            "channel": 2,
+            "playlist_link": "https://www.youtube.com/playlist?list=PL3kMf0Q991MNBSj9EmVLH-lkOIQ07e3xu",
+            "latest_show_link": "https://youtu.be/5Hs3PpRgw1U?list=PL3kMf0Q991MNBSj9EmVLH-lkOIQ07e3xu",
+            "title_example": "Another Huge Success of PM Imran Khan | Zara Hat Kay | 28 June 2019 | Dawn News",
+            "title_search_pattern": "{Episode Name} | {Show name} | {date:DD MMM YYYY} | {Channel Name}",
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "is_active": true,
+            "effective_date": "2019-07-01T03:12:33.822Z",
+            "expiration_date": null,
+            "feed_source": "Talk Shows Central",
+            "feed_quality": "480p",
+            "priority": 1,
+            "extra_data": null,
+            "added_by": 1,
+            "created": "2019-07-01T02:48:30.906Z",
+            "updated": "2019-07-01T03:12:33.822Z",
+            "country": [
+                4
+            ]
+        }
+    }
+]

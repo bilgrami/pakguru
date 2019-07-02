@@ -26,3 +26,5 @@
 
 # Declare files that will always have CRLF line endings on checkout.
 *.sh text eol=lf
+project/pakguru_project/pakguru_app/static/* linguist-vendored
+*.sh linguist-vendored

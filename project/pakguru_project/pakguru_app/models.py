@@ -4,37 +4,39 @@ Definition of models.
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import ArrayField, JSONField
 from django.db import models
-from .managers import (ShowManager, JokePostManager,
-                       QuotePostManager, PoliticalPostManager)
+# from django.urls import reverse
+
+from .managers import (
+    JokePostManager, PoliticalPostManager, QuotePostManager, ShowManager)
 
 feed_source_choice = [
-    ('Youtube', 'Youtube'),
-    ('Talk Shows Central', 'Talk Shows Central'),
-    ('unewstv', 'unewstv'),
-    ('Facebook', 'Facebook'),
-    ('Podcast', 'Podcast'),
-    ('Vimeo', 'Vimeo'),
-    ('Twitter', 'Twitter'),
-    ('Other', 'Other'),
+    ('YOUTUBE', 'Youtube'),
+    ('TALK_SHOWS_CENTRAL', 'Talk Shows Central'),
+    ('UNEWSTV', 'unewstv'),
+    ('FACEBOOK', 'Facebook'),
+    ('PODCAST', 'Podcast'),
+    ('VIMEO', 'Vimeo'),
+    ('TWITTER', 'Twitter'),
+    ('OTHER', 'Other'),
 ]
 
 media_type_choice = [
-    ('text', 'Text'),
-    ('image', 'Image'),
-    ('video', 'Video'),
-    ('podcast', 'Podcast'),
-    ('embedded video', 'embedded video'),
-    ('document', 'Document'),
+    ('TEXT', 'Text'),
+    ('IMAGE', 'Image'),
+    ('VIDEO', 'Video'),
+    ('PODCAST', 'Podcast'),
+    ('EMBEDDED_VIDEO', 'embedded video'),
+    ('DOCUMENT', 'Document'),
 ]
 
 weekday_choices = [
-    ('Sun', 'Sunday'),
-    ('Mon', 'Monday'),
-    ('Tue', 'Tuesday'),
-    ('Wed', 'Wednesday'),
-    ('Thu', 'Thursday'),
-    ('Fri', 'Friday'),
-    ('Sat', 'Saturday'),
+    ('SUN', 'Sunday'),
+    ('MON', 'Monday'),
+    ('TUE', 'Tuesday'),
+    ('WED', 'Wednesday'),
+    ('THU', 'Thursday'),
+    ('FRI', 'Friday'),
+    ('SAT', 'Saturday'),
 ]
 
 feed_quality_choices = [
@@ -130,7 +132,8 @@ class CountryList(models.Model):
 
 class ShowChannel(models.Model):
     channel_id = models.AutoField(primary_key=True)
-    channel_short_code = models.CharField('Channel Code', max_length=20)
+    channel_short_code = models.CharField('Channel Code', max_length=20,
+                                          db_index=True)
     channel_name = models.CharField('Channel Name', max_length=300)
     description = models.TextField('Description', blank=True, null=True)
     website_link = models.URLField('Website', max_length=500,
@@ -164,8 +167,8 @@ class ShowChannel(models.Model):
 
 class ShowSourceFeed(models.Model):
     feed_id = models.AutoField(primary_key=True)
-    feed_name = models.CharField('Feed Name', max_length=300)
-    show_name = models.CharField('Show Name', max_length=300)
+    feed_name = models.CharField('Feed Name', max_length=300, db_index=True)
+    show_name = models.CharField('Show Name', max_length=300, db_index=True)
     channel = models.ForeignKey(ShowChannel,
                                 on_delete=models.SET_NULL,
                                 blank=True, null=True)
@@ -181,11 +184,11 @@ class ShowSourceFeed(models.Model):
                                      null=True, blank=True)
     search_api_pattern = models.CharField('Search Pattern', max_length=500,
                                           null=True, blank=True)
-    is_active = models.BooleanField("Is Active", default=True)
+    is_active = models.BooleanField("Is Active", default=True, db_index=True)
     effective_date = models.DateTimeField('Effective Date', auto_now=True)
     expiration_date = models.DateTimeField('Expiration Date',
                                            null=True, blank=True)
-    country = models.ManyToManyField(CountryList, blank=True)
+    country = models.ManyToManyField(CountryList, blank=True, db_index=True)
     feed_source = models.CharField('Feed Source', choices=feed_source_choice,
                                    max_length=20, null=True, blank=True)
     feed_quality = models.CharField('Max Feed Quality',
@@ -197,7 +200,7 @@ class ShowSourceFeed(models.Model):
                                  on_delete=models.SET_NULL,
                                  null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    updated = models.DateTimeField(auto_now=True, db_index=True)
 
     def __str__(self):
         return f'{self.feed_name} ({self.channel})'
@@ -206,9 +209,19 @@ class ShowSourceFeed(models.Model):
         verbose_name_plural = "Show Source Feeds"
 
 
+class ShowFeed_HarvestJobLog(models.Model):
+    job_id = models.AutoField(primary_key=True)
+    feed_id = models.ForeignKey(ShowSourceFeed,
+                                on_delete=models.CASCADE)
+    latest_feed_date = models.DateField("Latest Feed Date", db_index=True)
+    is_latest = models.BooleanField("Is Latest", default=True, db_index=True)
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True, db_index=True)
+
+
 class Show(models.Model):
     show_id = models.AutoField(primary_key=True)
-    show_name = models.CharField('Show Name', max_length=300)
+    show_name = models.CharField('Show Name', max_length=300, db_index=True)
     host_name = models.CharField('Host Name', max_length=300)
     airtime = models.CharField('Air Time', max_length=300,
                                blank=True, null=True)
@@ -240,7 +253,7 @@ class Show(models.Model):
     locale = models.ForeignKey(LocaleList,
                                on_delete=models.SET_NULL,
                                blank=True, null=True)
-    is_active = models.BooleanField("Is Active", default=True)
+    is_active = models.BooleanField("Is Active", default=True, db_index=True)
     effective_date = models.DateTimeField('Effective Date', auto_now=True)
     expiration_date = models.DateTimeField('Expiration Date',
                                            null=True, blank=True)
@@ -250,10 +263,13 @@ class Show(models.Model):
                                  on_delete=models.SET_NULL,
                                  null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    updated = models.DateTimeField(auto_now=True, db_index=True)
 
     def __str__(self):
         return f'[{self.channel}] - {self.show_name}'
+
+    # def get_absolute_url(self):
+    #     return reverse('show_detail', args=[str(self.show_id)])
 
     class Meta:
         verbose_name_plural = "Shows"

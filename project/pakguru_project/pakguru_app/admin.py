@@ -7,7 +7,6 @@ from .models import (Author, PostCategoryList,
 admin.site.register(Author)
 admin.site.register(PostCategoryList)
 admin.site.register(LocaleList)
-admin.site.register(Show)
 admin.site.register(Post)
 admin.site.register(CountryList)
 admin.site.register(ShowChannel)
@@ -16,7 +15,7 @@ admin.site.register(PostStatistic)
 
 @admin.register(ShowSourceFeed)
 class ShowSourceFeed(admin.ModelAdmin):
-    list_display = ('feed_name',
+    list_display = ('feed_id', 'feed_name',
                     'show_name',
                     'channel', 'is_active', 'feed_source',
                     'feed_quality', 'priority', 'updated')
@@ -36,3 +35,40 @@ class ShowSourceFeed(admin.ModelAdmin):
               'feed_quality', 'priority',
               'added_by', 'extra_data',)
     save_on_top = True
+
+
+@admin.register(Show)
+class Show(admin.ModelAdmin):
+    list_display = ('show_name', 'get_host_name',
+                    'category', 'primary_feed',
+                    'channel', 'locale',
+                    'is_active')
+    list_filter = ('country__name', 'show_name', 'is_active',
+                   'channel',)
+    search_fields = ('show_name', 'host_name',
+                     'description')
+    date_hierarchy = 'updated'
+    ordering = ('-updated',)
+    list_per_page = 30
+    readonly_fields = ('created', 'effective_date', 'updated',)
+    fields = ('show_name', 'host_name',
+              'airtime', 'website_link',
+              'youtube_link', 'facebook_link',
+              'twitter_link', 'instagram_link',
+              'description',
+              'category',
+              'channel', 'locale',
+              'is_active',
+              'expiration_date', 'country',
+              'added_by', 'extra_data'
+              )
+    save_on_top = True
+
+    def get_ellipses(self, data, n):
+        return (data[:n] + '..') if len(data) > n else data
+
+    def get_host_name(self, obj):
+        return self.get_ellipses(obj.host_name, 20)
+
+    # def get_primary_feed(self, obj):
+    #     return self.get_ellipses(obj.primary_feed__feed_name, 20)

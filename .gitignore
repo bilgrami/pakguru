@@ -351,3 +351,14 @@ docker/volumes/redisdata/dump.rdb
 data/redis-data/dump.rdb
 docker/volumes/redisdata/dump.rdb
 docker/volumes/redisdata/dump.rdb
+docker/volumes/media/
+project/pakguru_project/pakguru_app/fixtures/ShowSourceFeed.json
+project/pakguru_project/pakguru_app/fixtures/Author.json
+project/pakguru_project/pakguru_app/fixtures/Post.json
+project/pakguru_project/pakguru_app/fixtures/Show.json
+project/pakguru_project/pakguru_app/fixtures/ShowChannel.json
+project/pakguru_project/pakguru_app/fixtures/ShowChannel.json
+project/pakguru_project/pakguru_app/fixtures/Author.json
+project/pakguru_project/pakguru_app/fixtures/Post.json
+project/pakguru_project/pakguru_app/fixtures/Show.json
+project/pakguru_project/pakguru_app/fixtures/ShowFeed_HarvestJobLog.json

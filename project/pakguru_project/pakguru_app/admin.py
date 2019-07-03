@@ -8,7 +8,6 @@ from .models import (Author, PostCategoryList,
 admin.site.register(Author)
 admin.site.register(PostCategoryList)
 admin.site.register(LocaleList)
-admin.site.register(Post)
 admin.site.register(CountryList)
 admin.site.register(ShowChannel)
 admin.site.register(PostStatistic)
@@ -16,23 +15,24 @@ admin.site.register(PostStatistic)
 
 @admin.register(ShowFeed_HarvestJobLog)
 class ShowFeed_HarvestJobLog(admin.ModelAdmin):
-    list_display = ('job_id', 'feed_id',
+    list_display = ('job_id', 'show_feed',
                     'latest_feed_date',
                     'is_latest', 'feed_data',
                     'job_status',
                     'added_by', 'updated')
-    list_filter = ('feed_id__feed_source', 'is_latest', 'job_status')
-    search_fields = ('job_id', 'feed_id', 'feed_id__feed_source')
+    list_filter = ('show_feed__feed_source', 'is_latest', 'job_status')
+    search_fields = ('job_id', 'show_feed', 'show_feed__feed_source')
     date_hierarchy = 'updated'
     ordering = ('-updated',)
     list_per_page = 50
     readonly_fields = ('created', 'updated')
-    fields = ('feed_id',
+    fields = ('show_feed',
               'latest_feed_date',
               'feed_data',
               'is_latest',
               'job_status',
               'notes',
+              'extra_data',
               'added_by', 'updated')
     save_on_top = True
 
@@ -96,5 +96,44 @@ class Show(admin.ModelAdmin):
     def get_host_name(self, obj):
         return self.get_ellipses(obj.host_name, 20)
 
-    # def get_primary_feed(self, obj):
-    #     return self.get_ellipses(obj.primary_feed__feed_name, 20)
+
+@admin.register(Post)
+class Post(admin.ModelAdmin):
+    list_display = ('title',
+                    'target_date', 'category',
+                    'locale',
+                    'weekday_name', 'publish_date',
+                    'is_active', 'flagged',
+                    'is_Show', 'is_Joke', 'is_Quote', 'is_Politics')
+    list_filter = ('target_date', 'weekday_name', 'category', 'is_active',
+                   'flagged', 'is_Show', 'is_Joke', 'is_Quote', 'is_Politics')
+    search_fields = ('title',)
+    date_hierarchy = 'target_date'
+    ordering = ('-publish_date',)
+    list_per_page = 100
+    readonly_fields = ('created_on', 'publish_date', 'updated',)
+    fields = ('title', 'slug',
+              'publish_date',
+              'target_date',
+              'text',
+              'post_author',
+              'source',
+              'source_detail',
+              'category',
+              'media_type', 'weekday_name',
+              'locale',
+              'show',
+              'tags',
+              'country',
+              'is_active', 'flagged',
+              'flagged_data',
+              'extra_data',
+              'is_Show', 'is_Joke', 'is_Quote', 'is_Politics'
+              )
+    save_on_top = True
+
+    def get_ellipses(self, data, n):
+        return (data[:n] + '..') if len(data) > n else data
+
+    def get_title(self, obj):
+        return self.get_ellipses(obj.title, 20)

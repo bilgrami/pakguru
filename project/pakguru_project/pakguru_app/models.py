@@ -232,8 +232,8 @@ def data_file_directory_path(instance, filename):
 
 class ShowFeed_HarvestJobLog(models.Model):
     job_id = models.AutoField(primary_key=True)
-    feed_id = models.ForeignKey(ShowSourceFeed,
-                                on_delete=models.CASCADE)
+    show_feed = models.ForeignKey(ShowSourceFeed,
+                                  on_delete=models.CASCADE)
     latest_feed_date = models.DateField('Latest Feed Date', db_index=True)
     is_latest = models.BooleanField('Is Latest', default=True, db_index=True)
     created = models.DateTimeField(auto_now_add=True)
@@ -249,10 +249,11 @@ class ShowFeed_HarvestJobLog(models.Model):
                                   default='NOT STARTED')
     notes = models.TextField("Additional Notes",
                              null=True, blank=True)
+    extra_data = JSONField(blank=True, null=True)
 
     def __str__(self):
         # latest = '*Active*' if {self.is_latest} else ''
-        return f'[{self.feed_id}] - {str(self.latest_feed_date)}'
+        return f'{str(self.latest_feed_date)} - [{self.show_feed}]'
 
     class Meta:
         verbose_name = 'Feed Harvest Job'
@@ -304,12 +305,6 @@ class Show(models.Model):
                                  null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True, db_index=True)
-    # latest_feed_date = models.DateTimeField("Latest Show Date",
-    #                                         null=True, blank=True)
-    # latest_feed_origin = models.ForeignKey(ShowSourceFeed,
-    #                                        on_delete=models.SET_NULL,
-    #                                        related_name='related_latest_shows',
-    #                                        blank=True, null=True)
 
     def __str__(self):
         return f'[{self.channel}] - {self.show_name}'
@@ -352,7 +347,7 @@ class Post(models.Model):
                              on_delete=models.SET_NULL,
                              blank=True, null=True, db_index=True)
     tags = ArrayField(models.CharField('Tags', max_length=50,
-                             blank=True, null=True, db_index=True))
+                                       blank=True, null=True, db_index=True))
     country = models.ManyToManyField(CountryList, blank=True)
     added_by = models.ForeignKey(User, related_name='related_posts',
                                  on_delete=models.SET_NULL,

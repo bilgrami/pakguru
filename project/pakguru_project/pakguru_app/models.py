@@ -1,13 +1,25 @@
-"""
+'''
 Definition of models.
-"""
+'''
+from datetime import datetime
+
 from django.contrib.auth.models import User
 from django.contrib.postgres.fields import ArrayField, JSONField
 from django.db import models
+
+from .managers import (JokePostManager, PoliticalPostManager, QuotePostManager,
+                       ShowManager)
+
 # from django.urls import reverse
 
-from .managers import (
-    JokePostManager, PoliticalPostManager, QuotePostManager, ShowManager)
+joblog_status_choices = [
+    ('NOT STARTED', 'Not Started'),
+    ('IN PROGRESS', 'In Progress'),
+    ('SUCCESS', 'Success'),
+    ('FAILED', 'Failed'),
+    ('PAUSED', 'Paused'),
+    ('CANCELLED', 'Cancelled'),
+]
 
 feed_source_choice = [
     ('YOUTUBE', 'Youtube'),
@@ -70,7 +82,7 @@ feed_quality_choices = [
 
 class PostCategoryList(models.Model):
     category_id = models.AutoField(primary_key=True)
-    name = models.CharField("Category Name", max_length=100)
+    name = models.CharField('Category Name', max_length=100)
     description = models.TextField('Description', blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -79,8 +91,8 @@ class PostCategoryList(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Post Category"
-        verbose_name_plural = "Post Categories"
+        verbose_name = 'Post Category'
+        verbose_name_plural = 'Post Categories'
 
 
 class LocaleList(models.Model):
@@ -94,14 +106,14 @@ class LocaleList(models.Model):
         return self.locale_code
 
     class Meta:
-        verbose_name_plural = "Locales"
+        verbose_name_plural = 'Locales'
 
 
 class Author(models.Model):
     author_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=255)
     email = models.EmailField(max_length=100, null=True, blank=True)
-    is_active = models.BooleanField("Is Active", default=True)
+    is_active = models.BooleanField('Is Active', default=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
@@ -109,15 +121,15 @@ class Author(models.Model):
         return f'{self.name} <{self.email}>'
 
     class Meta:
-        verbose_name_plural = "Authors"
+        verbose_name_plural = 'Authors'
 
 
 class CountryList(models.Model):
     country_id = models.AutoField(primary_key=True)
-    name = models.CharField("Country Name", max_length=200)
-    short_name = models.CharField("Short Name", max_length=10)
-    capital_city = models.CharField("Capital", max_length=100)
-    country_phone_code = models.CharField("Country Phone Code",
+    name = models.CharField('Country Name', max_length=200)
+    short_name = models.CharField('Short Name', max_length=10)
+    capital_city = models.CharField('Capital', max_length=100)
+    country_phone_code = models.CharField('Country Phone Code',
                                           max_length=10, null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
@@ -126,8 +138,8 @@ class CountryList(models.Model):
         return self.name
 
     class Meta:
-        verbose_name = "Country"
-        verbose_name_plural = "Countries"
+        verbose_name = 'Country'
+        verbose_name_plural = 'Countries'
 
 
 class ShowChannel(models.Model):
@@ -150,7 +162,7 @@ class ShowChannel(models.Model):
                                 related_name='related_show_channels',
                                 on_delete=models.SET_NULL,
                                 null=True, blank=True)
-    is_active = models.BooleanField("Is Active", default=True)
+    is_active = models.BooleanField('Is Active', default=True)
     added_by = models.ForeignKey(User, related_name='related_tvchannel',
                                  on_delete=models.SET_NULL,
                                  null=True, blank=True)
@@ -161,8 +173,8 @@ class ShowChannel(models.Model):
         return f'{self.channel_name} ({self.country})'
 
     class Meta:
-        verbose_name = "Show Channel"
-        verbose_name_plural = "Show Channels"
+        verbose_name = 'Show Channel'
+        verbose_name_plural = 'Show Channels'
 
 
 class ShowSourceFeed(models.Model):
@@ -184,7 +196,7 @@ class ShowSourceFeed(models.Model):
                                      null=True, blank=True)
     search_api_pattern = models.CharField('Search Pattern', max_length=500,
                                           null=True, blank=True)
-    is_active = models.BooleanField("Is Active", default=True, db_index=True)
+    is_active = models.BooleanField('Is Active', default=True, db_index=True)
     effective_date = models.DateTimeField('Effective Date', auto_now=True)
     expiration_date = models.DateTimeField('Expiration Date',
                                            null=True, blank=True)
@@ -194,7 +206,7 @@ class ShowSourceFeed(models.Model):
     feed_quality = models.CharField('Max Feed Quality',
                                     choices=feed_quality_choices,
                                     max_length=20, null=True, blank=True)
-    priority = models.SmallIntegerField("Priority", default=0)
+    priority = models.SmallIntegerField('Priority', default=0)
     extra_data = JSONField(blank=True, null=True)
     added_by = models.ForeignKey(User, related_name='related_tvfeed',
                                  on_delete=models.SET_NULL,
@@ -206,17 +218,45 @@ class ShowSourceFeed(models.Model):
         return f'{self.feed_name} ({self.channel})'
 
     class Meta:
-        verbose_name_plural = "Show Source Feeds"
+        verbose_name_plural = 'Show Source Feeds'
+
+
+def data_file_directory_path(instance, filename):
+    # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
+    folder = datetime.today().strftime('%Y')
+    file_prefix = datetime.today().strftime('%Y-%m-%d')
+    user = f'{instance.added_by.id}-{instance.added_by}'
+    file_name = f'{file_prefix}-{user}-{filename}'
+    return 'datafiles/{0}/{1}'.format(folder, file_name)
 
 
 class ShowFeed_HarvestJobLog(models.Model):
     job_id = models.AutoField(primary_key=True)
     feed_id = models.ForeignKey(ShowSourceFeed,
                                 on_delete=models.CASCADE)
-    latest_feed_date = models.DateField("Latest Feed Date", db_index=True)
-    is_latest = models.BooleanField("Is Latest", default=True, db_index=True)
+    latest_feed_date = models.DateField('Latest Feed Date', db_index=True)
+    is_latest = models.BooleanField('Is Latest', default=True, db_index=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True, db_index=True)
+    added_by = models.ForeignKey(User, related_name='related_harvestjobs',
+                                 on_delete=models.SET_NULL,
+                                 null=True, blank=True)
+    feed_data = models.FileField(upload_to=data_file_directory_path,
+                                 null=True, blank=True)
+    job_status = models.CharField('Job Status',
+                                  max_length=20,
+                                  choices=joblog_status_choices,
+                                  default='NOT STARTED')
+    notes = models.TextField("Additional Notes",
+                             null=True, blank=True)
+
+    def __str__(self):
+        # latest = '*Active*' if {self.is_latest} else ''
+        return f'[{self.feed_id}] - {str(self.latest_feed_date)}'
+
+    class Meta:
+        verbose_name = 'Feed Harvest Job'
+        verbose_name_plural = 'Feed Harvest Jobs'
 
 
 class Show(models.Model):
@@ -253,7 +293,7 @@ class Show(models.Model):
     locale = models.ForeignKey(LocaleList,
                                on_delete=models.SET_NULL,
                                blank=True, null=True)
-    is_active = models.BooleanField("Is Active", default=True, db_index=True)
+    is_active = models.BooleanField('Is Active', default=True, db_index=True)
     effective_date = models.DateTimeField('Effective Date', auto_now=True)
     expiration_date = models.DateTimeField('Expiration Date',
                                            null=True, blank=True)
@@ -264,6 +304,12 @@ class Show(models.Model):
                                  null=True, blank=True)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True, db_index=True)
+    # latest_feed_date = models.DateTimeField("Latest Show Date",
+    #                                         null=True, blank=True)
+    # latest_feed_origin = models.ForeignKey(ShowSourceFeed,
+    #                                        on_delete=models.SET_NULL,
+    #                                        related_name='related_latest_shows',
+    #                                        blank=True, null=True)
 
     def __str__(self):
         return f'[{self.channel}] - {self.show_name}'
@@ -272,15 +318,15 @@ class Show(models.Model):
     #     return reverse('show_detail', args=[str(self.show_id)])
 
     class Meta:
-        verbose_name_plural = "Shows"
+        verbose_name_plural = 'Shows'
 
 
 class Post(models.Model):
     post_id = models.AutoField('Post Id', primary_key=True)
     title = models.CharField('Title', max_length=255)
-    slug = models.SlugField('URL Slug')
+    slug = models.SlugField('URL Slug', max_length=255, unique=True)
     publish_date = models.DateTimeField('Publish Date', auto_now_add=True)
-    target_date = models.DateField('Target Date')
+    target_date = models.DateField('Target Date', db_index=True)
     text = models.TextField('Text',
                             blank=True, null=True)
     post_author = models.CharField('Author', max_length=255,
@@ -304,25 +350,27 @@ class Post(models.Model):
                                blank=True, null=True)
     show = models.ForeignKey(Show,
                              on_delete=models.SET_NULL,
-                             blank=True, null=True)
-    tags = ArrayField(models.CharField('Tags', max_length=50))
+                             blank=True, null=True, db_index=True)
+    tags = ArrayField(models.CharField('Tags', max_length=50,
+                             blank=True, null=True, db_index=True))
     country = models.ManyToManyField(CountryList, blank=True)
     added_by = models.ForeignKey(User, related_name='related_posts',
                                  on_delete=models.SET_NULL,
                                  null=True, blank=True)
-    is_active = models.BooleanField("Is Active", default=True)
-    flagged = models.BooleanField("Is Flagged", default=False)
-    flagged_data = models.TextField("Flagged Data",
+    is_active = models.BooleanField('Is Active', default=True)
+    flagged = models.BooleanField('Is Flagged',
+                                  default=False, db_index=True)
+    flagged_data = models.TextField('Flagged Data',
                                     blank=True, null=True)
     extra_data = JSONField(blank=True, null=True)
     created_on = models.DateTimeField('Created On',
                                       auto_now_add=True,
                                       null=True)
     updated = models.DateTimeField(auto_now=True)
-    is_Show = models.BooleanField("Is Show", default=True)
-    is_Joke = models.BooleanField("Is Joke", default=False)
-    is_Quote = models.BooleanField("Is Quote", default=False)
-    is_Politics = models.BooleanField("Is Politics", default=False)
+    is_Show = models.BooleanField('Is Show', default=True)
+    is_Joke = models.BooleanField('Is Joke', default=False)
+    is_Quote = models.BooleanField('Is Quote', default=False)
+    is_Politics = models.BooleanField('Is Politics', default=False)
 
     shows = ShowManager()
     jokes = JokePostManager()
@@ -330,7 +378,7 @@ class Post(models.Model):
     politicalposts = PoliticalPostManager()
 
     def __str__(self):
-        dt = self.target_date.strftime("%Y-%m-%d")
+        dt = self.target_date.strftime('%Y-%m-%d')
         return f'[{dt}] - {self.title}'
 
 
@@ -349,7 +397,7 @@ class PostStatistic(models.Model):
     updated = models.DateTimeField(auto_now=True)
 
     class Meta:
-        verbose_name_plural = "Post Stats"
+        verbose_name_plural = 'Post Stats'
 
 
 # class PostViews(models.Model):

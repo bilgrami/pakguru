@@ -18,6 +18,7 @@ DROP TABLE pakguru_app_post_country CASCADE;
 DROP TABLE pakguru_app_localelist CASCADE;
 DROP TABLE pakguru_app_show CASCADE;
 DROP TABLE pakguru_app_post CASCADE;
+DROP TABLE pakguru_app_showfeed_harvestjoblog CASCADE;
 */
 /*
 DROP TABLE auth_permission CASCADE;

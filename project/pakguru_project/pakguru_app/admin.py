@@ -2,7 +2,8 @@ from django.contrib import admin
 
 from .models import (Author, PostCategoryList,
                      LocaleList, Post, ShowSourceFeed,
-                     Show, CountryList, ShowChannel, PostStatistic)
+                     Show, CountryList, ShowChannel, PostStatistic,
+                     ShowFeed_HarvestJobLog)
 
 admin.site.register(Author)
 admin.site.register(PostCategoryList)
@@ -11,6 +12,29 @@ admin.site.register(Post)
 admin.site.register(CountryList)
 admin.site.register(ShowChannel)
 admin.site.register(PostStatistic)
+
+
+@admin.register(ShowFeed_HarvestJobLog)
+class ShowFeed_HarvestJobLog(admin.ModelAdmin):
+    list_display = ('job_id', 'feed_id',
+                    'latest_feed_date',
+                    'is_latest', 'feed_data',
+                    'job_status',
+                    'added_by', 'updated')
+    list_filter = ('feed_id__feed_source', 'is_latest', 'job_status')
+    search_fields = ('job_id', 'feed_id', 'feed_id__feed_source')
+    date_hierarchy = 'updated'
+    ordering = ('-updated',)
+    list_per_page = 50
+    readonly_fields = ('created', 'updated')
+    fields = ('feed_id',
+              'latest_feed_date',
+              'feed_data',
+              'is_latest',
+              'job_status',
+              'notes',
+              'added_by', 'updated')
+    save_on_top = True
 
 
 @admin.register(ShowSourceFeed)
@@ -59,6 +83,8 @@ class Show(admin.ModelAdmin):
               'category',
               'channel', 'locale',
               'is_active',
+              'primary_feed',
+              'additional_feeds',
               'expiration_date', 'country',
               'added_by', 'extra_data'
               )

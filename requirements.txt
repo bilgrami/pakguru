@@ -40,4 +40,4 @@ coverage
 python-coveralls
 mock
 factory_boy
-BeautifulSoup
+bs4

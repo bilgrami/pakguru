@@ -63,7 +63,7 @@ class ShowSourceFeed(admin.ModelAdmin):
 
 @admin.register(Show)
 class Show(admin.ModelAdmin):
-    list_display = ('name', 'get_host_name',
+    list_display = ('name', 'show_host',
                     'category', 'primary_feed',
                     'channel', 'locale',
                     'is_active')
@@ -93,7 +93,7 @@ class Show(admin.ModelAdmin):
     def get_ellipses(self, data, n):
         return (data[:n] + '..') if len(data) > n else data
 
-    def get_host_name(self, obj):
+    def show_host(self, obj):
         return self.get_ellipses(obj.host_name, 20)
 
 

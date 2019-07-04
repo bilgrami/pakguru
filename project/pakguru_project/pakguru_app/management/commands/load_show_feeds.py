@@ -13,7 +13,7 @@ from pakguru_app.models import ShowFeed_HarvestJobLog as job
 
 class Command(BaseCommand):
     def add_arguments(self, parser):
-        help_text = 'Process a Harbest feed Job by Job Id'
+        help_text = 'Process a load feed Job by Job Id. Dupes are ignored'
         parser.add_argument('job_id', type=int, help=help_text)
 
     def handle(self, *args, **options):
@@ -44,31 +44,44 @@ class Command(BaseCommand):
 
         """
         job_id = options['job_id']
+        if job_id == -1:
+            jobs = job.objects.filter(is_latest=True, is_active=True).all() \
+                    .values_list('job_id', flat=True)  # noqa: E113, E999
+
+            for job.job_id in jobs:
+                self.load_show_feed(job.job_id)
+        else:
+            self.load_show_feed(job_id)
+
+    def load_show_feed(self, job_id):
         latest_job = job.objects.filter(job_id=job_id,
                                         is_latest=True).first()
         if not latest_job:
             raise CommandError(f'Job ID: {job_id} not found')
 
         feed = latest_job.show_feed
-        show = Show.objects.filter(show_name=feed.show_name).first()
+        show = Show.objects.filter(name=feed.show_name).first()
+        if not show:
+            print(f'Warning: cannot find show: {feed.show_name}, job:{job_id}')
+            return
         # find latest_job by feed id
         NS = 'NOT STARTED'
         latest_job_hasnt_started = latest_job and latest_job.job_status == NS
         job_latest_feed_date = latest_job.latest_feed_date
-        print("job_latest_feed_date: ", job_latest_feed_date)
-        print("latest_job.job_status:", latest_job.job_status)
         if latest_job_hasnt_started:
+            print("job_latest_feed_date: ", job_latest_feed_date)
             tstart = datetime.now()
             feed_posts = eval(latest_job.feed_data.read())
             print(f"feed_posts retrieved from job: {latest_job.job_id}")
             latest_job.job_status = 'IN PROGRESS'  # in progress
+            latest_job.save()
             addedby_user = User.objects.get(id=1)
-            tags = [show.host_name, show.show_name]
+            tags = [show.host_name, show.name]
             extra_data = {
                 "host": show.host_name,
                 "job_id": latest_job.job_id,
                 "feed_id": feed.feed_id,
-                "show_name": show.show_name,
+                "show_name": show.name,
                 "feed_quality": feed.feed_quality
             }
             # self.get_latest_feed_posts(feed_posts, job_latest_feed_date)

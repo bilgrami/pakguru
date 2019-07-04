@@ -21,7 +21,7 @@ class ShowFeed_HarvestJobLog(admin.ModelAdmin):
                     'job_status',
                     'added_by', 'updated')
     list_filter = ('show_feed__feed_source', 'is_latest', 'job_status')
-    search_fields = ('job_id', 'show_feed', 'show_feed__feed_source')
+    search_fields = ('job_id', 'show_feed__name', 'show_feed__feed_source')
     date_hierarchy = 'updated'
     ordering = ('-updated',)
     list_per_page = 50

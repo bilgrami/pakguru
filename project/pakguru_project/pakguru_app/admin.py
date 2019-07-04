@@ -39,17 +39,17 @@ class ShowFeed_HarvestJobLog(admin.ModelAdmin):
 
 @admin.register(ShowSourceFeed)
 class ShowSourceFeed(admin.ModelAdmin):
-    list_display = ('feed_id', 'feed_name',
+    list_display = ('feed_id', 'name',
                     'show_name',
                     'channel', 'is_active', 'feed_source',
                     'feed_quality', 'priority', 'updated')
     list_filter = ('feed_source', 'channel', 'is_active', 'country')
-    search_fields = ('feed_name', 'channel__channel_name', 'show_name')
+    search_fields = ('feed_name', 'channel__channel_name', 'name')
     date_hierarchy = 'updated'
     ordering = ('-updated',)
     list_per_page = 30
     readonly_fields = ('created', 'effective_date', 'updated',)
-    fields = ('feed_name', 'show_name', 'channel',
+    fields = ('name', 'show_name', 'channel',
               'playlist_link', 'latest_show_link',
               'title_example', 'title_search_pattern',
               'search_api_url', 'search_api_pattern',
@@ -63,19 +63,19 @@ class ShowSourceFeed(admin.ModelAdmin):
 
 @admin.register(Show)
 class Show(admin.ModelAdmin):
-    list_display = ('show_name', 'get_host_name',
+    list_display = ('name', 'get_host_name',
                     'category', 'primary_feed',
                     'channel', 'locale',
                     'is_active')
-    list_filter = ('country__name', 'show_name', 'is_active',
+    list_filter = ('country__name', 'name', 'is_active',
                    'channel',)
-    search_fields = ('show_name', 'host_name',
+    search_fields = ('name', 'host_name',
                      'description')
     date_hierarchy = 'updated'
     ordering = ('-updated',)
     list_per_page = 30
     readonly_fields = ('created', 'effective_date', 'updated',)
-    fields = ('show_name', 'host_name',
+    fields = ('name', 'host_name',
               'airtime', 'website_link',
               'youtube_link', 'facebook_link',
               'twitter_link', 'instagram_link',
@@ -108,9 +108,9 @@ class Post(admin.ModelAdmin):
                    'flagged', 'is_Show', 'is_Joke', 'is_Quote', 'is_Politics')
     search_fields = ('title',)
     date_hierarchy = 'target_date'
-    ordering = ('-target_date','-publish_date',)
+    ordering = ('-target_date', '-publish_date',)
     list_per_page = 100
-    readonly_fields = ('created_on', 'publish_date', 'updated',)
+    readonly_fields = ('created', 'publish_date', 'updated',)
     fields = ('title', 'slug',
               'publish_date',
               'target_date',

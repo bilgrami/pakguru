@@ -55,8 +55,9 @@ class Command(BaseCommand):
                     latest_feed_date=latest_feed_date,
                     added_by=addedby_user
                 )
-                file_name = f'feed_id_{feed.feed_id}-{feed.name}.json'
+                file_name = f'feed_id_{feed.feed_id}-{feed.name}'
                 file_name = django.utils.text.slugify(file_name)
+                file_name = f'{file_name}.json'
                 print("file_name:", file_name)
                 j.feed_data.save(file_name, ContentFile(feed_data))
                 j.save()

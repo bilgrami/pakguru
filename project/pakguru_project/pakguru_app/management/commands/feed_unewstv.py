@@ -7,8 +7,6 @@ from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand, CommandError
 from django.db import IntegrityError
 
-import requests
-from bs4 import BeautifulSoup
 from pakguru_app.models import Post, Show
 from pakguru_app.models import ShowFeed_HarvestJobLog as job
 
@@ -131,30 +129,6 @@ class Command(BaseCommand):
 
             latest_job.extra_data = extra_data
             latest_job.save()
-            
-        # else:
-        #     base_url = 'http://www.unewstv.com'
-        #     feed_posts = self.get_feed_posts(base_url, feed.feed_url)
-
-        # # print(json.dumps(feed_posts, indent=4))
-        # if feed_posts and 1==0:
-        #     dt = list(feed_posts)[0]
-        #     latest_feed_date = datetime.strptime(dt, "%Y-%m-%d")
-        #     print("latest_feed_date:", latest_feed_date)
-        #     print("job_latest_feed_date:", job_latest_feed_date)
-        #     if (job_latest_feed_date and
-        #        job_latest_feed_date < latest_feed_date and 1 == 0):
-        #         # expire existing job logs
-        #         q = job.objects.filter(feed_id=feed_id)
-        #         q.update(is_latest=False)
-
-        #         # add new job log
-        #         job.objects.create(
-        #             feed_id=feed_id,
-        #             latest_feed_date=latest_feed_date,
-        #             is_latest=True
-        #         )
-        #     # create poosts for each link
 
     def get_latest_post(self, show_name, feed_id):
         # show_name = ShowSourceFeed.filter(feed_id=feed_id).show_name
@@ -165,58 +139,3 @@ class Command(BaseCommand):
     def get_latest_feed_posts(self, feed_posts, dt):
         return {k: v for k, v in feed_posts.iteritems()
                 if dateutil.parser.parse(k) > dt}
-
-    def get_video_from_post(self, post_url,
-                            result_as_json=False):
-        if post_url is not None:
-            page = requests.get(post_url)
-            soup = BeautifulSoup(page.content, 'html.parser')
-            f = soup.find('iframe')
-            if f is not None:
-                embed = f['src']
-                link = embed.replace('embed', 'watch')
-                if result_as_json:
-                    d = {
-                        'link': link,
-                        'embed': embed
-                    }
-                    result = {}
-                    result[post_url] = d
-                    return result
-                else:
-                    return link
-            else:
-                return ""
-
-    def get_feed_posts(self, base_url, feed_url):
-        page = requests.get(feed_url)
-
-        soup = BeautifulSoup(page.content, 'html.parser')
-        post_body = soup.find_all('div', class_='post_body')
-        result = {}
-
-        for body in post_body:
-            heading = body.find('div', class_='heading')
-            a = heading.find('a', href=True)
-            link = a['href']
-            label = a.get_text()
-
-            la = body.find('div', class_='links_area')
-            views = la.find_all('span', class_='partition')[0]
-            views = views.find('span', class_='highlight').get_text()
-            dt = la.find_all('span', class_='partition')[1]
-            dt_label = dt.find('span', class_='highlight').get_text()
-            dt = datetime.strptime(dt_label, '%B %d, %Y')
-            dt = dt.date().isoformat()
-
-            post_url = base_url + link
-            d = {
-                'dt_label': dt_label,
-                'link': post_url,
-                'video_link': self.get_video_from_post(post_url),
-                'label': label,
-                'views': views
-            }
-            result[str(dt)] = d
-
-        return result

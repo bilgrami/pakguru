@@ -6,12 +6,15 @@
 | [![Coverage Status](https://coveralls.io/repos/github/bilgrami/pakguru/badge.svg)](https://coveralls.io/github/bilgrami/pakguru)
 | [![CircleCI](https://circleci.com/gh/bilgrami/pakguru.svg?style=svg)](https://circleci.com/gh/bilgrami/pakguru)
 
-## About
+## Demo Link
 
-This application is written in Django 2.x with Azure postgres db as backend.
+* [pak.guru] - Pak.guru website is hosted as Azure web app inside a docker multi-container. We also make heavy use of Amazon serverless lambas to harvest web feeds. 
 
-The production version is hosted on Microsoft Azure inside a docker multi-container.
+
 
 ---
 
 > version 0.1.1
+
+[pak.guru]: <https://www.pak.guru>
+

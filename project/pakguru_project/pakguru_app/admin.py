@@ -43,8 +43,8 @@ class ShowSourceFeed(admin.ModelAdmin):
                     'show_name',
                     'channel', 'is_active', 'feed_source',
                     'feed_quality', 'priority', 'updated')
-    list_filter = ('feed_source', 'channel', 'is_active', 'country')
-    search_fields = ('feed_name', 'channel__channel_name', 'name')
+    list_filter = ('feed_id', 'feed_source', 'channel', 'is_active', 'country')
+    search_fields = ('feed_id', 'name', 'channel__name')
     date_hierarchy = 'updated'
     ordering = ('-updated',)
     list_per_page = 30

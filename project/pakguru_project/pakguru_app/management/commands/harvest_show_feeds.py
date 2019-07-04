@@ -121,7 +121,7 @@ def get_feed_posts(base_url, feed_url):
         d = {
             'dt_label': dt_label,
             'link': post_url,
-            'video_link': '',  # get_video_from_post(post_url),
+            'video_link': get_video_from_post(post_url),
             'label': label,
             'views': views
         }

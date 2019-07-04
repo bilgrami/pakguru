@@ -1,17 +1,17 @@
 #!/bin/bash
 # app_name=pakguru_app
 set -e
-echo Bringing web container up in detached mode (pointing to production db)
+echo 'Bringing web container up in detached mode (pointing to production db)'
 docker-compose -f docker-compose-hosted-azure-postgres-db.yml up -d
-echo Running dump script on web container
+echo 'Running dump script on web container'
 docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && ./shell_scripts/dump_data.sh'
-echo Bringing web container down
+echo 'Bringing web container down'
 docker-compose -f docker-compose-hosted-azure-postgres-db.yml down
 
-echo Bringing web container up in detached mode (pointing to dev db)
+echo 'Bringing web container up in detached mode (pointing to dev db)'
 docker-compose up -d
-echo Running load script on local container
+echo 'Running load script on local container'
 docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && ./shell_scripts/load_data.sh'
-echo Bringing local container down
+echo 'Bringing local container down'
 docker-compose down
 echo done

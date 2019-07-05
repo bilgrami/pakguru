@@ -85,8 +85,8 @@ class Command(BaseCommand):
                 "feed_quality": feed.feed_quality
             }
             # self.get_latest_feed_posts(feed_posts, job_latest_feed_date)
+            success_count = failed_count = dupes_count = 0
             for k, v in feed_posts.items():
-                success_count = failed_count = dupes_count = 0
                 title = v['label']
                 target_date = dateutil.parser.parse(k)
                 weekday_name = target_date.strftime("%a").upper()

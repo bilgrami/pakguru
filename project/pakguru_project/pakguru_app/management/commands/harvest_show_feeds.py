@@ -19,12 +19,23 @@ from pakguru_app.models import ShowSourceFeed
 
 class Command(BaseCommand):
     def add_arguments(self, parser):
-        help_text = 'Harvest files for active feeds'
-        parser.add_argument('feed_id', type=int, help=help_text)
+        help_text = 'Harvest files for active feeds. \n'
+        help_text += 'If recreate_all_jobs is true \n'
+        help_text += ' Then we expire and recreate all exisiting jobs \n'
+
+        parser.add_argument('recreate_all_jobs', type=str, help=help_text)
+        help_text = 'Max number of feeds to process. Use 0 for all'
+        parser.add_argument('max_feeds', type=int, help=help_text)
 
     def handle(self, *args, **options):
         """
+        Usage:
+        python manage.py harvest_show_feeds False 0
+        python manage.py harvest_show_feeds True 0
+
         Pseuodo Algrothm:
+            Expire all exisiting jobs if recreate_all_jobs is True
+
             find all active feeds belonging to unewstv
             that have no corresponding record in job table
 
@@ -36,32 +47,47 @@ class Command(BaseCommand):
                     latest_job.isactive = true
 
         """
-        feed_id = options['feed_id']
-        if not feed_id:
-            feeds = ShowSourceFeed.objects.filter(is_active=True,
-                 feed_source='UNEWSTV').all() \
-                .exclude(feed_id__in=job.objects.filter(is_active=True)
-                .values_list('show_feed_id', flat=True))  # noqa: E128
+        recreate_all_jobs = options['recreate_all_jobs']
+        max_feeds = options['max_feeds']
 
-            base_url = 'http://www.unewstv.com'
-            for feed in feeds:
-                feed_url = feed.playlist_link
-                addedby_user = User.objects.get(id=1)
-                feed_posts = get_feed_posts(base_url, feed_url)
-                feed_data = json.dumps(feed_posts, indent=4)
-                latest_feed_date = next(iter(feed_posts))
-                j = job.objects.create(
-                    show_feed=feed,
-                    latest_feed_date=latest_feed_date,
-                    added_by=addedby_user
-                )
-                file_name = f'feed_id_{feed.feed_id}-{feed.name}'
-                file_name = django.utils.text.slugify(file_name)
-                file_name = f'{file_name}.json'
-                print("file_name:", file_name)
-                j.feed_data.save(file_name, ContentFile(feed_data))
-                j.save()
-                print(j)
+        print("Arguments:")
+        print(" recreate_all_jobs:", recreate_all_jobs)
+        print(" max_feeds:", max_feeds)
+
+        if recreate_all_jobs == 'True':
+            # expire existing feed jobs
+            job.objects.filter(is_latest=True).update(is_active=False,
+                                                      is_latest=False)
+
+        feeds = ShowSourceFeed.objects.filter(is_active=True,
+                feed_source='UNEWSTV').all() \
+            .exclude(feed_id__in=job.objects.filter(is_active=True)
+            .values_list('show_feed_id', flat=True))  # noqa: E128
+
+        feeds = feeds[:max_feeds] if max_feeds > 0 else feeds
+        print("Feed count:", len(feeds))
+
+        base_url = 'http://www.unewstv.com'
+        for feed in feeds:
+            feed_url = feed.playlist_link
+            addedby_user = User.objects.get(id=1)
+            feed_posts = get_feed_posts(base_url, feed_url)
+            feed_data = json.dumps(feed_posts, indent=4)
+            latest_feed_date = next(iter(feed_posts))
+            j = job.objects.create(
+                show_feed=feed,
+                latest_feed_date=latest_feed_date,
+                added_by=addedby_user,
+                is_latest=True,
+                is_active=True
+            )
+            file_name = f'feed_id_{feed.feed_id}-{feed.name}'
+            file_name = django.utils.text.slugify(file_name)
+            file_name = f'{file_name}.json'
+            print("file_name:", file_name)
+            j.feed_data.save(file_name, ContentFile(feed_data))
+            j.save()
+            print(j)
 
     def get_latest_post(self, show_name, feed_id):
         # show_name = ShowSourceFeed.filter(feed_id=feed_id).show_name

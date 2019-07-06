@@ -1,5 +1,4 @@
 import json
-import sys
 from datetime import datetime
 
 import dateutil.parser
@@ -7,7 +6,6 @@ import django.utils.text
 from django.contrib.auth.models import User
 from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand, CommandError
-from django.db import IntegrityError
 
 # import boto3
 import requests

@@ -70,20 +70,22 @@ class Command(BaseCommand):
             channel = feed.extra_data['channel'] 
             show_name_from_feed = feed.extra_data['show_name_from_feed'] 
             additional_feed_url = feed.extra_data['additional_feed_url'] 
-            print("feed_url:", feed_url)
-            print("channel:", channel)
-            print("additional_feed_url:", additional_feed_url)
-            print("show_name_from_feed:", show_name_from_feed)
+            # print("feed_url:", feed_url)
+            # print("channel:", channel)
+            # print("additional_feed_url:", additional_feed_url)
+            # print("show_name_from_feed:", show_name_from_feed)
             addedby_user = User.objects.get(id=1)
             feed_posts = get_feed_posts(feed_url, additional_feed_url,
                                         channel, show_name_from_feed)
             feed_data = json.dumps(feed_posts, indent=4)
             # print("feed_data:", feed_data)
             latest_feed = next(iter(feed_posts.items()))
-            print("latest dt:", latest_feed[1])
             if latest_feed and not latest_feed[1]['dt']:
                 latest_feed_date = datetime.datetime.today().date().isoformat()
-                
+            else: 
+                latest_feed_date = latest_feed[1]['dt']
+
+            # print("latest dt:", latest_feed_date)
             j = job.objects.create(
                 show_feed=feed,
                 latest_feed_date=latest_feed_date,
@@ -123,16 +125,15 @@ def process_lising(listing):
     label = label_text.replace(' in HD', '').replace(' IN hd', '')
     category = listing.find('p', class_='list_cont_title').get_text()
     # channel = listing.find('p', class_='list_detail').get_text()
-    episode = dt = in_hd = ''
-
+    episode = dt = ''
+    in_hd = 'False'
     if "Episode" in label:
+        in_hd = 'True' if "-in-hd" in link else 'False'
         if label and len(label.split(" Episode ")) == 2:
             episode = label.split(" Episode ")[1]
-            in_hd = True if "-in-hd" in link else False
 
         if label and len(label.split(" Episodee ")) == 2:
             episode = label.split(" Episodee ")[1]
-            in_hd = True if "-in-hd" in link else False
     else:
         matches = datefinder.find_dates(label_text)
         dt = next(iter(matches))
@@ -163,7 +164,7 @@ def get_additional_feed_posts(feed_url, result, channel, show_name):
                 'link': link,
                 'video_link': get_video_from_post(link),
                 'in_hd': in_hd,
-                'additional': True,
+                'additional': 'True',
             }
 
             result[str(dt)] = d
@@ -192,10 +193,10 @@ def get_feed_posts(feed_url, additional_feed_url,
             'link': link,
             'video_link': get_video_from_post(link),
             'in_hd': in_hd,
-            'additional': False,
+            'additional': 'False',
         }
 
-        result[link] = d
+        result[str(dt)] = d
 
     # load more feed_posts
     latest_episode_key = next(iter(result))

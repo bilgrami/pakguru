@@ -7,6 +7,7 @@ from django.contrib.auth.models import User
 from django.core.management.base import BaseCommand, CommandError
 from django.db import IntegrityError
 
+import datefinder
 from pakguru_app.models import Post, Show
 from pakguru_app.models import ShowFeed_HarvestJobLog as job
 
@@ -58,6 +59,7 @@ class Command(BaseCommand):
             self.load_show_feed(job_id)
 
     def load_show_feed(self, job_id):
+        print("Processing Job Id:", job_id)
         latest_job = job.objects.filter(job_id=job_id,
                                         is_latest=True).first()
         if not latest_job:
@@ -77,8 +79,8 @@ class Command(BaseCommand):
             tstart = datetime.now()
             feed_posts = eval(latest_job.feed_data.read())
             print(f"feed_posts retrieved from job: {latest_job.job_id}")
-            latest_job.job_status = 'IN PROGRESS'  # in progress
-            latest_job.save()
+            # latest_job.job_status = 'IN PROGRESS'  # in progress
+            # latest_job.save()
             addedby_user = User.objects.get(id=1)
             tags = [show.host_name, show.name]
             extra_data = {
@@ -92,7 +94,15 @@ class Command(BaseCommand):
             success_count = failed_count = dupes_count = 0
             for k, v in feed_posts.items():
                 title = v['label']
-                target_date = dateutil.parser.parse(k)
+                if not k:
+                    print("Empty key found for title", title, v)
+                    continue
+
+                # target_date = dateutil.parser.parse(k)
+                matches = datefinder.find_dates(k)
+                target_date = next(iter(matches))
+                target_date = target_date.date()
+
                 weekday_name = target_date.strftime("%a").upper()
                 slug = django.utils.text.slugify(title)
                 post = Post(

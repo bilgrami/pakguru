@@ -174,6 +174,18 @@ class ShowChannel(ShowCommonInfo):
         verbose_name_plural = 'Show Channels'
 
 
+class FeedSourceType(CommonInfo):
+    short_code = models.CharField('Short Code', max_length=3, db_index=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'pakguru_app_feedsourcetype'
+        verbose_name = 'Feed Source Type'
+        verbose_name_plural = 'Feed Source Types'
+
+
 class ShowSourceFeed(CommonInfo):
     feed_id = models.AutoField(primary_key=True)
     show_name = models.CharField('Show Name', max_length=300, db_index=True)
@@ -196,6 +208,9 @@ class ShowSourceFeed(CommonInfo):
     feed_source = models.CharField('Feed Source', choices=feed_source_choice,
                                    default='OTHER',
                                    max_length=20)
+    feed_source_type = models.ForeignKey(FeedSourceType,
+                                         on_delete=models.CASCADE,
+                                         null=True, blank=True)
     feed_quality = models.CharField('Max Feed Quality',
                                     choices=feed_quality_choices,
                                     max_length=20, null=True, blank=True)
@@ -211,10 +226,14 @@ class ShowSourceFeed(CommonInfo):
 
 def data_file_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>
-    folder = datetime.today().strftime('%Y')
-    file_prefix = datetime.today().strftime('%Y-%m-%d')
-    user = f'{instance.added_by.id}-{instance.added_by}'
-    file_name = f'{file_prefix}-{user}-{filename}'
+    dt = datetime.today()
+    year = dt.strftime('%Y')
+    today = dt.strftime('%Y-%m-%d')
+    folder = year + '/' + today
+    user = 'unknown-user'
+    if instance and instance.added_by:
+        user = f'{instance.added_by.id}-{instance.added_by}'
+    file_name = f'{today}-{user}-{filename}'
     return 'datafiles/{0}/{1}'.format(folder, file_name)
 
 

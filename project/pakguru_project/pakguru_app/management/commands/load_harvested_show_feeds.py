@@ -18,6 +18,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         """
+        Usage:
+        # load all harvested show feeds
+        python manage.py load_harvested_show_feeds -1
+
         Pseuodo Algrothm:
             find latest_job by feed id
             if latest_job hasnt started:

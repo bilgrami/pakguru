@@ -3,7 +3,7 @@ from django.contrib import admin
 from .models import (Author, PostCategoryList,
                      LocaleList, Post, ShowSourceFeed,
                      Show, CountryList, ShowChannel, PostStatistic,
-                     ShowFeed_HarvestJobLog)
+                     ShowFeed_HarvestJobLog, FeedSourceType)
 
 admin.site.register(Author)
 admin.site.register(PostCategoryList)
@@ -11,6 +11,7 @@ admin.site.register(LocaleList)
 admin.site.register(CountryList)
 admin.site.register(ShowChannel)
 admin.site.register(PostStatistic)
+admin.site.register(FeedSourceType)
 
 
 @admin.register(ShowFeed_HarvestJobLog)
@@ -41,9 +42,9 @@ class ShowFeed_HarvestJobLog(admin.ModelAdmin):
 class ShowSourceFeed(admin.ModelAdmin):
     list_display = ('feed_id', 'name',
                     'show_name',
-                    'channel', 'is_active', 'feed_source',
+                    'channel', 'is_active', 'feed_source_type',
                     'feed_quality', 'priority', 'updated')
-    list_filter = ('feed_source', 'channel', 'is_active', 'country')
+    list_filter = ('feed_source_type', 'channel', 'is_active', 'country')
     search_fields = ('feed_id', 'name', 'channel__name')
     date_hierarchy = 'updated'
     ordering = ('-updated',)
@@ -55,7 +56,7 @@ class ShowSourceFeed(admin.ModelAdmin):
               'search_api_url', 'search_api_pattern',
               'expiration_date',
               'country',
-              'is_active', 'feed_source',
+              'is_active', 'feed_source_type',
               'feed_quality', 'priority',
               'added_by', 'extra_data',)
     save_on_top = True

@@ -1,3 +1,4 @@
+import datetime
 import json
 
 import dateutil.parser
@@ -6,13 +7,13 @@ from django.contrib.auth.models import User
 from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand, CommandError
 
+import datefinder
 # import boto3
 import requests
 from bs4 import BeautifulSoup
 from pakguru_app.models import Post, Show
 from pakguru_app.models import ShowFeed_HarvestJobLog as job
 from pakguru_app.models import ShowSourceFeed
-import datefinder
 
 
 class Command(BaseCommand):
@@ -28,8 +29,8 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         """
         Usage:
-        python manage.py harvest_show_feeds False 0
-        python manage.py harvest_show_feeds True 0
+        python manage.py harvest_show_feeds_DOL False 0
+        python manage.py harvest_show_feeds_DOL True 0
 
         Pseuodo Algrothm:
             Expire all exisiting jobs if recreate_all_jobs is True
@@ -56,12 +57,8 @@ class Command(BaseCommand):
             # expire existing feed jobs
             job.objects.filter(is_latest=True).update(is_active=False,
                                                       is_latest=False)
-        feed_source_code = 'DOL'
-        feed_source_name = ''  # get feed source
-        base_url = ''  # base_url
-
         feeds = ShowSourceFeed.objects.filter(is_active=True,
-                feed_source=feed_source_name).all() \
+                feed_source_type__short_code='DOL').all() \
             .exclude(feed_id__in=job.objects.filter(is_active=True)
             .values_list('show_feed_id', flat=True))  # noqa: E128
 
@@ -70,10 +67,23 @@ class Command(BaseCommand):
 
         for feed in feeds:
             feed_url = feed.playlist_link
+            channel = feed.extra_data['channel'] 
+            show_name_from_feed = feed.extra_data['show_name_from_feed'] 
+            additional_feed_url = feed.extra_data['additional_feed_url'] 
+            print("feed_url:", feed_url)
+            print("channel:", channel)
+            print("additional_feed_url:", additional_feed_url)
+            print("show_name_from_feed:", show_name_from_feed)
             addedby_user = User.objects.get(id=1)
-            feed_posts = get_feed_posts(base_url, feed_url)
+            feed_posts = get_feed_posts(feed_url, additional_feed_url,
+                                        channel, show_name_from_feed)
             feed_data = json.dumps(feed_posts, indent=4)
-            latest_feed_date = next(iter(feed_posts))
+            # print("feed_data:", feed_data)
+            latest_feed = next(iter(feed_posts.items()))
+            print("latest dt:", latest_feed[1])
+            if latest_feed and not latest_feed[1]['dt']:
+                latest_feed_date = datetime.datetime.today().date().isoformat()
+                
             j = job.objects.create(
                 show_feed=feed,
                 latest_feed_date=latest_feed_date,
@@ -156,13 +166,13 @@ def get_additional_feed_posts(feed_url, result, channel, show_name):
                 'additional': True,
             }
 
-            result[link] = d
+            result[str(dt)] = d
 
     return result
 
 
-def get_feed_posts(base_url, feed_url,
-                   additional_feed_url, channel, show_name):
+def get_feed_posts(feed_url, additional_feed_url,
+                   channel, show_name_from_feed):
     page = requests.get(feed_url)
 
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -176,7 +186,7 @@ def get_feed_posts(base_url, feed_url,
             'label': label,
             'dt': dt,
             'channel': channel,
-            'show_name': show_name,
+            'show_name': show_name_from_feed,
             'episode': episode,
             'category': category,
             'link': link,

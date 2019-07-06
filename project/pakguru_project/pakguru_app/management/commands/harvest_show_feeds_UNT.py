@@ -28,8 +28,11 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         """
         Usage:
-        python manage.py harvest_show_feeds False 0
-        python manage.py harvest_show_feeds True 0
+        python manage.py harvest_show_feeds_UNT False 0
+
+        # True expire and recreate all existing jobs
+        # 0 is to process everything
+        python manage.py harvest_show_feeds_UNT True 0
 
         Pseuodo Algrothm:
             Expire all exisiting jobs if recreate_all_jobs is True
@@ -58,7 +61,7 @@ class Command(BaseCommand):
                                                       is_latest=False)
 
         feeds = ShowSourceFeed.objects.filter(is_active=True,
-                feed_source='UNEWSTV').all() \
+                feed_source_type__short_code='UNT').all() \
             .exclude(feed_id__in=job.objects.filter(is_active=True)
             .values_list('show_feed_id', flat=True))  # noqa: E128
 

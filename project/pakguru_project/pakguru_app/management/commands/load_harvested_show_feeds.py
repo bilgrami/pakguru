@@ -18,36 +18,6 @@ class Command(BaseCommand):
         parser.add_argument('job_id', type=int, help=help_text)
 
     def handle(self, *args, **options):
-        """
-        Usage:
-        # load all harvested show feeds
-        python manage.py load_harvested_show_feeds -1
-
-        Pseuodo Algrothm:
-            find latest_job by feed id
-            if latest_job hasnt started:
-                feed_posts = from job feed_data
-                latest_job.job_status = in-progress
-                -- new_posts = all posts for show where target_date
-                            does not exists already
-                apply feed posts to post model
-                latest_job.job_status = finished
-            else:
-                feed_posts = harvest feed_data from feed_url
-                get latest_date from feed_posts
-                if latest_date > latest_job.latest_date:
-                    new_posts = find all rows that are > latest_job.latest_date
-                    in-active previous latest_job.job_status = finished
-
-                    create the new feed job record
-                        latest_job.job_status = in-progress
-                        latest_job.latest_date = latest_date
-                        latest_job.feed_data = feed_posts
-                        latest_job.isactive = true
-                    apply feed posts to post model
-                    latest_job.job_status = finished
-
-        """
         job_id = options['job_id']
         if job_id == -1:
             jobs = job.objects.filter(is_latest=True, is_active=True).all() \
@@ -57,6 +27,11 @@ class Command(BaseCommand):
                 self.load_show_feed(job.job_id)
         else:
             self.load_show_feed(job_id)
+
+    def get_flag(self, data, flag_name):
+        if data and flag_name in data:
+            return True if data[flag_name] == 1 else False
+        return False
 
     def load_show_feed(self, job_id):
         print("Processing Job Id:", job_id)
@@ -68,7 +43,17 @@ class Command(BaseCommand):
         feed = latest_job.show_feed
         show = Show.objects.filter(name=feed.show_name).first()
         if not show:
-            print(f'Warning: cannot find show: {feed.show_name}, job:{job_id}')
+            failure_message = (f'Warning: Unknown show: {feed.show_name}, '
+                               f'job:{job_id}')
+            extra_data = {
+                'job_id': job_id,
+                'error': failure_message,
+                'feed_id': feed.feed_id,
+                'previous_extra_data': latest_job.extra_data
+            }
+            latest_job.extra_data = extra_data
+            latest_job.save()
+            print(failure_message)
             return
         # find latest_job by feed id
         NS = 'NOT STARTED'
@@ -102,10 +87,13 @@ class Command(BaseCommand):
 
                 slug = django.utils.text.slugify(title)
                 video_link = v['video_link']
-                is_show = show.extra_data['is_Show'] if show.extra_data['is_Show'] else True  # noqa: E501
-                is_politics = show.extra_data['is_Politics'] if show.extra_data['is_Politics'] else True  # noqa: E501
-                is_joke = show.extra_data['is_Joke'] if show.extra_data['is_Joke'] else False  # noqa: E501
-                is_quote = show.extra_data['is_Quote'] if show.extra_data['is_Quote'] else False  # noqa: E501
+                is_show = is_politics = True
+                is_joke = is_quote = False
+                if show.extra_data:
+                    is_show = self.get_flag(show.extra_data, 'is_Show')
+                    is_politics = self.get_flag(show.extra_data, 'is_Politics')
+                    is_joke = self.get_flag(show.extra_data, 'is_Joke')
+                    is_quote = self.get_flag(show.extra_data, 'is_Quote')
 
                 matches = datefinder.find_dates(k)
                 target_date = next(iter(matches), False)
@@ -141,7 +129,7 @@ class Command(BaseCommand):
                     post.save()
                     post.country.set(feed.country.all())
                     success_count += 1
-                    print(post)
+                    print(post.post_id, post)
 
                 except IntegrityError:
                     dupes_count += 1

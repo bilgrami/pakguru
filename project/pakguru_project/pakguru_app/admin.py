@@ -100,14 +100,16 @@ class Show(admin.ModelAdmin):
 
 @admin.register(Post)
 class Post(admin.ModelAdmin):
-    list_display = ('title',
+    list_display = ('post_id', 'title',
                     'target_date', 'publish_date',
+                    'show',
                     'category', 'locale', 'weekday_name',
                     'is_active', 'flagged',
                     'is_Show', 'is_Joke', 'is_Quote', 'is_Politics')
-    list_filter = ('target_date', 'weekday_name', 'category', 'is_active',
-                   'flagged', 'is_Show', 'is_Joke', 'is_Quote', 'is_Politics')
-    search_fields = ('title',)
+    list_filter = ('target_date', 'weekday_name', 'category',
+                   'is_active', 'flagged', 'is_Show', 'is_Joke',
+                   'is_Quote', 'is_Politics')
+    search_fields = ('post_id', 'title',)
     date_hierarchy = 'target_date'
     ordering = ('-target_date', '-publish_date',)
     list_per_page = 100

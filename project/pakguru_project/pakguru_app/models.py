@@ -337,10 +337,10 @@ class Post(CommonInfo):
     is_Quote = models.BooleanField('Q', default=False)
     is_Politics = models.BooleanField('P', default=False)
 
-    shows = ShowManager()
-    jokes = JokePostManager()
-    quotes = QuotePostManager()
-    politicalposts = PoliticalPostManager()
+    # shows = ShowManager()
+    # jokes = JokePostManager()
+    # quotes = QuotePostManager()
+    # politicalposts = PoliticalPostManager()
 
     def __str__(self):
         dt = self.target_date.strftime('%Y-%m-%d')

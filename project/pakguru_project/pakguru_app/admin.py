@@ -21,8 +21,8 @@ class ShowFeed_HarvestJobLog(admin.ModelAdmin):
                     'is_latest', 'feed_data',
                     'job_status',
                     'added_by', 'updated')
-    list_filter = ('show_feed__feed_source', 'is_latest', 'job_status')
-    search_fields = ('job_id', 'show_feed__name', 'show_feed__feed_source')
+    list_filter = ('show_feed__feed_source_type', 'is_latest', 'job_status')
+    search_fields = ('job_id', 'show_feed__name', 'show_feed__feed_source_type')
     date_hierarchy = 'updated'
     ordering = ('-updated',)
     list_per_page = 50
@@ -68,8 +68,8 @@ class Show(admin.ModelAdmin):
                     'category', 'primary_feed',
                     'channel', 'locale',
                     'is_active')
-    list_filter = ('country__name', 'name', 'is_active',
-                   'channel',)
+    list_filter = ('channel', 'primary_feed__feed_source_type',
+                   'country__name', 'is_active', 'locale')
     search_fields = ('name', 'host_name',
                      'description')
     date_hierarchy = 'updated'
@@ -102,7 +102,7 @@ class Show(admin.ModelAdmin):
 class Post(admin.ModelAdmin):
     list_display = ('post_id', 'title',
                     'target_date', 'publish_date',
-                    'show',
+                    'show', 
                     'category', 'locale', 'weekday_name',
                     'is_active', 'flagged',
                     'is_Show', 'is_Joke', 'is_Quote', 'is_Politics')

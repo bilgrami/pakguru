@@ -22,17 +22,6 @@ joblog_status_choices = [
     ('CANCELLED', 'Cancelled'),
 ]
 
-feed_source_choice = [
-    ('YOUTUBE', 'Youtube'),
-    ('TALK_SHOWS_CENTRAL', 'Talk Shows Central'),
-    ('UNEWSTV', 'unewstv'),
-    ('FACEBOOK', 'Facebook'),
-    ('PODCAST', 'Podcast'),
-    ('VIMEO', 'Vimeo'),
-    ('TWITTER', 'Twitter'),
-    ('OTHER', 'Other'),
-]
-
 media_type_choice = [
     ('TEXT', 'Text'),
     ('IMAGE', 'Image'),
@@ -205,9 +194,6 @@ class ShowSourceFeed(CommonInfo):
     search_api_pattern = models.CharField('Search Pattern', max_length=500,
                                           null=True, blank=True)
     country = models.ManyToManyField(CountryList, blank=True, db_index=True)
-    feed_source = models.CharField('Feed Source', choices=feed_source_choice,
-                                   default='OTHER',
-                                   max_length=20)
     feed_source_type = models.ForeignKey(FeedSourceType,
                                          on_delete=models.CASCADE,
                                          null=True, blank=True)

@@ -5,7 +5,7 @@ import dateutil.parser
 import django.utils.text
 from django.contrib.auth.models import User
 from django.core.files.base import ContentFile
-from django.core.management.base import BaseCommand, CommandError
+from django.core.management.base import BaseCommand
 
 # import boto3
 import requests
@@ -54,14 +54,13 @@ class Command(BaseCommand):
         print("Arguments:")
         print(" recreate_all_jobs:", recreate_all_jobs)
         print(" max_feeds:", max_feeds)
-
+        FEED_SOURCE_TYPE = 'UNT'
         if recreate_all_jobs == 'True':
             # expire existing feed jobs
-            job.objects.filter(is_latest=True).update(is_active=False,
-                                                      is_latest=False)
+            job.objects.filter(is_latest=True, show_feed__feed_source_type__short_code=FEED_SOURCE_TYPE).update(is_active=False, is_latest=False)   # noqa: E128, E501
 
         feeds = ShowSourceFeed.objects.filter(is_active=True,
-                feed_source_type__short_code='UNT').all() \
+                feed_source_type__short_code=FEED_SOURCE_TYPE).all() \
             .exclude(feed_id__in=job.objects.filter(is_active=True)
             .values_list('show_feed_id', flat=True))  # noqa: E128
 

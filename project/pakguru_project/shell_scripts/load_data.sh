@@ -2,7 +2,7 @@
 set -e
 app_name=pakguru_app
 declare -a models_array
-models_array=(Author CountryList LocaleList PostCategoryList ShowChannel ShowSourceType ShowSourceFeed Show Post PostStatistic ShowFeed_HarvestJobLog)
+models_array=(Author CountryList LocaleList PostCategoryList ShowChannel FeedSourceType ShowSourceFeed Show Post PostStatistic ShowFeed_HarvestJobLog)
 
 echo 'decrypting data started .. '
 python manage.py decrypt_dump

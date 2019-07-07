@@ -79,42 +79,53 @@ class Command(BaseCommand):
             tstart = datetime.now()
             feed_posts = eval(latest_job.feed_data.read())
             print(f"feed_posts retrieved from job: {latest_job.job_id}")
-            # latest_job.job_status = 'IN PROGRESS'  # in progress
-            # latest_job.save()
+            latest_job.job_status = 'IN PROGRESS'  # in progress
+            latest_job.save()
             addedby_user = User.objects.get(id=1)
             tags = [show.host_name, show.name]
             extra_data = {
                 "host": show.host_name,
                 "job_id": latest_job.job_id,
                 "feed_id": feed.feed_id,
+                "feed_name": feed.name,
                 "show_name": show.name,
                 "feed_quality": feed.feed_quality
             }
             # self.get_latest_feed_posts(feed_posts, job_latest_feed_date)
             success_count = failed_count = dupes_count = 0
             for k, v in feed_posts.items():
+                failure_message = ''
                 title = v['label']
                 if not k:
-                    print("Empty key found for title", title, v)
+                    print("Empty key found for title. skipping..", title, v)
                     continue
 
-                # target_date = dateutil.parser.parse(k)
-                matches = datefinder.find_dates(k)
-                target_date = next(iter(matches))
-                target_date = target_date.date()
-
-                weekday_name = target_date.strftime("%a").upper()
                 slug = django.utils.text.slugify(title)
+                video_link = v['video_link']
+                is_show = show.extra_data['is_Show'] if show.extra_data['is_Show'] else True  # noqa: E501
+                is_politics = show.extra_data['is_Politics'] if show.extra_data['is_Politics'] else True  # noqa: E501
+                is_joke = show.extra_data['is_Joke'] if show.extra_data['is_Joke'] else False  # noqa: E501
+                is_quote = show.extra_data['is_Quote'] if show.extra_data['is_Quote'] else False  # noqa: E501
+
+                matches = datefinder.find_dates(k)
+                target_date = next(iter(matches), False)
+                if target_date:
+                    target_date = target_date.date()
+                    weekday_name = target_date.strftime("%a").upper()
+
+                # create new post
                 post = Post(
                     title=title,
                     slug=slug,
                     target_date=target_date,
                     weekday_name=weekday_name,
-                    text=v['video_link'],
+                    text=video_link,
                     show=show,
                     is_active=True,
-                    is_Show=True,
-                    is_Politics=True,
+                    is_Show=is_show,
+                    is_Politics=is_politics,
+                    is_Joke=is_joke,
+                    is_Quote=is_quote,
                     tags=tags,
                     extra_data=extra_data,
                     added_by=addedby_user,
@@ -129,13 +140,14 @@ class Command(BaseCommand):
                 try:
                     post.save()
                     post.country.set(feed.country.all())
-                    print(post)
                     success_count += 1
+                    print(post)
 
                 except IntegrityError:
-                    dupes_count += 11
+                    dupes_count += 1
                 except Exception:
-                    print("Problems?", sys.exc_info())
+                    failure_message = sys.exc_info()
+                    print("Problems?", failure_message)
                     failed_count += 1
 
             tend = datetime.now()
@@ -146,12 +158,14 @@ class Command(BaseCommand):
                 latest_job.job_status = 'FAILED'
 
             extra_data = {
-                'ts': str(tstart.isoformat()),
-                'te': str(tend.isoformat()),
-                'td': duration,
-                'S': success_count,
-                'F': failed_count,
-                'D': dupes_count
+                'time_start': str(tstart.isoformat()),
+                'time_end': str(tend.isoformat()),
+                'duration': duration,
+                'success': success_count,
+                'failed': failed_count,
+                'dupes': dupes_count,
+                'error': failure_message,
+                'previous_extra_data': latest_job.extra_data
             }
 
             latest_job.extra_data = extra_data

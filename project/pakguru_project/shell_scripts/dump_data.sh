@@ -1,7 +1,7 @@
 #!/bin/bash
 app_name=pakguru_app
 declare -a models_array
-models_array=(Author CountryList LocaleList PostCategoryList ShowChannel ShowSourceType ShowSourceFeed Show Post PostStatistic ShowFeed_HarvestJobLog)
+models_array=(Author CountryList LocaleList PostCategoryList ShowChannel FeedSourceType ShowSourceFeed Show Post PostStatistic ShowFeed_HarvestJobLog)
 
 for i in "${models_array[@]}"; 
 do 

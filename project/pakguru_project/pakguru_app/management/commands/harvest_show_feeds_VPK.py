@@ -1,5 +1,6 @@
 import datetime
 import json
+from urllib.parse import urlparse
 
 import dateutil.parser
 import django.utils.text
@@ -52,7 +53,7 @@ class Command(BaseCommand):
         print("Arguments:")
         print(" recreate_all_jobs:", recreate_all_jobs)
         print(" max_feeds:", max_feeds)
-        FEED_SOURCE_TYPE = 'DOL'
+        FEED_SOURCE_TYPE = 'VPK'
         if recreate_all_jobs == 'True':
             # expire existing feed jobs
             job.objects.filter(is_latest=True, show_feed__feed_source_type__short_code=FEED_SOURCE_TYPE).update(is_active=False, is_latest=False)   # noqa: E128, E501
@@ -60,23 +61,16 @@ class Command(BaseCommand):
         feeds = ShowSourceFeed.objects.filter(is_active=True,
                 feed_source_type__short_code=FEED_SOURCE_TYPE).all() \
             .exclude(feed_id__in=job.objects.filter(is_active=True)
-            .values_list('show_feed_id', flat=True))  # noqa: E128, E501
+            .values_list('show_feed_id', flat=True))  # noqa: E128
 
         feeds = feeds[:max_feeds] if max_feeds > 0 else feeds
         print("Feed count:", len(feeds))
 
         for feed in feeds:
             feed_url = feed.playlist_link
-            channel = feed.extra_data['channel']
-            show_name_from_feed = feed.extra_data['show_name_from_feed']
-            additional_feed_url = feed.extra_data['additional_feed_url']
             # print("feed_url:", feed_url)
-            # print("channel:", channel)
-            # print("additional_feed_url:", additional_feed_url)
-            # print("show_name_from_feed:", show_name_from_feed)
             addedby_user = User.objects.get(id=1)
-            feed_posts = get_feed_posts(feed_url, additional_feed_url,
-                                        channel, show_name_from_feed)
+            feed_posts = get_feed_posts(feed_url)
             feed_data = json.dumps(feed_posts, indent=4)
             # print("feed_data:", feed_data)
             latest_feed = next(iter(feed_posts.items()))
@@ -112,102 +106,79 @@ class Command(BaseCommand):
                 if dateutil.parser.parse(k) > dt}
 
 
-def get_video_from_post(post_url):
-    if post_url:
-        page = requests.get(post_url)
-        soup = BeautifulSoup(page.content, 'html.parser')
-        f = soup.find('iframe')
-        if f:
-            embed = f['src']
-            return embed.replace('embed', 'watch')
-    return ""
+def get_domain_from_link(link):
+    # if link[:2] == '//':
+    #     link = link[2:]
+    if 'http' not in link:
+        link = 'http:' + link
+
+    return urlparse(link).netloc, link
 
 
-def process_lising(listing):
-    heading = listing.find('div', class_='list_cont_title')
-    a = heading.find('a', href=True)
-    link = a['href']
-    label_text = a.get_text().replace(' in HD', '')
-    label = label_text.replace(' in HD', '').replace(' IN hd', '')
-    category = listing.find('p', class_='list_cont_title').get_text()
-    # channel = listing.find('p', class_='list_detail').get_text()
-    episode = dt = ''
-    in_hd = 'False'
-    if "Episode" in label:
-        in_hd = 'True' if "-in-hd" in link else 'False'
-        if label and len(label.split(" Episode ")) == 2:
-            episode = label.split(" Episode ")[1]
-
-        if label and len(label.split(" Episodee ")) == 2:
-            episode = label.split(" Episodee ")[1]
-    else:
-        matches = datefinder.find_dates(label_text)
-        dt = next(iter(matches))
-        if dt:
-            dt = dt.date().isoformat()
-
-    return (link, label_text, category, episode, dt, in_hd)
+def extract_links_from_iframe(content):
+    links = []
+    soup = BeautifulSoup(content, "html.parser")
+    for f in soup.find_all('iframe'):
+        links.append(f['src'])
+    return links
 
 
-def get_additional_feed_posts(feed_url, result, channel, show_name):
-    pages = [10, 20, 40, 80, 160, 320, 640]
-    for pg in pages:
-        data = {'var_post': f'{channel}/{show_name}/{pg}'}
+def get_video_from_post(url):
+    result = {}
+    if url:
+        content = str(requests.get(url).content)
+        soup = BeautifulSoup(content, "html.parser")
+        for f in soup.find_all('iframe'):
+            original = f['src']
+            host, link = get_domain_from_link(original)
+            link = link.replace('embed', 'watch')
 
-        page = requests.post(url=feed_url, data=data)
-        soup = BeautifulSoup(page.content, 'html.parser')
-        post_listings = soup.find_all('div', class_='list_contents')
-
-        for listing in post_listings:
-            link, label, category, episode, dt, in_hd = process_lising(listing)
             d = {
-                'label': label,
-                'dt': dt,
-                'channel': channel,
-                'show_name': show_name,
-                'episode': episode,
-                'category': category,
                 'link': link,
-                'video_link': get_video_from_post(link),
-                'in_hd': in_hd,
-                'additional': 'True',
+                'original': original
             }
-
-            result[str(dt)] = d
-
+            result[host] = d
     return result
 
 
-def get_feed_posts(feed_url, additional_feed_url,
-                   channel, show_name_from_feed):
+def process_lising(listing):
+    a = listing.find('a', href=True)
+    link = a['href']
+    div_label_text = listing.find('div', class_='archive-list-text')
+    label_text = div_label_text.find('h2').get_text()
+    label = label_text
+    episode = dt = ''
+
+    if "Episode" in label:
+        if label and len(label.split(" Episode ")) == 2:
+            episode = label.split(" Episode ")[1][:2]
+
+    matches = datefinder.find_dates(label_text)
+    dt = next(iter(matches), False)
+    if dt:
+        dt = dt.date().isoformat()
+
+    return (link, label_text, episode, dt)
+
+
+def get_feed_posts(feed_url):
     page = requests.get(feed_url)
 
     soup = BeautifulSoup(page.content, 'html.parser')
-    mid_container = soup.find('div', {"id": "middle-container"})
-    post_listings = mid_container.find_all('div', class_='list_contents')
+    mid_container = soup.find('div', {"id": "archive-list-wrap"})
+    post_listings = mid_container.find_all('li', class_='infinite-post')
     result = {}
 
     for listing in post_listings:
-        link, label, category, episode, dt, in_hd = process_lising(listing)
+        link, label, episode, dt = process_lising(listing)
         d = {
             'label': label,
             'dt': dt,
-            'channel': channel,
-            'show_name': show_name_from_feed,
             'episode': episode,
-            'category': category,
             'link': link,
             'video_link': get_video_from_post(link),
-            'in_hd': in_hd,
-            'additional': 'False',
         }
+        if dt:
+            result[str(dt)] = d
 
-        result[str(dt)] = d
-
-    # load more feed_posts
-    latest_episode_key = next(iter(result))
-    latest_episode = result[latest_episode_key]
-    channel = latest_episode['channel']
-    show_name = latest_episode['show_name']
-    get_additional_feed_posts(additional_feed_url, result, channel, show_name)
     return result

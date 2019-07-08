@@ -1,0 +1,19 @@
+[
+    {
+        "model": "reference_data_app.referencesourcetype",
+        "pk": 1,
+        "fields": {
+            "name": "IMDB",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-08T01:22:49.900Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-08T01:22:25Z",
+            "updated": "2019-07-08T01:22:49.900Z",
+            "extra_data": null
+        }
+    }
+]

@@ -4,11 +4,19 @@
         "pk": 1,
         "fields": {
             "name": "Pakistan",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-06-30T14:58:58.358Z",
+            "updated": "2019-06-30T14:58:58.358Z",
+            "extra_data": null,
             "short_name": "PK",
             "capital_city": "Islamabad",
-            "country_phone_code": "+92",
-            "created": "2019-06-30T14:58:58.358Z",
-            "updated": "2019-06-30T14:58:58.358Z"
+            "country_phone_code": "+92"
         }
     },
     {
@@ -16,11 +24,19 @@
         "pk": 2,
         "fields": {
             "name": "United States",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-06-30T14:59:19.011Z",
+            "updated": "2019-06-30T14:59:19.011Z",
+            "extra_data": null,
             "short_name": "USA",
             "capital_city": "Washington D.C.",
-            "country_phone_code": "+1",
-            "created": "2019-06-30T14:59:19.011Z",
-            "updated": "2019-06-30T14:59:19.011Z"
+            "country_phone_code": "+1"
         }
     },
     {
@@ -28,11 +44,19 @@
         "pk": 3,
         "fields": {
             "name": "United Arab Emirates",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-06-30T14:59:58.450Z",
+            "updated": "2019-06-30T14:59:58.450Z",
+            "extra_data": null,
             "short_name": "UAE",
             "capital_city": "Abu Dhabi",
-            "country_phone_code": "+971",
-            "created": "2019-06-30T14:59:58.450Z",
-            "updated": "2019-06-30T14:59:58.450Z"
+            "country_phone_code": "+971"
         }
     },
     {
@@ -40,11 +64,19 @@
         "pk": 4,
         "fields": {
             "name": "All",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-06-30T14:59:58.450Z",
+            "updated": "2019-06-30T14:59:58.450Z",
+            "extra_data": null,
             "short_name": "All",
             "capital_city": "N/A",
-            "country_phone_code": null,
-            "created": "2019-06-30T14:59:58.450Z",
-            "updated": "2019-06-30T14:59:58.450Z"
+            "country_phone_code": null
         }
     }
 ]

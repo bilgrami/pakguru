@@ -37,7 +37,8 @@ STOPSIGNAL SIGINT
 RUN \
  apt-get update && \
  apt-get install -qy --no-install-recommends \
-   openssh-server redis-tools && \
+   openssh-server redis-tools \
+   cron systemd && \
  rm -rf /var/lib/apt/lists/* && \
  mkdir -p /home/LogFiles /opt/startup && \
  echo "root:Docker!" | chpasswd 
@@ -55,5 +56,11 @@ RUN chmod -R +x /opt/startup \
 ENV SSH_PORT 2222
 EXPOSE 80 2222
 ENV PRODUCT_VERSION 0.1.1
+
+COPY docker/startup/cron_web /etc/cron.d/cron_web
+# Give execution rights on the cron job
+RUN chmod +x /etc/cron.d/cron_web
+# Apply cron job
+RUN crontab /etc/cron.d/cron_web
 
 ENTRYPOINT ["/opt/startup/init_container.sh"]

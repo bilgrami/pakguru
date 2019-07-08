@@ -4,10 +4,35 @@
         "pk": 1,
         "fields": {
             "name": "show_guru",
-            "email": "guru11@gmail.com",
+            "description": null,
             "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
             "created": "2019-06-30T15:02:42.178Z",
-            "updated": "2019-06-30T15:04:04.975Z"
+            "updated": "2019-06-30T15:04:04.975Z",
+            "extra_data": null,
+            "email": "guru11@gmail.com"
+        }
+    },
+    {
+        "model": "pakguru_app.author",
+        "pk": 2,
+        "fields": {
+            "name": "poetry guru",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-01T23:06:47.305Z",
+            "updated": "2019-07-01T23:06:47.305Z",
+            "extra_data": null,
+            "email": "poetry_guru111@gmail.com"
         }
     }
 ]

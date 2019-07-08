@@ -15,6 +15,7 @@ from bs4 import BeautifulSoup
 from pakguru_app.models import Post, Show
 from pakguru_app.models import ShowFeed_HarvestJobLog as job
 from pakguru_app.models import ShowSourceFeed
+from reference_data_app.models import ShowEpisodeReferenceInfo as Episode
 
 
 class Command(BaseCommand):
@@ -30,22 +31,8 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         """
         Usage:
-        python manage.py harvest_show_feeds_DOL False 0
-        python manage.py harvest_show_feeds_DOL True 0
-
-        Pseuodo Algrothm:
-            Expire all exisiting jobs if recreate_all_jobs is True
-
-            find all active feeds belonging to DOL
-            that have no corresponding record in job table
-
-            download feed_posts
-                create the new feed job record
-                    latest_job.job_status = in-progress
-                    latest_job.latest_date = latest_date
-                    latest_job.feed_data = feed_posts
-                    latest_job.isactive = true
-
+        python manage.py harvest_show_feeds_VPK False 0
+        python manage.py harvest_show_feeds_VPK True 0
         """
         recreate_all_jobs = options['recreate_all_jobs']
         max_feeds = options['max_feeds']
@@ -70,7 +57,7 @@ class Command(BaseCommand):
             feed_url = feed.playlist_link
             # print("feed_url:", feed_url)
             addedby_user = User.objects.get(id=1)
-            feed_posts = get_feed_posts(feed_url)
+            feed_posts = get_feed_posts(feed_url, feed.show_name)
             feed_data = json.dumps(feed_posts, indent=4)
             # print("feed_data:", feed_data)
             latest_feed = next(iter(feed_posts.items()))
@@ -141,27 +128,40 @@ def get_video_from_post(url):
     return result
 
 
-def process_lising(listing):
+def process_lising(listing, show_name):
     a = listing.find('a', href=True)
     link = a['href']
     div_label_text = listing.find('div', class_='archive-list-text')
     label_text = div_label_text.find('h2').get_text()
-    label = label_text
-    episode = dt = ''
+    episode = -1
+    dt = ''
+    if "Episode" in label_text:
+        if label_text and len(label_text.split(" Episode ")) == 2:
+            episode = get_episode(label_text.split(" Episode ")[1])
 
-    if "Episode" in label:
-        if label and len(label.split(" Episode ")) == 2:
-            episode = label.split(" Episode ")[1][:2]
-
-    matches = datefinder.find_dates(label_text)
-    dt = next(iter(matches), False)
-    if dt:
-        dt = dt.date().isoformat()
-
+    dt = get_date(label_text, show_name, episode)
+    dt = dt.isoformat()
     return (link, label_text, episode, dt)
 
 
-def get_feed_posts(feed_url):
+def get_episode(str):
+    nums = [int(s) for s in str.split() if s.isdigit()]
+    return nums[0]
+
+
+def get_date(label_text, show_name, episode):
+    ei = Episode.objects.filter(running_number=episode, show__name='Bulbulay').first()  # noqa: E501
+    if ei:
+        return ei.original_air_date
+    else:
+        matches = datefinder.find_dates(label_text)
+        dt = next(iter(matches), False)
+        if dt:
+            dt = dt.date().isoformat()
+            return dt + datetime.timedelta(days=episode)
+
+
+def get_feed_posts(feed_url, show_name):
     page = requests.get(feed_url)
 
     soup = BeautifulSoup(page.content, 'html.parser')
@@ -170,7 +170,7 @@ def get_feed_posts(feed_url):
     result = {}
 
     for listing in post_listings:
-        link, label, episode, dt = process_lising(listing)
+        link, label, episode, dt = process_lising(listing, show_name)
         d = {
             'label': label,
             'dt': dt,

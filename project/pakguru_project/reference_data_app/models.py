@@ -11,8 +11,8 @@ class ReferenceSourceType(CommonInfo):
 
     class Meta:
         db_table = 'reference_data_source_type'
-        verbose_name = 'Reference Source Type'
-        verbose_name_plural = 'Reference Source Types'
+        verbose_name = 'Source Type'
+        verbose_name_plural = 'Source Types'
 
 
 class ShowReferenceInfo(CommonInfo):
@@ -37,8 +37,8 @@ class ShowReferenceInfo(CommonInfo):
 
     class Meta:
         db_table = 'reference_data_show_info'
-        verbose_name = 'Show Reference Info'
-        verbose_name_plural = 'Show Reference Infosets'
+        verbose_name = 'Show'
+        verbose_name_plural = 'Shows'
 
 
 class ShowEpisodeReferenceInfo(CommonInfo):
@@ -49,23 +49,31 @@ class ShowEpisodeReferenceInfo(CommonInfo):
     show = models.ForeignKey(Show,
                              on_delete=models.SET_NULL,
                              blank=True, null=True, db_index=True)
+    show_reference_info = models.ForeignKey(ShowReferenceInfo,
+                                            on_delete=models.CASCADE,
+                                            blank=True, null=True,
+                                            db_index=True)
     reference_key = models.CharField(max_length=100, null=True, blank=True)
     season_number = models.SmallIntegerField("Season Number",
                                              null=True, blank=True)
     episode_number = models.SmallIntegerField("Episode Number",
                                               null=True, blank=True)
-    original_air_date = models.CharField(max_length=100, null=True, blank=True)
+    running_number = models.SmallIntegerField("Running Number",
+                                              null=True, blank=True)
+    original_air_date_from_source = models.CharField(max_length=100, null=True,
+                                                     blank=True)
+    original_air_date = models.DateField(null=True, blank=True)
     year = models.SmallIntegerField(null=True, blank=True)
-    series_title = models.CharField("Series Title", max_length=100,
+    series_title = models.CharField("Series Title", max_length=200,
                                     null=True, blank=True)
-    episode_title = models.CharField("Episode Title", max_length=100,
+    episode_title = models.CharField("Episode Title", max_length=200,
                                      null=True, blank=True)
-    plot = models.CharField(max_length=100, null=True, blank=True)
+    plot = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return f'{self.name}'
 
     class Meta:
         db_table = 'reference_data_show_episode_info'
-        verbose_name = 'Show Episode Reference Info'
-        verbose_name_plural = 'Show Episode Reference Infosets'
+        verbose_name = 'Episode'
+        verbose_name_plural = 'Episodes'

@@ -1,0 +1,2 @@
+# * * * * * echo "Hello world" >> /var/log/cron.log 2>&1
+# 0 */4 * * * /usr/local/project/pakguru_project/pakguru_app/shell_scripts/process_show_feeds.sh

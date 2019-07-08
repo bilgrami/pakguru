@@ -23,7 +23,7 @@ class ShowFeed_HarvestJobLog(admin.ModelAdmin):
                     'added_by', 'updated')
     list_filter = ('show_feed__feed_source_type', 'is_latest', 'job_status')
     search_fields = ('job_id', 'show_feed__name',
-                     'show_feed__feed_source_type')
+                     'show_feed__feed_source_type__name')
     date_hierarchy = 'updated'
     ordering = ('-updated',)
     list_per_page = 50
@@ -65,19 +65,19 @@ class ShowSourceFeed(admin.ModelAdmin):
 
 @admin.register(Show)
 class Show(admin.ModelAdmin):
-    list_display = ('name', 'show_host',
+    list_display = ('show_id', 'name', 'show_host',
                     'category', 'primary_feed',
                     'channel', 'locale',
                     'is_active')
     list_filter = ('channel', 'primary_feed__feed_source_type',
                    'country__name', 'is_active', 'locale')
-    search_fields = ('name', 'host_name',
+    search_fields = ('show_id', 'name', 'host_name',
                      'description')
     date_hierarchy = 'updated'
     ordering = ('-updated',)
     list_per_page = 30
-    readonly_fields = ('created', 'effective_date', 'updated',)
-    fields = ('name', 'host_name',
+    readonly_fields = ('show_id', 'created', 'effective_date', 'updated',)
+    fields = ('show_id', 'name', 'host_name',
               'airtime', 'website_link',
               'youtube_link', 'facebook_link',
               'twitter_link', 'instagram_link',

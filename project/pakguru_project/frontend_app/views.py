@@ -52,7 +52,7 @@ def about(request):
 def dailytv(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
-    posts = Post.objects.filter(is_active=True).all().order_by('-post_id')
+    posts = Post.objects.filter(is_active=True, target_date__gte=datetime.now().date()).all().order_by('-post_id')
     data = []
     for post in posts:
         try:
@@ -82,6 +82,7 @@ def dailytv(request):
             'title': 'Daily TV',
             'message': 'Daily TV description goes here.',
             'year': datetime.now().year,
+            'today': datetime.now().date,
             'posts': data
         }
     )

@@ -5,99 +5,26 @@
 <div class="jumbotron">
 
 <div class="container">
+        <h2>Total Posts: {{ posts|length }}</h2>
 
     <div class="row mb-1 mr-md-2 bg-primary text-white">
-        <div class="col-2 themed-grid-col">Post Id</div>
-        <div class="col-4 themed-grid-col">Title</div>
-        <div class="col-3 themed-grid-col">Url</div>
-        <div class="col-3 themed-grid-col">Tags</div>
+        <div class="col-1 themed-grid-col">Post Id</div>
+        <div class="col-6 themed-grid-col">Title</div>
+        <div class="col-5 themed-grid-col">Url</div>
       </div>
     
     
     {% for post in posts %}
     <div class="row mb-1">
-        <div class="col-2 themed-grid-col">{{ post.post_id }}</div>
-        <div class="col-4 themed-grid-col">{{ post.title }}</div>
-        <div class="col-3 themed-grid-col">{{ post.text }}</div>
-        <div class="col-3 themed-grid-col">{{ post.tags }}</div>
+        <div class="col-1 themed-grid-col">{{ post.post_id }}</div>
+        <div class="col-6 themed-grid-col">{{ post.title }}</div>
+        <div class="col-5 themed-grid-col">{{ post.name }} 
+      
+        </div>
       </div>
 
     {% endfor %}
-<!-- 
-<div class="row mb-1 mr-md-2 bg-primary text-white">
-    <div class="col-4 themed-grid-col">Dramas</div>
-    <div class="col-4 themed-grid-col">News Shows</div>
-    <div class="col-4 themed-grid-col">Sports</div>
-  </div>
 
-
-<div class="row mb-1">
-
-<!-- dramas begin here -->
-    <div class="col-4 themed-grid-col">
-      <div class="row mb-1">
-          <div class="col-md-8 bg-warning  text-dark">Tanhai</div>
-          <div class="col-md-4 bg-success text-white">10 views</div>
-      </div>    
-
-      <div class="row mb-1">
-          <div class="col-md-8 bg-warning  text-dark">Dhooop Kinaare</div>
-          <div class="col-md-4 bg-success text-white">4 views</div>
-      </div>    
-
-      <div class="row mb-1">
-          <div class="col-md-8 bg-warning  text-dark">Hamsafar</div>
-          <div class="col-md-4 bg-success text-white">4 views</div>
-      </div>    
-
-    </div>
-<!-- dramas end here -->
-<!-- news shows begin here -->
-
-    <div class="col-4 themed-grid-col">
-      <div class="row mb-1">
-          <div class="col-md-8 bg-dark  text-white">Dr. Shahid masood</div>
-          <div class="col-md-4 bg-success text-white">1012 views</div>
-      </div>    
-
-      <div class="row mb-1">
-          <div class="col-md-8 bg-dark  text-white">Kamran Khan</div>
-          <div class="col-md-4 bg-success text-white">300 views</div>
-      </div>    
-
-      <div class="row mb-1">
-          <div class="col-md-8 bg-dark  text-white">Zara Hat ke</div>
-          <div class="col-md-4 bg-success text-white">400 views</div>
-      </div>    
-
-      <div class="row mb-1">
-          <div class="col-md-8 bg-dark  text-white">News 5</div>
-          <div class="col-md-4 bg-success text-white">800 views</div>
-      </div>    
-
-    </div>
-<!-- news shows end here -->
-<!-- sports begin here -->
-
-    <div class="col-4 themed-grid-col">
-      <div class="row mb-1">
-          <div class="col-md-8 bg-danger text-white">Sport 1</div>
-          <div class="col-md-4 bg-success text-white">10 views</div>
-      </div>    
-
-      <div class="row mb-1">
-          <div class="col-md-8 bg-danger text-white">Sport 2</div>
-          <div class="col-md-4 bg-success text-white">4 views</div>
-      </div>    
-
-      <div class="row mb-1">
-          <div class="col-md-8 bg-danger text-white">Sport 3</div>
-          <div class="col-md-4 bg-success text-white">4 views</div>
-      </div>    
-
-    </div>
-
-sports end here -->
 
 
 </div>

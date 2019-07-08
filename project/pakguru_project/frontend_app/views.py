@@ -53,17 +53,27 @@ def dailytv(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True).all().order_by('-post_id')
-    # data = {}
-    # for post in posts:
-    #     d = {}
-    #     d['post_id'] = post.post_id
-    #     d['title'] = post.title
-    #     urls = json.loads(post.text.replace('\'', '"'))
-    #     link = ''
-    #     if 'www.youtube.com' in urls:
-    #         link = urls['www.youtube.com']['link']
-    #     d['link'] = link
-    #     data[post.post_id] = d
+    data = []
+    for post in posts:
+        try:
+            if len(post.text) > 40:
+                urls = json.loads(str(post.text).replace('\'', '"'))
+                utube = ''
+                dailymotion = ''
+                if 'www.youtube.com' in urls:
+                    utube = urls['www.youtube.com']['link']
+                if 'www.dailymotion.com' in urls:
+                    dailymotion = urls['www.dailymotion.com']['link']
+                post.description = dailymotion  #post.text
+                post.name = utube  #post.text
+            else:
+                post.name = post.text
+                post.description = post.text
+
+            data.append(post)
+        except Exception:
+            post.name = post.text
+            data.append(post)
 
     return render(
         request,
@@ -72,6 +82,6 @@ def dailytv(request):
             'title': 'Daily TV',
             'message': 'Daily TV description goes here.',
             'year': datetime.now().year,
-            'posts': posts
+            'posts': data
         }
     )

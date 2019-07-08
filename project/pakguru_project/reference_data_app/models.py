@@ -1,7 +1,8 @@
 # from django.contrib.auth.models import User
 from django.contrib.postgres.fields import JSONField
 from django.db import models
-from pakguru_app.models import CommonInfo, Show
+from common_utils_app.models import CommonInfo
+from pakguru_app.models import Show
 
 
 class ReferenceSourceType(CommonInfo):

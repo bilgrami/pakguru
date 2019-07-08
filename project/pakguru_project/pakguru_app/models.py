@@ -8,9 +8,8 @@ from django.contrib.postgres.fields import ArrayField, JSONField
 from django.db import models
 from django.utils import timezone
 
-from .managers import (JokePostManager, PoliticalPostManager, QuotePostManager,
-                       ShowManager)
-
+# from .managers import (JokePostManager, PoliticalPostManager,
+#                QuotePostManager, ShowManager)
 # from django.urls import reverse
 
 joblog_status_choices = [
@@ -353,7 +352,6 @@ class PostStatistic(models.Model):
 
     class Meta:
         verbose_name_plural = 'Post Stats'
-
 
 # class PostViews(models.Model):
 #     view_id = models.AutoField('Post View Id', primary_key=True)

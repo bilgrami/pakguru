@@ -42,3 +42,4 @@ mock
 factory_boy
 bs4
 datefinder
+imdbpy

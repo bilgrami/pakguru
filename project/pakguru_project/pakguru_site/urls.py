@@ -10,6 +10,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     url(r'^admin/shell/', include('django_admin_shell.urls')),
     url(r'^', include('pakguru_app.urls')),
+    url(r'^', include('reference_data_app.urls')),
     path('admin/', admin.site.urls),
 ]
 # https://stackoverflow.com/questions/9181047/django-static-files-development

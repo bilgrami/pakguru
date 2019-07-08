@@ -1,22 +1,9 @@
 #!/bin/bash
-set -e
-app_name=pakguru_app
-declare -a models_array
-models_array=(Author CountryList LocaleList PostCategoryList ShowChannel FeedSourceType ShowSourceFeed Show Post PostStatistic ShowFeed_HarvestJobLog)
+# THIS IS THE ROOT FOLDER
+declare -a app_name_array
+app_name_array=(reference_data_app pakguru_app)
 
-echo 'decrypting data started .. '
-python manage.py decrypt_dump
-echo 'decrypting data finished'
-
-echo 'loading data started .. '
-for i in "${models_array[@]}"; 
+for app_name in "${app_name_array[@]}"; 
 do 
-    model_name="$i"
-    echo "loading $model_name"; 
-    # python manage.py loaddata Author;
-    python manage.py loaddata $model_name
+    ./$app_name/shell_scripts/load_data.sh
 done
-echo 'loading data finished.'
-
-# echo 'removing dump files'
-# python manage.py remove_dump

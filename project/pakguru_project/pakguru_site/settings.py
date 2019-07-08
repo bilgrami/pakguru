@@ -42,7 +42,9 @@ CSRF_TRUSTED_ORIGINS = ALLOWED_HOSTS
 # Application definition
 
 INSTALLED_APPS = [
+    'common_utils_app.app.CommonUtilsAppConfig',
     'pakguru_app.app.PakGuruWebsiteConfig',
+    'reference_data_app.app.ReferenceDataAppConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

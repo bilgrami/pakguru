@@ -356,4 +356,3 @@ project/pakguru_project/pakguru_app/fixtures/*.json
 project/pakguru_project/reference_data_app/fixtures/*.json
 serverless/lambda-results/
 serverless/lambda-feed-scraper/package
-serverless/lambda-feed-scraper/package.zip

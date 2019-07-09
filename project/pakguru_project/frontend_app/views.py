@@ -1,9 +1,9 @@
-
 import json
 from datetime import datetime, timedelta
 
 from django.http import HttpRequest
 from django.shortcuts import render
+from django.views.decorators.cache import cache_page
 
 from pakguru_app.models import Post
 
@@ -48,12 +48,12 @@ def about(request):
         }
     )
 
-
+@cache_page(24*60*4)
 def dailytv(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
     yesterday = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
-    posts = Post.objects.filter(is_active=True, target_date__gte=yesterday).all().order_by('show__channel__name', 'show__name')  # noqa:E501
+    posts = Post.objects.filter(is_active=True, target_date__gte=yesterday, category__name='Talk Shows').all().order_by('-target_date', 'show__channel__name', 'show__name')  # noqa:E501
     for post in posts:
         try:
             utube = ''
@@ -81,6 +81,7 @@ def dailytv(request):
             dailymotion = post.url
         post.type = 'dailymotion' if dailymotion else 'utube'
         post.label = post.title
+        dates = [posts.order_by('target_date').values_list('target_date', flat=True).distinct('target_date')]
 
     return render(
         request,
@@ -90,6 +91,7 @@ def dailytv(request):
             'message': 'Daily TV description goes here.',
             'year': datetime.now().year,
             'today': datetime.now().date,
+            'dates': dates,
             'posts': posts
         }
     )

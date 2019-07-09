@@ -2,21 +2,27 @@
 
 {% block content %}
 
-<div class="jumbotron">
-    <h1>{{ today }} - Total Posts: {{ posts|length }}</h1>
+<div class="container">
+  <div class="row justify-content-md-center">
+      <div class="col-">
+          <h1>  {% for dt in dates %}
+                  {{ dt.0 | addslashes }} 
+               {% endfor %}
+</h1>
+      </div>
   </div>
+</div>
 
 <div class="container">
 
-    <div class="row mb-1 bg-primary text-white">
-        <div class="col-2 themed-grid-col">Date</div>
-        <div class="col-10 themed-grid-col">Video</div>
+    <div class="row bg-primary text-white justify-content-md-center">
+        <div class="col- themed-grid-col align-self-center"><h2>Talk Shows - ({{ posts|length }} Videos)</h2></div>
       </div>
     {% for post in posts %}
-    <div class="row mb-1">
-        <div class="col-2 themed-grid-col" title="{{ post.post_id }}">{{ post.target_date }}</div>
-        <div class="col-10 themed-grid-col" title="{{ post.url }}">
+    <div class="row justify-content-md-center">
+        <div class="col- themed-grid-col align-self-center" title="{{ post.url }}">
           <h2>{{ post.show}}</h2>
+          <span title="{{ post.post_id }}">{{ post.target_date }} - </span>
           <a href="{{ post.source }}">{{ post.label }}</a>
           <br/>
           {% if post.type == 'utube' %} 
@@ -25,9 +31,12 @@
           {% if post.type == 'dailymotion' %} 
           <iframe frameborder="0" width="480" height="270" src="{{ post.url }}" allowfullscreen allow="autoplay"></iframe>
           {% endif %} 
+          <hr/>
 
         </div>
+
       </div>
+
 
     {% endfor %}
 

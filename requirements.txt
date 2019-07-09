@@ -2,7 +2,7 @@ amqp
 astroid
 Babel
 billiard
-colorama
+# colorama
 Django
 django-health-check
 django-redis
@@ -43,3 +43,7 @@ factory_boy
 bs4
 datefinder
 imdbpy
+colorama<=0.3.9 # pinned for awscli
+PyYAML<=5.1 # pinned for awscli
+awscli
+boto3

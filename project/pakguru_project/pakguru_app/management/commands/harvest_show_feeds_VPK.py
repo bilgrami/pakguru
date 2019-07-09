@@ -150,15 +150,20 @@ def get_episode(str):
 
 
 def get_date(label_text, show_name, episode):
-    ei = Episode.objects.filter(running_number=episode, show__name='Bulbulay').first()  # noqa: E501
+    ei = Episode.objects.filter(running_number=episode, show__name=show_name).first()  # noqa: E501
     if ei:
         return ei.original_air_date
     else:
+        label_text = label_text.lower()
+        if " on " in label_text and len(label_text.split(" on ")) == 2:  # noqa: E501
+            label_text = label_text.split(" on ")[1]
+
         matches = datefinder.find_dates(label_text)
         dt = next(iter(matches), False)
         if dt:
-            dt = dt.date().isoformat()
-            return dt + datetime.timedelta(days=episode)
+            dt = dt.date()
+            delta = datetime.timedelta(days=episode)
+            return (dt + delta)
 
 
 def get_feed_posts(feed_url, show_name):

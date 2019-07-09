@@ -3,23 +3,29 @@
 {% block content %}
 
 <div class="jumbotron">
+    <h1>{{ today }} - Total Posts: {{ posts|length }}</h1>
+  </div>
 
 <div class="container">
-        <h2>Date: {{ today }} - Total Posts: {{ posts|length }}</h2>
 
-    <div class="row mb-1 mr-md-2 bg-primary text-white">
-        <div class="col-1 themed-grid-col">Post Id</div>
-        <div class="col-6 themed-grid-col">Title</div>
-        <div class="col-5 themed-grid-col">Url</div>
+    <div class="row mb-1 bg-primary text-white">
+        <div class="col-2 themed-grid-col">Date</div>
+        <div class="col-10 themed-grid-col">Video</div>
       </div>
-    
-    
     {% for post in posts %}
     <div class="row mb-1">
-        <div class="col-1 themed-grid-col">{{ post.post_id }}</div>
-        <div class="col-6 themed-grid-col">{{ post.title }}</div>
-        <div class="col-5 themed-grid-col">{{ post.name }} 
-      
+        <div class="col-2 themed-grid-col" title="{{ post.post_id }}">{{ post.target_date }}</div>
+        <div class="col-10 themed-grid-col" title="{{ post.url }}">
+          <h2>{{ post.show}}</h2>
+          <a href="{{ post.source }}">{{ post.label }}</a>
+          <br/>
+          {% if post.type == 'utube' %} 
+          <iframe width="560" height="315" src="{{ post.url }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          {% endif %} 
+          {% if post.type == 'dailymotion' %} 
+          <iframe frameborder="0" width="480" height="270" src="{{ post.url }}" allowfullscreen allow="autoplay"></iframe>
+          {% endif %} 
+
         </div>
       </div>
 
@@ -29,8 +35,6 @@
 
 </div>
 
-
-</div>
 
 
 {% endblock %}

@@ -101,30 +101,53 @@ class Command(BaseCommand):
                     target_date = target_date.date()
                     weekday_name = target_date.strftime("%a").upper()
 
-                # create new post
-                post = Post(
-                    title=title,
-                    slug=slug,
-                    target_date=target_date,
-                    weekday_name=weekday_name,
-                    text=video_link,
-                    show=show,
-                    is_active=True,
-                    is_Show=is_show,
-                    is_Politics=is_politics,
-                    is_Joke=is_joke,
-                    is_Quote=is_quote,
-                    tags=tags,
-                    extra_data=extra_data,
-                    added_by=addedby_user,
-                    post_author='Talk Shows Guru',
-                    category=show.category,
-                    locale=show.locale,
-                    media_type='EMBEDDED_VIDEO',
-                    source=feed.playlist_link,
-                    source_detail=v['link']
+                post = Post.objects.filter(slug=slug).first()
+                if not post:
+                    # create new post
+                    post = Post(
+                        title=title,
+                        slug=slug,
+                        target_date=target_date,
+                        weekday_name=weekday_name,
+                        text=video_link,
+                        show=show,
+                        is_active=True,
+                        is_Show=is_show,
+                        is_Politics=is_politics,
+                        is_Joke=is_joke,
+                        is_Quote=is_quote,
+                        tags=tags,
+                        extra_data=extra_data,
+                        added_by=addedby_user,
+                        post_author='Talk Shows Guru',
+                        category=show.category,
+                        locale=show.locale,
+                        media_type='EMBEDDED_VIDEO',
+                        source=feed.playlist_link,
+                        source_detail=v['link']
+                    )
+                else:
+                    # post.title = title
+                    post.target_date = target_date
+                    post.weekday_name = weekday_name
+                    post.text = video_link
+                    # post.show = show
+                    # post.is_active = True
+                    post.is_Show = is_show
+                    post.is_Politics = is_politics
+                    post.is_Joke = is_joke
+                    post.is_Quote = is_quote
+                    post.tags = tags
+                    post.extra_data = extra_data
+                    # post.added_by = addedby_user
+                    # post.post_author = 'Talk Shows Guru'
+                    post.category = show.category
+                    post.locale = show.locale
+                    post.media_type = 'EMBEDDED_VIDEO'
+                    post.source = feed.playlist_link
+                    post.source_detail = v['link']
 
-                )
+                    dupes_count += 1
                 try:
                     post.save()
                     post.country.set(feed.country.all())

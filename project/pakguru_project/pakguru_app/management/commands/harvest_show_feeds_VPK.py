@@ -17,6 +17,8 @@ from pakguru_app.models import ShowFeed_HarvestJobLog as job
 from pakguru_app.models import ShowSourceFeed
 from reference_data_app.models import ShowEpisodeReferenceInfo as Episode
 
+result = {}
+
 
 class Command(BaseCommand):
     def add_arguments(self, parser):
@@ -54,8 +56,8 @@ class Command(BaseCommand):
         print("Feed count:", len(feeds))
 
         for feed in feeds:
+            print("feed: id -> ", feed.pk, "-name> ", feed)
             feed_url = feed.playlist_link
-            # print("feed_url:", feed_url)
             addedby_user = User.objects.get(id=1)
             feed_posts = get_feed_posts(feed_url, feed.show_name)
             feed_data = json.dumps(feed_posts, indent=4)
@@ -80,7 +82,7 @@ class Command(BaseCommand):
             print("file_name:", file_name)
             j.feed_data.save(file_name, ContentFile(feed_data))
             j.save()
-            print(j)
+            print(j.pk, j)
 
     def get_latest_post(self, show_name, feed_id):
         # show_name = ShowSourceFeed.filter(feed_id=feed_id).show_name
@@ -154,16 +156,24 @@ def get_date(label_text, show_name, episode):
     if ei:
         return ei.original_air_date
     else:
+        # print('label_text 1', label_text)
+        sep = '–'
         label_text = label_text.lower()
-        if " on " in label_text and len(label_text.split(" on ")) >= 2:  # noqa: E501
-            label_text = label_text.split(" on ")[-1]
+        if sep in label_text and len(label_text.split(sep)) >= 2:  # noqa: E501
+            label_text = label_text.split(sep)[-1]
+        elif '-' in label_text and len(label_text.split('-')) >= 2:  # noqa: E501
+            label_text = label_text.split('-')[-1]
 
+        # print('label_text 2', label_text)
         matches = datefinder.find_dates(label_text)
         dt = next(iter(matches), False)
         if dt:
             dt = dt.date()
-            delta = datetime.timedelta(days=episode)
-            return (dt + delta)
+            if dt in result:
+                delta = datetime.timedelta(days=episode)
+                return (dt + delta)
+            else:
+                return dt
 
 
 def get_feed_posts(feed_url, show_name):
@@ -172,7 +182,6 @@ def get_feed_posts(feed_url, show_name):
     soup = BeautifulSoup(page.content, 'html.parser')
     mid_container = soup.find('div', {"id": "archive-list-wrap"})
     post_listings = mid_container.find_all('li', class_='infinite-post')
-    result = {}
 
     for listing in post_listings:
         link, label, episode, dt = process_lising(listing, show_name)

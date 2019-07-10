@@ -128,6 +128,7 @@ class Command(BaseCommand):
                         source_detail=v['link']
                     )
                 else:
+                    print('found post ', post.pk, target_date)
                     # post.title = title
                     post.target_date = target_date
                     post.weekday_name = weekday_name

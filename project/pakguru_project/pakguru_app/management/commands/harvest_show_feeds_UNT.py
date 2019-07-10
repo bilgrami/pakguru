@@ -56,6 +56,7 @@ class Command(BaseCommand):
 
         base_url = 'http://www.unewstv.com'
         for feed in feeds:
+            print("feed: id -> ", feed.pk, "-name> ", feed)
             feed_url = feed.playlist_link
             addedby_user = User.objects.get(id=1)
             feed_posts = get_feed_posts(base_url, feed_url)

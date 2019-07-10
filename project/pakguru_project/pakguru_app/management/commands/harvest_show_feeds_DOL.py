@@ -66,6 +66,7 @@ class Command(BaseCommand):
         print("Feed count:", len(feeds))
 
         for feed in feeds:
+            print("feed: id -> ", feed.pk, "-name> ", feed)
             feed_url = feed.playlist_link
             channel = feed.extra_data['channel']
             show_name_from_feed = feed.extra_data['show_name_from_feed']

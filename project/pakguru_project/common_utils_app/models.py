@@ -1,7 +1,7 @@
-from django.db import models
 from django.contrib.auth.models import User
-from django.utils import timezone
 from django.contrib.postgres.fields import JSONField
+from django.db import models
+from django.utils import timezone
 
 
 class CommonInfo(models.Model):
@@ -24,3 +24,8 @@ class CommonInfo(models.Model):
     class Meta:
         abstract = True
         ordering = ['name']
+
+
+def get_object(model_str, pk):
+    model = models.get_model(*model_str.split('.'))
+    return model._default_manager.get(pk=pk)

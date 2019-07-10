@@ -68,6 +68,7 @@ def get_post_url(url_text):
         url = url_text
 
     url = url.replace("watch", 'embed')
+    url = url.replace("http://", 'https://')
     # if 'www.youtube.com' in url:
     #     utube = url
     if 'www.dailymotion.com' in url:

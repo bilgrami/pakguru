@@ -14,13 +14,20 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
-    path('dailytv/', views.dailytv, name='dailytv'),
+
+    path('talkshows/', views.talkshows, name='talkshows'),
+    path('talkshows/<channel>/<show>/<show_id>/', views.singletalkshow,
+         name='singletalkshow'),
+
+    path('dramaserials/', views.dramaserials, name='dramaserials'),
+    path('dramaserial/<channel>/<show>/<show_id>/', views.singledramaserial,
+         name='singledramaserial'),
     path('login/',
          LoginView.as_view
          (
              template_name='pakguru_app/login.html',
              authentication_form=forms.BootstrapAuthenticationForm,
-             extra_context=
+             extra_context=  # noqa: E251
              {
                  'title': 'Log in',
                  'year': datetime.now().year,

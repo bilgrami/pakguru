@@ -70,7 +70,7 @@ class Show(admin.ModelAdmin):
                     'channel', 'locale',
                     'is_active')
     list_filter = ('channel', 'primary_feed__feed_source_type',
-                   'country__name', 'is_active', 'locale')
+                   'category', 'country__name', 'is_active', 'locale')
     search_fields = ('show_id', 'name', 'host_name',
                      'description')
     date_hierarchy = 'updated'

@@ -61,14 +61,14 @@
             <img src="{% static 'frontend_app/dm_logo_rgb_light-small.png' %}" width="56">
             {% endif %} 
 
-            {{ post.show}} </h3>
+            {{ post.show}} - {{ post.target_date }}</h3>
             {% if user.is_superuser or user.is_staff  %}
             <span><a target='_blank' href="{{ post.change_url }}">
               <img src="{% static 'frontend_app/edit-icon.png' %}" width="17">&nbsp;</a></span>
             {% endif %} 
 
             <span title="{{ post.post_id }}">{{ post.target_date }} - </span>
-            <span><a target='_blank' href="{{ post.source }}">{{ post.label }}</a></span>
+            <span>{{ post.label }}</span>
 
             <br/>
 

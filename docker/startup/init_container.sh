@@ -12,6 +12,9 @@ sed -i "s/SSH_PORT/$SSH_PORT/g" /etc/ssh/sshd_config;
 echo 'running cron '
 cron
 
+echo 'setting permissions for sh scripts'
+find . -name *.sh | xargs chmod +x
+
 cd $PROJECT_ROOT/$PROJECT_NAME/
 echo "Python location: '$(which python)', Python version: '$(python -V)'"
 echo "Current directory '$(pwd)' contains $(ls -1q * | wc -l) files"

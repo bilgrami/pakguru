@@ -29,7 +29,10 @@
         <div class="col-1">
         </div>
             <div class="col-11">
-                <h4><a href="{% url 'singledramaserial' channel=post.channel_slug show=post.show_slug show_id=post.show.show_id %}">{{ post.show.name}}</a></h4>
+                <h4><a href="{% url 'singledramaserial' channel=post.channel_slug show=post.show_slug show_id=post.show.show_id %}">
+                  {{ post.show.name}}</a>
+                  ({{ post.latest_post.target_date |timesince:post.time_in_pakistan }} ago)                
+                </h4>
             </div>
         </div>
       {% endifchanged %}

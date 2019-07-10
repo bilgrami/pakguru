@@ -1,5 +1,5 @@
 import json
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 
 import django.utils.text
 from django.http import HttpRequest
@@ -40,7 +40,7 @@ def contact(request):
     )
 
 
-# @cache_page(24*60*4)
+@cache_page(24*60*4)
 def about(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
@@ -78,6 +78,12 @@ def get_post_url(url_text):
 
 
 def process_posts(posts):
+    latest_posts = {}
+    yesterday = date.today() - timedelta(days=1)
+    two_days_ago = date.today() - timedelta(days=2)
+    # TODO: need to handle DST transition
+    time_in_pakistan = date.today() + timedelta(hours=12)
+
     for post in posts:
         post.type, post.url = get_post_url(post.text)
         post.channel_slug = django.utils.text.slugify(post.show.channel)
@@ -89,6 +95,15 @@ def process_posts(posts):
         post.feed_job_url = reverse('admin:pakguru_app_showfeed_harvestjoblog_change',  # noqa: E501
                                     args=(job_id,))
         post.feed_file_url = ShowFeed_HarvestJobLog.objects.get(pk=job_id).feed_data.url  # noqa: E501
+        if post.show not in latest_posts:
+            latest_posts[post.show] = Post.objects.filter(show=post.show).order_by('-target_date').first()  # noqa: E501
+
+        post.latest_post = latest_posts[post.show]
+        post.time_in_pakistan = time_in_pakistan
+        if post.latest_post.target_date >= yesterday:
+            post.latest_post_color = 'text-danger'
+        if post.latest_post.target_date >= two_days_ago:
+            post.latest_post_color = 'text-warning'
 
     return posts
 

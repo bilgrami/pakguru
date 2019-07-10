@@ -29,8 +29,16 @@
         <div class="col-1">
         </div>
             <div class="col-11">
-                <h4><a href="{% url 'singletalkshow' channel=post.channel_slug show=post.show_slug show_id=post.show.show_id %}">{{ post.show.name}}</a></h4>
-            </div>
+              <span>
+                <h4>
+                  <a href="{% url 'singletalkshow' channel=post.channel_slug show=post.show_slug show_id=post.show.show_id %}">
+                  {{ post.show.name}}</a> 
+              </span>
+                <span class="h6 {{post.latest_post_color}}">              
+                    ({{ post.latest_post.target_date |timesince:post.time_in_pakistan }} ago)
+              </span>    
+            </h4>
+          </div>
         </div>
       {% endifchanged %}
     {% endfor %}

@@ -93,7 +93,7 @@ def process_posts(posts):
     return posts
 
 
-# @cache_page(24*60*4)
+@cache_page(24*60*4)
 def talkshows(request):
     category = 'Talk Shows'
     assert isinstance(request, HttpRequest)
@@ -115,7 +115,7 @@ def talkshows(request):
     )
 
 
-# @cache_page(24*60*4)
+@cache_page(24*60*4)
 def singletalkshow(request, channel, show, show_id):
     category = 'Talks Shows'
     assert isinstance(request, HttpRequest)
@@ -138,7 +138,7 @@ def singletalkshow(request, channel, show, show_id):
     )
 
 
-# @cache_page(24*60*4)
+@cache_page(24*60*4)
 def dramaserials(request):
     category = 'Drama Serials'
     assert isinstance(request, HttpRequest)
@@ -159,7 +159,7 @@ def dramaserials(request):
     )
 
 
-# @cache_page(24*60*4)
+@cache_page(24*60*4)
 def singledramaserial(request, channel, show, show_id):
     category = 'Drama Serials'
     assert isinstance(request, HttpRequest)

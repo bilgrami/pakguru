@@ -34,19 +34,6 @@ class Command(BaseCommand):
         # 0 is to process everything
         python manage.py harvest_show_feeds_UNT True 0
 
-        Pseuodo Algrothm:
-            Expire all exisiting jobs if recreate_all_jobs is True
-
-            find all active feeds belonging to unewstv
-            that have no corresponding record in job table
-
-            download feed_posts
-                create the new feed job record
-                    latest_job.job_status = in-progress
-                    latest_job.latest_date = latest_date
-                    latest_job.feed_data = feed_posts
-                    latest_job.isactive = true
-
         """
         recreate_all_jobs = options['recreate_all_jobs']
         max_feeds = options['max_feeds']

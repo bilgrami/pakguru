@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<h2>{{ title }}.</h2>
-<h3>{{ message }}</h3>
-
-<p>Use this area to provide additional information.</p>
+<h2 class="display-2">{{ title }}.</h2>
+<h3 class="display-3">{{ message }}</h3>
+<br/><br/>
+<h4 class="display-4">Please use <a href="{% url 'contact' %}">Contact</a> page to provide feedback and suggestions.</h4>
 
 {% endblock %}

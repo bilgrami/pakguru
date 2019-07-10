@@ -25,7 +25,7 @@ def home(request):
     )
 
 
-@cache_page(24*60*4)
+# @cache_page(24*60*4)
 def contact(request):
     """Renders the contact page."""
     assert isinstance(request, HttpRequest)
@@ -33,14 +33,14 @@ def contact(request):
         request,
         'pakguru_app/contact.html',
         {
-            'title': 'Contact',
-            'message': 'Your contact page.',
+            'title': '',
+            'message': '',
             'year': datetime.now().year,
         }
     )
 
 
-@cache_page(24*60*4)
+# @cache_page(24*60*4)
 def about(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
@@ -49,7 +49,7 @@ def about(request):
         'pakguru_app/about.html',
         {
             'title': 'About',
-            'message': 'Your application description page.',
+            'message': 'Pak.guru is a listing of Daily Talk-shows and Dramas.',
             'year': datetime.now().year,
         }
     )

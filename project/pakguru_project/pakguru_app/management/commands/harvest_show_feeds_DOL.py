@@ -135,11 +135,11 @@ def process_lising(listing):
     in_hd = 'False'
     if "Episode" in label:
         in_hd = 'True' if "-in-hd" in link else 'False'
-        if label and len(label.split(" Episode ")) == 2:
-            episode = label.split(" Episode ")[1]
+        if label and len(label.split(" Episode ")) >= 2:
+            episode = label.split(" Episode ")[-1]
 
-        if label and len(label.split(" Episodee ")) == 2:
-            episode = label.split(" Episodee ")[1]
+        if label and len(label.split(" Episodee ")) >= 2:
+            episode = label.split(" Episodee ")[-1]
     else:
         matches = datefinder.find_dates(label_text)
         dt = next(iter(matches))

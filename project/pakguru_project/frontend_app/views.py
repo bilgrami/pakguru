@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.urls import reverse
 from django.views.decorators.cache import cache_page
 
-from pakguru_app.models import Post
+from pakguru_app.models import Post, ShowFeed_HarvestJobLog
 
 
 @cache_page(24*60*4)
@@ -85,10 +85,15 @@ def process_posts(posts):
         post.label = post.title
         post.change_url = reverse('admin:pakguru_app_post_change',
                                   args=(post.post_id,))
+        job_id = post.extra_data['job_id']
+        post.feed_job_url = reverse('admin:pakguru_app_showfeed_harvestjoblog_change',  # noqa: E501
+                                    args=(job_id,))
+        post.feed_file_url = ShowFeed_HarvestJobLog.objects.get(pk=job_id).feed_data.url  # noqa: E501
+
     return posts
 
 
-@cache_page(24*60*4)
+# @cache_page(24*60*4)
 def talkshows(request):
     category = 'Talk Shows'
     assert isinstance(request, HttpRequest)
@@ -110,7 +115,7 @@ def talkshows(request):
     )
 
 
-@cache_page(24*60*4)
+# @cache_page(24*60*4)
 def singletalkshow(request, channel, show, show_id):
     category = 'Talks Shows'
     assert isinstance(request, HttpRequest)
@@ -133,7 +138,7 @@ def singletalkshow(request, channel, show, show_id):
     )
 
 
-@cache_page(24*60*4)
+# @cache_page(24*60*4)
 def dramaserials(request):
     category = 'Drama Serials'
     assert isinstance(request, HttpRequest)
@@ -154,7 +159,7 @@ def dramaserials(request):
     )
 
 
-@cache_page(24*60*4)
+# @cache_page(24*60*4)
 def singledramaserial(request, channel, show, show_id):
     category = 'Drama Serials'
     assert isinstance(request, HttpRequest)

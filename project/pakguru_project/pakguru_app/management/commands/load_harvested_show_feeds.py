@@ -89,6 +89,7 @@ class Command(BaseCommand):
                 video_link = v['video_link']
                 is_show = is_politics = True
                 is_joke = is_quote = False
+                extra_data['feed_post'] = v
                 if show.extra_data:
                     is_show = self.get_flag(show.extra_data, 'is_Show')
                     is_politics = self.get_flag(show.extra_data, 'is_Politics')

@@ -137,7 +137,7 @@ def process_lising(listing, show_name):
     dt = ''
     if "Episode" in label_text:
         if label_text and len(label_text.split(" Episode ")) == 2:
-            episode = get_episode(label_text.split(" Episode ")[1])
+            episode = get_episode(label_text.split(" Episode ")[-1])
 
     dt = get_date(label_text, show_name, episode)
     dt = dt.isoformat()
@@ -155,8 +155,8 @@ def get_date(label_text, show_name, episode):
         return ei.original_air_date
     else:
         label_text = label_text.lower()
-        if " on " in label_text and len(label_text.split(" on ")) == 2:  # noqa: E501
-            label_text = label_text.split(" on ")[1]
+        if " on " in label_text and len(label_text.split(" on ")) >= 2:  # noqa: E501
+            label_text = label_text.split(" on ")[-1]
 
         matches = datefinder.find_dates(label_text)
         dt = next(iter(matches), False)

@@ -8,9 +8,11 @@ from django.urls import reverse
 from django.views.decorators.cache import cache_page
 
 from pakguru_app.models import Post, ShowFeed_HarvestJobLog
+FIVE_MINUTES = 60*5
+ONE_DAY = 60*60*24
 
 
-@cache_page(24*60*4)
+@cache_page(ONE_DAY)
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -25,7 +27,6 @@ def home(request):
     )
 
 
-# @cache_page(24*60*4)
 def contact(request):
     """Renders the contact page."""
     assert isinstance(request, HttpRequest)
@@ -40,7 +41,7 @@ def contact(request):
     )
 
 
-@cache_page(24*60*4)
+@cache_page(ONE_DAY)
 def about(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
@@ -108,7 +109,7 @@ def process_posts(posts):
     return posts
 
 
-@cache_page(24*60*4)
+@cache_page(FIVE_MINUTES)
 def talkshows(request):
     category = 'Talk Shows'
     assert isinstance(request, HttpRequest)
@@ -130,7 +131,7 @@ def talkshows(request):
     )
 
 
-@cache_page(24*60*4)
+@cache_page(FIVE_MINUTES)
 def singletalkshow(request, channel, show, show_id):
     category = 'Talks Shows'
     assert isinstance(request, HttpRequest)
@@ -153,7 +154,7 @@ def singletalkshow(request, channel, show, show_id):
     )
 
 
-@cache_page(24*60*4)
+@cache_page(FIVE_MINUTES)
 def dramaserials(request):
     category = 'Drama Serials'
     assert isinstance(request, HttpRequest)
@@ -174,7 +175,7 @@ def dramaserials(request):
     )
 
 
-@cache_page(24*60*4)
+@cache_page(FIVE_MINUTES)
 def singledramaserial(request, channel, show, show_id):
     category = 'Drama Serials'
     assert isinstance(request, HttpRequest)

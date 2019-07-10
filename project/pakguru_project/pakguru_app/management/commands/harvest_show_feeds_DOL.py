@@ -68,6 +68,10 @@ class Command(BaseCommand):
         for feed in feeds:
             print("feed: id -> ", feed.pk, "-name> ", feed)
             feed_url = feed.playlist_link
+            if not feed.extra_data:
+                print('Warning: Please check configuration under extra_data')
+                continue
+
             channel = feed.extra_data['channel']
             show_name_from_feed = feed.extra_data['show_name_from_feed']
             additional_feed_url = feed.extra_data['additional_feed_url']

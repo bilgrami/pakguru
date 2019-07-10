@@ -103,7 +103,7 @@ def process_posts(posts):
         post.time_in_pakistan = time_in_pakistan
         if post.latest_post.target_date >= yesterday:
             post.latest_post_color = 'text-danger'
-        if post.latest_post.target_date >= two_days_ago:
+        elif post.latest_post.target_date >= two_days_ago:
             post.latest_post_color = 'text-warning'
 
     return posts

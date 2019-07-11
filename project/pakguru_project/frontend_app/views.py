@@ -2,12 +2,15 @@ import json
 from datetime import date, datetime, timedelta
 
 import django.utils.text
-from django.http import HttpRequest
+from django.contrib.admin.views.decorators import staff_member_required
+from django.http import HttpRequest, JsonResponse
 from django.shortcuts import render
 from django.urls import reverse
 from django.views.decorators.cache import cache_page
 
 from pakguru_app.models import Post, ShowFeed_HarvestJobLog
+
+from .tasks import ProcessFeedTask
 
 FIVE_MINUTES = 60*5
 ONE_DAY = 60*60*24
@@ -114,7 +117,7 @@ def talkshows(request):
     category = 'Talk Shows'
     last_7_days = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
     posts = Post.objects.filter(is_active=True, target_date__gte=last_7_days, category__name=category).all().order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
-    process_posts(posts)
+    posts = process_posts(posts)
 
     return render(
         request,
@@ -134,7 +137,7 @@ def singletalkshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     last_7_days = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
     posts = Post.objects.filter(is_active=True, target_date__gte=last_7_days, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
-    process_posts(posts)
+    posts = process_posts(posts)
 
     return render(
         request,
@@ -153,7 +156,7 @@ def dramaserials(request):
     assert isinstance(request, HttpRequest)
     category = 'Drama Serials'
     posts = Post.objects.filter(is_active=True, category__name=category).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
-    process_posts(posts)
+    posts = process_posts(posts)
 
     return render(
         request,
@@ -185,12 +188,12 @@ def singledramaserial(request, channel, show, show_id):
     )
 
 
-@cache_page(FOUR_HOURS)
+@cache_page(FIVE_MINUTES)
 def recentshows(request):
     assert isinstance(request, HttpRequest)
     yesterday = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
-    posts = Post.objects.filter(is_active=True, publish_date__gte=yesterday).order_by('-target_date')  # noqa:E501
-    process_posts(posts)
+    posts = Post.objects.filter(is_active=True, publish_date__gte=yesterday).order_by('-post_id')  # noqa:E501
+    posts = process_posts(posts)
 
     return render(
         request,
@@ -199,7 +202,7 @@ def recentshows(request):
             'title': 'Recently Published Videos',
             "recentshows_page": "active",
             'message': 'Recently Published Videos',
-            'posts': posts
+            'posts': posts[:50]
         }
     )
 
@@ -209,7 +212,7 @@ def comedyshows(request):
     assert isinstance(request, HttpRequest)
     category = 'Comedy Shows'
     posts = Post.objects.filter(is_active=True, category__name=category).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
-    process_posts(posts)
+    posts = process_posts(posts)
 
     return render(
         request,
@@ -227,7 +230,7 @@ def comedyshows(request):
 def singlecomedyshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
-    process_posts(posts)
+    posts = process_posts(posts)
 
     return render(
         request,
@@ -239,3 +242,15 @@ def singlecomedyshow(request, channel, show, show_id):
             'posts': posts
         }
     )
+
+
+@staff_member_required
+def process_feeds(request, data):
+    result = ProcessFeedTask.process_feeds(data)
+    data = {
+        'data': data,
+        'result': result
+        }
+
+    # just return a JsonResponse
+    return JsonResponse(data)

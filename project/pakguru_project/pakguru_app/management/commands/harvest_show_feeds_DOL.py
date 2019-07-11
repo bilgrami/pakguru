@@ -15,6 +15,8 @@ from pakguru_app.models import Post, Show
 from pakguru_app.models import ShowFeed_HarvestJobLog as job
 from pakguru_app.models import ShowSourceFeed
 
+result = {}
+
 
 class Command(BaseCommand):
     def add_arguments(self, parser):
@@ -147,9 +149,14 @@ def process_lising(listing):
             episode = label.split(" Episodee ")[-1]
     else:
         matches = datefinder.find_dates(label_text)
-        dt = next(iter(matches))
+        dt = next(iter(matches), False)
         if dt:
-            dt = dt.date().isoformat()
+            dt = dt.date()
+            if dt in result:
+                delta = datetime.timedelta(days=episode)
+                return (dt + delta)
+            else:
+                return dt
 
     return (link, label_text, category, episode, dt, in_hd)
 
@@ -190,7 +197,6 @@ def get_feed_posts(feed_url, additional_feed_url,
     soup = BeautifulSoup(page.content, 'html.parser')
     mid_container = soup.find('div', {"id": "middle-container"})
     post_listings = mid_container.find_all('div', class_='list_contents')
-    result = {}
 
     for listing in post_listings:
         link, label, category, episode, dt, in_hd = process_lising(listing)

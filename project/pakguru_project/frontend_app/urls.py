@@ -42,6 +42,9 @@ urlpatterns = [
          ),
          name='login'),
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
+
+    path('process_feeds/<data>/', views.process_feeds, name='process_feeds'),
+   
 ]
 # https://stackoverflow.com/questions/9181047/django-static-files-development
 # urlpatterns += staticfiles_urlpatterns()

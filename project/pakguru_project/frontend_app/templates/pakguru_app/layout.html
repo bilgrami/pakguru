@@ -15,7 +15,7 @@
       gtag('config', 'UA-143619657-1');
     </script>
 
-    <title>{{ title }} - Pakguru website</title>
+    <title>{{ title }} - pak.guru website</title>
     {% load static %}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -36,14 +36,23 @@
                       <a class="nav-link" href="{% url 'home' %}">Home <span class="sr-only">(current)</span></a>
                     </li>
 
+                    <li class="nav-item {{ recentshows_page }}">
+                      <a class="nav-link" href="{% url 'recentshows' %}" tabindex="1">Recent Shows</a>
+                    </li>
+
                     <li class="nav-item {{ talkshows_page }}">
-                      <a class="nav-link" href="{% url 'talkshows' %}" tabindex="1">Talk Shows</a>
+                      <a class="nav-link" href="{% url 'talkshows' %}" tabindex="2">Talk Shows</a>
+                    </li>
+
+                    <li class="nav-item {{ comedyshows_page }}">
+                      <a class="nav-link" href="{% url 'comedyshows' %}" tabindex="3">Comedy Shows</a>
                     </li>
 
                     <li class="nav-item {{ dramaserials_page }}">
-                      <a class="nav-link" href="{% url 'dramaserials' %}" tabindex="2">Drama Serials</a>
+                      <a class="nav-link" href="{% url 'dramaserials' %}" tabindex="4">Drama Serials</a>
                     </li>
-                    
+
+
                     <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                               Help
@@ -51,16 +60,16 @@
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                               <a class="dropdown-item" href="{% url 'about' %}">About</a>
                               <a class="dropdown-item" href="{% url 'contact' %}">Contact</a>
-                              <div class="dropdown-divider"></div>
+                              {% comment %} <div class="dropdown-divider"></div>
                               <a class="dropdown-item" href="#">Report a Bug</a>
-                            </div>
+                            </div> {% endcomment %}
                           </li>
 
                   </ul>
-                  <form class="form-inline my-2 my-lg-0">
+                  {% comment %} <form class="form-inline my-2 my-lg-0">
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                  </form>
+                  </form> {% endcomment %}
                 </div>
               </nav>
 

@@ -1,0 +1,14 @@
+{% extends "pakguru_app/layout.html" %}
+
+{% block content %}
+    {% load staticfiles %}
+
+    {% block video_header %}
+        {% include "frontend_app/video_header_partial.html" %}    
+    {% endblock video_header %}
+
+    {% block video_list %}
+        {% include "frontend_app/video_list_partial.html" %}    
+    {% endblock video_list %}
+
+{% endblock %}

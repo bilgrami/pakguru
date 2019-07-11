@@ -15,6 +15,8 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('about/', views.about, name='about'),
 
+    path('recentshows/', views.recentshows, name='recentshows'),
+
     path('talkshows/', views.talkshows, name='talkshows'),
     path('talkshows/<channel>/<show>/<show_id>/', views.singletalkshow,
          name='singletalkshow'),
@@ -22,6 +24,11 @@ urlpatterns = [
     path('dramaserials/', views.dramaserials, name='dramaserials'),
     path('dramaserial/<channel>/<show>/<show_id>/', views.singledramaserial,
          name='singledramaserial'),
+
+    path('comedyshows/', views.comedyshows, name='comedyshows'),
+    path('comedyshow/<channel>/<show>/<show_id>/', views.singlecomedyshow,
+         name='singlecomedyshow'),
+
     path('login/',
          LoginView.as_view
          (

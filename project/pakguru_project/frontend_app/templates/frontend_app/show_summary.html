@@ -1,0 +1,42 @@
+{% extends "pakguru_app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+{% load humanize %}
+
+<div class="container">
+
+  <div class="row bg-primary text-white justify-content-md-center">
+      <div class="col-12">
+        <h3>{{message}} </h3>
+      </div>
+  </div>
+  <div class="row justify-content-md-center">
+      <div class="col-12">
+         <h4>{{ posts|length }} Video{{ posts|length | pluralize }}</h4>
+      </div>
+ </div>
+
+    {% for post in posts  %} 
+      {% ifchanged %}
+        <div class="row">
+          <div class="col-12">
+          <hr/>
+              <h2>{{ post.show.channel }} </h2>
+          </div>
+        </div>
+      {% endifchanged %}
+      {% ifchanged %}
+        <div class="row">
+        <div class="col-1">
+        </div>
+            <div class="col-11">
+                <h4><a href="{% url 'singledramaserial' channel=post.channel_slug show=post.show_slug show_id=post.show.show_id %}">
+                  {{ post.show.name}}</a>
+                  ({{ post.latest_post.target_date | timesince }})                
+                </h4>
+            </div>
+        </div>
+      {% endifchanged %}
+    {% endfor %}
+{% endblock %}

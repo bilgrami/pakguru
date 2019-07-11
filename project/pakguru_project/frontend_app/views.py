@@ -1,5 +1,5 @@
 import json
-from datetime import datetime, timedelta, date
+from datetime import date, datetime, timedelta
 
 import django.utils.text
 from django.http import HttpRequest
@@ -8,8 +8,10 @@ from django.urls import reverse
 from django.views.decorators.cache import cache_page
 
 from pakguru_app.models import Post, ShowFeed_HarvestJobLog
+
 FIVE_MINUTES = 60*5
 ONE_DAY = 60*60*24
+FOUR_HOURS = 60*60*4
 
 
 @cache_page(ONE_DAY)
@@ -82,8 +84,6 @@ def process_posts(posts):
     latest_posts = {}
     yesterday = date.today() - timedelta(days=1)
     two_days_ago = date.today() - timedelta(days=2)
-    # TODO: need to handle DST transition
-    time_in_pakistan = date.today() + timedelta(hours=12)
 
     for post in posts:
         post.type, post.url = get_post_url(post.text)
@@ -100,7 +100,6 @@ def process_posts(posts):
             latest_posts[post.show] = Post.objects.filter(show=post.show).order_by('-target_date').first()  # noqa: E501
 
         post.latest_post = latest_posts[post.show]
-        post.time_in_pakistan = time_in_pakistan
         if post.latest_post.target_date >= yesterday:
             post.latest_post_color = 'text-danger'
         elif post.latest_post.target_date >= two_days_ago:
@@ -109,88 +108,134 @@ def process_posts(posts):
     return posts
 
 
-@cache_page(FIVE_MINUTES)
+@cache_page(FOUR_HOURS)
 def talkshows(request):
-    category = 'Talk Shows'
     assert isinstance(request, HttpRequest)
+    category = 'Talk Shows'
     last_7_days = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
     posts = Post.objects.filter(is_active=True, target_date__gte=last_7_days, category__name=category).all().order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
     process_posts(posts)
 
     return render(
         request,
-        'pakguru_app/talkshows.html',
+        'frontend_app/show_summary.html',
         {
-            'title': 'Daily Talk Shows',
+            'title': 'Video Lst of Daily Talk Shows',
             "talkshows_page": "active",
-            'category': category,
-            'message': 'Daily Talk shows',
+            'message': 'Daily Talk show videos',
             'posts': posts,
             'posts_visible': False
         }
     )
 
 
-@cache_page(FIVE_MINUTES)
+@cache_page(FOUR_HOURS)
 def singletalkshow(request, channel, show, show_id):
-    category = 'Talks Shows'
     assert isinstance(request, HttpRequest)
-
     last_7_days = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
     posts = Post.objects.filter(is_active=True, target_date__gte=last_7_days, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
     process_posts(posts)
 
     return render(
         request,
-        'pakguru_app/talkshows.html',
+        'frontend_app/show_list.html',
         {
             'title': 'Daily Talk Show',
             "talkshows_page": "active",
-            'category': category,
-            'message': 'Daily Talk show',
-            'posts': posts,
-            'posts_visible': True
+            'message': posts[0].show,
+            'posts': posts
         }
     )
 
 
-@cache_page(FIVE_MINUTES)
+@cache_page(FOUR_HOURS)
 def dramaserials(request):
-    category = 'Drama Serials'
     assert isinstance(request, HttpRequest)
+    category = 'Drama Serials'
     posts = Post.objects.filter(is_active=True, category__name=category).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
     process_posts(posts)
 
     return render(
         request,
-        'pakguru_app/dramaserials.html',
+        'frontend_app/show_summary.html',
         {
-            'title': 'Drama Serials',
+            'title': 'Video List of Drama Serials',
             "dramaserials_page": "active",
-            'category': category,
-            'message': 'Drama Serials',
-            'posts': posts,
-            'posts_visible': False
+            'message': 'Video List of Drama Serials',
+            'posts': posts
         }
     )
 
 
-@cache_page(FIVE_MINUTES)
+@cache_page(FOUR_HOURS)
 def singledramaserial(request, channel, show, show_id):
-    category = 'Drama Serials'
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
     process_posts(posts)
 
     return render(
         request,
-        'pakguru_app/dramaserials.html',
+        'frontend_app/show_list.html',
         {
-            'title': 'Drama Serial',
+            'title': 'Drama Serial Video',
             "dramaserials_page": "active",
-            'category': category,
-            'message': 'Drama Serials',
-            'posts': posts,
-            'posts_visible': True
+            'message': posts[0].show,
+            'posts': posts
+        }
+    )
+
+
+@cache_page(FOUR_HOURS)
+def recentshows(request):
+    assert isinstance(request, HttpRequest)
+    yesterday = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
+    posts = Post.objects.filter(is_active=True, publish_date__gte=yesterday).order_by('-target_date')  # noqa:E501
+    process_posts(posts)
+
+    return render(
+        request,
+        'frontend_app/show_list.html',
+        {
+            'title': 'Recently Published Videos',
+            "recentshows_page": "active",
+            'message': 'Recently Published Videos',
+            'posts': posts
+        }
+    )
+
+
+@cache_page(FOUR_HOURS)
+def comedyshows(request):
+    assert isinstance(request, HttpRequest)
+    category = 'Comedy Shows'
+    posts = Post.objects.filter(is_active=True, category__name=category).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
+    process_posts(posts)
+
+    return render(
+        request,
+        'frontend_app/show_summary.html',
+        {
+            'title': 'Video list of Comedy Shows',
+            "comedyshows_page": "active",
+            'message': 'Video list of Comedy Shows',
+            'posts': posts
+        }
+    )
+
+
+@cache_page(FOUR_HOURS)
+def singlecomedyshow(request, channel, show, show_id):
+    assert isinstance(request, HttpRequest)
+    posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
+    process_posts(posts)
+
+    return render(
+        request,
+        'frontend_app/show_list.html',
+        {
+            'title': 'Comedy Show Videos',
+            "comedyshows_page": "active",
+            'message': posts[0].show,
+            'posts': posts
         }
     )

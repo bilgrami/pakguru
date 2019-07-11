@@ -63,8 +63,7 @@ class Command(BaseCommand):
             print("job_latest_feed_date: ", job_latest_feed_date)
             tstart = datetime.now()
             feed_posts = {}
-            feed_data_from_file = latest_job.feed_data.read()
-            if feed_data_from_file:
+            if latest_job.feed_data:
                 feed_posts = eval(latest_job.feed_data.read())
                 print(f"feed_posts retrieved from job: {latest_job.job_id}")
             latest_job.job_status = 'IN PROGRESS'  # in progress

@@ -10,14 +10,14 @@ from django.views.decorators.cache import cache_page
 
 from pakguru_app.models import Post, ShowFeed_HarvestJobLog
 
-from .tasks import ProcessFeedTask
+from .tasks import CacheTask, ProcessFeedsTask
 
 FIVE_MINUTES = 60*5
 ONE_DAY = 60*60*24
 FOUR_HOURS = 60*60*4
 
 
-# @cache_page(FOUR_HOURS)
+@cache_page(FOUR_HOURS)
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -46,7 +46,7 @@ def contact(request):
     )
 
 
-# @cache_page(ONE_DAY)
+@cache_page(ONE_DAY)
 def about(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
@@ -114,7 +114,7 @@ def process_posts(posts):
     return posts
 
 
-# @cache_page(FOUR_HOURS)
+@cache_page(FOUR_HOURS)
 def talkshows(request):
     assert isinstance(request, HttpRequest)
     category = 'Talk Shows'
@@ -135,7 +135,7 @@ def talkshows(request):
     )
 
 
-# @cache_page(FOUR_HOURS)
+@cache_page(FOUR_HOURS)
 def singletalkshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     last_7_days = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
@@ -154,7 +154,7 @@ def singletalkshow(request, channel, show, show_id):
     )
 
 
-# @cache_page(FOUR_HOURS)
+@cache_page(FOUR_HOURS)
 def dramaserials(request):
     assert isinstance(request, HttpRequest)
     category = 'Drama Serials'
@@ -173,7 +173,7 @@ def dramaserials(request):
     )
 
 
-# @cache_page(FOUR_HOURS)
+@cache_page(FOUR_HOURS)
 def singledramaserial(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
@@ -191,7 +191,7 @@ def singledramaserial(request, channel, show, show_id):
     )
 
 
-# @cache_page(FOUR_HOURS)
+@cache_page(FOUR_HOURS)
 def recentshows(request):
     assert isinstance(request, HttpRequest)
     yesterday = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
@@ -210,7 +210,7 @@ def recentshows(request):
     )
 
 
-# @cache_page(FOUR_HOURS)
+@cache_page(FOUR_HOURS)
 def comedyshows(request):
     assert isinstance(request, HttpRequest)
     category = 'Comedy Shows'
@@ -229,7 +229,7 @@ def comedyshows(request):
     )
 
 
-# @cache_page(FOUR_HOURS)
+@cache_page(FOUR_HOURS)
 def singlecomedyshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
@@ -248,18 +248,43 @@ def singlecomedyshow(request, channel, show, show_id):
 
 
 @staff_member_required
-def process_feeds(request, param1="True", param2=0, param3=-1):
-    t = ProcessFeedTask()
-    result = t.process_feeds(param1, param2, param3)
+def process_feeds(request):
+    assert isinstance(request, HttpRequest)
+    t = ProcessFeedsTask()
+    result = t.process_feeds()
     data = {
-        'params':
-            {
-                'param1': param1,
-                'param2': param2,
-                'param3': param3
-            },
+        'Task': 'ProcessFeedsTask',
         'result': result
         }
 
-    # just return a JsonResponse
     return JsonResponse(data)
+
+
+@staff_member_required
+def clear_cache(request):
+    assert isinstance(request, HttpRequest)
+    t = CacheTask()
+    result, result_detail = t.clear_cache()
+    data = {
+        'Task': 'CacheTask - Clear',
+        'result': result,
+        'detail': result_detail
+        }
+
+    # data = json.dumps(data, indent=4)
+    return JsonResponse(data, safe=False)
+
+
+@staff_member_required
+def get_cache(request):
+    assert isinstance(request, HttpRequest)
+    t = CacheTask()
+    result, result_detail = t.get_cache()
+    data = {
+        'Task': 'CacheTask - Get',
+        'result': result,
+        'detail': result_detail
+        }
+
+    # data = json.dumps(data, indent=4)
+    return JsonResponse(data, safe=False)

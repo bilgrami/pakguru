@@ -1,23 +1,56 @@
+import os
+from subprocess import Popen
+
 from django.core import management
-import threading
+
+import pakguru_app as app
+from common_utils_app.helpers import cache_helper as ch
 
 
-class ProcessFeedTask():
+class ProcessFeedsTask():
 
-    def worker(self, args):
-        param1 = args[0]
-        param2 = int(args[1])
-        param3 = int(args[2])
-        management.call_command("harvest_show_feeds_UNT", param1, param2)
-        management.call_command("harvest_show_feeds_DOL", param1, param2)
-        management.call_command("harvest_show_feeds_VPK", param1, param2)
-        management.call_command("load_harvested_show_feeds", param3)
+    def worker(self):
+        app_path = os.path.dirname(app.__file__)
+        cmd = os.path.join(app_path, 'shell_scripts', 'process_show_feeds.sh')
+        print('cmd:\n', cmd)
+        p = Popen([cmd])
+        p.terminate()
 
-    def process_feeds(self, param1, param2, param3):
-        print('calling command with Arg ->', param1, param2, param3)
-        args = (param1, param2, param3,)
-        # self.worker(args)
-        worker_thread = threading.Thread(target=self.worker, args=args)
-        worker_thread.daemon = True
-        worker_thread.start()
-        return 'done'
+    def process_feeds(self):
+        print('calling process_feeds command')
+        self.worker()
+        return 'OK'
+
+
+class CacheTask():
+
+    def clear_cache(self):
+        print('calling clear_cache command')
+        c = ch.CacheHelper(key_prefix=None)
+        all_keys = c.get_all_keys_in_db()
+        before_clear_cache = len(c.get_all_keys_in_db())
+        management.call_command("clear_cache")
+        after_clear_cache = len(c.get_all_keys_in_db())
+
+        before_cache_helper = len(c.get_all_keys_in_db())
+        c.clear_all()
+        after_cache_helper = len(c.get_all_keys_in_db())
+        data = {
+                'before_clear_cache': before_clear_cache,
+                'after_clear_cache': after_clear_cache,
+                'before_cache_helper': before_cache_helper,
+                'after_cache_helper': after_cache_helper,
+                'all_keys': str(all_keys),
+        }
+        return ('OK', data)
+
+    def get_cache(self):
+        print('calling get_cache command')
+        c = ch.CacheHelper(key_prefix=None)
+        all_keys = c.get_all_keys_in_db()
+        key_count = len(all_keys)
+        data = {
+                'key_count': key_count,
+                'all_keys': str(all_keys),
+        }
+        return ('OK', data)

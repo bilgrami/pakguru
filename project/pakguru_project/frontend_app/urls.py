@@ -43,8 +43,10 @@ urlpatterns = [
          name='login'),
     path('logout/', LogoutView.as_view(next_page='/'), name='logout'),
 
-    path('process_feeds/<param1>/<param2>/<param3>/', views.process_feeds, name='process_feeds'),
-   
+    path('process_feeds/', views.process_feeds, name='process_feeds'),
+    path('clear_cache/', views.clear_cache, name='clear_cache'),
+    path('get_cache/', views.get_cache, name='get_cache'),
+
 ]
 # https://stackoverflow.com/questions/9181047/django-static-files-development
 # urlpatterns += staticfiles_urlpatterns()

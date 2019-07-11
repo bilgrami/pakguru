@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'django_extensions',
     'rest_framework',
     'django_admin_shell',
+    'clear_cache',
  ]
 
 MIDDLEWARE = [
@@ -206,22 +207,35 @@ ADMIN_SHELL_ENABLE = True
 ADMIN_SHELL_ONLY_FOR_SUPERUSER = True
 ADMIN_SHELL_ONLY_DEBUG_MODE = True
 
-# REDIS settings
-REDIS_HOST = env('REDIS_HOST', 'redis')
-REDIS_PORT = 6379
-REDIS_DB = 0
-# REDIS_CACHE_LOCATION = "redis://redis:6379/0",
-REDIS_CACHE_LOCATION = "redis://" + env('REDIS_HOST', 'redis') + ":6379/0"
-CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": REDIS_CACHE_LOCATION,
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+
+if DATABASES['default']['ENGINE'] == 'django.db.backends.sqlite3':
+    USING_DUMMY_CACHE = True
+    CACHES = {
+        'default': {
+            # 'BACKEND': 'django.core.cache.backends.dummy.DummyCache',
+            'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+            }
+    }
+else:
+    USING_DUMMY_CACHE = False
+
+    # REDIS settings
+    REDIS_HOST = env('REDIS_HOST', 'localhost')
+    REDIS_PORT = 6379
+    REDIS_DB = 0
+    # REDIS_CACHE_LOCATION = "redis://redis:6379/0",
+    REDIS_CACHE_LOCATION = f"redis://{REDIS_HOST}:{REDIS_PORT}/0"
+
+    CACHES = {
+        "default": {
+            "BACKEND": "django_redis.cache.RedisCache",
+            "LOCATION": REDIS_CACHE_LOCATION,
+            "OPTIONS": {
+                "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            }
         }
     }
-}
 
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
-CACHE_TIMEOUT = 24*60*60*7
+CACHE_TIMEOUT = 24*60*60

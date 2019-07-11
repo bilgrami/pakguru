@@ -15,8 +15,9 @@ class ProcessFeedTask():
 
     def process_feeds(self, param1, param2, param3):
         print('calling command with Arg ->', param1, param2, param3)
-        args = (param1, param2, param3)
+        args = (param1, param2, param3,)
         # self.worker(args)
-        worker_thread = threading.Thread(target=self.worker, args=args, daemon=True)
+        worker_thread = threading.Thread(target=self.worker, args=args)
+        worker_thread.daemon = True
         worker_thread.start()
         return 'done'

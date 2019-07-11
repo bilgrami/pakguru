@@ -111,7 +111,7 @@ def process_posts(posts):
     return posts
 
 
-@cache_page(FOUR_HOURS)
+@cache_page(FIVE_MINUTES)
 def talkshows(request):
     assert isinstance(request, HttpRequest)
     category = 'Talk Shows'
@@ -132,7 +132,7 @@ def talkshows(request):
     )
 
 
-@cache_page(FOUR_HOURS)
+@cache_page(FIVE_MINUTES)
 def singletalkshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     last_7_days = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
@@ -151,7 +151,7 @@ def singletalkshow(request, channel, show, show_id):
     )
 
 
-@cache_page(FOUR_HOURS)
+@cache_page(FIVE_MINUTES)
 def dramaserials(request):
     assert isinstance(request, HttpRequest)
     category = 'Drama Serials'
@@ -170,7 +170,7 @@ def dramaserials(request):
     )
 
 
-@cache_page(FOUR_HOURS)
+@cache_page(FIVE_MINUTES)
 def singledramaserial(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
@@ -207,7 +207,7 @@ def recentshows(request):
     )
 
 
-@cache_page(FOUR_HOURS)
+@cache_page(FIVE_MINUTES)
 def comedyshows(request):
     assert isinstance(request, HttpRequest)
     category = 'Comedy Shows'
@@ -226,7 +226,7 @@ def comedyshows(request):
     )
 
 
-@cache_page(FOUR_HOURS)
+@cache_page(FIVE_MINUTES)
 def singlecomedyshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501

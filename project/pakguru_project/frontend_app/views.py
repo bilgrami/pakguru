@@ -120,9 +120,9 @@ def talkshows(request):
         request,
         'frontend_app/show_summary.html',
         {
-            'title': 'Video Lst of Daily Talk Shows',
+            'title': 'Video List of Daily Talk Shows',
             "talkshows_page": "active",
-            'message': 'Daily Talk show videos',
+            'message': 'Video List of Daily Talk Shows',
             'posts': posts,
             'posts_visible': False
         }

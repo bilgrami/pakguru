@@ -37,7 +37,7 @@ class ViewTest(TestCase):
     def test_talkshows(self):
         """Tests the talkshows page."""
         response = self.client.get('/talkshows/')
-        self.assertContains(response, 'Talk Shows', 3, 200)
+        self.assertContains(response, 'Talk Shows', 2, 200)
 
     def test_dramaserials(self):
         """Tests the dramaserials page."""

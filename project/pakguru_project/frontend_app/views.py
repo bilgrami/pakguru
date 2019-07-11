@@ -245,10 +245,16 @@ def singlecomedyshow(request, channel, show, show_id):
 
 
 @staff_member_required
-def process_feeds(request, data):
-    result = ProcessFeedTask.process_feeds(data)
+def process_feeds(request, param1="True", param2=0, param3=-1):
+    t = ProcessFeedTask()
+    result = t.process_feeds(param1, param2, param3)
     data = {
-        'data': data,
+        'params':
+            {
+                'param1': param1,
+                'param2': param2,
+                'param3': param3
+            },
         'result': result
         }
 

@@ -37,9 +37,19 @@ class ViewTest(TestCase):
     def test_talkshows(self):
         """Tests the talkshows page."""
         response = self.client.get('/talkshows/')
-        self.assertContains(response, 'Talk Shows', 2, 200)
+        self.assertEqual(response.status_code, 200)
 
     def test_dramaserials(self):
         """Tests the dramaserials page."""
         response = self.client.get('/dramaserials/')
-        self.assertContains(response, 'Drama Serials', 3, 200)
+        self.assertEqual(response.status_code, 200)
+
+    def test_comedyshows(self):
+        """Tests the comedyshows page."""
+        response = self.client.get('/comedyshows/')
+        self.assertEqual(response.status_code, 200)
+
+    def test_recentlypublishedshows(self):
+        """Tests the recentshows page."""
+        response = self.client.get('/recentshows/')
+        self.assertEqual(response.status_code, 200)

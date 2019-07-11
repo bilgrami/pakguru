@@ -30,11 +30,16 @@
         <div class="row">
         <div class="col-1">
         </div>
-            <div class="col-11">
-                <h4><a href="{% url 'singledramaserial' channel=post.channel_slug show=post.show_slug show_id=post.show.show_id %}">
+        <div class="col-11">
+
+               <span class="h4">
+               <a href="{% url 'singledramaserial' channel=post.channel_slug show=post.show_slug show_id=post.show.show_id %}">
                   {{ post.show.name}}</a>
-                  ({{ post.latest_post.target_date | timesince }})                
-                </h4>
+                  </span>
+                  -
+                  <span class="{{post.latest_post_color}}"> 
+                  Latest from: {{ post.latest_post.target_date | date:"D d-M-Y"  }}
+                </span>
             </div>
         </div>
       {% endifchanged %}

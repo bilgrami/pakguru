@@ -17,7 +17,7 @@ ONE_DAY = 60*60*24
 FOUR_HOURS = 60*60*4
 
 
-@cache_page(ONE_DAY)
+# @cache_page(FOUR_HOURS)
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -46,7 +46,7 @@ def contact(request):
     )
 
 
-@cache_page(ONE_DAY)
+# @cache_page(ONE_DAY)
 def about(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
@@ -99,19 +99,22 @@ def process_posts(posts):
         post.feed_job_url = reverse('admin:pakguru_app_showfeed_harvestjoblog_change',  # noqa: E501
                                     args=(job_id,))
         post.feed_file_url = ShowFeed_HarvestJobLog.objects.get(pk=job_id).feed_data.url  # noqa: E501
+        post.target_date += timedelta(hours=8)
         if post.show not in latest_posts:
             latest_posts[post.show] = Post.objects.filter(show=post.show).order_by('-target_date').first()  # noqa: E501
 
         post.latest_post = latest_posts[post.show]
-        if post.latest_post.target_date >= yesterday:
+        if post.latest_post.target_date.date() >= yesterday:
             post.latest_post_color = 'text-danger'
-        elif post.latest_post.target_date >= two_days_ago:
+        elif post.latest_post.target_date.date() >= two_days_ago:
             post.latest_post_color = 'text-warning'
+        else:
+            post.latest_post_color = 'text-info'
 
     return posts
 
 
-@cache_page(FIVE_MINUTES)
+# @cache_page(FOUR_HOURS)
 def talkshows(request):
     assert isinstance(request, HttpRequest)
     category = 'Talk Shows'
@@ -132,7 +135,7 @@ def talkshows(request):
     )
 
 
-@cache_page(FIVE_MINUTES)
+# @cache_page(FOUR_HOURS)
 def singletalkshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     last_7_days = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
@@ -151,7 +154,7 @@ def singletalkshow(request, channel, show, show_id):
     )
 
 
-@cache_page(FIVE_MINUTES)
+# @cache_page(FOUR_HOURS)
 def dramaserials(request):
     assert isinstance(request, HttpRequest)
     category = 'Drama Serials'
@@ -170,7 +173,7 @@ def dramaserials(request):
     )
 
 
-@cache_page(FIVE_MINUTES)
+# @cache_page(FOUR_HOURS)
 def singledramaserial(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
@@ -188,7 +191,7 @@ def singledramaserial(request, channel, show, show_id):
     )
 
 
-@cache_page(FIVE_MINUTES)
+# @cache_page(FOUR_HOURS)
 def recentshows(request):
     assert isinstance(request, HttpRequest)
     yesterday = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
@@ -207,7 +210,7 @@ def recentshows(request):
     )
 
 
-@cache_page(FIVE_MINUTES)
+# @cache_page(FOUR_HOURS)
 def comedyshows(request):
     assert isinstance(request, HttpRequest)
     category = 'Comedy Shows'
@@ -226,7 +229,7 @@ def comedyshows(request):
     )
 
 
-@cache_page(FIVE_MINUTES)
+# @cache_page(FOUR_HOURS)
 def singlecomedyshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501

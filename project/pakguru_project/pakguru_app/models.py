@@ -256,7 +256,7 @@ class Post(CommonInfo):
     title = models.CharField('Title', max_length=255)
     slug = models.SlugField('URL Slug', max_length=255, unique=True)
     publish_date = models.DateTimeField('Publish Date', auto_now_add=True)
-    target_date = models.DateField('Target Date', db_index=True)
+    target_date = models.DateTimeField('Target Date', db_index=True)
     text = models.TextField('Text',
                             blank=True, null=True)
     post_author = models.CharField('Author', max_length=255,

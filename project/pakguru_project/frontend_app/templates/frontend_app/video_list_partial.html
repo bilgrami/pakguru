@@ -6,17 +6,16 @@
 
     <div class="row justify-content-md-center">
         <div class="col- themed-grid-col align-self-center" title="{{ post.url }}">
-            <h3>
+        <h6>
                 {% if post.type == 'utube' %} 
-                    <img src="{% static 'frontend_app/yt_logo_rgb_light-small.png' %}" width="56">
+                    <img src="{% static 'frontend_app/yt_logo_rgb_light-small.png' %}" width="26">
                 {% endif %} 
                 {% if post.type == 'dailymotion' %} 
-                    <img src="{% static 'frontend_app/dm_logo_rgb_light-small.png' %}" width="56">
+                    <img src="{% static 'frontend_app/dm_logo_rgb_light-small.png' %}" width="26">
                 {% endif %} 
 
-                {{ post.show}} - {{ post.target_date }}
-            </h3>
-
+                <strong> <span class="h4">{{ post.label }}</span></strong>
+        </h6>
             {% if user.is_superuser or user.is_staff  %}
                 <span><a target='_blank' href="{{ post.change_url }}" title="{{ post.change_url }}">
                     <img src="{% static 'frontend_app/edit-icon.png' %}" width="17">&nbsp;</a></span>
@@ -32,7 +31,10 @@
 
             {% endif %} 
             
-            <span title="{{ post.label }}"><strong>{{ post.publish_date | timesince }} ago - {{ post.label }}</strong></span>
+            <span class="text-info" title="{{ post.label }}">
+            Aired on: {{ post.target_date | date:"d-M-Y"  }} - 
+            Published on: {{ post.publish_date | date:"d-M-Y" }} 
+            </span>
         </div>
     </div>
 

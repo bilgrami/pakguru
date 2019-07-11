@@ -1,16 +1,17 @@
 import datetime
 import json
+from random import randrange
 
+import datefinder
 import dateutil.parser
 import django.utils.text
+# import boto3
+import requests
+from bs4 import BeautifulSoup
 from django.contrib.auth.models import User
 from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand
 
-import datefinder
-# import boto3
-import requests
-from bs4 import BeautifulSoup
 from pakguru_app.models import Post, Show
 from pakguru_app.models import ShowFeed_HarvestJobLog as job
 from pakguru_app.models import ShowSourceFeed
@@ -135,32 +136,49 @@ def process_lising(listing):
     a = heading.find('a', href=True)
     link = a['href']
     label_text = a.get_text().replace(' in HD', '')
-    label = label_text.replace(' in HD', '').replace(' IN hd', '')
     category = listing.find('p', class_='list_cont_title').get_text()
     # channel = listing.find('p', class_='list_detail').get_text()
     episode = dt = ''
-    in_hd = 'False'
+    in_hd = 'True' if "-in-hd" in link else 'False'
+    episode = extract_episode(label_text)
+    dt = extract_date(result, label_text, episode)
+    return (link, label_text, category, episode, dt, in_hd)
+
+
+def extract_episode(label_text):
+    label = label_text.replace(' in HD', '').replace(' IN hd', '')
+    episode = randrange(100) * -1
     if "Episode" in label:
-        in_hd = 'True' if "-in-hd" in link else 'False'
         if label and len(label.split(" Episode ")) >= 2:
             episode = label.split(" Episode ")[-1]
 
         if label and len(label.split(" Episodee ")) >= 2:
             episode = label.split(" Episodee ")[-1]
+
+    if not type(episode) == int:
+        episode = randrange(100) * -1
+
+    return episode
+
+
+def extract_date(result, label_text, episode):
+    matches = datefinder.find_dates(label_text)
+    dt = next(iter(matches), False)
+    if dt:
+        dt = dt.date()
+        if dt in result:
+            delta = datetime.timedelta(days=episode)
+            dt = (dt + delta)
     else:
-        matches = datefinder.find_dates(label_text)
-        dt = next(iter(matches), False)
-        if dt:
-            dt = dt.date()
-            if dt in result:
-                delta = datetime.timedelta(days=episode)
-                dt = (dt + delta)
+        dt = datetime.datetime.today()
+        delta = datetime.timedelta(days=episode)
+        dt = (dt + delta)
+        return dt
 
     if type(dt) == datetime.date:
         dt = dt.isoformat()
 
-    return (link, label_text, category, episode, dt, in_hd)
-
+    return dt
 
 def get_additional_feed_posts(feed_url, result, channel, show_name):
     pages = [10, 20, 40, 80, 160, 320, 640]

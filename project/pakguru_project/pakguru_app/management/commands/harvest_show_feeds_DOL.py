@@ -154,9 +154,7 @@ def process_lising(listing):
             dt = dt.date()
             if dt in result:
                 delta = datetime.timedelta(days=episode)
-                return (dt + delta)
-            else:
-                return dt
+                dt = (dt + delta)
 
     return (link, label_text, category, episode, dt, in_hd)
 

@@ -1,7 +1,9 @@
 from datetime import datetime
 
+import django.utils.text
 from django.contrib.postgres.fields import ArrayField, JSONField
 from django.db import models
+from django.urls import reverse
 
 from common_utils_app.models import CommonInfo
 
@@ -301,6 +303,13 @@ class Post(CommonInfo):
     def __str__(self):
         dt = self.target_date.strftime('%Y-%m-%d')
         return f'[{dt}] - {self.title}'
+
+    def get_absolute_url(self):
+        return reverse('post_detail',
+                       args=[django.utils.text.slugify(self.show.channel),
+                             django.utils.text.slugify(self.show),
+                             self.slug,
+                             str(self.post_id)])
 
     class Meta:
         db_table = 'pakguru_app_post'

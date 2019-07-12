@@ -29,6 +29,8 @@ urlpatterns = [
     path('comedyshow/<channel>/<show>/<show_id>/', views.singlecomedyshow,
          name='singlecomedyshow'),
 
+    path('post_detail/<channel>/<show>/<slug>/<post_id>/', views.post_detail, name='post_detail'),
+
     path('login/',
          LoginView.as_view
          (

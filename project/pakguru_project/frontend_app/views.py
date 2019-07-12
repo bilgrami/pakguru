@@ -260,6 +260,24 @@ def process_feeds(request):
     return JsonResponse(data)
 
 
+def post_detail(request, channel, show, slug, post_id):
+    assert isinstance(request, HttpRequest)
+    posts = Post.objects.filter(is_active=True, post_id=post_id).all()  # noqa:E501
+    posts = process_posts(posts)
+
+    return render(
+        request,
+        'frontend_app/show_list.html',
+        {
+            'title': 'Show Post',
+            "talkshows_page": "active",
+            'message': posts[0].show,
+            'posts': posts
+        }
+    )
+
+
+
 @staff_member_required
 def clear_cache(request):
     assert isinstance(request, HttpRequest)

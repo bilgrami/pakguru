@@ -7,63 +7,64 @@
 <div class="container">
 
 
- {% if not posts_visible %} 
+  {% if not posts_visible %}
 
   <div class="row bg-primary text-white justify-content-md-center">
-      <div class="col- themed-grid-col align-self-center">
-        <h3>{{category}} for last 7 days</h3>
-        <h3>Video{{ posts|length | pluralize }})</h3>
-      </div>
+    <div class="col- themed-grid-col align-self-center">
+      <h3>{{category}} for last 7 days</h3>
+      <h3>Video{{ posts|length | pluralize }})</h3>
+    </div>
   </div>
 
-    {% for post in posts  %} 
-      {% ifchanged %}
-        <div class="row">
-          <div class="col-12">
-          <hr/>
-              <h2>{{ post.show.channel }} </h2>
-          </div>
-        </div>
-      {% endifchanged %}
-      {% ifchanged %}
-        <div class="row">
-        <div class="col-1">
-        </div>
-            <div class="col-11">
-              <span>
-                <h4>
-                  <a href="{% url 'singletalkshow' channel=post.channel_slug show=post.show_slug show_id=post.show.show_id %}">
-                  {{ post.show.name}}</a> 
-              </span>
-                <span class="h6 {{post.latest_post_color}}">              
-                    {{ post.latest_post.target_date }} 
-              </span>    
-            </h4>
-          </div>
-        </div>
-      {% endifchanged %}
-    {% endfor %}
-{% endif %} 
-
- {% if posts_visible %} 
-
-      {% for post in posts %}
-
-        {% ifchanged %}
-        <p>
-          <div class="row bg-primary text-white justify-content-md-center">
-              <div class="col- themed-grid-col align-self-center">
-              <h3>
-                {{post.show}} ({{ posts|length }} Video{{ posts|length | pluralize }} from last 7 days)</h3></div>
-          </div>
-        </p>
-        {% endifchanged %}
-
-
-    <div class="basic">
-      {% include "video_list_partial.html" %}    
+  {% for post in posts  %}
+  {% ifchanged %}
+  <div class="row">
+    <div class="col-12">
+      <hr />
+      <h2>{{ post.show.channel }} </h2>
     </div>
+  </div>
+  {% endifchanged %}
+  {% ifchanged %}
+  <div class="row">
+    <div class="col-1">
+    </div>
+    <div class="col-11">
+      <span>
+        <h4>
+          <a href="{% url 'singletalkshow' channel=post.channel_slug show=post.show_slug show_id=post.show.show_id %}">
+            {{ post.show.name}}</a>
+      </span>
+      <span class="h6 {{post.latest_post_color}}">
+        {{ post.latest_post.target_date }}
+      </span>
+      </h4>
+    </div>
+  </div>
+  {% endifchanged %}
+  {% endfor %}
+  {% endif %}
+
+  {% if posts_visible %}
+
+  {% for post in posts %}
+
+  {% ifchanged %}
+  <p>
+    <div class="row bg-primary text-white justify-content-md-center">
+      <div class="col- themed-grid-col align-self-center">
+        <h3>
+          {{post.show}} ({{ posts|length }} Video{{ posts|length | pluralize }} from last 7 days)</h3>
+      </div>
+    </div>
+  </p>
+  {% endifchanged %}
+
+
+  <div class="basic">
+    {% include "video_list_partial.html" %}
+  </div>
 
 
 
-{% endblock %}
+  {% endblock %}

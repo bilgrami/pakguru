@@ -1,7 +1,7 @@
 import json
 from datetime import date, datetime, timedelta
 
-import django.utils.text
+from django.utils.text import slugify
 from django.contrib.admin.views.decorators import staff_member_required
 from django.http import HttpRequest, JsonResponse
 from django.shortcuts import render
@@ -17,7 +17,7 @@ ONE_DAY = 60*60*24
 FOUR_HOURS = 60*60*4
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -46,7 +46,7 @@ def contact(request):
     )
 
 
-@cache_page(ONE_DAY)
+# @cache_page(ONE_DAY)
 def about(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
@@ -90,9 +90,12 @@ def process_posts(posts):
 
     for post in posts:
         post.type, post.url = get_post_url(post.text)
-        post.channel_slug = django.utils.text.slugify(post.show.channel)
-        post.show_slug = django.utils.text.slugify(post.show)
+        post.channel_slug = slugify(post.show.channel)
+        post.show_slug = slugify(post.show)
         post.label = post.title
+        post.detail_url = reverse('post_detail',
+                                  args=(post.channel_slug, post.show_slug,
+                                        post.slug, post.post_id,))
         post.change_url = reverse('admin:pakguru_app_post_change',
                                   args=(post.post_id,))
         job_id = post.extra_data['job_id']
@@ -100,9 +103,9 @@ def process_posts(posts):
                                     args=(job_id,))
         post.feed_file_url = ShowFeed_HarvestJobLog.objects.get(pk=job_id).feed_data.url  # noqa: E501
         post.target_date += timedelta(hours=8)
-        if post.show not in latest_posts:
-            latest_posts[post.show] = Post.objects.filter(show=post.show).order_by('-target_date').first()  # noqa: E501
 
+        if post.show not in latest_posts:
+            latest_posts[post.show] = posts.filter(show=post.show).order_by('-target_date').first()  # noqa: E501
         post.latest_post = latest_posts[post.show]
         if post.latest_post.target_date.date() >= yesterday:
             post.latest_post_color = 'text-danger'
@@ -114,7 +117,7 @@ def process_posts(posts):
     return posts
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def talkshows(request):
     assert isinstance(request, HttpRequest)
     category = 'Talk Shows'
@@ -135,7 +138,7 @@ def talkshows(request):
     )
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def singletalkshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     last_7_days = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
@@ -154,7 +157,7 @@ def singletalkshow(request, channel, show, show_id):
     )
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def dramaserials(request):
     assert isinstance(request, HttpRequest)
     category = 'Drama Serials'
@@ -173,7 +176,7 @@ def dramaserials(request):
     )
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def singledramaserial(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
@@ -191,7 +194,7 @@ def singledramaserial(request, channel, show, show_id):
     )
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def recentshows(request):
     assert isinstance(request, HttpRequest)
     yesterday = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
@@ -210,7 +213,7 @@ def recentshows(request):
     )
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def comedyshows(request):
     assert isinstance(request, HttpRequest)
     category = 'Comedy Shows'
@@ -229,7 +232,7 @@ def comedyshows(request):
     )
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def singlecomedyshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
@@ -275,7 +278,6 @@ def post_detail(request, channel, show, slug, post_id):
             'posts': posts
         }
     )
-
 
 
 @staff_member_required

@@ -10,6 +10,7 @@ from django.db import IntegrityError
 import datefinder
 from pakguru_app.models import Post, Show
 from pakguru_app.models import ShowFeed_HarvestJobLog as job
+from django.db.models import Max
 
 
 class Command(BaseCommand):
@@ -64,8 +65,13 @@ class Command(BaseCommand):
             tstart = datetime.now()
             feed_posts = {}
             if latest_job.feed_data:
-                feed_posts = eval(latest_job.feed_data.read())
-                print(f"feed_posts retrieved from job: {latest_job.job_id}")
+                try:
+                    feed_posts = eval(latest_job.feed_data.read())
+                    print(f"feed_posts retrieved from job: {latest_job.job_id}")
+                except Exception:
+                    print('error reading feed file')
+                    return
+
             latest_job.job_status = 'IN PROGRESS'  # in progress
             latest_job.save()
             addedby_user = User.objects.get(id=1)
@@ -82,6 +88,7 @@ class Command(BaseCommand):
             success_count = failed_count = dupes_count = 0
             for k, v in feed_posts.items():
                 failure_message = ''
+                episode = -1
                 title = v['label']
                 if not k:
                     print("Empty key found for title. skipping..", title, v)
@@ -89,6 +96,14 @@ class Command(BaseCommand):
 
                 slug = django.utils.text.slugify(title)
                 video_link = v['video_link']
+                show_posts = Post.objects.filter(show__show_id=show.show_id).all()  # noqa:E501
+                running_total = len(show_posts) + 1
+
+                if v['episode']:
+                    episode = int(v['episode'])
+                else:
+                    episode_dict = show_posts.aggregate(Max('episode_number'))
+                    episode = episode_dict['episode_number__max'] + 1
                 is_show = is_politics = True
                 is_joke = is_quote = False
                 extra_data['feed_post'] = v
@@ -128,8 +143,12 @@ class Command(BaseCommand):
                         locale=show.locale,
                         media_type='EMBEDDED_VIDEO',
                         source=feed.playlist_link,
-                        source_detail=v['link']
+                        source_detail=v['link'],
+                        episode_number=episode,
+                        running_total=running_total
                     )
+                    show.total_shows = running_total
+                    show.save()
                 else:
                     print('found post ', post.pk, target_date)
                     # post.title = title

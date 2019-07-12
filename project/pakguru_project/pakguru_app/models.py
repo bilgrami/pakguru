@@ -241,6 +241,8 @@ class Show(ShowCommonInfo):
     locale = models.ForeignKey(LocaleList,
                                on_delete=models.SET_NULL,
                                blank=True, null=True)
+    total_shows = models.SmallIntegerField('Total Shows', default=-1,
+                                           blank=True, null=True)
 
     def __str__(self):
         return f'[{self.channel}] - {self.name}'
@@ -294,6 +296,12 @@ class Post(CommonInfo):
     is_Joke = models.BooleanField('J', default=False)
     is_Quote = models.BooleanField('Q', default=False)
     is_Politics = models.BooleanField('P', default=False)
+    episode_number = models.SmallIntegerField('Episode Number', default=-1,
+                                              blank=True, null=True,
+                                              db_index=True)
+    running_total = models.SmallIntegerField('Running Total', default=-1,
+                                             blank=True, null=True,
+                                             db_index=True)
 
     # shows = ShowManager()
     # jokes = JokePostManager()

@@ -17,7 +17,7 @@ ONE_DAY = 60*60*24
 FOUR_HOURS = 60*60*4
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def home(request):
     """Renders the home page."""
     assert isinstance(request, HttpRequest)
@@ -46,7 +46,7 @@ def contact(request):
     )
 
 
-@cache_page(ONE_DAY)
+# @cache_page(ONE_DAY)
 def about(request):
     """Renders the about page."""
     assert isinstance(request, HttpRequest)
@@ -117,7 +117,7 @@ def process_posts(posts):
     return posts
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def talkshows(request):
     assert isinstance(request, HttpRequest)
     category = 'Talk Shows'
@@ -138,7 +138,7 @@ def talkshows(request):
     )
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def singletalkshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     last_7_days = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
@@ -157,11 +157,11 @@ def singletalkshow(request, channel, show, show_id):
     )
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def dramaserials(request):
     assert isinstance(request, HttpRequest)
     category = 'Drama Serials'
-    posts = Post.objects.filter(is_active=True, category__name=category).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
+    posts = Post.objects.filter(is_active=True, category__name=category).order_by('show__channel__name', 'show__name', '-episode_number')  # noqa:E501
     posts = process_posts(posts)
 
     return render(
@@ -176,7 +176,7 @@ def dramaserials(request):
     )
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def singledramaserial(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
@@ -194,7 +194,7 @@ def singledramaserial(request, channel, show, show_id):
     )
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def recentshows(request):
     assert isinstance(request, HttpRequest)
     yesterday = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
@@ -208,12 +208,12 @@ def recentshows(request):
             'title': 'Recently Published Videos',
             "recentshows_page": "active",
             'message': 'Recently Published Videos',
-            'posts': posts[:50]
+            'posts': posts
         }
     )
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def comedyshows(request):
     assert isinstance(request, HttpRequest)
     category = 'Comedy Shows'
@@ -232,7 +232,7 @@ def comedyshows(request):
     )
 
 
-@cache_page(FOUR_HOURS)
+# @cache_page(FOUR_HOURS)
 def singlecomedyshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501

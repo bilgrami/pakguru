@@ -35,7 +35,8 @@
         <div class="col-">
           <span class="{{post.latest_post_color}} text-sm-center">
             {{ post.show.host_name | default_if_none:"" }} /
-            Aired on: {{ post.latest_post.target_date | date:"D d-M-Y"  }}
+            Last Aired on: {{ post.latest_post.target_date | date:"D d-M-Y"  }} /
+            Total: {{ post.show.total_shows }}
           </span>
         </div>
       </div>

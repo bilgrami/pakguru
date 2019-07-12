@@ -39,7 +39,8 @@
         <span class="text-info" title="{{ post.label }}">
             Host: {{ post.show.host_name | default_if_none:"" }} /
             Aired on: {{ post.target_date | date:"D d-M-Y"  }} /
-            Published on: {{ post.publish_date | date:"d-M-Y" }}
+            Published on: {{ post.publish_date | date:"d-M-Y" }} /
+            Episode: {{ post.episode_number }}
         </span>
     </div>
 </div>

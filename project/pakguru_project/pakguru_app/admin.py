@@ -105,6 +105,7 @@ class Post(admin.ModelAdmin):
                     'target_date', 'publish_date',
                     'show',
                     'category', 'locale', 'weekday_name',
+                    'episode_number', 'running_total',
                     'is_active', 'flagged',
                     'is_Show', 'is_Joke', 'is_Quote', 'is_Politics')
     list_filter = ('target_date', 'weekday_name', 'category',
@@ -131,7 +132,8 @@ class Post(admin.ModelAdmin):
               'is_active', 'flagged',
               'flagged_data',
               'extra_data',
-              'is_Show', 'is_Joke', 'is_Quote', 'is_Politics'
+              'is_Show', 'is_Joke', 'is_Quote', 'is_Politics',
+              'episode_number', 'running_total'
               )
     save_on_top = True
 

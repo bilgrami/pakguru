@@ -68,7 +68,7 @@ class Show(admin.ModelAdmin):
     list_display = ('show_id', 'name', 'show_host',
                     'category', 'primary_feed',
                     'channel', 'locale',
-                    'is_active')
+                    'is_active', 'total_shows')
     list_filter = ('channel', 'primary_feed__feed_source_type',
                    'category', 'country__name', 'is_active', 'locale')
     search_fields = ('show_id', 'name', 'host_name',
@@ -88,7 +88,7 @@ class Show(admin.ModelAdmin):
               'primary_feed',
               'additional_feeds',
               'expiration_date', 'country',
-              'added_by', 'extra_data'
+              'added_by', 'extra_data', 'total_shows'
               )
     save_on_top = True
 

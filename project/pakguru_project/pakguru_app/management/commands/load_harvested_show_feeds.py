@@ -109,6 +109,7 @@ class Command(BaseCommand):
                     # create new post
                     post = Post(
                         title=title,
+                        name=title,
                         slug=slug,
                         target_date=target_date,
                         weekday_name=weekday_name,

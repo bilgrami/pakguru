@@ -45,7 +45,11 @@ class Command(BaseCommand):
         FEED_SOURCE_TYPE = 'VPK'
         if recreate_all_jobs == 'True':
             # expire existing feed jobs
-            job.objects.filter(is_latest=True, show_feed__feed_source_type__short_code=FEED_SOURCE_TYPE).update(is_active=False, is_latest=False)   # noqa: E128, E501
+            # job.objects.filter(is_latest=True, show_feed__feed_source_type__short_code=FEED_SOURCE_TYPE).update(is_active=False, is_latest=False)   # noqa: E128, E501
+            job.objects.filter(is_latest=True,
+            show_feed__feed_source_type__short_code=FEED_SOURCE_TYPE)\
+            .exclude(job_status='NOT STARTED')\
+            .update(is_active=False, is_latest=False)   # noqa: E128, E501
 
         feeds = ShowSourceFeed.objects.filter(is_active=True,
                 feed_source_type__short_code=FEED_SOURCE_TYPE).all() \

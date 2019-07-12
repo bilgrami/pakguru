@@ -59,7 +59,10 @@ class Command(BaseCommand):
         FEED_SOURCE_TYPE = 'DOL'
         if recreate_all_jobs == 'True':
             # expire existing feed jobs
-            job.objects.filter(is_latest=True, show_feed__feed_source_type__short_code=FEED_SOURCE_TYPE).update(is_active=False, is_latest=False)   # noqa: E128, E501
+            job.objects.filter(is_latest=True,
+            show_feed__feed_source_type__short_code=FEED_SOURCE_TYPE)\
+            .exclude(job_status='NOT STARTED')\
+            .update(is_active=False, is_latest=False)   # noqa: E128, E501
 
         feeds = ShowSourceFeed.objects.filter(is_active=True,
                 feed_source_type__short_code=FEED_SOURCE_TYPE).all() \
@@ -149,21 +152,23 @@ def process_lising(listing):
 
 def extract_episode(label_text):
     label = label_text.replace(' in HD', '').replace(' IN hd', '')
+    label = label.lower()
     episode = randrange(100) * -1
-    if "Episode" in label:
-        if label and len(label.split(" Episode ")) >= 2:
-            episode = label.split(" Episode ")[-1]
+    if "episode" in label:
+        if label and len(label.split(" episode ")) >= 2:
+            episode = label.split(" episode ")[-1]
 
-        if label and len(label.split(" Episodee ")) >= 2:
-            episode = label.split(" Episodee ")[-1]
+        if label and len(label.split(" episodee ")) >= 2:
+            episode = label.split(" episodee ")[-1]
 
-    if not type(episode) == int:
+    if not str(episode).isnumeric():
         episode = randrange(100) * -1
 
     return episode
 
 
 def extract_date(result, label_text, episode):
+    episode = int(episode)
     matches = datefinder.find_dates(label_text)
     dt = next(iter(matches), False)
     if dt:

@@ -1,17 +1,18 @@
-import datetime
+from datetime import datetime, date, timedelta
 import json
 from random import randrange
 
-import datefinder
 import dateutil.parser
 import django.utils.text
 # import boto3
 import requests
-from bs4 import BeautifulSoup
 from django.contrib.auth.models import User
 from django.core.files.base import ContentFile
 from django.core.management.base import BaseCommand
+from django.core.serializers.json import DjangoJSONEncoder
 
+import datefinder
+from bs4 import BeautifulSoup
 from pakguru_app.models import Post, Show
 from pakguru_app.models import ShowFeed_HarvestJobLog as job
 from pakguru_app.models import ShowSourceFeed
@@ -85,11 +86,12 @@ class Command(BaseCommand):
             addedby_user = User.objects.get(id=1)
             feed_posts = get_feed_posts(feed_url, additional_feed_url,
                                         channel, show_name_from_feed)
-            feed_data = json.dumps(feed_posts, indent=4)
+            # feed_data = json.dumps(feed_posts, indent=4)
+            feed_data = json.dumps(feed_posts, indent=4, cls=DjangoJSONEncoder)
             # print("feed_data:", feed_data)
             latest_feed = next(iter(feed_posts.items()))
             if latest_feed and not latest_feed[1]['dt']:
-                latest_feed_date = datetime.datetime.today().date().isoformat()
+                latest_feed_date = datetime.today().date().isoformat()
             else:
                 latest_feed_date = latest_feed[1]['dt']
 
@@ -167,18 +169,19 @@ def extract_date(result, label_text, episode):
     if dt:
         dt = dt.date()
         if dt in result:
-            delta = datetime.timedelta(days=episode)
+            delta = timedelta(days=episode)
             dt = (dt + delta)
     else:
-        dt = datetime.datetime.today()
-        delta = datetime.timedelta(days=episode)
+        dt = datetime.today()
+        delta = timedelta(days=episode)
         dt = (dt + delta)
         return dt
 
-    if type(dt) == datetime.date:
+    if isinstance(dt, (datetime, date)):
         dt = dt.isoformat()
 
     return str(dt)
+
 
 def get_additional_feed_posts(feed_url, result, channel, show_name):
     pages = [10, 20, 40, 80, 160, 320, 640]

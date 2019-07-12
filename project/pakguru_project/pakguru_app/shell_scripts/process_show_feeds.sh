@@ -1,4 +1,3 @@
-
 #!/bin/bash
 set -e
 # True expire and recreate all existing jobs

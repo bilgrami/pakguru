@@ -11,15 +11,17 @@ class ProcessFeedsTask():
 
     def worker(self):
         app_path = os.path.dirname(app.__file__)
+        os.path.abspath(__file__)
         cmd = os.path.join(app_path, 'shell_scripts', 'process_show_feeds.sh')
         print('cmd:\n', cmd)
         p = Popen([cmd])
-        p.terminate()
+        # p.terminate()
+        return cmd
 
     def process_feeds(self):
         print('calling process_feeds command')
-        self.worker()
-        return 'OK'
+        result = self.worker()
+        return result
 
 
 class CacheTask():

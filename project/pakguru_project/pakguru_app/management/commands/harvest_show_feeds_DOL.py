@@ -178,7 +178,7 @@ def extract_date(result, label_text, episode):
     if type(dt) == datetime.date:
         dt = dt.isoformat()
 
-    return dt
+    return str(dt)
 
 def get_additional_feed_posts(feed_url, result, channel, show_name):
     pages = [10, 20, 40, 80, 160, 320, 640]
@@ -221,7 +221,7 @@ def get_feed_posts(feed_url, additional_feed_url,
         link, label, category, episode, dt, in_hd = process_lising(listing)
         d = {
             'label': label,
-            'dt': dt,
+            'dt': str(dt),
             'channel': channel,
             'show_name': show_name_from_feed,
             'episode': episode,

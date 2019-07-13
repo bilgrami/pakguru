@@ -16,7 +16,7 @@ class ProcessFeedsTask():
         print('cmd:\n', cmd)
         p = Popen([cmd])
         # p.terminate()
-        return cmd
+        return 'OK'
 
     def process_feeds(self):
         print('calling process_feeds command')

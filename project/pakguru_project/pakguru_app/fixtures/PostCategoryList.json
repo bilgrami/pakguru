@@ -5,8 +5,15 @@
         "fields": {
             "name": "Talk Shows",
             "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
             "created": "2019-06-30T15:04:36.880Z",
-            "updated": "2019-07-01T03:07:47.183Z"
+            "updated": "2019-07-01T03:07:47.183Z",
+            "extra_data": null
         }
     },
     {
@@ -15,8 +22,15 @@
         "fields": {
             "name": "Jokes",
             "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
             "created": "2019-06-30T15:04:43.485Z",
-            "updated": "2019-06-30T15:04:43.485Z"
+            "updated": "2019-06-30T15:04:43.485Z",
+            "extra_data": null
         }
     },
     {
@@ -25,8 +39,15 @@
         "fields": {
             "name": "Quotes",
             "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
             "created": "2019-06-30T15:04:51.548Z",
-            "updated": "2019-06-30T15:04:51.548Z"
+            "updated": "2019-06-30T15:04:51.548Z",
+            "extra_data": null
         }
     },
     {
@@ -35,8 +56,15 @@
         "fields": {
             "name": "Poetry",
             "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
             "created": "2019-06-30T15:05:01.408Z",
-            "updated": "2019-06-30T15:05:01.408Z"
+            "updated": "2019-06-30T15:05:01.408Z",
+            "extra_data": null
         }
     },
     {
@@ -45,8 +73,15 @@
         "fields": {
             "name": "Drama Serials",
             "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
             "created": "2019-07-01T02:55:12.369Z",
-            "updated": "2019-07-01T02:55:12.369Z"
+            "updated": "2019-07-01T02:55:12.369Z",
+            "extra_data": null
         }
     },
     {
@@ -55,8 +90,32 @@
         "fields": {
             "name": "Sports",
             "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
             "created": "2019-07-01T10:39:59.907Z",
-            "updated": "2019-07-01T10:39:59.907Z"
+            "updated": "2019-07-01T10:39:59.907Z",
+            "extra_data": null
+        }
+    },
+    {
+        "model": "pakguru_app.postcategorylist",
+        "pk": 7,
+        "fields": {
+            "name": "Comedy Shows",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-07T06:38:15.880Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-07T06:37:59Z",
+            "updated": "2019-07-07T06:38:15.880Z",
+            "extra_data": null
         }
     }
 ]

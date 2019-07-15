@@ -3,105 +3,494 @@
         "model": "pakguru_app.showchannel",
         "pk": 1,
         "fields": {
-            "channel_short_code": "CBS",
-            "channel_name": "CBS",
+            "name": "CBS",
             "description": "CBS is an American English language commercial broadcast television and radio network that is a flagship property of CBS Corporation. The company is headquartered at the CBS Building in New York City with major production facilities and operations in New York City and Los Angeles",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-01T00:44:09.335Z",
+            "updated": "2019-07-01T00:44:09.335Z",
+            "extra_data": null,
             "website_link": "http://cbs.com",
             "youtube_link": null,
             "facebook_link": "https://www.facebook.com/CBS/",
             "twitter_link": null,
             "instagram_link": null,
-            "country": 2,
-            "is_active": true,
-            "added_by": [
-                "admin"
-            ],
-            "created": "2019-07-01T00:44:09.335Z",
-            "updated": "2019-07-01T00:44:09.335Z"
+            "channel_short_code": "CBS",
+            "country": [
+                4
+            ]
         }
     },
     {
         "model": "pakguru_app.showchannel",
         "pk": 2,
         "fields": {
-            "channel_short_code": "Dawn News",
-            "channel_name": "Dawn News",
+            "name": "Dawn News",
             "description": "Dawn is Pakistan's oldest, leading and most widely read English-language newspaper and is the country's newspaper of record. It is one of the country's three largest English-language dailies and the flagship of the Dawn Group of Newspapers.",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-01T00:46:09.650Z",
+            "updated": "2019-07-01T02:51:51.851Z",
+            "extra_data": null,
             "website_link": "https://en.wikipedia.org/wiki/Dawn_(newspaper)",
             "youtube_link": "https://www.youtube.com/user/dawnnewspakistan",
             "facebook_link": "https://www.facebook.com/DawnNews/",
             "twitter_link": null,
             "instagram_link": null,
-            "country": 1,
-            "is_active": true,
-            "added_by": [
-                "admin"
-            ],
-            "created": "2019-07-01T00:46:09.650Z",
-            "updated": "2019-07-01T02:51:51.851Z"
+            "channel_short_code": "Dawn News",
+            "country": [
+                4
+            ]
         }
     },
     {
         "model": "pakguru_app.showchannel",
         "pk": 3,
         "fields": {
-            "channel_short_code": "Dunya News",
-            "channel_name": "Dunya News",
+            "name": "Dunya News",
             "description": "Dunya News is a 24 hours Urdu language news and current affairs television channel from Pakistan. It is governed and operated by the National Communication Services Pvt. Ltd. Its head office is situated at Lahore, Pakistan. \r\n\r\nhttps://en.wikipedia.org/wiki/Dunya_News",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-01T00:47:44.156Z",
+            "updated": "2019-07-01T02:53:25.223Z",
+            "extra_data": null,
             "website_link": "https://dunyanews.tv/",
             "youtube_link": "https://www.youtube.com/channel/UCnMBV5Iw4WqKILKue1nP6Hg",
             "facebook_link": "https://www.facebook.com/dunyanews/",
             "twitter_link": "https://twitter.com/DunyaNews",
             "instagram_link": null,
-            "country": 1,
-            "is_active": true,
-            "added_by": [
-                "admin"
-            ],
-            "created": "2019-07-01T00:47:44.156Z",
-            "updated": "2019-07-01T02:53:25.223Z"
+            "channel_short_code": "Dunya News",
+            "country": [
+                4
+            ]
         }
     },
     {
         "model": "pakguru_app.showchannel",
         "pk": 4,
         "fields": {
-            "channel_short_code": "Geo News",
-            "channel_name": "Geo News",
+            "name": "Geo News",
             "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-01T05:54:22.633Z",
+            "updated": "2019-07-01T05:54:22.633Z",
+            "extra_data": null,
             "website_link": null,
             "youtube_link": null,
             "facebook_link": null,
             "twitter_link": null,
             "instagram_link": null,
-            "country": 1,
-            "is_active": true,
-            "added_by": [
-                "admin"
-            ],
-            "created": "2019-07-01T05:54:22.633Z",
-            "updated": "2019-07-01T05:54:22.633Z"
+            "channel_short_code": "Geo News",
+            "country": [
+                4
+            ]
         }
     },
     {
         "model": "pakguru_app.showchannel",
         "pk": 5,
         "fields": {
-            "channel_short_code": "GNN",
-            "channel_name": "GNN",
+            "name": "GNN",
             "description": "G News Network, commonly known as GNN, is a Pakistani 24-hour news and current affairs channel based in Lahore, Pakistan. It is owned and operated by Gourmet Foods.",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-01T08:42:51.088Z",
+            "updated": "2019-07-01T08:42:51.088Z",
+            "extra_data": null,
             "website_link": "https://gnnhd.tv/",
             "youtube_link": "https://www.youtube.com/channel/UC35KuZBNIj4S5Ls0yjY-UHQ",
             "facebook_link": "https://www.facebook.com/gnnhd.tv/",
             "twitter_link": "https://twitter.com/gnnhdofficial",
             "instagram_link": "https://www.instagram.com/gnnhd.official/",
-            "country": 1,
+            "channel_short_code": "GNN",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 6,
+        "fields": {
+            "name": "HUM TV",
+            "description": "Hum TV is a 24-hour Urdu General Entertainment TV channel based in Karachi, Pakistan. It was founded by Sultana Siddiqui and Duraid Qureshi. It is owned by Hum Network Limited. Hum Network Limited was known as Eye Television Network Limited prior to 21 January 2011. Hum TV began its transmission on 17 January 2005.",
             "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
-            "created": "2019-07-01T08:42:51.088Z",
-            "updated": "2019-07-01T08:42:51.088Z"
+            "created": "2019-07-01T19:46:01.465Z",
+            "updated": "2019-07-01T19:46:01.465Z",
+            "extra_data": null,
+            "website_link": "https://www.hum.tv/",
+            "youtube_link": "https://www.youtube.com/channel/UCEeEQxm6qc_qaTE7qTV5aLQ",
+            "facebook_link": "https://www.facebook.com/humtvpakistan",
+            "twitter_link": null,
+            "instagram_link": "https://www.instagram.com/humtvpakistanofficial/",
+            "channel_short_code": "HUM TV",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 7,
+        "fields": {
+            "name": "92 News",
+            "description": "92 News is an Urdu language channel. It is Pakistan's first HD television news channel based in Lahore, launched in year 2015. On 1992 Pakistan won the Cricket World Cup so channel name based on this event. 92 is the country code of Pakistan and it counts as another major reason in this subject.",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-02T16:50:37.123Z",
+            "updated": "2019-07-02T16:50:37.123Z",
+            "extra_data": null,
+            "website_link": "https://92newshd.tv/",
+            "youtube_link": "https://www.youtube.com/channel/UCsgC5cbz3DE2Shh34gNKiog",
+            "facebook_link": "https://web.facebook.com/92NewsHD?_rdc=1&_rdr",
+            "twitter_link": "https://twitter.com/92newschannel",
+            "instagram_link": null,
+            "channel_short_code": "92 News",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 8,
+        "fields": {
+            "name": "ARY News",
+            "description": "ARY News is a Pakistani news channel launched on 26 September 2004. A bilingual news channel in English and Urdu, it is a part of the ARY Digital Network, which is a subsidiary of ARY Group. ARY is an acronym of Abdul Razzak Yaqoob, who was the owner of ARY Group.",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-02T17:22:21.278Z",
+            "updated": "2019-07-02T17:22:21.278Z",
+            "extra_data": null,
+            "website_link": "https://arynews.tv/en/",
+            "youtube_link": "https://www.youtube.com/channel/UCMmpLL2ucRHAXbNHiCPyIyg",
+            "facebook_link": "https://web.facebook.com/arynewsasia?_rdc=1&_rdr",
+            "twitter_link": "https://twitter.com/arynewsofficial",
+            "instagram_link": null,
+            "channel_short_code": "ARY News",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 9,
+        "fields": {
+            "name": "Aap News",
+            "description": "AAP Media Network bringing two News Channel in Pakistan. AAP NEWS is a urdu based news channel and INDUS NEWS an English Language news channel for local and international audience.",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T07:51:33.036Z",
+            "updated": "2019-07-03T07:51:33.036Z",
+            "extra_data": null,
+            "website_link": "https://aapnews.pk/",
+            "youtube_link": "https://www.youtube.com/channel/UCPTF7suymU_TvRvRPYuHdvA",
+            "facebook_link": "https://web.facebook.com/aapnewspk?_rdc=1&_rdr",
+            "twitter_link": "https://twitter.com/aapnewspk",
+            "instagram_link": "https://www.instagram.com/aapnewspk/",
+            "channel_short_code": "Aap News",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 10,
+        "fields": {
+            "name": "24 News",
+            "description": "24 News HD is an Urdu language current affairs television channel in Pakistan based in Lahore, launched in 2015.",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T09:43:35.063Z",
+            "updated": "2019-07-03T09:43:35.063Z",
+            "extra_data": null,
+            "website_link": "https://www.24newshd.tv/",
+            "youtube_link": "https://www.youtube.com/channel/UCcmpeVbSSQlZRvHfdC-CRwg",
+            "facebook_link": "https://web.facebook.com/24NewsHD.tv?_rdc=1&_rdr",
+            "twitter_link": "https://twitter.com/24NewsHDtv",
+            "instagram_link": null,
+            "channel_short_code": "24 News",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 11,
+        "fields": {
+            "name": "Neo News",
+            "description": "Neo News HD is an Urdu language Pakistani news channel based in Lahore, launched on 15 May 2015.",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T18:18:33.164Z",
+            "updated": "2019-07-03T18:18:33.164Z",
+            "extra_data": null,
+            "website_link": "https://www.neonetwork.pk/",
+            "youtube_link": "https://www.youtube.com/channel/UCAsvFcpUQegneSh0QAUd64A",
+            "facebook_link": "https://web.facebook.com/neotvnetwork/?_rdc=1&_rdr",
+            "twitter_link": "https://twitter.com/NeoNewsUR",
+            "instagram_link": null,
+            "channel_short_code": "Neo News",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 12,
+        "fields": {
+            "name": "Express News",
+            "description": "Express News is an Urdu language Pakistani television news channel Based in karachi, launched on January 1, 2008. It is owned and run by the country's third largest Urdu daily, Daily Express.",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T18:42:42.361Z",
+            "updated": "2019-07-03T18:42:42.361Z",
+            "extra_data": null,
+            "website_link": "https://www.express.pk/",
+            "youtube_link": "https://www.youtube.com/channel/UCTur7oM6mLL0rM2k0znuZpQ",
+            "facebook_link": "https://web.facebook.com/expressnewspk?_rdc=1&_rdr",
+            "twitter_link": "https://twitter.com/ExpressNewsPK",
+            "instagram_link": null,
+            "channel_short_code": "Express News",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 13,
+        "fields": {
+            "name": "Aaj News",
+            "description": "Aaj News is a 24-hour Pakistani news television channel. The word Aaj in English means \"Today\". It is a privately owned Urdu language TV station which covers national and international news.",
+            "is_active": true,
+            "effective_date": "2019-07-01T01:43:06.946Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T19:04:12.604Z",
+            "updated": "2019-07-03T19:15:04.745Z",
+            "extra_data": null,
+            "website_link": "https://www.aaj.tv/",
+            "youtube_link": "https://www.youtube.com/channel/UCgBAPAcLsh_MAPvJprIz89w",
+            "facebook_link": "https://web.facebook.com/aajtv0/?_rdc=1&_rdr",
+            "twitter_link": "https://twitter.com/aaj_urdu",
+            "instagram_link": null,
+            "channel_short_code": "Aaj News",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 14,
+        "fields": {
+            "name": "BOL News",
+            "description": "BOL Network (Urdu: \u0628\u0648\u0644 \u0646\u06cc\u0679 \u0648\u0631\u06a9\u200e) is a media conglomerate based in Karachi owned by Shoaib Ahmed Shaikh, who also served as the CEO and chairman of the media network.\r\nBol has launched its live regular transmission on 25 December 2016.",
+            "is_active": true,
+            "effective_date": "2019-07-04T20:15:57.240Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-04T19:27:03Z",
+            "updated": "2019-07-04T20:15:57.240Z",
+            "extra_data": null,
+            "website_link": "https://www.bolnetwork.com/",
+            "youtube_link": "https://www.youtube.com/channel/UCz2yxQJZgiB_5elTzqV7FiQ",
+            "facebook_link": "https://web.facebook.com/BOLNETWORK/",
+            "twitter_link": "https://twitter.com/intent/follow?original_referer=https%3A%2F%2Fwww.bolnetwork.com%2F&ref_src=twsrc%5Etfw&screen_name=BOLNetwork&tw_p=followbutton",
+            "instagram_link": null,
+            "channel_short_code": "BOL News",
+            "country": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 15,
+        "fields": {
+            "name": "SAMAA TV",
+            "description": "SAMAA TV is Pakistan\u2019s first private satellite news channel that provides live transmission simultaneously from five cities of Pakistan: Karachi, Lahore, Islamabad, Quetta and Peshawar.",
+            "is_active": true,
+            "effective_date": "2019-07-04T19:59:58.292Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-04T19:55:20Z",
+            "updated": "2019-07-04T19:59:58.292Z",
+            "extra_data": null,
+            "website_link": "https://www.samaa.tv/",
+            "youtube_link": "https://www.youtube.com/user/samaatvnews",
+            "facebook_link": "https://web.facebook.com/samaatvnews?_rdc=1&_rdr",
+            "twitter_link": "https://twitter.com/samaatv",
+            "instagram_link": "https://www.instagram.com/samaatv/",
+            "channel_short_code": "SAMAA TV",
+            "country": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 16,
+        "fields": {
+            "name": "Geo TV",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-06T10:17:38.856Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-06T10:17:18Z",
+            "updated": "2019-07-06T10:17:38.856Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "channel_short_code": "GEO",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 17,
+        "fields": {
+            "name": "Ary Digital",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-07T06:34:56.028Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-07T06:34:35Z",
+            "updated": "2019-07-07T06:34:56.028Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "channel_short_code": "ARYD",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 18,
+        "fields": {
+            "name": "TV One",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-07T06:41:31.281Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-07T06:41:02Z",
+            "updated": "2019-07-07T06:41:31.281Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "channel_short_code": "TVONE",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 19,
+        "fields": {
+            "name": "Abb Takk",
+            "description": "Abbtakk delivers the latest headlines news and information on the latest top stories from Pakistan and around the world on weather, business, entertainment, politics, sports and more.",
+            "is_active": true,
+            "effective_date": "2019-07-10T14:49:59.978Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-10T14:48:31Z",
+            "updated": "2019-07-10T14:49:59.979Z",
+            "extra_data": null,
+            "website_link": "https://abbtakk.tv/en/",
+            "youtube_link": "https://www.youtube.com/channel/UC5mwDEzm4FzXKoHPBDnuUQQ",
+            "facebook_link": "https://www.facebook.com/AbbTakk/?ref=bookmarks",
+            "twitter_link": null,
+            "instagram_link": "https://www.instagram.com/abbtakknewsofficial/",
+            "channel_short_code": "Abb Takk",
+            "country": [
+                1
+            ]
         }
     }
 ]

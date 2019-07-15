@@ -3,7 +3,17 @@
         "model": "pakguru_app.showsourcefeed",
         "pk": 1,
         "fields": {
-            "feed_name": "YouTube - 60 Minutes",
+            "name": "YouTube - 60 Minutes",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-06T09:41:43.125Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-01T01:15:13.753Z",
+            "updated": "2019-07-06T09:41:43.125Z",
+            "extra_data": null,
             "show_name": "60 Minutes",
             "channel": 1,
             "playlist_link": "https://www.youtube.com/user/60minutes/playlists?view=1&sort=dd&flow=grid",
@@ -12,18 +22,9 @@
             "title_search_pattern": null,
             "search_api_url": null,
             "search_api_pattern": null,
-            "is_active": true,
-            "effective_date": "2019-07-01T01:43:06.946Z",
-            "expiration_date": null,
-            "feed_source": "Youtube",
+            "feed_source_type": 1,
             "feed_quality": "1080p",
             "priority": 1,
-            "extra_data": null,
-            "added_by": [
-                "admin"
-            ],
-            "created": "2019-07-01T01:15:13.753Z",
-            "updated": "2019-07-01T01:43:06.946Z",
             "country": [
                 2
             ]
@@ -33,7 +34,17 @@
         "model": "pakguru_app.showsourcefeed",
         "pk": 2,
         "fields": {
-            "feed_name": "YouTube - Zara Hat Kay",
+            "name": "YouTube - Zara Hat Kay",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-06T09:41:28.583Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-01T01:36:31.821Z",
+            "updated": "2019-07-06T09:41:28.583Z",
+            "extra_data": null,
             "show_name": "Zara Hat Kay",
             "channel": 2,
             "playlist_link": "https://www.youtube.com/watch?v=odMfq4uvawg&list=PLqvJuaAfjXbQZEZrIYkNHyd5JYW4peIwE",
@@ -42,18 +53,9 @@
             "title_search_pattern": null,
             "search_api_url": null,
             "search_api_pattern": null,
-            "is_active": true,
-            "effective_date": "2019-07-01T03:13:12.619Z",
-            "expiration_date": null,
-            "feed_source": "Youtube",
+            "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 3,
-            "extra_data": null,
-            "added_by": [
-                "admin"
-            ],
-            "created": "2019-07-01T01:36:31.821Z",
-            "updated": "2019-07-01T03:13:12.619Z",
             "country": [
                 2
             ]
@@ -63,7 +65,17 @@
         "model": "pakguru_app.showsourcefeed",
         "pk": 3,
         "fields": {
-            "feed_name": "unewstv - Zara Hat Kay",
+            "name": "unewstv - Zara Hat Kay",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T02:09:02.888Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-01T01:42:27.916Z",
+            "updated": "2019-07-03T02:09:02.889Z",
+            "extra_data": null,
             "show_name": "Zara Hat Kay",
             "channel": 2,
             "playlist_link": "http://www.unewstv.com/category/Zara+Hut+Kay+on+Dawn+News",
@@ -72,18 +84,9 @@
             "title_search_pattern": "{show name} ({episode title}) \u2013 {date: DDth MMM YYYY}",
             "search_api_url": "http://www.unewstv.com/category/Zara+Hut+Kay+on+Dawn+News",
             "search_api_pattern": "http://www.unewstv.com/category/Zara+Hut+Kay+on+Dawn+News",
-            "is_active": true,
-            "effective_date": "2019-07-01T05:52:31.957Z",
-            "expiration_date": null,
-            "feed_source": "unewstv",
+            "feed_source_type": 2,
             "feed_quality": "480p",
-            "priority": 2,
-            "extra_data": null,
-            "added_by": [
-                "admin"
-            ],
-            "created": "2019-07-01T01:42:27.916Z",
-            "updated": "2019-07-01T05:52:31.957Z",
+            "priority": 1,
             "country": [
                 4
             ]
@@ -93,7 +96,17 @@
         "model": "pakguru_app.showsourcefeed",
         "pk": 4,
         "fields": {
-            "feed_name": "Talk Shows Central - Zara Hat Kay",
+            "name": "Talk Shows Central - Zara Hat Kay",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-06T09:42:59.041Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-01T02:48:30.906Z",
+            "updated": "2019-07-06T09:42:59.041Z",
+            "extra_data": null,
             "show_name": "Zara Hat Kay",
             "channel": 2,
             "playlist_link": "https://www.youtube.com/playlist?list=PL3kMf0Q991MNBSj9EmVLH-lkOIQ07e3xu",
@@ -102,18 +115,9 @@
             "title_search_pattern": "{Episode Name} | {Show name} | {date:DD MMM YYYY} | {Channel Name}",
             "search_api_url": null,
             "search_api_pattern": null,
-            "is_active": true,
-            "effective_date": "2019-07-01T03:12:33.822Z",
-            "expiration_date": null,
-            "feed_source": "Talk Shows Central",
+            "feed_source_type": 5,
             "feed_quality": "480p",
             "priority": 1,
-            "extra_data": null,
-            "added_by": [
-                "admin"
-            ],
-            "created": "2019-07-01T02:48:30.906Z",
-            "updated": "2019-07-01T03:12:33.822Z",
             "country": [
                 4
             ]
@@ -123,8 +127,18 @@
         "model": "pakguru_app.showsourcefeed",
         "pk": 5,
         "fields": {
-            "feed_name": "unewstv - Merey Mutabiq with Hassan Nisar",
-            "show_name": "Merey Mutabiq with Hassan Nisar",
+            "name": "unewstv - Meray Mutabiq With Hassan Nisar",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T06:28:36.458Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-01T05:55:27.463Z",
+            "updated": "2019-07-03T06:28:36.458Z",
+            "extra_data": null,
+            "show_name": "Meray Mutabiq With Hassan Nisar",
             "channel": 4,
             "playlist_link": "http://www.unewstv.com/category/Merey+Mutabiq+with+Hassan+Nisar",
             "latest_show_link": "http://www.unewstv.com/153242/meray-mutabiq-with-hassan-nisar-amnesty-scheme-other-issues-30th-june-2019",
@@ -132,18 +146,9 @@
             "title_search_pattern": "{show name} ({episode title}) \u2013 {date: DDth MMM YYYY}",
             "search_api_url": null,
             "search_api_pattern": null,
-            "is_active": true,
-            "effective_date": "2019-07-01T05:56:46.741Z",
-            "expiration_date": null,
-            "feed_source": "unewstv",
+            "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 1,
-            "extra_data": null,
-            "added_by": [
-                "admin"
-            ],
-            "created": "2019-07-01T05:55:27.463Z",
-            "updated": "2019-07-01T05:56:46.741Z",
             "country": [
                 1
             ]
@@ -153,7 +158,17 @@
         "model": "pakguru_app.showsourcefeed",
         "pk": 6,
         "fields": {
-            "feed_name": "unewstv - Live with Dr. Shahid Masood",
+            "name": "unewstv - Live with Dr. Shahid Masood",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T06:13:18.027Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-01T08:55:53.055Z",
+            "updated": "2019-07-03T06:13:18.027Z",
+            "extra_data": null,
             "show_name": "Live with Dr. Shahid Masood",
             "channel": 5,
             "playlist_link": "http://www.unewstv.com/category/Live+with+Dr.+Shahid+Masood",
@@ -162,18 +177,1743 @@
             "title_search_pattern": "Live with Dr. Shahid Masood (Muashi Dehshatgardi Ka Bharpoor Waar) - 29th June 2019",
             "search_api_url": "http://www.unewstv.com/category/Live+with+Dr.+Shahid+Masood",
             "search_api_pattern": "http://www.unewstv.com/category/Live+with+Dr.+Shahid+Masood",
-            "is_active": true,
-            "effective_date": "2019-07-01T08:55:53.055Z",
-            "expiration_date": null,
-            "feed_source": "unewstv",
+            "feed_source_type": 2,
             "feed_quality": "720p",
             "priority": 2,
-            "extra_data": null,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 7,
+        "fields": {
+            "name": "Geo News - Score with Yahya Hussaini",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-06T09:42:44.830Z",
+            "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
-            "created": "2019-07-01T08:55:53.055Z",
-            "updated": "2019-07-01T08:55:53.055Z",
+            "created": "2019-07-01T19:07:08.136Z",
+            "updated": "2019-07-06T09:42:44.830Z",
+            "extra_data": null,
+            "show_name": "Score with Yahya Hussaini",
+            "channel": 4,
+            "playlist_link": "https://www.geo.tv/shows/score",
+            "latest_show_link": "https://www.geo.tv/shows/score/241687-score-28-june-2019",
+            "title_example": "Score - 28-June-2019",
+            "title_search_pattern": "Score - 27-June-2019",
+            "search_api_url": "https://www.geo.tv/shows/score/241687-score-28-june-2019",
+            "search_api_pattern": "https://www.geo.tv/shows/score/241687-score-28-june-2019",
+            "feed_source_type": 7,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 8,
+        "fields": {
+            "name": "HUM TV - Deewar e Shab",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-06T09:41:13.364Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-01T19:52:37.901Z",
+            "updated": "2019-07-06T09:41:13.364Z",
+            "extra_data": null,
+            "show_name": "Deewar e Shab",
+            "channel": 6,
+            "playlist_link": "https://www.hum.tv/dramas/deewar-e-shab/",
+            "latest_show_link": "https://www.hum.tv/deewar-e-shab-episode-04/",
+            "title_example": "Deewar e Shab Episode #04 HUM TV Drama 29 June 2019",
+            "title_search_pattern": "Deewar e Shab Episode #03 HUM TV Drama 22 June 2019",
+            "search_api_url": "https://www.hum.tv/dramas/deewar-e-shab/",
+            "search_api_pattern": "https://www.hum.tv/dramas/deewar-e-shab/",
+            "feed_source_type": 6,
+            "feed_quality": "1080p",
+            "priority": 2,
+            "country": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 9,
+        "fields": {
+            "name": "unewstv - Muqabil",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T06:15:37.632Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-02T17:01:55.446Z",
+            "updated": "2019-07-03T06:15:37.632Z",
+            "extra_data": null,
+            "show_name": "Muqabil",
+            "channel": 7,
+            "playlist_link": "http://www.unewstv.com/category/Muqabil+on+92+News",
+            "latest_show_link": "http://www.unewstv.com/153314/muqabil-is-pm-helpless-in-front-of-corruption-mafia-1st-july-2019",
+            "title_example": "Muqabil (Is PM Helpless In Front of Corruption Mafia) \u2013 1st July 2019",
+            "title_search_pattern": "Muqabil (Kia Opposition Tehreek Chalaye Gi) \u2013 27th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Muqabil+on+92+News",
+            "search_api_pattern": null,
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 10,
+        "fields": {
+            "name": "unewstv - Off The Record",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T06:15:16.180Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-02T17:28:47.497Z",
+            "updated": "2019-07-03T06:15:16.180Z",
+            "extra_data": null,
+            "show_name": "Off The Record",
+            "channel": 8,
+            "playlist_link": "http://www.unewstv.com/category/Off+The+Record+with+Kashif+Abbasi",
+            "latest_show_link": "http://www.unewstv.com/153037/off-the-record-all-parties-conference-inflation-27th-june-2019",
+            "title_example": "Off The Record (All Parties Conference, Inflation) - 27th June 2019",
+            "title_search_pattern": "Off The Record (APC Ne Kia Hasil Kia?) \u2013 26th June 2019 June 26, 2019",
+            "search_api_url": "http://www.unewstv.com/category/Off+The+Record+with+Kashif+Abbasi",
+            "search_api_pattern": "http://www.unewstv.com/category/Off+The+Record+with+Kashif+Abbasi",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 11,
+        "fields": {
+            "name": "unewstv - Dunya Kamran Khan Kay Sath",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T04:15:01.447Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-03T04:15:01.447Z",
+            "updated": "2019-07-03T04:15:01.447Z",
+            "extra_data": null,
+            "show_name": "Dunya Kamran Khan Kay Sath",
+            "channel": 3,
+            "playlist_link": "http://www.unewstv.com/category/Dunya+Kamran+Khan+Kay+Sath",
+            "latest_show_link": "http://www.unewstv.com/153395/dunya-kamran-khan-kay-sath-mehngai-ka-tofan-2nd-july-2019",
+            "title_example": "Dunya Kamran Khan Kay Sath (Mehngai Ka Tofan) - 2nd July 2019 Dunya Kamran Khan Kay Sath (Mehngai Ka Tofan) - 2nd July 2019",
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                1,
+                2,
+                3,
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 12,
+        "fields": {
+            "name": "unewstv - Aap Kay Muqabil",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T07:53:27.275Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T07:53:27.275Z",
+            "updated": "2019-07-03T07:53:27.276Z",
+            "extra_data": null,
+            "show_name": "Aap Kay Muqabil",
+            "channel": 9,
+            "playlist_link": "http://www.unewstv.com/category/Aap+Kay+Muqabil",
+            "latest_show_link": "http://www.unewstv.com/153388/aap-kay-muqabil-rana-sanaullah-s-arrest-other-issues-2nd-july-2019",
+            "title_example": "Aap Kay Muqabil (Rana Sanaullah's Arrest, Other Issues) \u2013 2nd July 2019",
+            "title_search_pattern": "Aap Kay Muqabil (PM Imran Khan's Interview About Amnesty & Taxes) \u2013 1st July 2019 July 01, 2019",
+            "search_api_url": "http://www.unewstv.com/category/Aap+Kay+Muqabil",
+            "search_api_pattern": "http://www.unewstv.com/category/Aap+Kay+Muqabil",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 13,
+        "fields": {
+            "name": "unewstv - The Reporters",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T08:07:28.898Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T08:07:28.898Z",
+            "updated": "2019-07-03T08:07:28.898Z",
+            "extra_data": null,
+            "show_name": "The Reporters",
+            "channel": 8,
+            "playlist_link": "http://www.unewstv.com/category/The+Reporters+on+ARY+News",
+            "latest_show_link": "http://www.unewstv.com/153376/the-reporters-pm-imran-khan-s-offer-to-nawaz-zardari-2nd-july-2019",
+            "title_example": "The Reporters (PM Imran Khan's Offer to Nawaz & Zardari) \u2013 2nd July 2019",
+            "title_search_pattern": "The Reporters (Opposition's All Parties Conference Failed) - 27th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/The+Reporters+on+ARY+News",
+            "search_api_pattern": "http://www.unewstv.com/category/The+Reporters+on+ARY+News",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 14,
+        "fields": {
+            "name": "unewstv - Aaj Shahzaib Khanzada Ke Saath",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T08:25:07.063Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T08:25:07.063Z",
+            "updated": "2019-07-03T08:25:07.063Z",
+            "extra_data": null,
+            "show_name": "Aaj Shahzaib Khanzada Ke Saath",
+            "channel": 4,
+            "playlist_link": "http://www.unewstv.com/category/Aaj+Shahzaib+Khanzada+Ke+Saath",
+            "latest_show_link": "http://www.unewstv.com/153325/aaj-shahzeb-khanzada-kay-sath-rana-sanaullah-arrested-1st-july-2019",
+            "title_example": "Aaj Shahzeb Khanzada Kay Sath (Rana Sanaullah Arrested) - 1st July 2019",
+            "title_search_pattern": "Aaj Shahzaib Khanzada Ke Saath (Army Chief's Statement About Economy) \u2013 28th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Aaj+Shahzaib+Khanzada+Ke+Saath",
+            "search_api_pattern": "http://www.unewstv.com/category/Aaj+Shahzaib+Khanzada+Ke+Saath",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 15,
+        "fields": {
+            "name": "unewstv - Night Edition",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T08:37:06.514Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T08:37:06.514Z",
+            "updated": "2019-07-03T08:37:06.514Z",
+            "extra_data": null,
+            "show_name": "Night Edition",
+            "channel": 7,
+            "playlist_link": "http://www.unewstv.com/category/Night+Edition+on+92+News",
+            "latest_show_link": "http://www.unewstv.com/153244/night-edition-big-shock-for-pmln-30th-june-2019",
+            "title_example": "Night Edition (Big Shock For PMLN?) \u2013 30th June 2019",
+            "title_search_pattern": "Night Edition (Budget Approved, Opposition Failed?) \u2013 29th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Night+Edition+on+92+News",
+            "search_api_pattern": "http://www.unewstv.com/category/Night+Edition+on+92+News",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 16,
+        "fields": {
+            "name": "unewstv - Jirga",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T08:48:42.453Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T08:48:42.453Z",
+            "updated": "2019-07-03T08:48:42.453Z",
+            "extra_data": null,
+            "show_name": "Jirga",
+            "channel": 4,
+            "playlist_link": "http://www.unewstv.com/category/Jirga+with+Saleem+Safi",
+            "latest_show_link": "http://www.unewstv.com/153255/jirga-with-saleem-safi-ashraf-ghani-special-interview-30th-june-2019",
+            "title_example": "Jirga With Saleem Safi (Ashraf Ghani Special Interview) - 30th June 2019",
+            "title_search_pattern": "Jirga with Saleem Safi (Qamar Zaman Kaira Exclusive) - 22nd June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Jirga+with+Saleem+Safi",
+            "search_api_pattern": "http://www.unewstv.com/category/Jirga+with+Saleem+Safi",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 17,
+        "fields": {
+            "name": "unewstv - Bebaak",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T08:56:47.316Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T08:56:47.316Z",
+            "updated": "2019-07-03T08:56:47.316Z",
+            "extra_data": null,
+            "show_name": "Bebaak",
+            "channel": 5,
+            "playlist_link": "http://www.unewstv.com/category/Bebaak+on+GNN+News",
+            "latest_show_link": "http://www.unewstv.com/153396/bebaak-production-orders-arrests-economy-2nd-july-2019",
+            "title_example": "Bebaak (Production Orders, Arrests, Economy) - 2nd July 2019",
+            "title_search_pattern": "Bebaak (Rana Sanaullah Arrested, Shahbaz Maryam Meeting) - 1st July 2019 July 01, 2019",
+            "search_api_url": "http://www.unewstv.com/category/Bebaak+on+GNN+News",
+            "search_api_pattern": "http://www.unewstv.com/category/Bebaak+on+GNN+News",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 18,
+        "fields": {
+            "name": "unewstv - Capital Talk",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T09:10:26.810Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T09:10:26.810Z",
+            "updated": "2019-07-03T09:10:26.810Z",
+            "extra_data": null,
+            "show_name": "Capital Talk",
+            "channel": 4,
+            "playlist_link": "http://www.unewstv.com/category/Capital+Talk+with+Hamid+Mir",
+            "latest_show_link": "http://www.unewstv.com/153400/capital-talk-fazal-ur-rehman-exclusive-interview-2nd-july-2019",
+            "title_example": "Capital Talk (Fazal ur Rehman Exclusive Interview) - 2nd July 2019",
+            "title_search_pattern": "Capital Talk (Cricket Se Siasat Tak) \u2013 27th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Capital+Talk+with+Hamid+Mir",
+            "search_api_pattern": "http://www.unewstv.com/category/Capital+Talk+with+Hamid+Mir",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 19,
+        "fields": {
+            "name": "unewstv - Hard Talk Pakistan",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T09:17:40.682Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T09:17:40.682Z",
+            "updated": "2019-07-03T09:17:40.682Z",
+            "extra_data": null,
+            "show_name": "Hard Talk Pakistan",
+            "channel": 7,
+            "playlist_link": "http://www.unewstv.com/category/Hard+Talk+Pakistan+With+Moeed+Pirzada",
+            "latest_show_link": "http://www.unewstv.com/153236/hard-talk-pakistan-with-moeed-pirzada-cracks-in-pmln-30th-june-2019",
+            "title_example": "Hard Talk Pakistan With Moeed Pirzada (Cracks in PMLN) - 30th June 2019",
+            "title_search_pattern": "Hard Talk Pakistan With Moeed Pirzada (Mid Term Elections Ka Mutalba) - 29th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Hard+Talk+Pakistan+With+Moeed+Pirzada",
+            "search_api_pattern": "http://www.unewstv.com/category/Hard+Talk+Pakistan+With+Moeed+Pirzada",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 20,
+        "fields": {
+            "name": "unewstv - Power Play",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T09:27:35.039Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T09:27:35.039Z",
+            "updated": "2019-07-03T09:27:35.039Z",
+            "extra_data": null,
+            "show_name": "Power Play",
+            "channel": 8,
+            "playlist_link": "http://www.unewstv.com/category/Power+Play+on+ARY+News",
+            "latest_show_link": "http://www.unewstv.com/153405/power-play-chairman-fbr-shabbar-zaidi-exclusive-interview-2nd-july-2019",
+            "title_example": "Power Play (Chairman FBR Shabbar Zaidi Exclusive Interview) \u2013 2nd July 2019",
+            "title_search_pattern": "Power Play (Beqabu Dollar Aur Maeeshat) \u2013 27th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Power+Play+on+ARY+News",
+            "search_api_pattern": "http://www.unewstv.com/category/Power+Play+on+ARY+News",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 21,
+        "fields": {
+            "name": "unewstv - Najam Sethi Show",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T09:45:08.610Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T09:45:08.610Z",
+            "updated": "2019-07-03T09:45:08.610Z",
+            "extra_data": null,
+            "show_name": "Najam Sethi Show",
+            "channel": 10,
+            "playlist_link": "http://www.unewstv.com/category/Najam+Sethi+Show",
+            "latest_show_link": "http://www.unewstv.com/153386/najam-sethi-show-more-arrests-asif-zardari-s-interview-2nd-july-2019",
+            "title_example": "Najam Sethi Show (More Arrests, Asif Zardari's Interview) \u2013 2nd July 2019",
+            "title_search_pattern": "Najam Sethi Show (PM Imran Khan's Speech) \u2013 1st July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Najam+Sethi+Show",
+            "search_api_pattern": "http://www.unewstv.com/category/Najam+Sethi+Show",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 22,
+        "fields": {
+            "name": "unewstv - Think Tank",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T18:04:23.845Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T18:04:23.845Z",
+            "updated": "2019-07-03T18:04:23.845Z",
+            "extra_data": null,
+            "show_name": "Think Tank",
+            "channel": 3,
+            "playlist_link": "http://www.unewstv.com/category/Think+Tank+on+Dunya+News",
+            "latest_show_link": "http://www.unewstv.com/153231/think-tank-pmln-in-trouble-pmln-members-meet-imran-khan-30th-june-2019",
+            "title_example": "Think Tank (PMLN In Trouble, PMLN Members Meet Imran Khan) - 30th June 2019",
+            "title_search_pattern": "Think Tank (Attitude of Govt And Opposition) - 29th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Think+Tank+on+Dunya+News",
+            "search_api_pattern": "http://www.unewstv.com/category/Think+Tank+on+Dunya+News",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 23,
+        "fields": {
+            "name": "unewstv - Harf e Raaz",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T18:21:12.286Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T18:21:12.286Z",
+            "updated": "2019-07-03T18:21:12.286Z",
+            "extra_data": null,
+            "show_name": "Harf e Raaz",
+            "channel": 11,
+            "playlist_link": "http://www.unewstv.com/category/Harf-e-Raz+on+Neo+Tv",
+            "latest_show_link": "http://www.unewstv.com/153437/harf-e-raaz-why-america-now-favours-pakistan-3rd-july-2019",
+            "title_example": "Harf e Raaz (Why America Now Favours Pakistan?) - 3rd July 2019",
+            "title_search_pattern": "Harf e Raaz With Orya Maqbool Jan (Anti Opposition Drive) - 2nd July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Harf-e-Raz+on+Neo+Tv",
+            "search_api_pattern": "http://www.unewstv.com/category/Harf-e-Raz+on+Neo+Tv",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 24,
+        "fields": {
+            "name": "unewstv - Khara Sach",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-07T06:28:16.051Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T18:33:41.023Z",
+            "updated": "2019-07-07T06:28:16.052Z",
+            "extra_data": null,
+            "show_name": "Khara Sach",
+            "channel": 10,
+            "playlist_link": "http://www.unewstv.com/category/Khara+Sach+with+Mubasher+Luqman",
+            "latest_show_link": "http://www.unewstv.com/153404/khara-sach-with-mubashir-lucman-production-orders-issue-2nd-july-2019",
+            "title_example": "Khara Sach With Mubashir Lucman (Production Orders Issue) \u2013 2nd July 2019",
+            "title_search_pattern": "Khara Sach With Mubashir Lucman (Sheikh Rasheed Exclusive Interview) \u2013 1st July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Khara+Sach+with+Mubasher+Luqman",
+            "search_api_pattern": "http://www.unewstv.com/category/Khara+Sach+with+Mubasher+Luqman",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 25,
+        "fields": {
+            "name": "unewstv - Kal Tak with Javed Chaudhry",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-10T14:32:26.643Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T18:45:37.770Z",
+            "updated": "2019-07-10T14:32:26.643Z",
+            "extra_data": null,
+            "show_name": "Kal tak with Javed Chaudhry",
+            "channel": 12,
+            "playlist_link": "http://www.unewstv.com/category/Kal+Tak+with+Javed+Chaudhry",
+            "latest_show_link": "http://www.unewstv.com/153391/kal-tak-with-javed-chaudhry-imran-khan-s-big-announcement-2nd-july-2019",
+            "title_example": "Kal Tak with Javed Chaudhry (Imran Khan's Big Announcement) \u2013 2nd July 2019",
+            "title_search_pattern": "Kal tak with Javed Chaudhry (PMLN Mein Cracks) \u2013 1st July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Kal+Tak+with+Javed+Chaudhry",
+            "search_api_pattern": "http://www.unewstv.com/category/Kal+Tak+with+Javed+Chaudhry",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 26,
+        "fields": {
+            "name": "unewstv - Faisla Aap Ka",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T19:06:23.531Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T19:06:23.537Z",
+            "updated": "2019-07-03T19:06:23.538Z",
+            "extra_data": null,
+            "show_name": "Faisla Aap Ka",
+            "channel": 13,
+            "playlist_link": "http://www.unewstv.com/category/Faisla+Aap+Ka",
+            "latest_show_link": "http://www.unewstv.com/153433/faisla-aap-ka-cases-on-opposition-leaders-3rd-july-2019",
+            "title_example": "Faisla Aap Ka (Cases on Opposition Leaders) \u2013 3rd July 2019",
+            "title_search_pattern": "Faisla Aap Ka (Production Order Ke Qanoon Mein Tarmeem Ka Faisla) \u2013 2nd July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Faisla+Aap+Ka",
+            "search_api_pattern": "http://www.unewstv.com/category/Faisla+Aap+Ka",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 27,
+        "fields": {
+            "name": "unewstv - To The Point",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-03T19:19:35.884Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-03T19:19:35.884Z",
+            "updated": "2019-07-03T19:19:35.884Z",
+            "extra_data": null,
+            "show_name": "To The Point",
+            "channel": 12,
+            "playlist_link": "http://www.unewstv.com/category/To+The+Point+With+Mansoor+Ali+Khan",
+            "latest_show_link": "http://www.unewstv.com/153251/to-the-point-cracks-in-pmln-30th-june-2019",
+            "title_example": "To The Point (Cracks in PMLN) \u2013 30th June 2019",
+            "title_search_pattern": "To The Point (Opposition Failed To Reject Budget) \u2013 29th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/To+The+Point+With+Mansoor+Ali+Khan",
+            "search_api_pattern": "http://www.unewstv.com/category/To+The+Point+With+Mansoor+Ali+Khan",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 28,
+        "fields": {
+            "name": "unewstv - News Eye",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-04T18:00:37.964Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-04T18:00:37.332Z",
+            "updated": "2019-07-04T18:00:37.964Z",
+            "extra_data": null,
+            "show_name": "News Eye",
+            "channel": 2,
+            "playlist_link": "http://www.unewstv.com/category/News+Eye+with+Meher+Abbasi",
+            "latest_show_link": "http://www.unewstv.com/153458/news-eye-with-meher-abbasi-rana-sanaullah-s-arrest-3rd-july-2019",
+            "title_example": "News Eye with Meher Abbasi (Rana Sanaullah's Arrest) \u2013 3rd July 2019",
+            "title_search_pattern": "News Eye with Meher Abbasi (Imran Khan's Clear Message) \u2013 2nd July 2019",
+            "search_api_url": "http://www.unewstv.com/category/News+Eye+with+Meher+Abbasi",
+            "search_api_pattern": "http://www.unewstv.com/category/News+Eye+with+Meher+Abbasi",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 29,
+        "fields": {
+            "name": "unewstv - G For Gharida",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-04T18:18:55.852Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-04T18:18:55.202Z",
+            "updated": "2019-07-04T18:18:55.852Z",
+            "extra_data": null,
+            "show_name": "G for Gharida",
+            "channel": 13,
+            "playlist_link": "http://www.unewstv.com/category/G+For+Gharida+Farooqi+",
+            "latest_show_link": "http://www.unewstv.com/153175/g-for-gharida-discussion-on-current-issues-29th-june-2019",
+            "title_example": "G For Gharida (Discussion on Current Issues) \u2013 29th June 2019",
+            "title_search_pattern": "G For Gharida (Federal Budget Approved) \u2013 28th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/G+For+Gharida+Farooqi+",
+            "search_api_pattern": "http://www.unewstv.com/category/G+For+Gharida+Farooqi+",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 30,
+        "fields": {
+            "name": "unewstv - Nasim Zehra @ 8:00",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-04T18:33:20.251Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-04T18:33:18.948Z",
+            "updated": "2019-07-04T18:33:20.251Z",
+            "extra_data": null,
+            "show_name": "Nasim Zehra @ 8:00",
+            "channel": 10,
+            "playlist_link": "http://www.unewstv.com/category/Nasim+Zehra+%40+8%3A00",
+            "latest_show_link": "http://www.unewstv.com/153246/nasim-zehra-8-00-dollar-ki-parwaz-30th-june-2019",
+            "title_example": "Nasim Zehra @ 8:00 (Dollar Ki Parwaz) \u2013 30th June 2019",
+            "title_search_pattern": "Nasim Zehra @ 8:00 (Cricket World Cup 2019) \u2013 23rd June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Nasim+Zehra+%40+8%3A00",
+            "search_api_pattern": "http://www.unewstv.com/category/Nasim+Zehra+%40+8%3A00",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 31,
+        "fields": {
+            "name": "unewstv - Breaking Point with Malick",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-04T18:54:24.944Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-04T18:52:14.662Z",
+            "updated": "2019-07-04T18:54:24.944Z",
+            "extra_data": null,
+            "show_name": "Breaking Point with Malick",
+            "channel": 6,
+            "playlist_link": "http://www.unewstv.com/category/Breaking+Point+with+Malick",
+            "latest_show_link": "http://www.unewstv.com/153224/breaking-point-with-malick-consultancy-contract-mein-arbon-ka-izafa-30th-june-2019",
+            "title_example": "Breaking Point with Malick (Consultancy Contract Mein Arbon Ka Izafa) - 30th June 2019",
+            "title_search_pattern": "Breaking Point with Malick (APC Se Kia Nikla?) - 29th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Breaking+Point+with+Malick",
+            "search_api_pattern": "http://www.unewstv.com/category/Breaking+Point+with+Malick",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 32,
+        "fields": {
+            "name": "unewstv - Face to Face with Ayesha Bakhsh",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-04T19:18:45.289Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-04T19:18:43.852Z",
+            "updated": "2019-07-04T19:18:45.289Z",
+            "extra_data": null,
+            "show_name": "Face to Face with Ayesha Bakhsh",
+            "channel": 5,
+            "playlist_link": "http://www.unewstv.com/category/Face+to+Face+with+Ayesha+Bakhsh",
+            "latest_show_link": "http://www.unewstv.com/153229/face-to-face-with-ayesha-bakhsh-pmln-members-meet-imran-khan-30th-june-2019",
+            "title_example": "Face to Face with Ayesha Bakhsh (PMLN Members Meet Imran Khan) \u2013 30th June 2019",
+            "title_search_pattern": "Face To Face with Ayesha Bakhsh (PM Imran Khan's Speech) - 29th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Face+to+Face+with+Ayesha+Bakhsh",
+            "search_api_pattern": "http://www.unewstv.com/category/Face+to+Face+with+Ayesha+Bakhsh",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 33,
+        "fields": {
+            "name": "unewstv - Tajzia Sami Ibrahim Kay Sath",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-04T20:16:22.954Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-04T19:34:02.474Z",
+            "updated": "2019-07-04T20:16:22.954Z",
+            "extra_data": null,
+            "show_name": "Tajzia Sami Ibrahim Kay Sath",
+            "channel": 14,
+            "playlist_link": "http://www.unewstv.com/category/Tajzia+Sami+Ibrahim+Kay+Sath",
+            "latest_show_link": "http://www.unewstv.com/153434/tajzia-sami-ibrahim-kay-sath-fbr-in-action-3rd-july-2019",
+            "title_example": "Tajzia Sami Ibrahim Kay Sath (FBR In Action) \u2013 3rd July 2019",
+            "title_search_pattern": "Tajzia Sami Ibrahim Kay Sath (Rana Sanaullah Arrest) \u2013 2nd July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Tajzia+Sami+Ibrahim+Kay+Sath",
+            "search_api_pattern": "http://www.unewstv.com/category/Tajzia+Sami+Ibrahim+Kay+Sath",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 34,
+        "fields": {
+            "name": "unewstv - News Beat",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-04T20:00:25.131Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-04T20:00:24.644Z",
+            "updated": "2019-07-04T20:00:25.131Z",
+            "extra_data": null,
+            "show_name": "News Beat",
+            "channel": 15,
+            "playlist_link": "http://www.unewstv.com/category/News+Beat+on+Samaa+News",
+            "latest_show_link": "http://www.unewstv.com/153257/news-beat-opposition-abhi-se-bikharne-lagi-30th-june-2019",
+            "title_example": "News Beat (Opposition Abhi Se Bikharne Lagi?) - 30th June 2019",
+            "title_search_pattern": "News Beat (PTI Hakumat Ka Pehla Budget Manzoor) - 28th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/News+Beat+on+Samaa+News",
+            "search_api_pattern": "http://www.unewstv.com/category/News+Beat+on+Samaa+News",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 35,
+        "fields": {
+            "name": "unewstv - Nadeem Malik Live",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-05T20:05:38.615Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-05T20:05:36.560Z",
+            "updated": "2019-07-05T20:05:38.615Z",
+            "extra_data": null,
+            "show_name": "Nadeem Malik Live",
+            "channel": 15,
+            "playlist_link": "http://www.unewstv.com/category/Nadeem+Malik+Live+on+Samaa+News",
+            "latest_show_link": "http://www.unewstv.com/153509/nadeem-malik-live-fbr-action-against-benami-assets-4th-july-2019",
+            "title_example": "Nadeem Malik Live (FBR Action Against Benami Assets) - 4th July 2019",
+            "title_search_pattern": "Nadeem Malik Live (Kisi Ko NRO Nahi Mile Ga - Imran Khan) - 3rd July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Nadeem+Malik+Live+on+Samaa+News",
+            "search_api_pattern": "http://www.unewstv.com/category/Nadeem+Malik+Live+on+Samaa+News",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 36,
+        "fields": {
+            "name": "unewstv - Aaj Rana Mubashir Kay Saath",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-05T20:42:21.873Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-05T20:42:21.124Z",
+            "updated": "2019-07-05T20:42:21.873Z",
+            "extra_data": null,
+            "show_name": "Aaj Rana Mubashir Kay Saath",
+            "channel": 13,
+            "playlist_link": "http://www.unewstv.com/category/Aaj+Rana+Mubashir+Kay+Sath",
+            "latest_show_link": "http://www.unewstv.com/153575/aaj-rana-mubashir-kay-saath-who-is-funding-ptm-5th-july-2019",
+            "title_example": "Aaj Rana Mubashir Kay Saath (Who Is Funding PTM?) \u2013 5th July 2019",
+            "title_search_pattern": "Aaj Rana Mubashir Kay Saath (Debt Inquiry Commission Ka Kia Huwa) \u2013 30th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Aaj+Rana+Mubashir+Kay+Sath",
+            "search_api_pattern": "http://www.unewstv.com/category/Aaj+Rana+Mubashir+Kay+Sath",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 37,
+        "fields": {
+            "name": "unewstv - Ho Kya Raha Hai",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-05T20:53:42.248Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-05T20:53:41.406Z",
+            "updated": "2019-07-05T20:53:42.248Z",
+            "extra_data": null,
+            "show_name": "Ho Kya Raha Hai",
+            "channel": 7,
+            "playlist_link": "http://www.unewstv.com/category/Ho+Kya+Raha+Hai+on+92+News+HD",
+            "latest_show_link": "http://www.unewstv.com/153518/ho-kya-raha-hai-how-govt-will-control-inflation-4th-july-2019",
+            "title_example": "Ho Kya Raha Hai (How Govt Will Control Inflation) - 4th July 2019",
+            "title_search_pattern": "Ho Kya Raha Hai (Firing At Lahore Airport) \u2013 3rd July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Ho+Kya+Raha+Hai+on+92+News+HD",
+            "search_api_pattern": "http://www.unewstv.com/category/Ho+Kya+Raha+Hai+on+92+News+HD",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 38,
+        "fields": {
+            "name": "unewstv - Nuqta e Nazar",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-05T21:01:58.773Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-05T21:01:56.373Z",
+            "updated": "2019-07-05T21:01:58.773Z",
+            "extra_data": null,
+            "show_name": "Nuqta e Nazar",
+            "channel": 3,
+            "playlist_link": "http://www.unewstv.com/category/Nuqta+e+Nazar+by+Mujeeb+ur+Rehman+Shami",
+            "latest_show_link": "http://www.unewstv.com/153507/nuqta-e-nazar-rana-sanaullah-ki-giraftari-4th-july-2019",
+            "title_example": "Nuqta e Nazar (Rana Sanaullah Ki Giraftari) - 4th July 2019",
+            "title_search_pattern": "Nuqta e Nazar (Ahtasab Aur Maeeshat) - 3rd July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Nuqta+e+Nazar+by+Mujeeb+ur+Rehman+Shami",
+            "search_api_pattern": "http://www.unewstv.com/category/Nuqta+e+Nazar+by+Mujeeb+ur+Rehman+Shami",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 39,
+        "fields": {
+            "name": "unewstv - On The Front",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-05T21:13:59.857Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-05T21:13:58.205Z",
+            "updated": "2019-07-05T21:13:59.857Z",
+            "extra_data": null,
+            "show_name": "On The Front",
+            "channel": 3,
+            "playlist_link": "http://www.unewstv.com/category/On+The+Front+with+Kamran+Shahid",
+            "latest_show_link": "http://www.unewstv.com/153523/on-the-front-with-kamran-shahid-case-against-rana-sanaullah-4th-july-2019",
+            "title_example": "On The Front with Kamran Shahid (Case Against Rana Sanaullah) - 4th July 2019",
+            "title_search_pattern": "On The Front (Hakumat Aur Opposition Aamne Samne) - 3rd July 2019",
+            "search_api_url": "http://www.unewstv.com/category/On+The+Front+with+Kamran+Shahid",
+            "search_api_pattern": "http://www.unewstv.com/category/On+The+Front+with+Kamran+Shahid",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 40,
+        "fields": {
+            "name": "unewstv - Ikhtilafi Note",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-05T21:30:29.635Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-05T21:30:28.548Z",
+            "updated": "2019-07-05T21:30:29.635Z",
+            "extra_data": null,
+            "show_name": "Ikhtilafi Note",
+            "channel": 3,
+            "playlist_link": "http://www.unewstv.com/category/Ikhtilafi+Note+on+Dunya+News",
+            "latest_show_link": "http://www.unewstv.com/153578/ikhtilafi-note-chairman-senate-issue-amnesty-scheme-5th-july-2019",
+            "title_example": "Ikhtilafi Note (Chairman Senate Issue, Amnesty Scheme) - 5th July 2019",
+            "title_search_pattern": "Ikhtilafi Note (Cracks in PMLN's Ranks) - 30th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Ikhtilafi+Note+on+Dunya+News",
+            "search_api_pattern": "http://www.unewstv.com/category/Ikhtilafi+Note+on+Dunya+News",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 41,
+        "fields": {
+            "name": "unewstv - Seedhi Baat",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-05T21:41:58.366Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-05T21:41:56.802Z",
+            "updated": "2019-07-05T21:41:58.367Z",
+            "extra_data": null,
+            "show_name": "Seedhi Baat",
+            "channel": 11,
+            "playlist_link": "http://www.unewstv.com/category/Seedhi+Baat+on+Capital+Tv",
+            "latest_show_link": "http://www.unewstv.com/153521/seedhi-baat-charges-on-rana-sanaullah-4th-july-2019",
+            "title_example": "Seedhi Baat (Charges on Rana Sanaullah) \u2013 4th July 2019",
+            "title_search_pattern": "Seedhi Baat (Rana Sanaullah Ki Giraftari) \u2013 3rd July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Seedhi+Baat+on+Capital+Tv",
+            "search_api_pattern": "http://www.unewstv.com/category/Seedhi+Baat+on+Capital+Tv",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 42,
+        "fields": {
+            "name": "unewstv - Sawal Yeh Hai",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-06T09:31:18.593Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-05T21:50:07.907Z",
+            "updated": "2019-07-06T09:31:18.593Z",
+            "extra_data": null,
+            "show_name": "Sawal Yeh Hai",
+            "channel": 8,
+            "playlist_link": "http://www.unewstv.com/category/Sawal+Yeh+hai+with+Dr+Danish",
+            "latest_show_link": "http://www.unewstv.com/153608/sawal-yeh-hai-opposition-ki-rahbar-committee-ka-ijlas-5th-july-2019",
+            "title_example": "Sawal Yeh Hai (Opposition Ki Rahbar Committee Ka Ijlas) - 5th July 2019",
+            "title_search_pattern": "Sawal Yeh Hai (Jahangir Tareen Exclusive Interview) \u2013 30th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Sawal+Yeh+hai+with+Dr+Danish",
+            "search_api_pattern": "http://www.unewstv.com/category/Sawal+Yeh+hai+with+Dr+Danish",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 43,
+        "fields": {
+            "name": "DOL - Naseebon Jali",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-11T02:21:04.092Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-06T08:31:15.461Z",
+            "updated": "2019-07-11T02:21:04.092Z",
+            "extra_data": {
+                "channel": "Hum TV",
+                "feed_url": "http://dramaonline.pk/hum-tv-dramas/naseebon-jali/",
+                "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
+                "show_name_from_feed": "Naseebon Jali"
+            },
+            "show_name": "Naseebon Jali",
+            "channel": 6,
+            "playlist_link": "http://dramaonline.pk/hum-tv-dramas/naseebon-jali/",
+            "latest_show_link": "http://dramaonline.pk/naseebon-jali-episode-171-in-hd/",
+            "title_example": "Naseebon Jali Episode 171",
+            "title_search_pattern": "{Show name} Episode {Episode Number}",
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 3,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 44,
+        "fields": {
+            "name": "DOL - Subah Pakistan With Shahista Lodhi",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-06T10:26:11.809Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-06T10:26:11.744Z",
+            "updated": "2019-07-06T10:26:11.809Z",
+            "extra_data": {
+                "channel": "Geo TV",
+                "Show Short Name": "Subah Pakistan",
+                "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
+                "show_name_from_feed": "Geo Subah Pakistan With Shahista Lodhi"
+            },
+            "show_name": "Subah Pakistan With Shahista Lodhi",
+            "channel": 16,
+            "playlist_link": "http://dramaonline.pk/geo-tv-dramas/geo-subah-pakistan-with-shahista-lodhi/",
+            "latest_show_link": "http://dramaonline.pk/geo-subah-pakistan-8-may-2018/",
+            "title_example": "Geo Subah Pakistan 8 May 2018",
+            "title_search_pattern": "{Channel Code} {Show Short Name} {Date}",
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 3,
+            "feed_quality": "720p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 45,
+        "fields": {
+            "name": "unewstv - Naya Pakistan",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-10T15:23:11.351Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-06T11:44:26.586Z",
+            "updated": "2019-07-10T15:23:11.351Z",
+            "extra_data": null,
+            "show_name": "Naya Pakistan",
+            "channel": 4,
+            "playlist_link": "http://www.unewstv.com/category/Naya+Pakistan+on+Geo+News",
+            "latest_show_link": "http://www.unewstv.com/153612/naya-pakistan-who-will-be-new-chairman-senate-5th-july-2019",
+            "title_example": "Naya Pakistan (Who Will Be New Chairman Senate) \u2013 5th July 2019",
+            "title_search_pattern": "Naya Pakistan (Imran Khan Ne Bhi Changa Manga Ki Siasat Shuru Ker Di) - 30th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Naya+Pakistan+on+Geo+News",
+            "search_api_pattern": "http://www.unewstv.com/category/Naya+Pakistan+on+Geo+News",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 46,
+        "fields": {
+            "name": "unewstv - Report Card",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-10T15:22:54.903Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-06T11:47:25.018Z",
+            "updated": "2019-07-10T15:22:54.903Z",
+            "extra_data": null,
+            "show_name": "Report Card",
+            "channel": 4,
+            "playlist_link": "http://www.unewstv.com/category/Report+Card+On+Geo+News",
+            "latest_show_link": "http://www.unewstv.com/153530/report-card-kaun-imran-khan-se-nro-maang-raha-hai-4th-july-2019",
+            "title_example": "Report Card (Kaun Imran Khan Se NRO Maang Raha Hai) \u2013 4th July 2019",
+            "title_search_pattern": "Report Card (Lahore Airport Per Qatal) \u2013 3rd July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Report+Card+On+Geo+News",
+            "search_api_pattern": "http://www.unewstv.com/category/Report+Card+On+Geo+News",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 47,
+        "fields": {
+            "name": "unewstv - Aapas Ki Baat",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-06T16:26:49.986Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-06T16:26:48.814Z",
+            "updated": "2019-07-06T16:26:49.986Z",
+            "extra_data": null,
+            "show_name": "Aapas Ki Baat",
+            "channel": 4,
+            "playlist_link": "http://www.unewstv.com/category/Aapas+Ki+Baat+With+Najam+Sethi",
+            "latest_show_link": "http://www.unewstv.com/153472/apas-ki-baat-imran-khan-s-clear-stance-about-nro-3rd-july-2019",
+            "title_example": "Apas ki Baat (Imran Khan's Clear Stance About NRO) \u2013 3rd July 2019",
+            "title_search_pattern": "Aapas Ki Baat (Rana Sanaullah Ki Giraftari) - 2nd July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Aapas+Ki+Baat+With+Najam+Sethi",
+            "search_api_pattern": "http://www.unewstv.com/category/Aapas+Ki+Baat+With+Najam+Sethi",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 51,
+        "fields": {
+            "name": "VPK - Sawera",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-07T06:29:58.133Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-07T06:29:58.062Z",
+            "updated": "2019-07-07T06:29:58.133Z",
+            "extra_data": null,
+            "show_name": "Sawera",
+            "channel": 16,
+            "playlist_link": "http://vidpk.com/tag/sawera/",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 4,
+            "feed_quality": "720p",
+            "priority": 1,
+            "country": []
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 52,
+        "fields": {
+            "name": "VPK - Alif Allah Aur Insaan",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-07T06:33:09.189Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-07T06:33:08.964Z",
+            "updated": "2019-07-07T06:33:09.189Z",
+            "extra_data": null,
+            "show_name": "Alif Allah Aur Insaan",
+            "channel": 6,
+            "playlist_link": "http://vidpk.com/tag/alif-allah-aur-insaan/",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 4,
+            "feed_quality": "720p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 53,
+        "fields": {
+            "name": "VPK - Bulbulay",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-07T06:42:00.700Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-07T06:36:41.321Z",
+            "updated": "2019-07-07T06:42:00.700Z",
+            "extra_data": {
+                "is_Joke": 1,
+                "is_Show": 0,
+                "is_Quote": 0,
+                "is_Politics": 0
+            },
+            "show_name": "Bulbulay",
+            "channel": 17,
+            "playlist_link": "http://vidpk.com/tag/bulbulay/",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 4,
+            "feed_quality": "720p",
+            "priority": 1,
+            "country": []
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 54,
+        "fields": {
+            "name": "VPK - Dil e Majboor",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-07T06:42:46.079Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-07T06:42:45.755Z",
+            "updated": "2019-07-07T06:42:46.079Z",
+            "extra_data": null,
+            "show_name": "Dil e Majboor",
+            "channel": 18,
+            "playlist_link": "http://vidpk.com/tag/dil-e-majboor/",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 4,
+            "feed_quality": "720p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 55,
+        "fields": {
+            "name": "DOL - Mah E Tamaam",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-11T02:23:47.123Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-10T09:25:53.098Z",
+            "updated": "2019-07-11T02:23:47.123Z",
+            "extra_data": {
+                "channel": "Hum TV",
+                "Show Short Name": "Mah E Tamaam",
+                "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
+                "show_name_from_feed": "Mah E Tamaam"
+            },
+            "show_name": "Mah E Tamaam",
+            "channel": 6,
+            "playlist_link": "http://dramaonline.pk/hum-tv-dramas/mah-e-tamaam/",
+            "latest_show_link": "http://dramaonline.pk/mah-e-tamam--last-episode/",
+            "title_example": "Mah E Tamam last Episode",
+            "title_search_pattern": "{Show name} Episode {Episode Number}",
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 3,
+            "feed_quality": "720p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 56,
+        "fields": {
+            "name": "unewstv - Tonight With Fareeha",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-10T14:52:03.845Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-10T14:52:03.450Z",
+            "updated": "2019-07-10T14:52:03.845Z",
+            "extra_data": null,
+            "show_name": "Tonight With Fareeha",
+            "channel": 19,
+            "playlist_link": "http://www.unewstv.com/category/Tonight+With+Fareeha+Idrees",
+            "latest_show_link": "http://www.unewstv.com/153864/tonight-with-fareeha-fake-trust-deed-maryam-in-trouble-9th-july-2019",
+            "title_example": "Tonight With Fareeha (Fake Trust Deed, Maryam in Trouble) \u2013 9th July 2019",
+            "title_search_pattern": "Tonight With Fareeha (Leaked Video of Judge Arshad Malik) \u2013 8th July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Tonight+With+Fareeha+Idrees",
+            "search_api_pattern": "http://www.unewstv.com/category/Tonight+With+Fareeha+Idrees",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 57,
+        "fields": {
+            "name": "unewstv - Hasb e Haal",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-10T15:13:55.548Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-10T15:13:55.251Z",
+            "updated": "2019-07-10T15:13:55.548Z",
+            "extra_data": null,
+            "show_name": "Hasb e Haal",
+            "channel": 3,
+            "playlist_link": "http://www.unewstv.com/category/Hasb+e+Haal+on+Dunya+Tv",
+            "latest_show_link": "http://www.unewstv.com/153740/hasb-e-haal-azizi-as-ustad-sureelay-khan-7th-july-2019",
+            "title_example": "Hasb e Haal (Azizi as Ustad Sureelay Khan) - 7th July 2019",
+            "title_search_pattern": "Hasb e Haal (Facebook Vs Heer Ranjha ) - 6th July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Hasb+e+Haal+on+Dunya+Tv",
+            "search_api_pattern": "http://www.unewstv.com/category/Hasb+e+Haal+on+Dunya+Tv",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 58,
+        "fields": {
+            "name": "unewstv - Mazaaq Raat",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-10T15:27:14.710Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-10T15:27:12.839Z",
+            "updated": "2019-07-10T15:27:14.746Z",
+            "extra_data": null,
+            "show_name": "Mazaaq Raat",
+            "channel": 3,
+            "playlist_link": "http://www.unewstv.com/category/Mazaaq+Raat+on+Dunya+Tv",
+            "latest_show_link": "http://www.unewstv.com/153893/mazaaq-raat-khalil-tahir-sandhu-dua-bhutto-9-july-2019",
+            "title_example": "Mazaaq Raat (Khalil Tahir Sandhu & Dua Bhutto) - 9 July 2019",
+            "title_search_pattern": "Mazaaq Raat (Haleem Adil Sheikh & Meerab Awan) - 8th July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Mazaaq+Raat+on+Dunya+Tv",
+            "search_api_pattern": "http://www.unewstv.com/category/Mazaaq+Raat+on+Dunya+Tv",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 59,
+        "fields": {
+            "name": "unewstv - Syasi Theater",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-10T15:37:58.929Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-10T15:37:58.683Z",
+            "updated": "2019-07-10T15:37:58.929Z",
+            "extra_data": null,
+            "show_name": "Syasi Theater",
+            "channel": 12,
+            "playlist_link": "http://www.unewstv.com/category/Syasi+Theater+on+Express+News",
+            "latest_show_link": "http://www.unewstv.com/153888/syasi-theater-comedy-show-9th-july-2019",
+            "title_example": "Syasi Theater (Comedy Show) \u2013 9th July 2019",
+            "title_search_pattern": "Syasi Theater (Comedy Show) \u2013 8th July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Syasi+Theater+on+Express+News",
+            "search_api_pattern": "http://www.unewstv.com/category/Syasi+Theater+on+Express+News",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 60,
+        "fields": {
+            "name": "unewstv - Khabarnak",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-10T15:53:00.456Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-10T15:52:59.164Z",
+            "updated": "2019-07-10T15:53:00.456Z",
+            "extra_data": null,
+            "show_name": "Khabarnak",
+            "channel": 4,
+            "playlist_link": "http://www.unewstv.com/category/Khabarnaak+on+Geo+News",
+            "latest_show_link": "http://www.unewstv.com/153737/khabarnak-comedy-show-7th-july-2019",
+            "title_example": "Khabarnak (Comedy Show) \u2013 7th July 2019",
+            "title_search_pattern": "Khabarnaak (Comedy Show) - 6th July 2019",
+            "search_api_url": "http://www.unewstv.com/category/Khabarnaak+on+Geo+News",
+            "search_api_pattern": "http://www.unewstv.com/category/Khabarnaak+on+Geo+News",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 61,
+        "fields": {
+            "name": "unewstv - Khabardar",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-10T16:09:19.270Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-10T16:09:18.040Z",
+            "updated": "2019-07-10T16:09:19.270Z",
+            "extra_data": null,
+            "show_name": "Khabardar",
+            "channel": 12,
+            "playlist_link": "http://www.unewstv.com/category/Khabardar+with+Aftab+Iqbal",
+            "latest_show_link": "http://www.unewstv.com/153739/khabardar-with-aftab-iqbal-comedy-show-7th-july-2019",
+            "title_example": "Khabardar With Aftab Iqbal (Comedy Show) \u2013 7th July 2019",
+            "title_search_pattern": "Khabardar Aftab Iqbal (Comedy Show) \u2013 30th June 2019",
+            "search_api_url": "http://www.unewstv.com/category/Khabardar+with+Aftab+Iqbal",
+            "search_api_pattern": "http://www.unewstv.com/category/Khabardar+with+Aftab+Iqbal",
+            "feed_source_type": 2,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 62,
+        "fields": {
+            "name": "DOL - Khan",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-11T02:18:51.934Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-10T18:52:05.529Z",
+            "updated": "2019-07-11T02:18:51.934Z",
+            "extra_data": {
+                "channel": "Geo TV",
+                "Show Short Name": "Khan",
+                "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
+                "show_name_from_feed": "Khan"
+            },
+            "show_name": "Khan",
+            "channel": 16,
+            "playlist_link": "http://dramaonline.pk/geo-tv-dramas/khan/",
+            "latest_show_link": "http://dramaonline.pk/khan-last-episode-30-in-hd/",
+            "title_example": "Khan Last Episode 30",
+            "title_search_pattern": "{Show name} Episode {Episode Number}",
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 3,
+            "feed_quality": "1080p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 63,
+        "fields": {
+            "name": "DOL - Udaari",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-11T02:20:31.205Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-10T19:05:48.433Z",
+            "updated": "2019-07-11T02:20:31.205Z",
+            "extra_data": {
+                "channel": "Hum TV",
+                "Show Short Name": "Udaari",
+                "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
+                "show_name_from_feed": "Udaari"
+            },
+            "show_name": "Udaari",
+            "channel": 6,
+            "playlist_link": "http://dramaonline.pk/hum-tv-dramas/udaari/",
+            "latest_show_link": "http://dramaonline.pk/udaari-last-episode-25-in-hd/",
+            "title_example": "Udaari Last Episode 25",
+            "title_search_pattern": "{Show name} Episode {Episode Number}",
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 3,
+            "feed_quality": "1080p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 64,
+        "fields": {
+            "name": "DOL - Udaari",
+            "description": null,
+            "is_active": false,
+            "effective_date": "2019-07-10T19:20:43.438Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-10T19:20:41.362Z",
+            "updated": "2019-07-10T19:20:43.438Z",
+            "extra_data": null,
+            "show_name": "Udaari",
+            "channel": 6,
+            "playlist_link": "http://dramaonline.pk/hum-tv-dramas/udaari/",
+            "latest_show_link": "http://dramaonline.pk/udaari-last-episode-25-in-hd/",
+            "title_example": "Udaari Last Episode 25",
+            "title_search_pattern": "{Show name} Episode {Episode Number}",
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 2,
+            "feed_quality": "720p",
+            "priority": 2,
             "country": [
                 4
             ]

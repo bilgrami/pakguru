@@ -27,10 +27,15 @@ if (User.objects.filter(username = 'shahneela')):
 else:
   User.objects.create_superuser('shahneela', 'shahneela@example.com', 'test123')
 
+if (User.objects.filter(username = 'bilgrami')):
+  print ('Warning: Username [bilgrami] aleady exists. ')
+else:
+  User.objects.create_superuser('bilgrami', 'bilgrami@example.com', 'test123')
+
 "
 echo "$__script" | python manage.py shell
 echo finished!
-echo ----------------------------------------- 
+echo -----------------------------------------
 
 # python manage.py makemigrations
 # python manage.py migrate --fake pakguru_app zero

@@ -16,7 +16,26 @@
 
 ### 1) Pre-requisites
 
-You need docker and docker-compose to run the website.
+#### Required
+
+* Python v3.7.4 with pip
+* Docker and docker-compose
+* git
+
+#### Optional
+
+* VS Code (optional)
+* AWS Cli (optional)
+* gCloud Cli (optional)
+* Azure Cli (optional)
+
+Make sure your local volumne drives are mounted and shared with docker.
+
+For example:
+
+```sh
+docker run --rm -v c:/Users:/data alpine ls /data
+```
 
 #### Method 1: Pull image from docker hub
 
@@ -40,24 +59,33 @@ docker build -t bilgrami/pakguru:latest .
 
 After building docker image, launch the website using any of the following methods:
 
-#### Method 1: Use docker with sqllite database
-
-```sh
-docker run --rm -it -p 5000:5000/tcp bilgrami/pakguru:latest
-```
-
-#### Method 2: Use docker-compose with postgrs database
+#### Method 1: Use docker-compose with postgres database and redis cache
 
 ```sh
 docker-compose up
 ```
 
-### 3) Launch Website
+#### Method 2: Use stand-alone docker with sqllite database and dummy cache
+
+```sh
+docker run --rm -it -p 5000:5000/tcp bilgrami/pakguru:latest
+```
+
+### 3) Run init script
+
+Run init script to create users, migrate database and load sample fixture data
+
+```sh
+docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && chmod +x ./shell_scripts/init_script.sh && ./shell_scripts//init_script.sh'
+
+```
+
+### 4) Launch Website
 
 Verify the deployment by navigating to your server address in your preferred browser.
 
 ```sh
-http://127.0.0.1:5000
+http://localhost:5000
 
 ```
 

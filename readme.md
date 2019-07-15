@@ -1,4 +1,4 @@
-# Welcome to pak.guru official github repository!
+# Welcome to pak.guru official github repository
 
 ----
 
@@ -8,12 +8,9 @@
 
 ## Demo Link
 
-* [pak.guru] - Pak.guru website is hosted as Azure web app inside a docker multi-container. We also make heavy use of Amazon serverless lambas to harvest web feeds. 
+* [pak.guru] - Pak.guru website is hosted as Azure web app inside a docker multi-container. We also make heavy use of Amazon serverless lambas to harvest web feeds.
 
-
-
----
-
+----
 
 ## Installation
 
@@ -24,7 +21,7 @@ You need docker and docker-compose to run the website.
 #### Method 1: Pull image from docker hub
 
 ```sh
-docker pull -t bilgrami/pakguru:latest
+docker pull bilgrami/pakguru:latest
 ```
 
 #### Method 2: Build image on your local machine
@@ -64,4 +61,5 @@ Verify the deployment by navigating to your server address in your preferred bro
 
 > version 0.1.1
 
+----
 [pak.guru]: <https://www.pak.guru>

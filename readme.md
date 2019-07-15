@@ -58,6 +58,7 @@ Verify the deployment by navigating to your server address in your preferred bro
 
 ```sh
 http://127.0.0.1:5000
+
 ```
 
 > version 0.1.1

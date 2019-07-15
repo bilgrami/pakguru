@@ -8,7 +8,7 @@
 
 ## Demo Link
 
-* [pak guru] - pak.guru website is a multi-container django app hosted as an Azure. We also make heavy use of serverless lambdas to harvest web data and publish to the website.
+* [pak.guru] - pak.guru website is a multi-container django app hosted as an Azure. We also make heavy use of serverless lambdas to harvest web data and publish to the website.
 
 ----
 
@@ -58,9 +58,10 @@ Verify the deployment by navigating to your server address in your preferred bro
 
 ```sh
 http://127.0.0.1:5000
+```
 
 > version 0.1.1
 
 ----
 
-[pak guru]: <https://www.pak.guru>
+[pak.guru]: <https://www.pak.guru>

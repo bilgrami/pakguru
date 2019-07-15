@@ -8,7 +8,7 @@
 
 ## Demo Link
 
-* [pak.guru] - Pak.guru website is hosted as Azure web app inside a docker multi-container. We also make heavy use of Amazon serverless lambas to harvest web feeds.
+* [pak guru] - pak.guru website is a multi-container django app hosted as an Azure. We also make heavy use of serverless lambdas to harvest web data and publish to the website.
 
 ----
 
@@ -57,9 +57,10 @@ docker-compose up
 Verify the deployment by navigating to your server address in your preferred browser.
 
 ```sh
-127.0.0.1:5000
+http://127.0.0.1:5000
 
 > version 0.1.1
 
 ----
-[pak.guru]: <https://www.pak.guru>
+
+[pak guru]: <https://www.pak.guru>

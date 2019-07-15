@@ -14,7 +14,54 @@
 
 ---
 
+
+## Installation
+
+### 1) Pre-requisites
+
+You need docker and docker-compose to run the website.
+
+#### Method 1: Pull image from docker hub
+
+```sh
+docker pull -t bilgrami/pakguru:latest
+```
+
+#### Method 2: Build image on your local machine
+
+```sh
+git clone https://github.com/bilgrami/pakguru.git
+cd pakguru
+
+## setup python environment
+./shell_scripts/setup-environment.sh
+
+docker build -t bilgrami/pakguru:latest .
+```
+
+### 2) Run Docker Container
+
+After building docker image, launch the website using any of the following methods:
+
+#### Method 1: Use docker with sqllite database
+
+```sh
+docker run --rm -it -p 5000:5000/tcp bilgrami/pakguru:latest
+```
+
+#### Method 2: Use docker-compose with postgrs database
+
+```sh
+docker-compose up
+```
+
+### 3) Launch Website
+
+Verify the deployment by navigating to your server address in your preferred browser.
+
+```sh
+127.0.0.1:5000
+
 > version 0.1.1
 
 [pak.guru]: <https://www.pak.guru>
-

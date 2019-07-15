@@ -15,4 +15,4 @@ elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
     ./.virtualenvs/myproject_env/Scripts/activate.bat
 fi
 python -m pip install --upgrade pip
-python -m pip install -r requirements.txt
+# python -m pip install -r requirements.txt

@@ -8,7 +8,7 @@
 
 ## Demo Link
 
-* [pak.guru] - pak.guru website is a multi-container django app hosted as an Azure. We also make heavy use of serverless lambdas to harvest web data and publish to the website.
+* [pak.guru] - pak.guru website is a multi-container django app hosted on Azure. We make heavy use of serverless lambdas to harvest data.
 
 ----
 
@@ -24,12 +24,10 @@
 
 #### Optional
 
-* VS Code (optional)
-* AWS Cli (optional)
-* gCloud Cli (optional)
-* Azure Cli (optional)
+* VS Code
+* Azure Cli
 
-Make sure your local volumne drives are mounted and shared with docker.
+Make sure your local volumne drives are mounted and shared within docker.
 
 For example:
 
@@ -59,13 +57,13 @@ docker build -t bilgrami/pakguru:latest .
 
 After building docker image, launch the website using any of the following methods:
 
-#### Method 1: Use docker-compose with postgres database and redis cache
+#### Method 1: Use multi-container Django app with postgres database and redis cache
 
 ```sh
 docker-compose up
 ```
 
-#### Method 2: Use stand-alone docker with sqllite database and dummy cache
+#### Method 2: Use stand-alone docker container app running Django with sqllite database and dummy cache
 
 ```sh
 docker run --rm -it -p 5000:5000/tcp bilgrami/pakguru:latest

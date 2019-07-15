@@ -98,11 +98,25 @@ def process_posts(posts):
                                         post.slug, post.post_id,))
         post.change_url = reverse('admin:pakguru_app_post_change',
                                   args=(post.post_id,))
-        job_id = post.extra_data['job_id']
-        post.feed_job_url = reverse('admin:pakguru_app_showfeed_harvestjoblog_change',  # noqa: E501
-                                    args=(job_id,))
-        post.feed_file_url = ShowFeed_HarvestJobLog.objects.get(pk=job_id).feed_data.url  # noqa: E501
+        if 'job_id' in post.extra_data:
+            job_id = post.extra_data['job_id']
+            post.feed_job_url = reverse('admin:pakguru_app_showfeed_harvestjoblog_change',  # noqa: E501
+                                        args=(job_id,))
+            post.feed_file_url = ShowFeed_HarvestJobLog.objects.get(pk=job_id).feed_data.url  # noqa: E501
+        else:
+            post.feed_job_url = 'javascript:void(0);'
+            post.feed_file_url = 'javascript:void(0);'
+
         post.target_date += timedelta(hours=8)
+        if post.show.host_name.lower() == 'unknown':
+            post.show.host_name = None
+        else:
+            post.show.host_name = post.show.host_name + ' /'
+
+        if post.show.total_shows < 0:
+            post.show.total_shows = None
+        else:
+            post.show.total_shows = '/ Total: ' + str(post.show.total_shows)
 
         if post.show not in latest_posts:
             latest_posts[post.show] = posts.filter(show=post.show).order_by('-target_date').first()  # noqa: E501
@@ -133,7 +147,7 @@ def talkshows(request):
             "talkshows_page": "active",
             'message': 'Video List of Daily Talk Shows',
             'posts': posts,
-            'posts_visible': False
+            'singleshowviewname': 'singletalkshow'
         }
     )
 
@@ -171,7 +185,8 @@ def dramaserials(request):
             'title': 'Video List of Drama Serials',
             "dramaserials_page": "active",
             'message': 'Video List of Drama Serials',
-            'posts': posts
+            'posts': posts,
+            'singleshowviewname': 'singledramaserial'
         }
     )
 
@@ -227,7 +242,8 @@ def comedyshows(request):
             'title': 'Video list of Comedy Shows',
             "comedyshows_page": "active",
             'message': 'Video list of Comedy Shows',
-            'posts': posts
+            'posts': posts,
+            'singleshowviewname': 'singlecomedyshow'
         }
     )
 

@@ -34,9 +34,9 @@
       <div class="row">
         <div class="col-">
           <span class="{{post.latest_post_color}} text-sm-center">
-            {{ post.show.host_name | default_if_none:"" }} /
-            Last Aired on: {{ post.latest_post.target_date | date:"D d-M-Y"  }} /
-            Total: {{ post.show.total_shows }}
+            {{ post.show.host_name | default_if_none:"" }}
+            Last Aired on: {{ post.latest_post.target_date | date:"D d-M-Y"  }}
+            {{ post.show.total_shows | default_if_none:"" }}
           </span>
         </div>
       </div>
@@ -45,9 +45,26 @@
       <div class="row">
         <div class="col-">
           <span class="h4">
+
+           {% if singleshowviewname == 'singletalkshow' %}
+            <a
+              href="{% url 'singletalkshow' channel=post.channel_slug show=post.show_slug show_id=post.show.show_id %}">
+              {{ post.show.name}}</a>
+          {% endif %}              
+
+           {% if singleshowviewname == 'singlecomedyshow' %}
+            <a
+              href="{% url 'singlecomedyshow' channel=post.channel_slug show=post.show_slug show_id=post.show.show_id %}">
+              {{ post.show.name}}</a>
+          {% endif %}              
+
+           {% if singleshowviewname == 'singledramaserial' %}
             <a
               href="{% url 'singledramaserial' channel=post.channel_slug show=post.show_slug show_id=post.show.show_id %}">
               {{ post.show.name}}</a>
+          {% endif %}              
+ 
+
           </span>
 
           <span class="h6">

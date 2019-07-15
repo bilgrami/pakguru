@@ -97,9 +97,9 @@ class Command(BaseCommand):
                 slug = django.utils.text.slugify(title)
                 video_link = v['video_link']
                 show_posts = Post.objects.filter(show__show_id=show.show_id).all()  # noqa:E501
-                running_total = len(show_posts) + 1
+                total_shows = len(show_posts) + 1
 
-                if v['episode']:
+                if 'episode' in v:
                     episode = int(v['episode'])
                 else:
                     episode_dict = show_posts.aggregate(Max('episode_number'))
@@ -145,9 +145,9 @@ class Command(BaseCommand):
                         source=feed.playlist_link,
                         source_detail=v['link'],
                         episode_number=episode,
-                        running_total=running_total
+                        running_total=total_shows
                     )
-                    show.total_shows = running_total
+                    show.total_shows = total_shows
                     show.save()
                 else:
                     print('found post ', post.pk, target_date)

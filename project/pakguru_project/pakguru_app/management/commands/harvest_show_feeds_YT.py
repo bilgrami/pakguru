@@ -65,7 +65,7 @@ class Command(BaseCommand):
                 latest_feed_date=latest_feed_date,
                 added_by=addedby_user,
                 is_latest=True,
-                is_active=True
+                is_active=False
             )
             file_name = f'feed_id_{feed.feed_id}-{feed.name}'
             file_name = django.utils.text.slugify(file_name)

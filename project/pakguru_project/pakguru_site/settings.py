@@ -240,3 +240,6 @@ else:
 SESSION_ENGINE = "django.contrib.sessions.backends.cache"
 SESSION_CACHE_ALIAS = "default"
 CACHE_TIMEOUT = 24*60*60
+
+# API KEYS
+YT_API_KEY = env('YT_API_KEY')

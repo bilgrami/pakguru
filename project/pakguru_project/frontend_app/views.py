@@ -98,7 +98,7 @@ def process_posts(posts):
                                         post.slug, post.post_id,))
         post.change_url = reverse('admin:pakguru_app_post_change',
                                   args=(post.post_id,))
-        if 'job_id' in post.extra_data:
+        if post.extra_data and 'job_id' in post.extra_data:
             job_id = post.extra_data['job_id']
             post.feed_job_url = reverse('admin:pakguru_app_showfeed_harvestjoblog_change',  # noqa: E501
                                         args=(job_id,))
@@ -158,14 +158,14 @@ def singletalkshow(request, channel, show, show_id):
     last_7_days = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
     posts = Post.objects.filter(is_active=True, target_date__gte=last_7_days, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
     posts = process_posts(posts)
-
+    show_name = posts[0].show
     return render(
         request,
         'frontend_app/show_list.html',
         {
-            'title': 'Daily Talk Show',
+            'title': f'Episdoes of {show_name} Talk Show since last 7 days',
             "talkshows_page": "active",
-            'message': posts[0].show,
+            'message': show_name,
             'posts': posts
         }
     )
@@ -196,14 +196,15 @@ def singledramaserial(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
     process_posts(posts)
+    show_name = posts[0].show
 
     return render(
         request,
         'frontend_app/show_list.html',
         {
-            'title': 'Drama Serial Video',
+            'title': f'Episdoes of {show_name} Drama Serial since last 7 days',
             "dramaserials_page": "active",
-            'message': posts[0].show,
+            'message': show_name,
             'posts': posts
         }
     )
@@ -253,14 +254,15 @@ def singlecomedyshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
     posts = process_posts(posts)
+    show_name = posts[0].show
 
     return render(
         request,
         'frontend_app/show_list.html',
         {
-            'title': 'Comedy Show Videos',
+            'title': f'Episdoes of {show_name} Comedy show since last 7 days',
             "comedyshows_page": "active",
-            'message': posts[0].show,
+            'message': show_name,
             'posts': posts
         }
     )

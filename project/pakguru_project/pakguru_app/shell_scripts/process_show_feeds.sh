@@ -17,6 +17,10 @@ python manage.py harvest_show_feeds_VPK True 0
 echo 'running load_harvested_show_feeds'
 python manage.py load_harvested_show_feeds -1
 
+echo 'running harvest_show_feeds_YT'
+python manage.py harvest_show_feeds_YT True 0
+echo 'running load_harvested_show_feeds'
+python manage.py load_harvested_show_feeds -1
 
 echo 'running clear_cache command '
 python manage.py clear_cache

@@ -1,9 +1,0 @@
-{
-    "harvest_unt": {
-        "lambda": {
-            "feed_source": "UNT",
-            "base_url": "http://www.unewstv.com",
-            "feed_url": "http://www.unewstv.com/category/Aapas+Ki+Baat+With+Najam+Sethi"
-        }
-    }
-}

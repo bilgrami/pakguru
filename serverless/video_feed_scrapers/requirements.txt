@@ -1,6 +1,0 @@
-# pylint
-# wikipedia
-# python-json-logger
-boto3
-bs4
-datefinder

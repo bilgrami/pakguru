@@ -18,16 +18,16 @@ def save_file_to_s3(bucket, file_name, data):
 BUCKET_NAME = 'devstorage.pak.guru'
 COLLECTION_NAME = 'video_feeds'
 
-def get_file_name_for_storage(collection_name, filename):
+def get_file_name_for_storage(collection_name, file_prefix):
     """computes file_name to be stored in a cloud bucket
     Returns 
     a string containing filename in the following format 
-    collection_name/folder/file_name_with_time
+    {collection_name}/{folder}/{file_name_with_time}
     where
-        folder: of format year/today
+        folder: of format {year}/{today}
             year: 4 digit year YYYY
             today: Today's date in format YYYY-MM-DD
-        file_name_with_time is today-prefix-filename
+        file_name_with_time is in format {today}-{file_prefix}
             today: Today's date in format YYYY-MM-DD
     """    
     dt = datetime.today()
@@ -35,7 +35,7 @@ def get_file_name_for_storage(collection_name, filename):
     today = dt.strftime('%Y-%m-%d')
 
     folder = f'{year}/{today}'
-    file_name_with_time = f'{today}-{filename}'
+    file_name_with_time = f'{today}-{file_prefix}'
     return f'{collection_name}/{folder}/{file_name_with_time}'
     
 def parse_params(event):
@@ -61,10 +61,10 @@ def lambda_handler(event, context):
     h = harvest_show_feeds_UNT()
     result =  h.get_feed_posts(base_url, feed_url)
 
-    body = json.dumps(str(result), indent=4, sort_keys=True)
+    body = json.dumps(result, indent=4, sort_keys=True)
 
-    file_name = f'{feed_name}.json'
-    file_name = get_file_name_for_storage(COLLECTION_NAME, file_name)
+    file_prefix = f'{feed_name}.json'
+    file_name = get_file_name_for_storage(COLLECTION_NAME, file_prefix)
     save_file_to_s3(BUCKET_NAME, file_name, body)
     
     response = {

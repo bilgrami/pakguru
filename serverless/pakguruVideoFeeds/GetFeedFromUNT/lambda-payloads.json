@@ -1,0 +1,31 @@
+{
+    "GetFeedFromUNT": {
+        "lambda": {
+            "feed_source": "UNT",
+            "base_url": "http://www.unewstv.com",
+            "feed_url": "http://www.unewstv.com/category/Aapas+Ki+Baat+With+Najam+Sethi",
+            "feed_name": "Aapas+Ki+Baat+With+Najam+Sethi"
+        },
+        "apigateway": {
+            "path": "/getfeedfromUNT",
+            "method": {
+                "value": "POST",
+                "items": [
+                    "GET",
+                    "POST",
+                    "PUT",
+                    "DELETE",
+                    "HEAD",
+                    "OPTIONS",
+                    "PATCH"
+                ]
+            },
+            "body": {
+                "feed_source": "UNT",
+                "base_url": "http://www.unewstv.com",
+                "feed_url": "http://www.unewstv.com/category/Aapas+Ki+Baat+With+Najam+Sethi",
+                "feed_name": "Aapas+Ki+Baat+With+Najam+Sethi"
+            }
+        }
+    }
+}

@@ -1,13 +1,16 @@
+import json
 from datetime import datetime
-import requests
+
 from bs4 import BeautifulSoup
+import requests
 
 
 class harvest_show_feeds_UNT:
     def _get_video_from_post(self, post_url,
-                             result_as_json=False):
+                              result_as_json=False):
         if post_url is not None:
             page = requests.get(post_url)
+            content = page.content
             soup = BeautifulSoup(page.content, 'html.parser')
             f = soup.find('iframe')
             if f is not None:
@@ -26,7 +29,7 @@ class harvest_show_feeds_UNT:
             else:
                 return ""
 
-    def _get_feed_posts(self, base_url, feed_url):
+    def get_feed_posts(self, base_url, feed_url):
 
         page = requests.get(feed_url)
 
@@ -60,7 +63,12 @@ class harvest_show_feeds_UNT:
 
         return result
 
-    def get_feed_posts(self, params):
-        base_url = params['base_url']
-        feed_url = params['feed_url']
-        return self._get_feed_posts(base_url, feed_url)
+"""
+{
+  "feed_source": "UNT",
+  "base_url": "http://www.unewstv.com",
+  "feed_url": "http://www.unewstv.com/category/Aapas+Ki+Baat+With+Najam+Sethi",
+  "feed_name": "Aapas+Ki+Baat+With+Najam+Sethi"
+}
+
+"""

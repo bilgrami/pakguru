@@ -1,0 +1,7 @@
+ikp3db==1.1.4
+pylint
+python-json-logger
+boto3
+bs4
+datefinder
+requests

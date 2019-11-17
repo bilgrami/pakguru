@@ -98,14 +98,16 @@ def process_posts(posts):
                                         post.slug, post.post_id,))
         post.change_url = reverse('admin:pakguru_app_post_change',
                                   args=(post.post_id,))
-        if post.extra_data and 'job_id' in post.extra_data:
-            job_id = post.extra_data['job_id']
-            post.feed_job_url = reverse('admin:pakguru_app_showfeed_harvestjoblog_change',  # noqa: E501
-                                        args=(job_id,))
-            post.feed_file_url = ShowFeed_HarvestJobLog.objects.get(pk=job_id).feed_data.url  # noqa: E501
-        else:
-            post.feed_job_url = 'javascript:void(0);'
-            post.feed_file_url = 'javascript:void(0);'
+        # if post.extra_data and 'job_id' in post.extra_data:
+        #     job_id = post.extra_data['job_id']
+        #     post.feed_job_url = reverse('admin:pakguru_app_showfeed_harvestjoblog_change',  # noqa: E501
+        #                                 args=(job_id,))
+        #     post.feed_file_url = ShowFeed_HarvestJobLog.objects.get(pk=job_id).feed_data.url  # noqa: E501
+        # else:
+        #     post.feed_job_url = 'javascript:void(0);'
+        #     post.feed_file_url = 'javascript:void(0);'
+        post.feed_job_url = 'javascript:void(0);'
+        post.feed_file_url = 'javascript:void(0);'
 
         post.target_date += timedelta(hours=8)
         if post.show.host_name.lower() == 'unknown':

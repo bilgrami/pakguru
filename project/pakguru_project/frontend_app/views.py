@@ -136,7 +136,8 @@ def talkshows(request):
     assert isinstance(request, HttpRequest)
     category = 'Talk Shows'
     last_7_days = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
-    posts = Post.objects.filter(is_active=True, target_date__gte=last_7_days, category__name=category).all().order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
+    last_31_days = datetime.strftime(datetime.now() - timedelta(31), '%Y-%m-%d')
+    posts = Post.objects.filter(is_active=True, target_date__gte=last_31_days, category__name=category).all().order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
     posts = process_posts(posts)
 
     return render(
@@ -156,7 +157,8 @@ def talkshows(request):
 def singletalkshow(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
     last_7_days = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
-    posts = Post.objects.filter(is_active=True, target_date__gte=last_7_days, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
+    last_31_days = datetime.strftime(datetime.now() - timedelta(31), '%Y-%m-%d')
+    posts = Post.objects.filter(is_active=True, target_date__gte=last_31_days, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
     posts = process_posts(posts)
     show_name = posts[0].show
     return render(

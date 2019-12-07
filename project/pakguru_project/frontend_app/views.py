@@ -179,7 +179,7 @@ def singletalkshow(request, channel, show, show_id):
 def dramaserials(request):
     assert isinstance(request, HttpRequest)
     category = 'Drama Serials'
-    posts = Post.objects.filter(is_active=True, category__name=category).order_by('show__channel__name', 'show__name', '-episode_number')  # noqa:E501
+    posts = Post.objects.filter(is_active=True, category__name=category).order_by('show__channel__name', 'show__name', 'episode_number')  # noqa:E501
     posts = process_posts(posts)
 
     return render(
@@ -198,7 +198,7 @@ def dramaserials(request):
 @cache_page(FOUR_HOURS)
 def singledramaserial(request, channel, show, show_id):
     assert isinstance(request, HttpRequest)
-    posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', '-target_date')  # noqa:E501
+    posts = Post.objects.filter(is_active=True, show__show_id=show_id).order_by('show__channel__name', 'show__name', 'episode_number')  # noqa:E501
     process_posts(posts)
     show_name = posts[0].show
 

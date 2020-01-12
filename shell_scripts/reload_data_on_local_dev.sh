@@ -14,6 +14,8 @@ echo 'Bringing web container up in detached mode (pointing to dev db)'
 docker-compose up -d
 echo 'Running any pending migrations'
 docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && python manage.py migrate'
+echo 'Flushing local db'
+docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && python manage.py flush --no-input'
 echo 'Running load script on local container'
 docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && ./shell_scripts/load_data.sh'
 echo 'Bringing local container down'

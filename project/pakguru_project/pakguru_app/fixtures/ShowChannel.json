@@ -492,5 +492,29 @@
                 1
             ]
         }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 20,
+        "fields": {
+            "name": "APlus",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-08-05T06:15:07.432Z",
+            "expiration_date": null,
+            "added_by": null,
+            "created": "2019-08-05T06:14:26Z",
+            "updated": "2019-08-05T06:15:07.432Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "channel_short_code": "APlus",
+            "country": [
+                1
+            ]
+        }
     }
 ]

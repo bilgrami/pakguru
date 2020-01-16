@@ -1502,26 +1502,31 @@
         "model": "pakguru_app.showsourcefeed",
         "pk": 52,
         "fields": {
-            "name": "VPK - Alif Allah Aur Insaan",
+            "name": "DOL - Alif Allah Aur Insaan",
             "description": null,
             "is_active": true,
-            "effective_date": "2019-07-07T06:33:09.189Z",
+            "effective_date": "2019-12-30T03:34:01.680Z",
             "expiration_date": null,
             "added_by": [
-                "bilgrami"
+                "shahneela"
             ],
             "created": "2019-07-07T06:33:08.964Z",
-            "updated": "2019-07-07T06:33:09.189Z",
-            "extra_data": null,
+            "updated": "2019-12-30T03:34:01.680Z",
+            "extra_data": {
+                "channel": "Hum TV",
+                "feed_url": "http://dramaonline.pk/hum-tv-dramas/alif-allah-aur-insaan/",
+                "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
+                "show_name_from_feed": "Alif Allah Aur Insaan"
+            },
             "show_name": "Alif Allah Aur Insaan",
             "channel": 6,
-            "playlist_link": "http://vidpk.com/tag/alif-allah-aur-insaan/",
-            "latest_show_link": null,
+            "playlist_link": "http://dramaonline.pk/hum-tv-dramas/alif-allah-aur-insaan/",
+            "latest_show_link": "http://dramaonline.pk/alif-allah-aur-insaan-last-episode-43-in-hd/",
             "title_example": null,
             "title_search_pattern": null,
             "search_api_url": null,
             "search_api_pattern": null,
-            "feed_source_type": 4,
+            "feed_source_type": 3,
             "feed_quality": "720p",
             "priority": 1,
             "country": [
@@ -1823,15 +1828,16 @@
             "name": "DOL - Khan",
             "description": null,
             "is_active": true,
-            "effective_date": "2019-07-11T02:18:51.934Z",
+            "effective_date": "2020-01-09T16:49:27.445Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-10T18:52:05.529Z",
-            "updated": "2019-07-11T02:18:51.934Z",
+            "updated": "2020-01-09T16:49:27.445Z",
             "extra_data": {
                 "channel": "Geo TV",
+                "feed_url": "http://dramaonline.pk/geo-tv-dramas/khan/",
                 "Show Short Name": "Khan",
                 "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
                 "show_name_from_feed": "Khan"
@@ -1914,6 +1920,949 @@
             "feed_source_type": 2,
             "feed_quality": "720p",
             "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 65,
+        "fields": {
+            "name": "DOL - Aangan",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-12-30T03:36:38.031Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-12T18:48:58.766Z",
+            "updated": "2019-12-30T03:36:38.031Z",
+            "extra_data": {
+                "channel": "Hum TV",
+                "feed_url": "http://dramaonline.pk/hum-tv-dramas/aangan/",
+                "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
+                "show_name_from_feed": "Aangan"
+            },
+            "show_name": "Aangan",
+            "channel": 6,
+            "playlist_link": "http://dramaonline.pk/hum-tv-dramas/aangan/",
+            "latest_show_link": "http://dramaonline.pk/aangan-episode-28/",
+            "title_example": "Aangan Episode 28",
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 3,
+            "feed_quality": "720p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 66,
+        "fields": {
+            "name": "YT - On The Front",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-07-16T12:13:25.539Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-07-16T12:13:25.033Z",
+            "updated": "2019-07-16T12:13:25.539Z",
+            "extra_data": null,
+            "show_name": "On The Front",
+            "channel": 3,
+            "playlist_link": "https://www.youtube.com/watch?v=IBCNu8CewbM&list=PL3kMf0Q991MMdVaSDmi6rNoZK5NOczext",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": []
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 67,
+        "fields": {
+            "name": "YT - Dunya Kamran Khan Kay Sath",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-08-19T04:59:41.511Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-20T08:18:14.706Z",
+            "updated": "2019-08-19T04:59:41.511Z",
+            "extra_data": null,
+            "show_name": "Dunya Kamran Khan Kay Sath",
+            "channel": 3,
+            "playlist_link": "https://www.youtube.com/watch?v=yOhd3SjBPrw&list=PL3kMf0Q991MNOICH9Y7IY61iWOulEwTFg",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 68,
+        "fields": {
+            "name": "YT - Think Tank",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-08-19T05:00:06.766Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-20T08:22:42.660Z",
+            "updated": "2019-08-19T05:00:06.766Z",
+            "extra_data": null,
+            "show_name": "Think Tank",
+            "channel": 3,
+            "playlist_link": "https://www.youtube.com/watch?v=YIeDkmfZjrU&list=PL3kMf0Q991MNEnm28W5ngmJxAQwZS-M8i",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 69,
+        "fields": {
+            "name": "YT - Sawal Say Agay",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-08-19T05:00:49.071Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-20T08:30:17.619Z",
+            "updated": "2019-08-19T05:00:49.071Z",
+            "extra_data": null,
+            "show_name": "Sawal Say Agay",
+            "channel": 2,
+            "playlist_link": "https://www.youtube.com/watch?v=CIq110I85xo&list=PL3kMf0Q991MPkn9lsKDSaaCkZQ6ALbOr_",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 70,
+        "fields": {
+            "name": "YT - Grift",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-08-19T05:01:32.598Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-20T08:32:57.661Z",
+            "updated": "2019-08-19T05:01:32.598Z",
+            "extra_data": null,
+            "show_name": "Grift",
+            "channel": 12,
+            "playlist_link": "https://www.youtube.com/watch?v=7ITm7SEyHHQ&list=PL3kMf0Q991MOz8Ux5OFncqOtjdE_BxjwE",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 71,
+        "fields": {
+            "name": "YT-Pinjra",
+            "description": null,
+            "is_active": false,
+            "effective_date": "2019-12-30T07:02:13.882Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-08-05T06:17:19.270Z",
+            "updated": "2019-12-30T07:02:13.882Z",
+            "extra_data": null,
+            "show_name": "Pinjra",
+            "channel": 20,
+            "playlist_link": "https://www.youtube.com/playlist?list=PLI1u6sZ1_Fp6VLZ1lNiUg2D2gwshCalCh",
+            "latest_show_link": "https://www.youtube.com/watch?v=smBZSAUte9A&list=PLI1u6sZ1_Fp6VLZ1lNiUg2D2gwshCalCh",
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 72,
+        "fields": {
+            "name": "YT-Kal Tak",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-08-19T05:01:59.103Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-08-06T04:11:55.054Z",
+            "updated": "2019-08-19T05:01:59.103Z",
+            "extra_data": null,
+            "show_name": "Kal Tak",
+            "channel": 12,
+            "playlist_link": "https://www.youtube.com/watch?v=U-WbyBOVWrc&list=PL3kMf0Q991MODXzEGvoEzx2XLu8RNt4E5",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 73,
+        "fields": {
+            "name": "YT-Takrar",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-08-19T04:55:06.360Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-08-06T04:17:34.184Z",
+            "updated": "2019-08-19T04:55:06.360Z",
+            "extra_data": null,
+            "show_name": "Takrar",
+            "channel": 12,
+            "playlist_link": "https://www.youtube.com/watch?v=8XmmmYgmmus&list=PL3kMf0Q991MPbDvSEQInhmpaiHykgF1TG",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 74,
+        "fields": {
+            "name": "YT-Spot Light",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-08-19T05:02:16.800Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-08-06T04:23:50.543Z",
+            "updated": "2019-08-19T05:02:16.800Z",
+            "extra_data": null,
+            "show_name": "Spot Light",
+            "channel": 13,
+            "playlist_link": "https://www.youtube.com/watch?v=ept3WtK_zw0&list=PL3kMf0Q991MMFL_OYxkYxpoRJxIu139KM",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 75,
+        "fields": {
+            "name": "YT-News Eye",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-08-19T05:02:33.779Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-08-06T04:35:07.429Z",
+            "updated": "2019-08-19T05:02:33.779Z",
+            "extra_data": null,
+            "show_name": "News Eye",
+            "channel": 2,
+            "playlist_link": "https://www.youtube.com/watch?v=wqUMSXpgs8U&list=PL3kMf0Q991MO8cRHSYS8TNR-0FsUrMqtv",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 76,
+        "fields": {
+            "name": "YT - Express Special",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-09-03T06:29:21.627Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-02T08:22:15.558Z",
+            "updated": "2019-09-03T06:29:21.627Z",
+            "extra_data": null,
+            "show_name": "Express Special",
+            "channel": 12,
+            "playlist_link": "https://www.youtube.com/watch?v=zw6yRdD7arI&list=PL3kMf0Q991MNWHrph66mgNomNa-l5sTOIhttps://www.youtube.com/playlist?list=PL3kMf0Q991MNWHrph66mgNomNa-l5sTOI",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 77,
+        "fields": {
+            "name": "YT - Faisla Aap Ka",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-09-03T06:29:03.347Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T06:19:55.836Z",
+            "updated": "2019-09-03T06:29:03.347Z",
+            "extra_data": null,
+            "show_name": "Faisla Aap Ka",
+            "channel": 13,
+            "playlist_link": "https://www.youtube.com/watch?v=8h-3F0WKJl0&list=PL3kMf0Q991MO0-GwM1je510HYepB8bY2q",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 78,
+        "fields": {
+            "name": "YT - Do Raaye",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-09-03T06:28:28.736Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T06:24:51.458Z",
+            "updated": "2019-09-03T06:28:28.736Z",
+            "extra_data": null,
+            "show_name": "Do Raaye",
+            "channel": 2,
+            "playlist_link": "https://www.youtube.com/watch?v=8NHoPI1dIcU&list=PL3kMf0Q991MOMh4GT1SapneSsvNgFhWKB",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 79,
+        "fields": {
+            "name": "YT - Ikhtalafi Note",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-09-03T06:50:13.786Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T06:50:13.217Z",
+            "updated": "2019-09-03T06:50:13.786Z",
+            "extra_data": null,
+            "show_name": "Ikhtalafi Note",
+            "channel": 3,
+            "playlist_link": "https://www.youtube.com/watch?v=OOCBlZ6K3t0&list=PL3kMf0Q991MNj6_lSKC6kFlrEGWnmx5Qm",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 80,
+        "fields": {
+            "name": "Talk Shows Central - Center Stage",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-11-14T07:04:06.343Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T06:52:04.574Z",
+            "updated": "2019-11-14T07:04:06.343Z",
+            "extra_data": null,
+            "show_name": "Center Stage",
+            "channel": 12,
+            "playlist_link": "https://www.youtube.com/watch?v=UAWsE1piIR4&list=PL3kMf0Q991MMGYVJpwy9taQEP6Gxm6iQ_",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 5,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 81,
+        "fields": {
+            "name": "YT- News Wise",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-09-03T06:55:06.225Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T06:55:03.911Z",
+            "updated": "2019-09-03T06:55:06.225Z",
+            "extra_data": null,
+            "show_name": "News Wise",
+            "channel": 2,
+            "playlist_link": "https://www.youtube.com/watch?v=c_fijVoHXPI&list=PL3kMf0Q991MO1dbBS-BFL27W-O-i6T3Bk",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 82,
+        "fields": {
+            "name": "YT - Benaqaab",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-09-03T06:58:40.213Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T06:58:39.683Z",
+            "updated": "2019-09-03T06:58:40.213Z",
+            "extra_data": null,
+            "show_name": "Benaqaab",
+            "channel": 19,
+            "playlist_link": "https://www.youtube.com/watch?v=7B7_l0k1_30&list=PL3kMf0Q991MMb3LNd8TRyRNN9dTgcACIg",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 83,
+        "fields": {
+            "name": "YT - Tonight with Fereeha",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-09-03T07:00:56.529Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T07:00:55.516Z",
+            "updated": "2019-09-03T07:00:56.529Z",
+            "extra_data": null,
+            "show_name": "Tonight with Fereeha",
+            "channel": 19,
+            "playlist_link": "https://www.youtube.com/watch?v=JHPj5xUSxss&list=PL3kMf0Q991MO4TVm91TtYC-kOjbaul0l-",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 84,
+        "fields": {
+            "name": "YT - Mazaaq Raat",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-09-12T05:21:31.841Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-12T05:21:30.095Z",
+            "updated": "2019-09-12T05:21:31.841Z",
+            "extra_data": null,
+            "show_name": "Mazaaq Raat",
+            "channel": 3,
+            "playlist_link": "https://www.youtube.com/watch?v=Yt6ficVkVi0&list=PL3kMf0Q991MNZ4HudwzKhlqCp7O5T6IfY",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 85,
+        "fields": {
+            "name": "YT - Hasb e Haal",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-09-12T05:24:34.302Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-12T05:24:33.153Z",
+            "updated": "2019-09-12T05:24:34.302Z",
+            "extra_data": null,
+            "show_name": "Hasb e Haal",
+            "channel": 3,
+            "playlist_link": "https://www.youtube.com/watch?v=vufqp26RMq4&list=PL3kMf0Q991MNgG6fvZKQsnmtqAtu_62mS",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 86,
+        "fields": {
+            "name": "YT - Khabardar",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-09-12T05:27:38.998Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-12T05:27:38.216Z",
+            "updated": "2019-09-12T05:27:38.998Z",
+            "extra_data": null,
+            "show_name": "Khabardar",
+            "channel": 12,
+            "playlist_link": "https://www.youtube.com/watch?v=iAegkDzh9ow&list=PL3kMf0Q991MO-SBgr7BSPnGEqNtX5CeV_",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 87,
+        "fields": {
+            "name": "YT - Syasi Theater",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-09-16T08:00:22.172Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-16T08:00:20.815Z",
+            "updated": "2019-09-16T08:00:22.172Z",
+            "extra_data": null,
+            "show_name": "Syasi Theater",
+            "channel": 12,
+            "playlist_link": "https://www.youtube.com/watch?v=6eFzFBJwmJg&list=PL3kMf0Q991MPZsRdStE6C7lPYC_o0MG8x",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "720p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 88,
+        "fields": {
+            "name": "YT - Ikhtalafi Note",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-09-16T08:05:05.669Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-16T08:05:04.909Z",
+            "updated": "2019-09-16T08:05:05.669Z",
+            "extra_data": null,
+            "show_name": "Ikhtalafi Note",
+            "channel": 3,
+            "playlist_link": "https://www.youtube.com/watch?v=AmDEK1Y5l5s&list=PL3kMf0Q991MNj6_lSKC6kFlrEGWnmx5Qm",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 89,
+        "fields": {
+            "name": "YT - To The Point",
+            "description": null,
+            "is_active": false,
+            "effective_date": "2019-12-30T07:03:47.399Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-16T08:09:53.901Z",
+            "updated": "2019-12-30T07:03:47.399Z",
+            "extra_data": null,
+            "show_name": "To The Point",
+            "channel": 12,
+            "playlist_link": "https://www.youtube.com/watch?v=jE0Jy923Row&list=PL3kMf0Q991MPpN2sRVf9Qzn2QFsvN-mV-",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 90,
+        "fields": {
+            "name": "YT - Ghar Jamai",
+            "description": null,
+            "is_active": false,
+            "effective_date": "2019-12-30T07:02:30.407Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-10-11T07:07:23.461Z",
+            "updated": "2019-12-30T07:02:30.407Z",
+            "extra_data": null,
+            "show_name": "Ghar Jamai",
+            "channel": 17,
+            "playlist_link": "https://www.youtube.com/watch?v=wepuWE2ZuDc&list=PLHWkZlkvcf_fNzKo_Di2DMLjTZMKTvjca",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "480p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 91,
+        "fields": {
+            "name": "DOL - Mohabbat Tumse Nafrat Hai",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-12-30T03:20:59.320Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-12-22T09:04:25.220Z",
+            "updated": "2019-12-30T03:20:59.320Z",
+            "extra_data": {
+                "channel": "Geo TV",
+                "feed_url": "http://dramaonline.pk/geo-tv-dramas/mohabbat-tumse-nafrat-hai/",
+                "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
+                "show_name_from_feed": "Mohabbat Tumse Nafrat Hai"
+            },
+            "show_name": "Mohabbat Tumse Nafrat Hai",
+            "channel": 16,
+            "playlist_link": "http://dramaonline.pk/geo-tv-dramas/mohabbat-tumse-nafrat-hai/",
+            "latest_show_link": "http://dramaonline.pk/mohabbat-tumse-nafrat-hai-last-episode-29-in-hd/",
+            "title_example": "Mohabbat Tumse Nafrat Hai Last Episode 29",
+            "title_search_pattern": "{Show name} Episode {Episode Number}",
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 3,
+            "feed_quality": "1080p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 92,
+        "fields": {
+            "name": "YT - Mohabbat Tum Se Nafrat Hai",
+            "description": null,
+            "is_active": false,
+            "effective_date": "2019-12-30T07:01:34.166Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-12-26T08:32:20.147Z",
+            "updated": "2019-12-30T07:01:34.166Z",
+            "extra_data": null,
+            "show_name": "Mohabbat Tum Se Nafrat Hai",
+            "channel": 16,
+            "playlist_link": "https://www.youtube.com/watch?v=T4DYBziNgdQ&list=PLaA8Tc_xcK87iNpVsTxQN4m0tinIi109H",
+            "latest_show_link": "https://www.youtube.com/watch?v=T4DYBziNgdQ&list=PLaA8Tc_xcK87iNpVsTxQN4m0tinIi109H&index=1",
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "1080p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 93,
+        "fields": {
+            "name": "YT - Mohabbat Tum Se Nafrat Hai",
+            "description": null,
+            "is_active": false,
+            "effective_date": "2019-12-30T07:01:56.262Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-12-26T08:32:20.156Z",
+            "updated": "2019-12-30T07:01:56.262Z",
+            "extra_data": null,
+            "show_name": "Mohabbat Tum Se Nafrat Hai",
+            "channel": 16,
+            "playlist_link": "https://www.youtube.com/watch?v=T4DYBziNgdQ&list=PLaA8Tc_xcK87iNpVsTxQN4m0tinIi109H",
+            "latest_show_link": "https://www.youtube.com/watch?v=T4DYBziNgdQ&list=PLaA8Tc_xcK87iNpVsTxQN4m0tinIi109H&index=1",
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 1,
+            "feed_quality": "1080p",
+            "priority": 2,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 94,
+        "fields": {
+            "name": "DOL - Ab Dekh Khuda Kya Karta Hai",
+            "description": null,
+            "is_active": true,
+            "effective_date": "2019-12-30T03:24:37.063Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-12-27T17:51:32.576Z",
+            "updated": "2019-12-30T03:24:37.064Z",
+            "extra_data": {
+                "channel": "Geo TV",
+                "feed_url": "http://dramaonline.pk/geo-tv-dramas/ab-dekh-khuda-kiya-karta-hai/",
+                "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
+                "show_name_from_feed": "Ab Dekh Khuda Kiya Karta Hai"
+            },
+            "show_name": "Ab Dekh Khuda Kya Karta Hai",
+            "channel": 16,
+            "playlist_link": "http://dramaonline.pk/geo-tv-dramas/ab-dekh-khuda-kiya-karta-hai/",
+            "latest_show_link": "http://dramaonline.pk/ab-dekh-khuda-kya-karta-hai-episode-23/",
+            "title_example": "Ab Dekh Khuda Kya Karta Hai Episode 23",
+            "title_search_pattern": "{Show name} Episode {Episode Number}",
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 3,
+            "feed_quality": "1080p",
+            "priority": 1,
             "country": [
                 4
             ]

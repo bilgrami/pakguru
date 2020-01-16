@@ -25,6 +25,7 @@
             "channel": 1,
             "primary_feed": 1,
             "locale": 1,
+            "total_shows": -1,
             "country": [
                 2
             ],
@@ -38,13 +39,13 @@
             "name": "Zara Hat Kay",
             "description": "Zara Hat Kay \u2013 Your dose of daily news, away from the mainstream talk shows, a show that speaks your mind and is interactive with the public on social media.",
             "is_active": true,
-            "effective_date": "2019-07-03T02:14:43.015Z",
+            "effective_date": "2020-01-15T06:03:46.932Z",
             "expiration_date": null,
             "added_by": [
                 "bilgrami"
             ],
             "created": "2019-07-01T01:34:13.765Z",
-            "updated": "2019-07-03T02:14:43.015Z",
+            "updated": "2020-01-15T06:03:46.932Z",
             "extra_data": null,
             "website_link": null,
             "youtube_link": null,
@@ -57,6 +58,7 @@
             "channel": 2,
             "primary_feed": 3,
             "locale": 2,
+            "total_shows": 171,
             "country": [
                 1,
                 2,
@@ -75,13 +77,13 @@
             "name": "Meray Mutabiq With Hassan Nisar",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-03T06:28:10.192Z",
+            "effective_date": "2020-01-06T05:18:02.434Z",
             "expiration_date": null,
             "added_by": [
                 "bilgrami"
             ],
             "created": "2019-07-01T05:58:03.243Z",
-            "updated": "2019-07-03T06:28:10.192Z",
+            "updated": "2020-01-06T05:18:02.434Z",
             "extra_data": null,
             "website_link": null,
             "youtube_link": null,
@@ -94,6 +96,7 @@
             "channel": 4,
             "primary_feed": 5,
             "locale": 2,
+            "total_shows": 64,
             "country": [
                 1
             ],
@@ -107,13 +110,13 @@
             "name": "Live with Dr. Shahid Masood",
             "description": "G News Network, commonly known as GNN, is a Pakistani 24-hour news and current affairs channel based in Lahore, Pakistan. It is owned and operated by Gourmet Foods.",
             "is_active": true,
-            "effective_date": "2019-07-01T09:03:22.498Z",
+            "effective_date": "2020-01-14T19:20:16.036Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-01T09:03:22.498Z",
-            "updated": "2019-07-01T09:03:22.498Z",
+            "updated": "2020-01-14T19:20:16.036Z",
             "extra_data": null,
             "website_link": "https://gnnhd.tv/",
             "youtube_link": "https://www.youtube.com/channel/UC35KuZBNIj4S5Ls0yjY-UHQ",
@@ -126,6 +129,7 @@
             "channel": 5,
             "primary_feed": 6,
             "locale": 2,
+            "total_shows": 230,
             "country": [
                 4
             ],
@@ -160,6 +164,7 @@
             "channel": 4,
             "primary_feed": 7,
             "locale": 2,
+            "total_shows": -1,
             "country": [
                 1
             ],
@@ -192,6 +197,7 @@
             "channel": 6,
             "primary_feed": 8,
             "locale": 2,
+            "total_shows": -1,
             "country": [
                 1
             ],
@@ -205,13 +211,13 @@
             "name": "Muqabil",
             "description": "Haroon ur Rasheed and Zafar Hilaly expose the political failures in our society, in a highly rated and popular TV show, Muqabil, hosted by Alina Shigri. Watch as how both of these seasoned journalists unfold the various sides of stories, everyday at 10:03 PM from Monday to Thursday.",
             "is_active": true,
-            "effective_date": "2019-07-02T17:07:46.271Z",
+            "effective_date": "2020-01-13T05:16:26.469Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-02T17:07:46.271Z",
-            "updated": "2019-07-02T17:07:46.271Z",
+            "updated": "2020-01-13T05:16:26.469Z",
             "extra_data": null,
             "website_link": "https://92newshd.tv/",
             "youtube_link": "https://www.youtube.com/channel/UCsgC5cbz3DE2Shh34gNKiog",
@@ -224,6 +230,7 @@
             "channel": 7,
             "primary_feed": 9,
             "locale": 2,
+            "total_shows": 135,
             "country": [
                 4
             ],
@@ -237,13 +244,13 @@
             "name": "Off The Record",
             "description": "Kashif Abasi is a Pakistani journalist, television talk show host and anchorperson based in Islamabad. He hosts the current affairs talk show Off the Record on ARY News.",
             "is_active": true,
-            "effective_date": "2019-07-02T17:33:36.918Z",
+            "effective_date": "2020-01-14T19:19:38.931Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-02T17:33:36.918Z",
-            "updated": "2019-07-02T17:33:36.918Z",
+            "updated": "2020-01-14T19:19:38.931Z",
             "extra_data": null,
             "website_link": "https://arynews.tv/en/",
             "youtube_link": "https://www.youtube.com/channel/UCMmpLL2ucRHAXbNHiCPyIyg",
@@ -256,6 +263,7 @@
             "channel": 8,
             "primary_feed": 10,
             "locale": 2,
+            "total_shows": 148,
             "country": [
                 4
             ],
@@ -269,13 +277,13 @@
             "name": "Dunya Kamran Khan Kay Sath",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-03T04:16:16.944Z",
+            "effective_date": "2020-01-15T06:02:58.448Z",
             "expiration_date": null,
             "added_by": [
                 "bilgrami"
             ],
             "created": "2019-07-03T04:16:16.944Z",
-            "updated": "2019-07-03T04:16:16.944Z",
+            "updated": "2020-01-15T06:02:58.448Z",
             "extra_data": null,
             "website_link": null,
             "youtube_link": null,
@@ -288,6 +296,7 @@
             "channel": 3,
             "primary_feed": 11,
             "locale": 2,
+            "total_shows": 168,
             "country": [
                 1,
                 2,
@@ -304,13 +313,13 @@
             "name": "Aap Kay Muqabil",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-03T07:58:42.860Z",
+            "effective_date": "2019-09-20T04:12:09.138Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T07:58:42.860Z",
-            "updated": "2019-07-03T07:58:42.860Z",
+            "updated": "2019-09-20T04:12:09.138Z",
             "extra_data": null,
             "website_link": "https://aapnews.pk/",
             "youtube_link": "https://www.youtube.com/channel/UCPTF7suymU_TvRvRPYuHdvA",
@@ -323,6 +332,7 @@
             "channel": 9,
             "primary_feed": 12,
             "locale": 2,
+            "total_shows": 55,
             "country": [
                 4
             ],
@@ -336,13 +346,13 @@
             "name": "The Reporters",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-03T08:18:08.135Z",
+            "effective_date": "2020-01-14T19:19:25.862Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T08:18:08.135Z",
-            "updated": "2019-07-03T08:18:08.135Z",
+            "updated": "2020-01-14T19:19:25.862Z",
             "extra_data": null,
             "website_link": "https://arynews.tv/en/",
             "youtube_link": "https://www.youtube.com/user/ARYNEWSofficial",
@@ -355,6 +365,7 @@
             "channel": 8,
             "primary_feed": 13,
             "locale": 2,
+            "total_shows": 153,
             "country": [
                 4
             ],
@@ -368,13 +379,13 @@
             "name": "Aaj Shahzaib Khanzada Ke Saath",
             "description": "A program that combines fast paced news, undivided analysis and stories that make headlines. Anchored by an energetic and strong host, Shahzeb Khanzada.",
             "is_active": true,
-            "effective_date": "2019-07-03T08:30:54.772Z",
+            "effective_date": "2020-01-15T06:02:46.098Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T08:30:54.772Z",
-            "updated": "2019-07-03T08:30:54.772Z",
+            "updated": "2020-01-15T06:02:46.098Z",
             "extra_data": null,
             "website_link": "https://www.geo.tv/",
             "youtube_link": "https://www.youtube.com/user/geonews",
@@ -387,6 +398,7 @@
             "channel": 4,
             "primary_feed": 14,
             "locale": 2,
+            "total_shows": 164,
             "country": [
                 4
             ],
@@ -400,13 +412,13 @@
             "name": "Night Edition",
             "description": "Night Edition is a Current Affair Program hosted by Shazia Akram.",
             "is_active": true,
-            "effective_date": "2019-07-03T08:45:55.320Z",
+            "effective_date": "2020-01-14T19:19:14.546Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T08:45:55.320Z",
-            "updated": "2019-07-03T08:45:55.320Z",
+            "updated": "2020-01-14T19:19:14.546Z",
             "extra_data": null,
             "website_link": "https://92newshd.tv/",
             "youtube_link": "https://www.youtube.com/channel/UCsgC5cbz3DE2Shh34gNKiog",
@@ -419,6 +431,7 @@
             "channel": 7,
             "primary_feed": 15,
             "locale": 2,
+            "total_shows": 128,
             "country": [
                 4
             ],
@@ -432,13 +445,13 @@
             "name": "Jirga",
             "description": "Jirga covers every important issue related to politics, economy, sociology, religion and international relations. It is a journey to achieve prosperous future by providing access to bitter truth through serious and thought provoking dialogue.",
             "is_active": true,
-            "effective_date": "2019-07-03T08:51:28.128Z",
+            "effective_date": "2020-01-13T05:15:42.339Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T08:51:28.128Z",
-            "updated": "2019-07-03T08:51:28.128Z",
+            "updated": "2020-01-13T05:15:42.339Z",
             "extra_data": null,
             "website_link": "https://www.geo.tv/",
             "youtube_link": "https://www.youtube.com/user/geonews",
@@ -451,6 +464,7 @@
             "channel": 4,
             "primary_feed": 16,
             "locale": 2,
+            "total_shows": 87,
             "country": [
                 4
             ],
@@ -464,13 +478,13 @@
             "name": "Bebaak",
             "description": "Ch. Ghulam Hussain and Saeed Qazi will provide you with insights and indepth analysis only on Bebaak, only on GNN!",
             "is_active": true,
-            "effective_date": "2019-07-03T09:02:59.193Z",
+            "effective_date": "2019-08-09T21:03:02.767Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T09:02:59.193Z",
-            "updated": "2019-07-03T09:02:59.193Z",
+            "updated": "2019-08-09T21:03:02.767Z",
             "extra_data": null,
             "website_link": "https://gnnhd.tv/",
             "youtube_link": "https://www.youtube.com/channel/UC35KuZBNIj4S5Ls0yjY-UHQ",
@@ -483,6 +497,7 @@
             "channel": 5,
             "primary_feed": 17,
             "locale": 2,
+            "total_shows": 55,
             "country": [
                 4
             ],
@@ -496,13 +511,13 @@
             "name": "Capital Talk",
             "description": "Capital Talk looks at the challenges, issues and concerns facing Pakistan on a daily basis. The format includes a panel of renowned personalities who participate in a dialogue which contributes",
             "is_active": true,
-            "effective_date": "2019-07-03T09:12:30.637Z",
+            "effective_date": "2020-01-14T19:19:03.413Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T09:12:30.638Z",
-            "updated": "2019-07-03T09:12:30.638Z",
+            "updated": "2020-01-14T19:19:03.413Z",
             "extra_data": null,
             "website_link": "https://www.geo.tv/",
             "youtube_link": "https://www.youtube.com/user/geonews",
@@ -515,6 +530,7 @@
             "channel": 4,
             "primary_feed": 18,
             "locale": 2,
+            "total_shows": 148,
             "country": [
                 4
             ],
@@ -528,13 +544,13 @@
             "name": "Hard Talk Pakistan",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-03T09:19:58.058Z",
+            "effective_date": "2020-01-14T19:18:58.700Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T09:19:58.058Z",
-            "updated": "2019-07-03T09:19:58.058Z",
+            "updated": "2020-01-14T19:18:58.700Z",
             "extra_data": null,
             "website_link": "https://92newshd.tv/",
             "youtube_link": "https://www.youtube.com/channel/UCsgC5cbz3DE2Shh34gNKiog",
@@ -547,6 +563,7 @@
             "channel": 7,
             "primary_feed": 19,
             "locale": 2,
+            "total_shows": 127,
             "country": [
                 4
             ],
@@ -560,13 +577,13 @@
             "name": "Power Play",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-03T09:29:47.363Z",
+            "effective_date": "2020-01-15T06:02:21.374Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T09:29:47.363Z",
-            "updated": "2019-07-03T09:29:47.363Z",
+            "updated": "2020-01-15T06:02:21.374Z",
             "extra_data": null,
             "website_link": "https://arynews.tv/en/",
             "youtube_link": "https://www.youtube.com/user/ARYNEWSofficial",
@@ -579,6 +596,7 @@
             "channel": 8,
             "primary_feed": 20,
             "locale": 2,
+            "total_shows": 142,
             "country": [
                 4
             ],
@@ -592,13 +610,13 @@
             "name": "Najam Sethi Show",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-03T09:48:03.417Z",
+            "effective_date": "2019-08-08T01:35:12.108Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T09:48:03.417Z",
-            "updated": "2019-07-03T09:48:03.417Z",
+            "updated": "2019-08-08T01:35:12.108Z",
             "extra_data": null,
             "website_link": "https://www.24newshd.tv/",
             "youtube_link": "https://www.youtube.com/channel/UCcmpeVbSSQlZRvHfdC-CRwg",
@@ -611,6 +629,7 @@
             "channel": 10,
             "primary_feed": 21,
             "locale": 2,
+            "total_shows": 53,
             "country": [
                 4
             ],
@@ -624,13 +643,13 @@
             "name": "Think Tank",
             "description": "It's not a TV show, it's a Think Tank. The participants are Sohail Warraich, Ayaz Amir, Haroon ur Rasheed and Salman Ghani. Presented by brainy girl Syeda Ayesha Naz.",
             "is_active": true,
-            "effective_date": "2019-07-03T18:13:11.398Z",
+            "effective_date": "2020-01-13T05:15:05.489Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T18:11:14.738Z",
-            "updated": "2019-07-03T18:13:11.398Z",
+            "updated": "2020-01-13T05:15:05.489Z",
             "extra_data": null,
             "website_link": "http://dunyanews.tv/",
             "youtube_link": "https://www.youtube.com/user/dunyanews1",
@@ -643,6 +662,7 @@
             "channel": 3,
             "primary_feed": 22,
             "locale": 2,
+            "total_shows": 121,
             "country": [
                 4
             ],
@@ -656,13 +676,13 @@
             "name": "Harf e Raaz",
             "description": "Harf E Raz is a flagship Neo News program which is a one-hour debate on current events hosted by Jameel Farooqui.And Creative Presenter by Orya Maqbool Jan . Harf E Raz looks at the challenges, issues, and concerns facing Pakistan on a daily basis.",
             "is_active": true,
-            "effective_date": "2019-07-03T18:26:26.869Z",
+            "effective_date": "2020-01-14T19:18:42.004Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T18:26:26.869Z",
-            "updated": "2019-07-03T18:26:26.869Z",
+            "updated": "2020-01-14T19:18:42.004Z",
             "extra_data": null,
             "website_link": "https://www.neonetwork.pk/",
             "youtube_link": "https://www.youtube.com/channel/UCAsvFcpUQegneSh0QAUd64A",
@@ -675,6 +695,7 @@
             "channel": 11,
             "primary_feed": 23,
             "locale": 2,
+            "total_shows": 148,
             "country": [
                 4
             ],
@@ -688,13 +709,13 @@
             "name": "Khara Sach",
             "description": "Mubashir Luqman brings you the latest news with his hard-hitting analysis on Pakistan politics in Khara Sach.",
             "is_active": true,
-            "effective_date": "2019-07-07T07:24:00.183Z",
+            "effective_date": "2020-01-15T06:03:25.656Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T18:36:11.261Z",
-            "updated": "2019-07-07T07:24:00.183Z",
+            "updated": "2020-01-15T06:03:25.656Z",
             "extra_data": {
                 "is_Joke": 0,
                 "is_Show": 1,
@@ -712,6 +733,7 @@
             "channel": 10,
             "primary_feed": 24,
             "locale": 2,
+            "total_shows": 93,
             "country": [
                 4
             ],
@@ -725,13 +747,13 @@
             "name": "Kal tak with Javed Chaudhry",
             "description": "Kal Tak is a Pakistani television show that covers a variety of subject include social issues and current affairs.",
             "is_active": true,
-            "effective_date": "2019-07-10T14:22:43.993Z",
+            "effective_date": "2020-01-14T19:18:28.528Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T18:51:19.433Z",
-            "updated": "2019-07-10T14:22:43.993Z",
+            "updated": "2020-01-14T19:18:28.528Z",
             "extra_data": null,
             "website_link": "https://www.express.pk/",
             "youtube_link": "https://www.youtube.com/channel/UCTur7oM6mLL0rM2k0znuZpQ",
@@ -744,6 +766,7 @@
             "channel": 12,
             "primary_feed": 25,
             "locale": 2,
+            "total_shows": 148,
             "country": [
                 4
             ],
@@ -757,13 +780,13 @@
             "name": "Faisla Aap Ka",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-03T19:13:45.942Z",
+            "effective_date": "2020-01-14T19:19:52.074Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T19:13:45.942Z",
-            "updated": "2019-07-03T19:13:45.942Z",
+            "updated": "2020-01-14T19:19:52.074Z",
             "extra_data": null,
             "website_link": "https://www.aaj.tv/",
             "youtube_link": "https://www.youtube.com/channel/UCgBAPAcLsh_MAPvJprIz89w",
@@ -776,6 +799,7 @@
             "channel": 13,
             "primary_feed": 26,
             "locale": 2,
+            "total_shows": 145,
             "country": [
                 4
             ],
@@ -789,13 +813,13 @@
             "name": "To The Point",
             "description": "To the Point is a Pakistani television show that covers a variety of subject include social issues and current affairs.",
             "is_active": true,
-            "effective_date": "2019-07-04T11:55:15.526Z",
+            "effective_date": "2020-01-14T19:18:37.993Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-03T19:24:03.444Z",
-            "updated": "2019-07-04T11:55:15.526Z",
+            "updated": "2020-01-14T19:18:37.993Z",
             "extra_data": null,
             "website_link": "https://www.express.pk/",
             "youtube_link": "https://www.youtube.com/channel/UCTur7oM6mLL0rM2k0znuZpQ",
@@ -808,6 +832,7 @@
             "channel": 12,
             "primary_feed": 27,
             "locale": 2,
+            "total_shows": 116,
             "country": [
                 4
             ],
@@ -821,13 +846,13 @@
             "name": "News Eye",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-04T18:57:21.226Z",
+            "effective_date": "2020-01-15T06:02:00.526Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-04T18:08:46.554Z",
-            "updated": "2019-07-04T18:57:21.226Z",
+            "updated": "2020-01-15T06:02:00.526Z",
             "extra_data": null,
             "website_link": "https://www.dawnnews.tv/",
             "youtube_link": "https://www.youtube.com/user/dawnnewspakistan",
@@ -840,6 +865,7 @@
             "channel": 2,
             "primary_feed": 28,
             "locale": 2,
+            "total_shows": 138,
             "country": [
                 4
             ],
@@ -872,6 +898,7 @@
             "channel": 13,
             "primary_feed": 29,
             "locale": 2,
+            "total_shows": -1,
             "country": [
                 4
             ],
@@ -885,13 +912,13 @@
             "name": "Nasim Zehra @ 8:00",
             "description": "Senior journalist Nasim Zehra brings leading personalities for deep analysis and discussions on her program Nasim Zehra @8:00.",
             "is_active": true,
-            "effective_date": "2019-07-04T18:58:24.716Z",
+            "effective_date": "2020-01-14T03:48:31.225Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-04T18:37:07.344Z",
-            "updated": "2019-07-04T18:58:24.716Z",
+            "updated": "2020-01-14T03:48:31.225Z",
             "extra_data": null,
             "website_link": "https://www.24newshd.tv/",
             "youtube_link": "https://www.youtube.com/channel/UCcmpeVbSSQlZRvHfdC-CRwg",
@@ -904,6 +931,7 @@
             "channel": 10,
             "primary_feed": 30,
             "locale": 2,
+            "total_shows": 99,
             "country": [
                 4
             ],
@@ -917,13 +945,13 @@
             "name": "Breaking Point with Malick",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-04T19:03:13.821Z",
+            "effective_date": "2020-01-13T05:14:19.302Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-04T19:03:11.753Z",
-            "updated": "2019-07-04T19:03:13.821Z",
+            "updated": "2020-01-13T05:14:19.302Z",
             "extra_data": null,
             "website_link": "https://www.humnews.pk/",
             "youtube_link": "https://www.youtube.com/channel/UC0Um3pnZ2WGBEeoA3BX2sKw?feature=embeds_subscribe_title",
@@ -936,6 +964,7 @@
             "channel": 6,
             "primary_feed": 31,
             "locale": 2,
+            "total_shows": 118,
             "country": [
                 4
             ],
@@ -949,13 +978,13 @@
             "name": "Face to Face with Ayesha Bakhsh",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-04T19:22:07.220Z",
+            "effective_date": "2020-01-13T05:14:13.206Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-04T19:22:05.502Z",
-            "updated": "2019-07-04T19:22:07.220Z",
+            "updated": "2020-01-13T05:14:13.206Z",
             "extra_data": null,
             "website_link": "https://gnnhd.tv/",
             "youtube_link": "https://www.youtube.com/channel/UC35KuZBNIj4S5Ls0yjY-UHQ",
@@ -968,6 +997,7 @@
             "channel": 5,
             "primary_feed": 32,
             "locale": 2,
+            "total_shows": 114,
             "country": [
                 4
             ],
@@ -981,13 +1011,13 @@
             "name": "Tajzia Sami Ibrahim Kay Sath",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-04T19:38:11.203Z",
+            "effective_date": "2020-01-14T19:18:04.182Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-04T19:38:09.629Z",
-            "updated": "2019-07-04T19:38:11.203Z",
+            "updated": "2020-01-14T19:18:04.182Z",
             "extra_data": null,
             "website_link": "https://www.bolnetwork.com/",
             "youtube_link": "https://www.youtube.com/channel/UCz2yxQJZgiB_5elTzqV7FiQ",
@@ -1000,6 +1030,7 @@
             "channel": 14,
             "primary_feed": 33,
             "locale": 2,
+            "total_shows": 220,
             "country": [
                 4
             ],
@@ -1013,13 +1044,13 @@
             "name": "News Beat",
             "description": "A serious political show with Fereeha Idrees where the top policy makers of the country analyze news and current events that have shaped the current circumstances of the country.",
             "is_active": true,
-            "effective_date": "2019-07-04T20:15:09.810Z",
+            "effective_date": "2020-01-13T05:13:58.868Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-04T20:15:08.046Z",
-            "updated": "2019-07-04T20:15:09.810Z",
+            "updated": "2020-01-13T05:13:58.868Z",
             "extra_data": null,
             "website_link": "https://www.samaa.tv/",
             "youtube_link": "https://www.youtube.com/user/samaatvnews",
@@ -1032,6 +1063,7 @@
             "channel": 15,
             "primary_feed": 34,
             "locale": 2,
+            "total_shows": 96,
             "country": [
                 4
             ],
@@ -1045,13 +1077,13 @@
             "name": "Nadeem Malik Live",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-05T20:29:56.292Z",
+            "effective_date": "2020-01-14T19:17:54.655Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-05T20:29:54.134Z",
-            "updated": "2019-07-05T20:29:56.292Z",
+            "updated": "2020-01-14T19:17:54.655Z",
             "extra_data": null,
             "website_link": "https://www.samaa.tv/",
             "youtube_link": "https://www.youtube.com/user/samaatvnews",
@@ -1064,6 +1096,7 @@
             "channel": 15,
             "primary_feed": 35,
             "locale": 2,
+            "total_shows": 144,
             "country": [
                 4
             ],
@@ -1077,13 +1110,13 @@
             "name": "Aaj Rana Mubashir Kay Saath",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-05T20:46:13.795Z",
+            "effective_date": "2020-01-14T03:48:01.245Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-05T20:46:12.186Z",
-            "updated": "2019-07-05T20:46:13.795Z",
+            "updated": "2020-01-14T03:48:01.245Z",
             "extra_data": null,
             "website_link": "https://www.aaj.tv/",
             "youtube_link": "https://www.youtube.com/channel/UCgBAPAcLsh_MAPvJprIz89w",
@@ -1096,6 +1129,7 @@
             "channel": 13,
             "primary_feed": 36,
             "locale": 2,
+            "total_shows": 121,
             "country": [
                 4
             ],
@@ -1109,13 +1143,13 @@
             "name": "Ho Kya Raha Hai",
             "description": "Arif Nizami and Asad Ullah Khan have an informal yet very professional and productive discussion on the current political situation in the country.",
             "is_active": true,
-            "effective_date": "2019-07-05T20:58:05.096Z",
+            "effective_date": "2020-01-14T19:17:45.582Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-05T20:58:04.220Z",
-            "updated": "2019-07-05T20:58:05.096Z",
+            "updated": "2020-01-14T19:17:45.582Z",
             "extra_data": null,
             "website_link": "https://92newshd.tv/",
             "youtube_link": "https://www.youtube.com/channel/UCsgC5cbz3DE2Shh34gNKiog",
@@ -1128,6 +1162,7 @@
             "channel": 7,
             "primary_feed": 37,
             "locale": 2,
+            "total_shows": 144,
             "country": [
                 4
             ],
@@ -1141,13 +1176,13 @@
             "name": "Nuqta e Nazar",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-07T05:17:53.442Z",
+            "effective_date": "2020-01-14T19:17:40.463Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-05T21:08:33.155Z",
-            "updated": "2019-07-07T05:17:53.442Z",
+            "updated": "2020-01-14T19:17:40.463Z",
             "extra_data": {
                 "is_Joke": 0,
                 "is_Show": 1,
@@ -1164,6 +1199,7 @@
             "channel": 3,
             "primary_feed": 38,
             "locale": 2,
+            "total_shows": 145,
             "country": [
                 4
             ],
@@ -1177,13 +1213,13 @@
             "name": "On The Front",
             "description": "On the Front is a tri-weekly news program currently airing on the Dunya News television channel, broadcast from Pakistan. The show is hosted by Pakistani news personality and analyst Kamran Shahid.",
             "is_active": true,
-            "effective_date": "2019-07-07T05:16:52.747Z",
+            "effective_date": "2020-01-14T19:17:35.418Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-05T21:17:14.144Z",
-            "updated": "2019-07-07T05:16:52.747Z",
+            "updated": "2020-01-14T19:17:35.418Z",
             "extra_data": {
                 "is_Joke": 0,
                 "is_Show": 1,
@@ -1200,6 +1236,7 @@
             "channel": 3,
             "primary_feed": 39,
             "locale": 2,
+            "total_shows": 145,
             "country": [
                 4
             ],
@@ -1213,13 +1250,13 @@
             "name": "Ikhtilafi Note",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-07T05:16:45.847Z",
+            "effective_date": "2020-01-13T05:13:20.495Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-05T21:35:29.886Z",
-            "updated": "2019-07-07T05:16:45.847Z",
+            "updated": "2020-01-13T05:13:20.495Z",
             "extra_data": {
                 "is_Joke": 0,
                 "is_Show": 1,
@@ -1236,6 +1273,7 @@
             "channel": 3,
             "primary_feed": 40,
             "locale": 2,
+            "total_shows": 117,
             "country": [
                 4
             ],
@@ -1249,13 +1287,13 @@
             "name": "Seedhi Baat",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-07T05:16:38.467Z",
+            "effective_date": "2020-01-14T19:17:24.837Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-05T21:45:46.695Z",
-            "updated": "2019-07-07T05:16:38.467Z",
+            "updated": "2020-01-14T19:17:24.837Z",
             "extra_data": {
                 "is_Joke": 0,
                 "is_Show": 1,
@@ -1272,6 +1310,7 @@
             "channel": 11,
             "primary_feed": 41,
             "locale": 2,
+            "total_shows": 142,
             "country": [
                 4
             ],
@@ -1285,13 +1324,13 @@
             "name": "Sawal Yeh Hai",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-07T05:16:31.222Z",
+            "effective_date": "2020-01-13T05:12:59.042Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-05T21:53:52.679Z",
-            "updated": "2019-07-07T05:16:31.222Z",
+            "updated": "2020-01-13T05:12:59.042Z",
             "extra_data": {
                 "is_Joke": 0,
                 "is_Show": 1,
@@ -1308,6 +1347,7 @@
             "channel": 8,
             "primary_feed": 42,
             "locale": 2,
+            "total_shows": 113,
             "country": [
                 4
             ],
@@ -1321,13 +1361,13 @@
             "name": "Report Card",
             "description": "REPORT CARD is a roundup of the most important news items throughout the day discussed objectively with leading analysts and opinion makers.",
             "is_active": true,
-            "effective_date": "2019-07-07T05:16:16.753Z",
+            "effective_date": "2020-01-14T19:20:30.738Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-06T10:15:57.692Z",
-            "updated": "2019-07-07T05:16:16.753Z",
+            "updated": "2020-01-14T19:20:30.738Z",
             "extra_data": {
                 "is_Joke": 0,
                 "is_Show": 1,
@@ -1344,6 +1384,7 @@
             "channel": 4,
             "primary_feed": 46,
             "locale": 2,
+            "total_shows": 189,
             "country": [
                 4
             ],
@@ -1380,6 +1421,7 @@
             "channel": 16,
             "primary_feed": 44,
             "locale": 2,
+            "total_shows": -1,
             "country": [
                 4
             ],
@@ -1393,13 +1435,13 @@
             "name": "Naya Pakistan",
             "description": "The show is based on robust discussions on news events and/or pressing current affairs issues, offering a unique but flexible format whereby facts, analyses and opinions are incorporated into different segments thereof. Moreover, the show not only focuses on discerning and discussing important issues and events but also offers various perspectives and conclusions to the viewers.",
             "is_active": true,
-            "effective_date": "2019-07-07T05:16:23.286Z",
+            "effective_date": "2020-01-13T05:17:50.461Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-06T16:17:31.101Z",
-            "updated": "2019-07-07T05:16:23.286Z",
+            "updated": "2020-01-13T05:17:50.461Z",
             "extra_data": {
                 "is_Joke": 0,
                 "is_Show": 1,
@@ -1416,6 +1458,7 @@
             "channel": 4,
             "primary_feed": 45,
             "locale": 2,
+            "total_shows": 105,
             "country": [
                 4
             ],
@@ -1429,13 +1472,13 @@
             "name": "Aapas Ki Baat",
             "description": "Aapas ki Baat is a quick paced live show about the news and happenings over the national and international sphere encompassing the views and analysis by veteran journalist Najam Sethi.",
             "is_active": true,
-            "effective_date": "2019-07-07T05:15:36.294Z",
+            "effective_date": "2020-01-15T06:03:33.501Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-06T16:32:50.284Z",
-            "updated": "2019-07-07T05:15:36.294Z",
+            "updated": "2020-01-15T06:03:33.501Z",
             "extra_data": {
                 "is_Joke": 0,
                 "is_Show": 1,
@@ -1452,6 +1495,7 @@
             "channel": 4,
             "primary_feed": 47,
             "locale": 2,
+            "total_shows": 102,
             "country": [
                 4
             ],
@@ -1484,6 +1528,7 @@
             "channel": 16,
             "primary_feed": 51,
             "locale": 2,
+            "total_shows": -1,
             "country": [
                 4
             ],
@@ -1497,13 +1542,13 @@
             "name": "Alif Allah Aur Insaan",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-07T06:33:28.142Z",
+            "effective_date": "2020-01-09T16:53:41.203Z",
             "expiration_date": null,
             "added_by": [
-                "bilgrami"
+                "shahneela"
             ],
             "created": "2019-07-07T06:32:03.013Z",
-            "updated": "2019-07-07T06:33:28.142Z",
+            "updated": "2020-01-09T16:53:41.203Z",
             "extra_data": null,
             "website_link": null,
             "youtube_link": null,
@@ -1516,6 +1561,7 @@
             "channel": 6,
             "primary_feed": 52,
             "locale": 2,
+            "total_shows": 12,
             "country": [
                 4
             ],
@@ -1529,13 +1575,13 @@
             "name": "Bulbulay",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-07T07:28:53.630Z",
+            "effective_date": "2019-12-30T07:27:08.926Z",
             "expiration_date": null,
             "added_by": [
                 "bilgrami"
             ],
             "created": "2019-07-07T06:37:06.213Z",
-            "updated": "2019-07-07T07:28:53.630Z",
+            "updated": "2019-12-30T07:27:08.926Z",
             "extra_data": {
                 "is_Joke": 1,
                 "is_Show": 0,
@@ -1553,6 +1599,7 @@
             "channel": 17,
             "primary_feed": 53,
             "locale": 2,
+            "total_shows": 69,
             "country": [
                 4
             ],
@@ -1585,6 +1632,7 @@
             "channel": 18,
             "primary_feed": 54,
             "locale": 2,
+            "total_shows": -1,
             "country": [
                 4
             ],
@@ -1598,13 +1646,13 @@
             "name": "Tonight With Fareeha",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-10T14:55:20.915Z",
+            "effective_date": "2020-01-14T19:20:35.682Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-10T14:55:19.585Z",
-            "updated": "2019-07-10T14:55:20.916Z",
+            "updated": "2020-01-14T19:20:35.682Z",
             "extra_data": null,
             "website_link": "https://abbtakk.tv/en/",
             "youtube_link": "https://www.youtube.com/channel/UC5mwDEzm4FzXKoHPBDnuUQQ",
@@ -1617,6 +1665,7 @@
             "channel": 19,
             "primary_feed": 56,
             "locale": 2,
+            "total_shows": 145,
             "country": [
                 4
             ],
@@ -1630,13 +1679,13 @@
             "name": "Mah E Tamaam",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-11T02:24:10.672Z",
+            "effective_date": "2020-01-12T07:43:49.706Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-10T15:09:41.477Z",
-            "updated": "2019-07-11T02:24:10.673Z",
+            "updated": "2020-01-12T07:43:49.706Z",
             "extra_data": null,
             "website_link": null,
             "youtube_link": null,
@@ -1649,6 +1698,7 @@
             "channel": 6,
             "primary_feed": 55,
             "locale": 2,
+            "total_shows": 5,
             "country": [
                 4
             ],
@@ -1662,13 +1712,13 @@
             "name": "Hasb e Haal",
             "description": "Your one stop destination for all Hasb E Haal episodes, Watch Azizi discussing different news, issues and imitating all the famous personalities of Pakistan. Enjoy and get ready for non-stop entertainment! Hosts: Junaid Saleem and Najia Baig Sohail Ahmed: Azizi",
             "is_active": true,
-            "effective_date": "2019-07-10T15:19:56.836Z",
+            "effective_date": "2020-01-14T03:50:28.203Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-10T15:19:55.904Z",
-            "updated": "2019-07-10T15:19:56.836Z",
+            "updated": "2020-01-14T03:50:28.203Z",
             "extra_data": null,
             "website_link": "http://dunyanews.tv/",
             "youtube_link": "https://www.youtube.com/channel/UCnMBV5Iw4WqKILKue1nP6Hg",
@@ -1681,6 +1731,7 @@
             "channel": 3,
             "primary_feed": 57,
             "locale": 2,
+            "total_shows": 145,
             "country": [
                 4
             ],
@@ -1694,13 +1745,13 @@
             "name": "Mazaaq Raat",
             "description": "\"Mazaaq Raat is a top grossing Pakistani comedy television show airing on Dunya News. Hosting the show is Vasay Chaudhary accompanied with a humorous team including DJ Mohsin Abbas Haider and the talented Hina Niazi.",
             "is_active": true,
-            "effective_date": "2019-07-10T15:30:26.270Z",
+            "effective_date": "2020-01-15T06:03:21.657Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-10T15:30:25.229Z",
-            "updated": "2019-07-10T15:30:26.270Z",
+            "updated": "2020-01-15T06:03:21.657Z",
             "extra_data": null,
             "website_link": "http://dunyanews.tv/",
             "youtube_link": "https://www.youtube.com/channel/UCnMBV5Iw4WqKILKue1nP6Hg",
@@ -1713,6 +1764,7 @@
             "channel": 3,
             "primary_feed": 58,
             "locale": 2,
+            "total_shows": 111,
             "country": [
                 4
             ],
@@ -1726,13 +1778,13 @@
             "name": "Syasi Theater",
             "description": "Watch Syasi Theater a Comedy talk show where host Syed Wasi Shah invites famous Personalities and discuss different issues as well as general life discussion .",
             "is_active": true,
-            "effective_date": "2019-07-10T15:45:48.674Z",
+            "effective_date": "2020-01-10T08:01:11.992Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-10T15:45:47.352Z",
-            "updated": "2019-07-10T15:45:48.674Z",
+            "updated": "2020-01-10T08:01:11.992Z",
             "extra_data": null,
             "website_link": "https://www.express.pk/",
             "youtube_link": "https://www.youtube.com/channel/UCTur7oM6mLL0rM2k0znuZpQ",
@@ -1745,6 +1797,7 @@
             "channel": 12,
             "primary_feed": 59,
             "locale": 2,
+            "total_shows": 110,
             "country": [
                 4
             ],
@@ -1758,13 +1811,13 @@
             "name": "Khabarnak",
             "description": "A veritable \u201cgossip column of talk shows\u201d where in a tongue-in-cheek manner politics, current affairs and society are under discussion focusing on pertinent issues that affect us all.",
             "is_active": true,
-            "effective_date": "2019-07-10T16:02:22.559Z",
+            "effective_date": "2020-01-13T05:14:31.906Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-10T16:02:21.207Z",
-            "updated": "2019-07-10T16:02:22.559Z",
+            "updated": "2020-01-13T05:14:31.906Z",
             "extra_data": null,
             "website_link": "https://www.geo.tv/",
             "youtube_link": "https://www.youtube.com/channel/UC_vt34wimdCzdkrzVejwX9g",
@@ -1777,6 +1830,7 @@
             "channel": 4,
             "primary_feed": 60,
             "locale": 2,
+            "total_shows": 126,
             "country": [
                 4
             ],
@@ -1790,13 +1844,13 @@
             "name": "Khabardar",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-10T16:18:52.257Z",
+            "effective_date": "2020-01-14T03:47:20.906Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-10T16:18:49.162Z",
-            "updated": "2019-07-10T16:18:52.257Z",
+            "updated": "2020-01-14T03:47:20.906Z",
             "extra_data": null,
             "website_link": "https://www.express.pk/",
             "youtube_link": "https://www.youtube.com/channel/UCTur7oM6mLL0rM2k0znuZpQ",
@@ -1809,6 +1863,7 @@
             "channel": 12,
             "primary_feed": 61,
             "locale": 2,
+            "total_shows": 102,
             "country": [
                 4
             ],
@@ -1822,13 +1877,13 @@
             "name": "Khan",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-11T02:23:02.552Z",
+            "effective_date": "2020-01-12T07:43:52.494Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-10T18:53:27.448Z",
-            "updated": "2019-07-11T02:23:02.552Z",
+            "updated": "2020-01-12T07:43:52.494Z",
             "extra_data": null,
             "website_link": null,
             "youtube_link": null,
@@ -1841,38 +1896,7 @@
             "channel": 16,
             "primary_feed": 62,
             "locale": 2,
-            "country": [
-                4
-            ],
-            "additional_feeds": []
-        }
-    },
-    {
-        "model": "pakguru_app.show",
-        "pk": 58,
-        "fields": {
-            "name": "Zindagi Gulzar Hai",
-            "description": "",
-            "is_active": false,
-            "effective_date": "2019-07-10T19:07:06.588Z",
-            "expiration_date": null,
-            "added_by": [
-                "shahneela"
-            ],
-            "created": "2019-07-10T19:07:05.633Z",
-            "updated": "2019-07-10T19:07:06.588Z",
-            "extra_data": null,
-            "website_link": null,
-            "youtube_link": null,
-            "facebook_link": null,
-            "twitter_link": null,
-            "instagram_link": null,
-            "host_name": "HUM TV",
-            "airtime": null,
-            "category": 5,
-            "channel": 6,
-            "primary_feed": 63,
-            "locale": 2,
+            "total_shows": 7,
             "country": [
                 4
             ],
@@ -1886,13 +1910,13 @@
             "name": "Udaari",
             "description": "",
             "is_active": false,
-            "effective_date": "2019-07-10T19:21:51.023Z",
+            "effective_date": "2020-01-12T07:43:45.693Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-10T19:21:50.289Z",
-            "updated": "2019-07-10T19:21:51.024Z",
+            "updated": "2020-01-12T07:43:45.693Z",
             "extra_data": null,
             "website_link": null,
             "youtube_link": null,
@@ -1905,6 +1929,7 @@
             "channel": 6,
             "primary_feed": 64,
             "locale": 2,
+            "total_shows": 8,
             "country": [
                 4
             ],
@@ -1918,13 +1943,13 @@
             "name": "Naseebon Jali",
             "description": "",
             "is_active": true,
-            "effective_date": "2019-07-11T19:11:26.227Z",
+            "effective_date": "2020-01-12T07:43:31.521Z",
             "expiration_date": null,
             "added_by": [
                 "bilgrami"
             ],
             "created": "2019-07-11T19:11:24.977Z",
-            "updated": "2019-07-11T19:11:26.227Z",
+            "updated": "2020-01-12T07:43:31.521Z",
             "extra_data": null,
             "website_link": null,
             "youtube_link": null,
@@ -1937,6 +1962,929 @@
             "channel": 6,
             "primary_feed": 43,
             "locale": 2,
+            "total_shows": 42,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 61,
+        "fields": {
+            "name": "Aangan",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-12-30T03:37:18.392Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-12T18:51:40.448Z",
+            "updated": "2019-12-30T03:37:18.392Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Sajal Aly, Mawra Hocane, Ahad Raza Mir",
+            "airtime": null,
+            "category": 5,
+            "channel": 6,
+            "primary_feed": 65,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 64,
+        "fields": {
+            "name": "Grift",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-08-24T18:03:45.758Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-20T08:36:37.632Z",
+            "updated": "2019-08-24T18:03:45.758Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Saddam Tufail",
+            "airtime": null,
+            "category": 1,
+            "channel": 12,
+            "primary_feed": 70,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 65,
+        "fields": {
+            "name": "Dunya Kamran Khan Kay Sath",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-08-30T04:30:36.809Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-20T08:39:00.541Z",
+            "updated": "2019-08-30T04:30:36.809Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Kamran Khan",
+            "airtime": null,
+            "category": 1,
+            "channel": 3,
+            "primary_feed": 67,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 66,
+        "fields": {
+            "name": "Think Tank",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-20T08:42:09.407Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-20T08:42:07.610Z",
+            "updated": "2019-07-20T08:42:09.407Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Syeda Ayesha Naaz",
+            "airtime": null,
+            "category": 1,
+            "channel": 3,
+            "primary_feed": 68,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 67,
+        "fields": {
+            "name": "Sawal Say Agay",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-07-20T08:47:22.509Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-07-20T08:47:21.260Z",
+            "updated": "2019-07-20T08:47:22.509Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Mujahid Barelvi",
+            "airtime": null,
+            "category": 1,
+            "channel": 2,
+            "primary_feed": 69,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 68,
+        "fields": {
+            "name": "Pinjra",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-12-19T06:22:50.663Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-08-05T06:31:50.679Z",
+            "updated": "2019-12-19T06:22:50.663Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Yumna Zaidi, Samina Ahmed",
+            "airtime": null,
+            "category": 5,
+            "channel": 20,
+            "primary_feed": 71,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": [
+                71
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 69,
+        "fields": {
+            "name": "Kal Tak",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-08-06T04:13:37.752Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-08-06T04:13:36.714Z",
+            "updated": "2019-08-06T04:13:37.753Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Javed Chaudhary",
+            "airtime": null,
+            "category": 1,
+            "channel": 12,
+            "primary_feed": 72,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 70,
+        "fields": {
+            "name": "Takrar",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-08-06T04:18:54.312Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-08-06T04:18:52.926Z",
+            "updated": "2019-08-06T04:18:54.312Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Imran Khan",
+            "airtime": null,
+            "category": 1,
+            "channel": 12,
+            "primary_feed": 73,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 71,
+        "fields": {
+            "name": "Spot Light",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-08-06T04:32:13.351Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-08-06T04:32:11.213Z",
+            "updated": "2019-08-06T04:32:13.351Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Munizae Jahangir",
+            "airtime": null,
+            "category": 1,
+            "channel": 13,
+            "primary_feed": 74,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 72,
+        "fields": {
+            "name": "News Eye",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-08-06T04:37:35.440Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-08-06T04:37:34.093Z",
+            "updated": "2019-08-06T04:37:35.440Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Mehar Bokhari",
+            "airtime": null,
+            "category": 1,
+            "channel": 2,
+            "primary_feed": 75,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 73,
+        "fields": {
+            "name": "Express Special",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-02T08:27:22.796Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-02T08:27:21.595Z",
+            "updated": "2019-09-02T08:27:22.796Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Junaid Haleem",
+            "airtime": null,
+            "category": 1,
+            "channel": 12,
+            "primary_feed": 76,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 74,
+        "fields": {
+            "name": "Faisla Aap Ka",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-03T06:22:33.891Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T06:22:32.748Z",
+            "updated": "2019-09-03T06:22:33.891Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Asma Sherazi",
+            "airtime": null,
+            "category": 1,
+            "channel": 13,
+            "primary_feed": 77,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 75,
+        "fields": {
+            "name": "Tonight with Fereeha",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-03T07:02:06.885Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T07:02:05.608Z",
+            "updated": "2019-09-03T07:02:06.885Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Fereeha Idrees",
+            "airtime": null,
+            "category": 1,
+            "channel": 19,
+            "primary_feed": 83,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 76,
+        "fields": {
+            "name": "Benaqaab",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-03T07:02:58.008Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T07:02:57.036Z",
+            "updated": "2019-09-03T07:02:58.008Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Saifan Khan",
+            "airtime": null,
+            "category": 1,
+            "channel": 19,
+            "primary_feed": 82,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 77,
+        "fields": {
+            "name": "News Wise",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-03T07:03:59.482Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T07:03:58.349Z",
+            "updated": "2019-09-03T07:03:59.482Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Arifa Noor",
+            "airtime": null,
+            "category": 1,
+            "channel": 2,
+            "primary_feed": 81,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 78,
+        "fields": {
+            "name": "Center Stage",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-03T07:08:43.719Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T07:08:42.856Z",
+            "updated": "2019-09-03T07:08:43.719Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Rehman Azhar",
+            "airtime": null,
+            "category": 1,
+            "channel": 12,
+            "primary_feed": 80,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 79,
+        "fields": {
+            "name": "Ikhtalafi Note",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-03T07:11:56.099Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T07:11:55.208Z",
+            "updated": "2019-09-03T07:11:56.099Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Habib Akram, Saad Rasool",
+            "airtime": null,
+            "category": 1,
+            "channel": 3,
+            "primary_feed": 79,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 80,
+        "fields": {
+            "name": "Do Raaye",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-03T07:18:51.803Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-03T07:18:50.500Z",
+            "updated": "2019-09-03T07:18:51.803Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Fasi Zaka",
+            "airtime": null,
+            "category": 1,
+            "channel": 2,
+            "primary_feed": 78,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 81,
+        "fields": {
+            "name": "Mazaaq Raat",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-12T05:23:26.492Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-12T05:23:25.304Z",
+            "updated": "2019-09-12T05:23:26.492Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Khurram Sohail Khan",
+            "airtime": null,
+            "category": 7,
+            "channel": 3,
+            "primary_feed": 84,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 82,
+        "fields": {
+            "name": "Hasb e Haal",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-12T05:25:51.882Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-12T05:25:50.759Z",
+            "updated": "2019-09-12T05:25:51.882Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Junaid Saleem",
+            "airtime": null,
+            "category": 7,
+            "channel": 3,
+            "primary_feed": 85,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 83,
+        "fields": {
+            "name": "Khabardar",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-12T05:28:31.579Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-12T05:28:30.637Z",
+            "updated": "2019-09-12T05:28:31.579Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Aftab Iqbal",
+            "airtime": null,
+            "category": 7,
+            "channel": 12,
+            "primary_feed": 86,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 84,
+        "fields": {
+            "name": "Syasi Theater",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-16T08:02:08.929Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-16T08:02:07.314Z",
+            "updated": "2019-09-16T08:02:08.929Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Syed Wasi Shah",
+            "airtime": null,
+            "category": 7,
+            "channel": 12,
+            "primary_feed": 87,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 85,
+        "fields": {
+            "name": "Ikhtalafi Note",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-16T08:06:25.440Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-16T08:06:23.849Z",
+            "updated": "2019-09-16T08:06:25.440Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Habib Akram, Saad Rasul, Ume Rabab",
+            "airtime": null,
+            "category": 1,
+            "channel": 3,
+            "primary_feed": 88,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 86,
+        "fields": {
+            "name": "To The Point",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-09-16T08:13:16.372Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-09-16T08:13:14.806Z",
+            "updated": "2019-09-16T08:13:16.372Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Mansoor Ali Khan",
+            "airtime": null,
+            "category": 1,
+            "channel": 12,
+            "primary_feed": 89,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 87,
+        "fields": {
+            "name": "Ghar Jamai",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-10-11T07:09:05.085Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-10-11T07:09:03.750Z",
+            "updated": "2019-10-11T07:09:05.085Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Ary Dramas",
+            "airtime": null,
+            "category": 5,
+            "channel": 17,
+            "primary_feed": 90,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 88,
+        "fields": {
+            "name": "Mohabbat Tumse Nafrat Hai",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-12-30T07:24:19.392Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-12-22T09:07:37.636Z",
+            "updated": "2019-12-30T07:24:19.392Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "Geo TV",
+            "airtime": null,
+            "category": 5,
+            "channel": 16,
+            "primary_feed": 91,
+            "locale": 2,
+            "total_shows": 4,
+            "country": [
+                4
+            ],
+            "additional_feeds": [
+                93
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 89,
+        "fields": {
+            "name": "Zindagi Gulzar Hai",
+            "description": "",
+            "is_active": false,
+            "effective_date": "2019-12-26T07:12:03.693Z",
+            "expiration_date": null,
+            "added_by": [
+                "bilgrami"
+            ],
+            "created": "2019-12-26T07:12:01.843Z",
+            "updated": "2019-12-26T07:12:03.693Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "HUM TV",
+            "airtime": null,
+            "category": 5,
+            "channel": 6,
+            "primary_feed": null,
+            "locale": 2,
+            "total_shows": -1,
+            "country": [
+                4
+            ],
+            "additional_feeds": []
+        }
+    },
+    {
+        "model": "pakguru_app.show",
+        "pk": 90,
+        "fields": {
+            "name": "Ab Dekh Khuda Kya Karta Hai",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-12-27T18:01:30.934Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-12-27T18:01:26.326Z",
+            "updated": "2019-12-27T18:01:30.934Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "host_name": "geo tv",
+            "airtime": null,
+            "category": 5,
+            "channel": 16,
+            "primary_feed": 94,
+            "locale": 2,
+            "total_shows": -1,
             "country": [
                 4
             ],

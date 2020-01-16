@@ -117,5 +117,22 @@
             "updated": "2019-07-07T06:38:15.880Z",
             "extra_data": null
         }
+    },
+    {
+        "model": "pakguru_app.postcategorylist",
+        "pk": 8,
+        "fields": {
+            "name": "Movies",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2019-12-14T17:46:43.128Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2019-12-14T17:46:10Z",
+            "updated": "2019-12-14T17:46:43.128Z",
+            "extra_data": null
+        }
     }
 ]

@@ -10,14 +10,16 @@ docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && ./shel
 echo 'Bringing web container down'
 docker-compose -f docker-compose-hosted-azure-postgres-db.yml down
 
-echo 'Bringing web container up in detached mode (pointing to dev db)'
-docker-compose up -d
-echo 'Running any pending migrations'
-docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && python manage.py migrate'
-echo 'Flushing local db'
-docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && python manage.py flush --no-input'
-echo 'Running load script on local container'
-docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && ./shell_scripts/load_data.sh'
-echo 'Bringing local container down'
-docker-compose down
-echo done
+echo 'Bringing web container up in detached mode (pointing to dev db)';
+docker-compose up -d;
+echo 'Running any pending migrations';
+docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && python manage.py migrate';
+echo 'Flushing local db';
+docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && python manage.py flush --no-input';
+echo 'Running init script';
+docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && chmod +x ./shell_scripts/init_script.sh && ./shell_scripts//init_script.sh';
+echo 'Running load script on local container';
+docker-compose exec web bash -c 'cd /usr/local/project/pakguru_project && ./shell_scripts/load_data.sh';
+echo 'Bringing local container down';
+docker-compose down;
+echo done;

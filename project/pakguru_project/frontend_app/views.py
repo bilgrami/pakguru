@@ -244,7 +244,7 @@ def comedyshows(request):
         request,
         'frontend_app/show_summary.html',
         {
-            'title': 'Video list of Comedy Shows',
+            'title': 'Comedy Shows',
             "comedyshows_page": "active",
             'message': 'Video list of Comedy Shows',
             'posts': posts,

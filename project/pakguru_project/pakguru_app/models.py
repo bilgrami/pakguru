@@ -283,8 +283,7 @@ class Post(CommonInfo):
                                on_delete=models.SET_NULL,
                                blank=True, null=True)
     show = models.ForeignKey(Show,
-                             on_delete=models.SET_NULL,
-                             blank=True, null=True, db_index=True)
+                             on_delete=models.CASCADE, db_index=True)
     tags = ArrayField(models.CharField('Tags', max_length=50,
                                        blank=True, null=True, db_index=True))
     country = models.ManyToManyField(CountryList, blank=True)

@@ -67,10 +67,11 @@ class ShowSourceFeed(admin.ModelAdmin):
 class Show(admin.ModelAdmin):
     list_display = ('show_id', 'name', 'show_host',
                     'category', 'primary_feed',
-                    'channel', 'locale',
+                    'channel', 'locale', 'updated',
                     'is_active', 'total_shows')
     list_filter = ('channel', 'primary_feed__feed_source_type',
-                   'category', 'country__name', 'is_active', 'locale')
+                   'category', 'country__name', 'is_active', 'updated',
+                   'locale')
     search_fields = ('show_id', 'name', 'host_name',
                      'description')
     date_hierarchy = 'updated'
@@ -103,18 +104,17 @@ class Show(admin.ModelAdmin):
 class Post(admin.ModelAdmin):
     list_display = ('post_id', 'title',
                     'target_date', 'publish_date',
-                    'show',
+                    'show', 'updated',
                     'category', 'locale', 'weekday_name',
                     'episode_number', 'running_total',
                     'is_active', 'flagged',
-                    'is_Show', 'is_Joke', 'is_Quote', 'is_Politics')
-    list_filter = ('target_date', 'weekday_name', 'category',
-                   'is_active', 'flagged', 'is_Show', 'is_Joke',
-                   'is_Quote', 'is_Politics')
-    search_fields = ('post_id', 'title',)
-    date_hierarchy = 'target_date'
-    ordering = ('-target_date', '-publish_date',)
-    list_per_page = 100
+                    'is_Show', 'is_Politics')
+    list_filter = ('target_date', 'weekday_name', 'category', 'updated',
+                   'is_active', 'flagged', 'is_Show', 'is_Politics')
+    search_fields = ('post_id', 'title', 'show__name')
+    date_hierarchy = 'updated'
+    ordering = ('-updated',)
+    list_per_page = 50
     readonly_fields = ('created', 'publish_date', 'updated',)
     fields = ('title', 'slug',
               'publish_date',

@@ -15,7 +15,7 @@ admin.site.register(FeedSourceType)
 
 
 @admin.register(ShowFeed_HarvestJobLog)
-class ShowFeed_HarvestJobLog(admin.ModelAdmin):
+class ShowFeed_HarvestJobLogAdmin(admin.ModelAdmin):
     list_display = ('job_id', 'show_feed',
                     'latest_feed_date',
                     'is_latest', 'feed_data',
@@ -40,31 +40,38 @@ class ShowFeed_HarvestJobLog(admin.ModelAdmin):
 
 
 @admin.register(ShowSourceFeed)
-class ShowSourceFeed(admin.ModelAdmin):
+class ShowSourceFeedAdmin(admin.ModelAdmin):
     list_display = ('feed_id', 'name',
                     'show_name',
                     'channel', 'is_active', 'feed_source_type',
-                    'feed_quality', 'priority', 'updated')
+                    'feed_frequency', 'updated')
     list_filter = ('feed_source_type', 'channel', 'is_active', 'country')
     search_fields = ('feed_id', 'name', 'channel__name')
     date_hierarchy = 'updated'
     ordering = ('-updated',)
-    list_per_page = 30
+    list_per_page = 50
     readonly_fields = ('created', 'effective_date', 'updated',)
     fields = ('name', 'show_name', 'channel',
               'playlist_link', 'latest_show_link',
               'title_example', 'title_search_pattern',
               'search_api_url', 'search_api_pattern',
               'expiration_date',
-              'country',
+              'country', 'feed_frequency',
               'is_active', 'feed_source_type',
               'feed_quality', 'priority',
               'added_by', 'extra_data',)
     save_on_top = True
 
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "channel":
+            # kwargs["queryset"] = Show.objects.filter(added_by=request.user).order_by('name')
+            kwargs["queryset"] = Show.objects.order_by('channel__name', 'name')
+        return super(ShowSourceFeedAdmin, self).formfield_for_foreignkey(db_field, 
+                                                               request,
+                                                               **kwargs)
 
 @admin.register(Show)
-class Show(admin.ModelAdmin):
+class ShowAdmin(admin.ModelAdmin):
     list_display = ('show_id', 'name', 'show_host',
                     'category', 'primary_feed',
                     'channel', 'locale', 'updated',
@@ -99,9 +106,25 @@ class Show(admin.ModelAdmin):
     def show_host(self, obj):
         return self.get_ellipses(obj.host_name, 20)
 
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "primary_feed":
+            kwargs["queryset"] = ShowSourceFeed.objects.order_by('name')
+        elif db_field.name == "channel":
+            kwargs["queryset"] = ShowChannel.objects.order_by('name')
+
+        return super(ShowAdmin, self).formfield_for_foreignkey(db_field, 
+                                                               request,
+                                                               **kwargs)
+
+    def formfield_for_manytomany(self, db_field, request, **kwargs):
+        if db_field.name == "additional_feeds":
+            kwargs["queryset"] = ShowSourceFeed.objects.order_by('name')
+        return super(ShowAdmin, self).formfield_for_manytomany(db_field,
+                                                                request,
+                                                                **kwargs)
 
 @admin.register(Post)
-class Post(admin.ModelAdmin):
+class PostAdmin(admin.ModelAdmin):
     list_display = ('post_id', 'title',
                     'target_date', 'publish_date',
                     'show', 'updated',
@@ -142,3 +165,28 @@ class Post(admin.ModelAdmin):
 
     def get_title(self, obj):
         return self.get_ellipses(obj.title, 20)
+
+    def formfield_for_foreignkey(self, db_field, request, **kwargs):
+        if db_field.name == "show":
+            # kwargs["queryset"] = Show.objects.filter(added_by=request.user).order_by('name')
+            kwargs["queryset"] = Show.objects.order_by('channel__name', 'name')
+        return super(PostAdmin, self).formfield_for_foreignkey(db_field, 
+                                                               request,
+                                                               **kwargs)
+
+    actions = [
+        "mark_as_Flagged", "unmark_as_Flagged",
+        "mark_as_Active", "unmark_as_Active",    
+    ]
+
+    def mark_as_Flagged(self, request, queryset):
+        queryset.update(flagged=True)
+
+    def unmark_as_Flagged(self, request, queryset):
+        queryset.update(flagged=False)
+
+    def mark_as_Active(self, request, queryset):
+        queryset.update(is_active=True)
+
+    def unmark_as_Active(self, request, queryset):
+        queryset.update(is_active=False)

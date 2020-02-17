@@ -20,7 +20,7 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         job_id = options['job_id']
-        if job_id == -1:
+        if job_id == -1:  # process all jobs
             jobs = job.objects.filter(is_latest=True, is_active=True).all() \
                     .values_list('job_id', flat=True)  # noqa: E113, E999
 

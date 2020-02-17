@@ -34,3 +34,7 @@ urlpatterns = [
 # urlpatterns += staticfiles_urlpatterns()
 urlpatterns += static(settings.MEDIA_URL,
                       document_root=settings.MEDIA_ROOT)
+
+admin.site.site_header = "Pak.guru Admin"
+admin.site.site_title = "Pak.guru Admin Portal"
+admin.site.index_title = "Welcome to Pak.guru Admin Portal"

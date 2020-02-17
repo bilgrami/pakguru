@@ -45,6 +45,11 @@ feed_quality_choices = [
     ('8K', '8K'),
 ]
 
+feed_frequency_choices = [
+    ('ONE_TIME', 'once'),
+    ('DAILY', 'Daily')
+]
+
 
 class PostCategoryList(CommonInfo):
     category_id = models.AutoField(primary_key=True)
@@ -173,6 +178,10 @@ class ShowSourceFeed(CommonInfo):
                                     choices=feed_quality_choices,
                                     max_length=20, null=True, blank=True)
     priority = models.SmallIntegerField('Priority', default=0)
+    feed_frequency = models.CharField('Feed Frequency',
+                                      max_length=20,
+                                      choices=feed_frequency_choices,
+                                      default='ONE_TIME')
 
     def __str__(self):
         return f'{self.name} ({self.channel})'

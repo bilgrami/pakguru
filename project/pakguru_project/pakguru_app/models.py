@@ -296,14 +296,14 @@ class Post(CommonInfo):
     tags = ArrayField(models.CharField('Tags', max_length=50,
                                        blank=True, null=True, db_index=True))
     country = models.ManyToManyField(CountryList, blank=True)
-    flagged = models.BooleanField('F?',
+    flagged = models.BooleanField('Flagged',
                                   default=False, db_index=True)
     flagged_data = models.TextField('Flag Info',
                                     blank=True, null=True)
-    is_Show = models.BooleanField('S', default=True)
-    is_Joke = models.BooleanField('J', default=False)
-    is_Quote = models.BooleanField('Q', default=False)
-    is_Politics = models.BooleanField('P', default=False)
+    is_Show = models.BooleanField('Is Show', default=True)
+    is_Joke = models.BooleanField('Is Joke', default=False)
+    is_Quote = models.BooleanField('Is Quote', default=False)
+    is_Politics = models.BooleanField('Is Political', default=False)
     episode_number = models.SmallIntegerField('Episode Number', default=-1,
                                               blank=True, null=True,
                                               db_index=True)

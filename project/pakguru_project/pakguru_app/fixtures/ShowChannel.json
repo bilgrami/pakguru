@@ -542,5 +542,57 @@
                 4
             ]
         }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 22,
+        "fields": {
+            "name": "GEO Kahani",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2020-02-17T05:14:32.974Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2020-02-17T05:13:16Z",
+            "updated": "2020-02-17T05:14:32.975Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "channel_short_code": "GEO Kahani",
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 23,
+        "fields": {
+            "name": "Urdu 1",
+            "description": "",
+            "is_active": true,
+            "effective_date": "2020-02-17T05:15:24.285Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2020-02-17T05:15:01Z",
+            "updated": "2020-02-17T05:15:24.285Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "channel_short_code": "Urdu 1",
+            "country": [
+                4
+            ]
+        }
     }
 ]

@@ -25,6 +25,7 @@
             "feed_source_type": 1,
             "feed_quality": "1080p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 2
             ]
@@ -56,6 +57,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 3,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 2
             ]
@@ -87,6 +89,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -118,6 +121,7 @@
             "feed_source_type": 5,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -149,6 +153,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 1
             ]
@@ -180,6 +185,7 @@
             "feed_source_type": 2,
             "feed_quality": "720p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -211,6 +217,7 @@
             "feed_source_type": 7,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 1
             ]
@@ -242,6 +249,7 @@
             "feed_source_type": 6,
             "feed_quality": "1080p",
             "priority": 2,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 1
             ]
@@ -273,6 +281,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -304,6 +313,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -335,6 +345,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 1,
                 2,
@@ -369,6 +380,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -400,6 +412,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 1
             ]
@@ -431,6 +444,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -462,6 +476,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -493,6 +508,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -524,6 +540,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -555,6 +572,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -586,6 +604,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -617,6 +636,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -648,6 +668,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -679,6 +700,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -710,6 +732,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -741,6 +764,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -772,6 +796,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -803,6 +828,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -834,6 +860,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -865,6 +892,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -896,6 +924,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -927,6 +956,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -958,6 +988,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -989,6 +1020,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1020,6 +1052,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1051,6 +1084,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1082,6 +1116,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1113,6 +1148,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1144,6 +1180,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1175,6 +1212,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1206,6 +1244,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1237,6 +1276,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1268,6 +1308,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1299,6 +1340,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1335,6 +1377,7 @@
             "feed_source_type": 3,
             "feed_quality": "720p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1366,6 +1409,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1397,6 +1441,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1428,6 +1473,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1459,6 +1505,7 @@
             "feed_source_type": 4,
             "feed_quality": "720p",
             "priority": 1,
+            "feed_frequency": "ONE_TIME",
             "country": []
         }
     },
@@ -1468,14 +1515,14 @@
         "fields": {
             "name": "DOL - Alif Allah Aur Insaan",
             "description": null,
-            "is_active": true,
-            "effective_date": "2019-12-30T03:34:01.680Z",
+            "is_active": false,
+            "effective_date": "2020-02-17T17:47:20.944Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-07T06:33:08.964Z",
-            "updated": "2019-12-30T03:34:01.680Z",
+            "updated": "2020-02-17T17:47:20.944Z",
             "extra_data": {
                 "channel": "Hum TV",
                 "feed_url": "http://dramaonline.pk/hum-tv-dramas/alif-allah-aur-insaan/",
@@ -1493,6 +1540,7 @@
             "feed_source_type": 3,
             "feed_quality": "720p",
             "priority": 1,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -1529,6 +1577,7 @@
             "feed_source_type": 4,
             "feed_quality": "720p",
             "priority": 1,
+            "feed_frequency": "ONE_TIME",
             "country": []
         }
     },
@@ -1558,6 +1607,7 @@
             "feed_source_type": 4,
             "feed_quality": "720p",
             "priority": 1,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -1589,6 +1639,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1620,6 +1671,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -1651,6 +1703,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -1682,6 +1735,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -1713,6 +1767,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -1744,6 +1799,7 @@
             "feed_source_type": 2,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -1781,6 +1837,7 @@
             "feed_source_type": 3,
             "feed_quality": "1080p",
             "priority": 2,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -1792,14 +1849,14 @@
         "fields": {
             "name": "DOL - Aangan",
             "description": null,
-            "is_active": true,
-            "effective_date": "2019-12-30T03:36:38.031Z",
+            "is_active": false,
+            "effective_date": "2020-02-17T17:46:30.622Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-12T18:48:58.766Z",
-            "updated": "2019-12-30T03:36:38.031Z",
+            "updated": "2020-02-17T17:46:30.622Z",
             "extra_data": {
                 "channel": "Hum TV",
                 "feed_url": "http://dramaonline.pk/hum-tv-dramas/aangan/",
@@ -1817,6 +1874,7 @@
             "feed_source_type": 3,
             "feed_quality": "720p",
             "priority": 2,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -1848,6 +1906,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": []
         }
     },
@@ -1877,6 +1936,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1908,6 +1968,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1939,6 +2000,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -1970,6 +2032,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2001,6 +2064,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -2032,6 +2096,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2063,6 +2128,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2094,6 +2160,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2125,6 +2192,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2156,6 +2224,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2187,6 +2256,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2218,6 +2288,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2249,6 +2320,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2280,6 +2352,7 @@
             "feed_source_type": 5,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2311,6 +2384,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2342,6 +2416,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2373,6 +2448,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2404,6 +2480,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -2435,6 +2512,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -2466,6 +2544,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -2497,6 +2576,7 @@
             "feed_source_type": 1,
             "feed_quality": "720p",
             "priority": 2,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -2528,6 +2608,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2559,6 +2640,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 2,
+            "feed_frequency": "ON_DEMAND",
             "country": [
                 4
             ]
@@ -2590,6 +2672,7 @@
             "feed_source_type": 1,
             "feed_quality": "480p",
             "priority": 1,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -2626,6 +2709,7 @@
             "feed_source_type": 3,
             "feed_quality": "1080p",
             "priority": 1,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -2657,6 +2741,7 @@
             "feed_source_type": 1,
             "feed_quality": "1080p",
             "priority": 2,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -2693,6 +2778,7 @@
             "feed_source_type": 3,
             "feed_quality": "1080p",
             "priority": 1,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -2729,6 +2815,7 @@
             "feed_source_type": 3,
             "feed_quality": "720p",
             "priority": 1,
+            "feed_frequency": "ONE_TIME",
             "country": [
                 4
             ]
@@ -2758,6 +2845,7 @@
             "feed_source_type": 3,
             "feed_quality": null,
             "priority": 0,
+            "feed_frequency": "ONE_TIME",
             "country": []
         }
     }

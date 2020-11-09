@@ -46,8 +46,11 @@ feed_quality_choices = [
 ]
 
 feed_frequency_choices = [
-    ('ONE_TIME', 'once'),
-    ('DAILY', 'Daily')
+    ('ONE_TIME', 'One Time'),
+    ('ON_DEMAND', 'On Demand'),
+    ('DAILY', 'Daily'),
+    ('HOURLY', 'Hourly'),
+    ('MONTHLY', 'Monthly'),
 ]
 
 

@@ -10,6 +10,6 @@
     // "appService.defaultWebAppToDeploy": "/subscriptions/73432e2b-6a72-47c4-abc2-5cf2563e2b5e/resourceGroups/appsvc_rg_linux_centralus/providers/Microsoft.Web/sites/pakguru",
     "appService.deploySubpath": "",
     "python.linting.flake8Enabled": true,
-    "python.linting.pep8Enabled": false,
+    "python.linting.pycodestyleEnabled": false,
    
 }

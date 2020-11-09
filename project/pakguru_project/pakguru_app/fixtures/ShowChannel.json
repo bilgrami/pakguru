@@ -516,5 +516,31 @@
                 1
             ]
         }
+    },
+    {
+        "model": "pakguru_app.showchannel",
+        "pk": 21,
+        "fields": {
+            "name": "PTV",
+            "description": "",
+            "is_active": false,
+            "effective_date": "2020-02-06T18:44:59.075Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2020-02-05T11:55:02Z",
+            "updated": "2020-02-06T18:44:59.075Z",
+            "extra_data": null,
+            "website_link": null,
+            "youtube_link": null,
+            "facebook_link": null,
+            "twitter_link": null,
+            "instagram_link": null,
+            "channel_short_code": "PTV",
+            "country": [
+                4
+            ]
+        }
     }
 ]

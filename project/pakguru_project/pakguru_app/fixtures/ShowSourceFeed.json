@@ -1306,42 +1306,6 @@
     },
     {
         "model": "pakguru_app.showsourcefeed",
-        "pk": 43,
-        "fields": {
-            "name": "DOL - Naseebon Jali",
-            "description": null,
-            "is_active": true,
-            "effective_date": "2019-07-11T02:21:04.092Z",
-            "expiration_date": null,
-            "added_by": [
-                "bilgrami"
-            ],
-            "created": "2019-07-06T08:31:15.461Z",
-            "updated": "2019-07-11T02:21:04.092Z",
-            "extra_data": {
-                "channel": "Hum TV",
-                "feed_url": "http://dramaonline.pk/hum-tv-dramas/naseebon-jali/",
-                "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
-                "show_name_from_feed": "Naseebon Jali"
-            },
-            "show_name": "Naseebon Jali",
-            "channel": 6,
-            "playlist_link": "http://dramaonline.pk/hum-tv-dramas/naseebon-jali/",
-            "latest_show_link": "http://dramaonline.pk/naseebon-jali-episode-171-in-hd/",
-            "title_example": "Naseebon Jali Episode 171",
-            "title_search_pattern": "{Show name} Episode {Episode Number}",
-            "search_api_url": null,
-            "search_api_pattern": null,
-            "feed_source_type": 3,
-            "feed_quality": "480p",
-            "priority": 1,
-            "country": [
-                4
-            ]
-        }
-    },
-    {
-        "model": "pakguru_app.showsourcefeed",
         "pk": 44,
         "fields": {
             "name": "DOL - Subah Pakistan With Shahista Lodhi",
@@ -1601,42 +1565,6 @@
     },
     {
         "model": "pakguru_app.showsourcefeed",
-        "pk": 55,
-        "fields": {
-            "name": "DOL - Mah E Tamaam",
-            "description": null,
-            "is_active": true,
-            "effective_date": "2019-07-11T02:23:47.123Z",
-            "expiration_date": null,
-            "added_by": [
-                "shahneela"
-            ],
-            "created": "2019-07-10T09:25:53.098Z",
-            "updated": "2019-07-11T02:23:47.123Z",
-            "extra_data": {
-                "channel": "Hum TV",
-                "Show Short Name": "Mah E Tamaam",
-                "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
-                "show_name_from_feed": "Mah E Tamaam"
-            },
-            "show_name": "Mah E Tamaam",
-            "channel": 6,
-            "playlist_link": "http://dramaonline.pk/hum-tv-dramas/mah-e-tamaam/",
-            "latest_show_link": "http://dramaonline.pk/mah-e-tamam--last-episode/",
-            "title_example": "Mah E Tamam last Episode",
-            "title_search_pattern": "{Show name} Episode {Episode Number}",
-            "search_api_url": null,
-            "search_api_pattern": null,
-            "feed_source_type": 3,
-            "feed_quality": "720p",
-            "priority": 2,
-            "country": [
-                4
-            ]
-        }
-    },
-    {
-        "model": "pakguru_app.showsourcefeed",
         "pk": 56,
         "fields": {
             "name": "unewstv - Tonight With Fareeha",
@@ -1827,14 +1755,14 @@
         "fields": {
             "name": "DOL - Khan",
             "description": null,
-            "is_active": true,
-            "effective_date": "2020-01-09T16:49:27.445Z",
+            "is_active": false,
+            "effective_date": "2020-01-23T06:17:57.873Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-07-10T18:52:05.529Z",
-            "updated": "2020-01-09T16:49:27.445Z",
+            "updated": "2020-01-23T06:17:57.873Z",
             "extra_data": {
                 "channel": "Geo TV",
                 "feed_url": "http://dramaonline.pk/geo-tv-dramas/khan/",
@@ -1852,73 +1780,6 @@
             "search_api_pattern": null,
             "feed_source_type": 3,
             "feed_quality": "1080p",
-            "priority": 2,
-            "country": [
-                4
-            ]
-        }
-    },
-    {
-        "model": "pakguru_app.showsourcefeed",
-        "pk": 63,
-        "fields": {
-            "name": "DOL - Udaari",
-            "description": null,
-            "is_active": true,
-            "effective_date": "2019-07-11T02:20:31.205Z",
-            "expiration_date": null,
-            "added_by": [
-                "shahneela"
-            ],
-            "created": "2019-07-10T19:05:48.433Z",
-            "updated": "2019-07-11T02:20:31.205Z",
-            "extra_data": {
-                "channel": "Hum TV",
-                "Show Short Name": "Udaari",
-                "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
-                "show_name_from_feed": "Udaari"
-            },
-            "show_name": "Udaari",
-            "channel": 6,
-            "playlist_link": "http://dramaonline.pk/hum-tv-dramas/udaari/",
-            "latest_show_link": "http://dramaonline.pk/udaari-last-episode-25-in-hd/",
-            "title_example": "Udaari Last Episode 25",
-            "title_search_pattern": "{Show name} Episode {Episode Number}",
-            "search_api_url": null,
-            "search_api_pattern": null,
-            "feed_source_type": 3,
-            "feed_quality": "1080p",
-            "priority": 2,
-            "country": [
-                4
-            ]
-        }
-    },
-    {
-        "model": "pakguru_app.showsourcefeed",
-        "pk": 64,
-        "fields": {
-            "name": "DOL - Udaari",
-            "description": null,
-            "is_active": false,
-            "effective_date": "2019-07-10T19:20:43.438Z",
-            "expiration_date": null,
-            "added_by": [
-                "shahneela"
-            ],
-            "created": "2019-07-10T19:20:41.362Z",
-            "updated": "2019-07-10T19:20:43.438Z",
-            "extra_data": null,
-            "show_name": "Udaari",
-            "channel": 6,
-            "playlist_link": "http://dramaonline.pk/hum-tv-dramas/udaari/",
-            "latest_show_link": "http://dramaonline.pk/udaari-last-episode-25-in-hd/",
-            "title_example": "Udaari Last Episode 25",
-            "title_search_pattern": "{Show name} Episode {Episode Number}",
-            "search_api_url": null,
-            "search_api_pattern": null,
-            "feed_source_type": 2,
-            "feed_quality": "720p",
             "priority": 2,
             "country": [
                 4
@@ -2740,14 +2601,14 @@
         "fields": {
             "name": "DOL - Mohabbat Tumse Nafrat Hai",
             "description": null,
-            "is_active": true,
-            "effective_date": "2019-12-30T03:20:59.320Z",
+            "is_active": false,
+            "effective_date": "2020-01-24T14:50:50.524Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-12-22T09:04:25.220Z",
-            "updated": "2019-12-30T03:20:59.320Z",
+            "updated": "2020-01-24T14:50:50.524Z",
             "extra_data": {
                 "channel": "Geo TV",
                 "feed_url": "http://dramaonline.pk/geo-tv-dramas/mohabbat-tumse-nafrat-hai/",
@@ -2772,49 +2633,18 @@
     },
     {
         "model": "pakguru_app.showsourcefeed",
-        "pk": 92,
-        "fields": {
-            "name": "YT - Mohabbat Tum Se Nafrat Hai",
-            "description": null,
-            "is_active": false,
-            "effective_date": "2019-12-30T07:01:34.166Z",
-            "expiration_date": null,
-            "added_by": [
-                "shahneela"
-            ],
-            "created": "2019-12-26T08:32:20.147Z",
-            "updated": "2019-12-30T07:01:34.166Z",
-            "extra_data": null,
-            "show_name": "Mohabbat Tum Se Nafrat Hai",
-            "channel": 16,
-            "playlist_link": "https://www.youtube.com/watch?v=T4DYBziNgdQ&list=PLaA8Tc_xcK87iNpVsTxQN4m0tinIi109H",
-            "latest_show_link": "https://www.youtube.com/watch?v=T4DYBziNgdQ&list=PLaA8Tc_xcK87iNpVsTxQN4m0tinIi109H&index=1",
-            "title_example": null,
-            "title_search_pattern": null,
-            "search_api_url": null,
-            "search_api_pattern": null,
-            "feed_source_type": 1,
-            "feed_quality": "1080p",
-            "priority": 2,
-            "country": [
-                4
-            ]
-        }
-    },
-    {
-        "model": "pakguru_app.showsourcefeed",
         "pk": 93,
         "fields": {
             "name": "YT - Mohabbat Tum Se Nafrat Hai",
             "description": null,
             "is_active": false,
-            "effective_date": "2019-12-30T07:01:56.262Z",
+            "effective_date": "2020-02-06T18:42:34.159Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-12-26T08:32:20.156Z",
-            "updated": "2019-12-30T07:01:56.262Z",
+            "updated": "2020-02-06T18:42:34.159Z",
             "extra_data": null,
             "show_name": "Mohabbat Tum Se Nafrat Hai",
             "channel": 16,
@@ -2838,14 +2668,14 @@
         "fields": {
             "name": "DOL - Ab Dekh Khuda Kya Karta Hai",
             "description": null,
-            "is_active": true,
-            "effective_date": "2019-12-30T03:24:37.063Z",
+            "is_active": false,
+            "effective_date": "2020-02-06T18:41:58.944Z",
             "expiration_date": null,
             "added_by": [
                 "shahneela"
             ],
             "created": "2019-12-27T17:51:32.576Z",
-            "updated": "2019-12-30T03:24:37.064Z",
+            "updated": "2020-02-06T18:41:58.944Z",
             "extra_data": {
                 "channel": "Geo TV",
                 "feed_url": "http://dramaonline.pk/geo-tv-dramas/ab-dekh-khuda-kiya-karta-hai/",
@@ -2855,8 +2685,8 @@
             "show_name": "Ab Dekh Khuda Kya Karta Hai",
             "channel": 16,
             "playlist_link": "http://dramaonline.pk/geo-tv-dramas/ab-dekh-khuda-kiya-karta-hai/",
-            "latest_show_link": "http://dramaonline.pk/ab-dekh-khuda-kya-karta-hai-episode-23/",
-            "title_example": "Ab Dekh Khuda Kya Karta Hai Episode 23",
+            "latest_show_link": "http://dramaonline.pk/ab-dekh-khuda-kya-karta-hai-last-episode-24/",
+            "title_example": "Ab Dekh Khuda Kya Karta Hai Last Episode 24",
             "title_search_pattern": "{Show name} Episode {Episode Number}",
             "search_api_url": null,
             "search_api_pattern": null,
@@ -2866,6 +2696,69 @@
             "country": [
                 4
             ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 95,
+        "fields": {
+            "name": "DOL - Nazr e Bad",
+            "description": null,
+            "is_active": false,
+            "effective_date": "2020-02-06T18:41:24.411Z",
+            "expiration_date": null,
+            "added_by": [
+                "shahneela"
+            ],
+            "created": "2020-01-27T05:52:25.264Z",
+            "updated": "2020-02-06T18:41:24.411Z",
+            "extra_data": {
+                "channel": "HUM TV",
+                "feed_url": "http://dramaonline.pk/hum-tv-dramas/nazr-e-bad/",
+                "additional_feed_url": "http://dramaonline.pk/contents/load-more-dramas.php",
+                "show_name_from_feed": "Nazr e Bad"
+            },
+            "show_name": "Nazr e Bad",
+            "channel": 6,
+            "playlist_link": "http://dramaonline.pk/hum-tv-dramas/nazr-e-bad/",
+            "latest_show_link": "http://dramaonline.pk/nazr-e-bad-episode-40-in-hd-last-episode/",
+            "title_example": "Nazr e Bad Episode 40 in HD last episode",
+            "title_search_pattern": "{Show name} Episode {Episode Number}",
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 3,
+            "feed_quality": "720p",
+            "priority": 1,
+            "country": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "pakguru_app.showsourcefeed",
+        "pk": 98,
+        "fields": {
+            "name": "Dummy Feed",
+            "description": null,
+            "is_active": false,
+            "effective_date": "2020-02-15T18:06:29.436Z",
+            "expiration_date": null,
+            "added_by": null,
+            "created": "2020-02-15T18:06:12.503Z",
+            "updated": "2020-02-15T18:06:29.436Z",
+            "extra_data": null,
+            "show_name": "Dummy show",
+            "channel": 6,
+            "playlist_link": "http://example.com/dummyplaylistlink",
+            "latest_show_link": null,
+            "title_example": null,
+            "title_search_pattern": null,
+            "search_api_url": null,
+            "search_api_pattern": null,
+            "feed_source_type": 3,
+            "feed_quality": null,
+            "priority": 0,
+            "country": []
         }
     }
 ]

@@ -48,3 +48,4 @@ PyYAML<=5.1 # pinned for awscli
 awscli
 boto3
 django-clear-cache
+stream-django
